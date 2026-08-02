@@ -1,0 +1,84 @@
+name: Import host compatibility hardening
+
+on:
+  push:
+    branches:
+      - feature/five-domain-extension-split
+    paths:
+      - .github/workflows/import-host-compatibility-hardening.yml
+
+permissions:
+  contents: write
+
+jobs:
+  import-hardening:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out feature branch
+        uses: actions/checkout@v4
+        with:
+          ref: feature/five-domain-extension-split
+          fetch-depth: 0
+
+      - name: Install Parquet reader
+        run: python -m pip install --disable-pip-version-check pyarrow==17.0.0
+
+      - name: Download transfer dataset
+        run: |
+          curl --fail --location --retry 4 --retry-delay 3 \
+            'https://titan-builder-ob009-artifact.miniup.app/api/data-file/titan-builder-ob009-artifact/workcore-host-compatibility-hardening-transfer.parquet' \
+            --output /tmp/workcore-host-hardening.parquet
+
+      - name: Reconstruct and verify archive
+        env:
+          EXPECTED_SHA256: 7d3d64b0149790e1f6992da1cec92f38b3be7f70d59bb9baaa068332b3b0aabe
+          EXPECTED_BYTES: '306668'
+        run: |
+          python - <<'PY'
+          import base64
+          import hashlib
+          import os
+          from pathlib import Path
+          import pyarrow.parquet as pq
+
+          table = pq.read_table('/tmp/workcore-host-hardening.parquet')
+          rows = sorted(table.to_pylist(), key=lambda row: int(row['Sequence']))
+          encoded = ''.join(str(row['Payload_Base64']) for row in rows)
+          archive = base64.b64decode(encoded, validate=True)
+          actual_sha = hashlib.sha256(archive).hexdigest()
+
+          if len(archive) != int(os.environ['EXPECTED_BYTES']):
+              raise SystemExit(f'archive size mismatch: {len(archive)}')
+          if actual_sha != os.environ['EXPECTED_SHA256']:
+              raise SystemExit(f'archive SHA-256 mismatch: {actual_sha}')
+
+          Path('/tmp/workcore-host-hardening.zip').write_bytes(archive)
+          print(f'verified {len(archive)} bytes with SHA-256 {actual_sha}')
+          PY
+
+      - name: Apply hardening delta
+        run: |
+          rm -rf /tmp/workcore-host-hardening
+          mkdir -p /tmp/workcore-host-hardening
+          unzip -q /tmp/workcore-host-hardening.zip -d /tmp/workcore-host-hardening
+          test -f /tmp/workcore-host-hardening/workcore-host-hardening/tools/generate_host_profile.py
+          test -f /tmp/workcore-host-hardening/workcore-host-hardening/.github/workflows/host-compatibility.yml
+          cp -a /tmp/workcore-host-hardening/workcore-host-hardening/. ./
+          rm -f .github/workflows/import-host-compatibility-hardening.yml
+
+      - name: Verify imported hardening
+        run: |
+          python -m unittest tests/test_repository_integrity.py tests/test_host_compatibility.py -v
+          python tools/validate_repository.py --repo .
+          python tools/analyze_package_dependencies.py --packages-root packages --output /tmp/dependency-report.json
+          python -m py_compile tools/build_extensions.py tools/generate_host_profile.py tools/analyze_package_dependencies.py tests/test_build_extensions.py tests/test_host_compatibility.py
+          find packages -type f -name '*.php' -print0 | xargs -0 -n1 -P4 php -l > /tmp/php-lint.log
+          test "$(grep -c '^No syntax errors detected in ' /tmp/php-lint.log)" -eq 2061
+
+      - name: Commit hardening changes
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'test: harden MagicAI host package compatibility'
+          git push origin HEAD:feature/five-domain-extension-split
