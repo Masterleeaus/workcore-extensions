@@ -26,13 +26,13 @@ jobs:
       - name: Download correction transfer
         run: |
           curl --fail --location --retry 4 --retry-delay 3 \
-            'https://titan-builder-ob009-artifact.miniup.app/api/data-file/titan-builder-ob009-artifact/workcore-final-consolidated-correction-transfer.parquet' \
+            'https://titan-builder-ob009-artifact.miniup.app/api/data-file/titan-builder-ob009-artifact/workcore-final-consolidated-correction-v2.parquet' \
             --output /tmp/workcore-final-correction.parquet
 
       - name: Reconstruct and verify correction archive
         env:
-          EXPECTED_SHA256: 02e23878fd91f1c5d99cdb21f873d21676cc20905731f7b942ed406d1a7fcb45
-          EXPECTED_BYTES: '7569461'
+          EXPECTED_SHA256: 035091143f4580c01ce352fb4571a05f3eafa040b99cf77deb732151415da6d5
+          EXPECTED_BYTES: '2543523'
         run: |
           python - <<'PY'
           import base64
@@ -45,8 +45,10 @@ jobs:
               pq.read_table('/tmp/workcore-final-correction.parquet').to_pylist(),
               key=lambda row: int(row['Sequence']),
           )
-          encoded = ''.join(str(row['Payload_Base64']) for row in rows)
-          archive = base64.b64decode(encoded, validate=True)
+          archive = base64.b64decode(
+              ''.join(str(row['Payload_Base64']) for row in rows),
+              validate=True,
+          )
           actual_sha = hashlib.sha256(archive).hexdigest()
           expected_sha = os.environ['EXPECTED_SHA256']
           expected_bytes = int(os.environ['EXPECTED_BYTES'])
@@ -63,10 +65,12 @@ jobs:
           rm -rf /tmp/workcore-final-correction-expanded
           mkdir -p /tmp/workcore-final-correction-expanded
           unzip -q /tmp/workcore-final-correction.zip -d /tmp/workcore-final-correction-expanded
-          source=/tmp/workcore-final-correction-expanded/workcore-final-correction
+          source=/tmp/workcore-final-correction-expanded/workcore-final-correction-v2
+
           test -f "$source/packages/workcore-commercial/src/Domains/WorkCore/System/Modules/Finance/Actions/CreateFinanceInvoice.php"
           test -f "$source/packages/workcore-shared-foundation/src/Domains/WorkCore/Database/Migrations/2026_08_02_000002_create_tm_payment_orchestration_tables.php"
           test -f "$source/integration/magicai-extension/extension.json"
+          grep -q 'supportsFullText' "$source/packages/workcore-shared-foundation/src/Domains/WorkCore/Database/Migrations/2026_07_23_120058_create_tz_ai_knowledge_tables.php"
 
           rm -rf packages compatibility site integration/magicai-extension
           cp -a "$source/packages" ./packages
@@ -93,12 +97,14 @@ jobs:
 
       - name: Verify corrected repository
         run: |
-          python -m unittest tests/test_repository_integrity.py tests/test_host_compatibility.py -v
+          python -m unittest discover -s tests -p 'test_*.py' -v
           python tools/validate_repository.py --repo .
           find packages -type f -name '*.php' -print0 | xargs -0 -n1 -P4 php -l >/tmp/php-lint.txt
           test "$(find packages -type f -name '*.php' | wc -l)" -eq 2090
           grep -q 'CreateFinanceCreditNote.php' ownership-manifest.json
           grep -q '2026_08_02_000002_create_tm_payment_orchestration_tables.php' ownership-manifest.json
+          grep -q 'supportsFullText' packages/workcore-shared-foundation/src/Domains/WorkCore/Database/Migrations/2026_07_23_120058_create_tz_ai_knowledge_tables.php
+          grep -q 'Schema::hasTable' integration/host-overlay/database/migrations/2026_07_25_000001_add_workcore_tenancy_to_meetup.php
 
       - name: Commit final consolidated correction
         run: |
