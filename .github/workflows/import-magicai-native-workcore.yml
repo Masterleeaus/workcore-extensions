@@ -91,6 +91,7 @@ jobs:
           cp -a "$source/docs/." ./docs/
           cp -a "$source/site/." ./site/
           cp -a "$source/integration/host-overlay/." ./integration/host-overlay/
+          cp -a "$source/.github/workflows/." ./.github/workflows/
 
           sed -i 's/EXPECTED_OWNED_FILE_COUNT = 2129/EXPECTED_OWNED_FILE_COUNT = 2158/' tools/validate_repository.py
           sed -i 's/self.assertEqual(2129, report.owned_file_count)/self.assertEqual(2158, report.owned_file_count)/' tests/test_repository_integrity.py
@@ -160,6 +161,7 @@ jobs:
         run: |
           git config user.name 'OpenAI'
           git config user.email 'noreply@openai.com'
+          git checkout -- .github/workflows
           git add -A
           git commit -m 'feat: convert WorkCore into MagicAI-native extensions'
           git pull --rebase origin feature/magicai-native-workcore-extensions
