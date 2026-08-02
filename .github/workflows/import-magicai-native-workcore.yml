@@ -88,7 +88,6 @@ jobs:
 
           cp -a "$source/tools/." ./tools/
           cp -a "$source/tests/." ./tests/
-          cp -a "$source/.github/workflows/." ./.github/workflows/
           cp -a "$source/docs/." ./docs/
           cp -a "$source/site/." ./site/
           cp -a "$source/integration/host-overlay/." ./integration/host-overlay/
@@ -110,8 +109,6 @@ jobs:
 
           MiniUp is transport provenance only and is not a runtime dependency.
           MD
-
-          rm -f .github/workflows/import-magicai-native-workcore.yml
 
       - name: Verify complete repository and native packages
         run: |
