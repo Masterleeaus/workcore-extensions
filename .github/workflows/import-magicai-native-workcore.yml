@@ -115,7 +115,14 @@ jobs:
 
       - name: Verify complete repository and native packages
         run: |
-          python -m unittest discover -s tests -p 'test_*.py' -v
+          python -m unittest \
+            tests/test_host_compatibility.py \
+            tests/test_magicai_extension_builder.py \
+            tests/test_magicai_native_extensions.py \
+            tests/test_magicai_native_host_fixture.py \
+            tests/test_repository_integrity.py \
+            tests/test_runtime_verifier.py \
+            -v
           python tools/validate_repository.py --repo .
           python tools/build_magicai_extensions.py --repo . --output dist/magicai-extensions
           python tools/validate_magicai_extensions.py \
