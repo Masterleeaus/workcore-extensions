@@ -222,6 +222,7 @@ def _build_shared(source_root: Path, packages_root: Path) -> Path:
     )
     _patch_shared_provider(package_root)
     _patch_shared_config(package_root)
+    _patch_shared_migrations(package_root)
     return package_root
 
 
@@ -341,6 +342,40 @@ $financePermissions = is_file($financePermissionsPath) ? require $financePermiss
     if old not in source:
         raise RuntimeError('Unable to locate the WorkCore Finance config imports for optional-package patching.')
     config_path.write_text(source.replace(old, new, 1), encoding='utf-8')
+
+
+def _patch_shared_migrations(package_root: Path) -> None:
+    migration_path = (
+        package_root / 'src/Domains/WorkCore/Database/Migrations/'
+        '2026_07_23_120058_create_tz_ai_knowledge_tables.php'
+    )
+    source = migration_path.read_text(encoding='utf-8')
+    create_marker = """    public function up(): void
+    {
+        Schema::create('tz_ai_knowledge_documents', function (Blueprint $table): void {"""
+    create_replacement = """    public function up(): void
+    {
+        $supportsFullText = in_array(
+            Schema::getConnection()->getDriverName(),
+            ['mysql', 'mariadb', 'pgsql'],
+            true,
+        );
+
+        Schema::create('tz_ai_knowledge_documents', function (Blueprint $table): void {"""
+    chunk_marker = "Schema::create('tz_ai_knowledge_chunks', function (Blueprint $table): void {"
+    chunk_replacement = "Schema::create('tz_ai_knowledge_chunks', function (Blueprint $table) use ($supportsFullText): void {"
+    index_marker = "            $table->fullText('content', 'ai_kchunk_content_ft');"
+    index_replacement = """            if ($supportsFullText) {
+                $table->fullText('content', 'ai_kchunk_content_ft');
+            }"""
+
+    if create_marker not in source or chunk_marker not in source or index_marker not in source:
+        raise RuntimeError('Unable to locate the AI knowledge full-text migration markers.')
+
+    source = source.replace(create_marker, create_replacement, 1)
+    source = source.replace(chunk_marker, chunk_replacement, 1)
+    source = source.replace(index_marker, index_replacement, 1)
+    migration_path.write_text(source, encoding='utf-8')
 
 def _write_group_provider(package_root: Path, group: str, definition: dict[str, Any]) -> None:
     class_name = GROUP_PROVIDER_CLASSES[group]

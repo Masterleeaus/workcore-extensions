@@ -572,11 +572,11 @@
     },
     {
       "destination": "packages/workcore-shared-foundation/src/Domains/WorkCore/Database/Migrations/2026_07_23_120058_create_tz_ai_knowledge_tables.php",
-      "destination_sha256": "d61a6cf715fd8c5071716984cdbf7aab5d2198d8bfb60c1a674a1dcbdf5b341a",
+      "destination_sha256": "cdcb5de0861589913a360701fda7af6ed98d00c65bd9dabdee23554b40b52566",
       "owner": "shared-foundation",
       "source": "app/Domains/WorkCore/Database/Migrations/2026_07_23_120058_create_tz_ai_knowledge_tables.php",
       "source_sha256": "d61a6cf715fd8c5071716984cdbf7aab5d2198d8bfb60c1a674a1dcbdf5b341a",
-      "transformed": false
+      "transformed": true
     },
     {
       "destination": "packages/workcore-shared-foundation/src/Domains/WorkCore/Database/Migrations/2026_07_23_120059_create_tz_service_variants_and_faqs_tables.php",

@@ -10,6 +10,12 @@ return new class extends Migration
 {
     public function up(): void
     {
+        $supportsFullText = in_array(
+            Schema::getConnection()->getDriverName(),
+            ['mysql', 'mariadb', 'pgsql'],
+            true,
+        );
+
         Schema::create('tz_ai_knowledge_documents', function (Blueprint $table): void {
             $table->id();
             $table->string('public_id', 64);
@@ -37,7 +43,7 @@ return new class extends Migration
             $table->index(['company_id', 'expires_at', 'deleted_at'], 'ai_kdoc_company_retention_idx');
         });
 
-        Schema::create('tz_ai_knowledge_chunks', function (Blueprint $table): void {
+        Schema::create('tz_ai_knowledge_chunks', function (Blueprint $table) use ($supportsFullText): void {
             $table->id();
             $table->uuid('public_id');
             $table->unsignedBigInteger('company_id');
@@ -62,7 +68,9 @@ return new class extends Migration
             $table->index(['company_id', 'visibility', 'expires_at'], 'ai_kchunk_access_expiry_idx');
             $table->index(['company_id', 'required_permission'], 'ai_kchunk_permission_idx');
             $table->index(['company_id', 'owner_user_id'], 'ai_kchunk_owner_idx');
-            $table->fullText('content', 'ai_kchunk_content_ft');
+            if ($supportsFullText) {
+                $table->fullText('content', 'ai_kchunk_content_ft');
+            }
         });
     }
 

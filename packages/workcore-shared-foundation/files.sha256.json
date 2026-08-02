@@ -367,9 +367,9 @@
       "sha256": "c7903a13735c2f28d27ddf3a00283f7bf5b7d5847d63031ba6f6e4621729d2d9"
     },
     {
-      "bytes": 3558,
+      "bytes": 3802,
       "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120058_create_tz_ai_knowledge_tables.php",
-      "sha256": "d61a6cf715fd8c5071716984cdbf7aab5d2198d8bfb60c1a674a1dcbdf5b341a"
+      "sha256": "cdcb5de0861589913a360701fda7af6ed98d00c65bd9dabdee23554b40b52566"
     },
     {
       "bytes": 2643,

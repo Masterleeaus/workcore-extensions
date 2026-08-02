@@ -31,6 +31,20 @@ class OptionalConfigurationTests(unittest.TestCase):
         self.assertIn('is_file($financePermissionsPath)', config)
 
 
+class MigrationPortabilityTests(unittest.TestCase):
+    def test_ai_knowledge_fulltext_index_is_guarded_for_sqlite(self) -> None:
+        migration = (
+            PACKAGES_ROOT / 'workcore-shared-foundation/'
+            'src/Domains/WorkCore/Database/Migrations/'
+            '2026_07_23_120058_create_tz_ai_knowledge_tables.php'
+        ).read_text(encoding='utf-8')
+
+        self.assertIn("Schema::getConnection()->getDriverName()", migration)
+        self.assertIn("['mysql', 'mariadb', 'pgsql']", migration)
+        self.assertIn('if ($supportsFullText)', migration)
+        self.assertIn("$table->fullText('content', 'ai_kchunk_content_ft');", migration)
+
+
 class ComposerPackageTests(unittest.TestCase):
     def test_all_packages_share_an_explicit_release_version(self) -> None:
         for composer_path in sorted(PACKAGES_ROOT.glob('*/composer.json')):

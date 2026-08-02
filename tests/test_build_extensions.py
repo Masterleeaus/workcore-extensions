@@ -71,6 +71,21 @@ class PackageBuildTests(unittest.TestCase):
             self.assertGreaterEqual(len(list(migration_root.glob('*.php'))), 100)
 
 
+    def test_build_guards_ai_knowledge_fulltext_index_for_sqlite(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            output_root = Path(temporary_directory)
+            build(SOURCE_ROOT, output_root)
+            migration = (
+                output_root / 'packages/workcore-shared-foundation/'
+                'src/Domains/WorkCore/Database/Migrations/'
+                '2026_07_23_120058_create_tz_ai_knowledge_tables.php'
+            ).read_text(encoding='utf-8')
+
+            self.assertIn("Schema::getConnection()->getDriverName()", migration)
+            self.assertIn("['mysql', 'mariadb', 'pgsql']", migration)
+            self.assertIn('if ($supportsFullText)', migration)
+
+
 class ProviderIsolationTests(unittest.TestCase):
     def test_shared_provider_skips_unavailable_module_providers_and_has_no_fallback_loader(self) -> None:
         with tempfile.TemporaryDirectory() as temporary_directory:
