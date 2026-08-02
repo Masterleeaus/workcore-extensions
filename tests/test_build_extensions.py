@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 import hashlib
 import subprocess
 import sys
@@ -8,7 +9,8 @@ import unittest
 from tools.build_extensions import GROUPS, build, discover_modules, validate_ownership
 from tools.build_site import build_site
 
-SOURCE_ROOT = Path('/mnt/data/workcore_magicai_consolidated_scan')
+REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
+SOURCE_ROOT = Path(os.environ.get('WORKCORE_SOURCE_ROOT', '/mnt/data/workcore_magicai_consolidated_scan'))
 
 
 class OwnershipTests(unittest.TestCase):
@@ -142,7 +144,7 @@ class SiteCatalogueTests(unittest.TestCase):
     def test_site_builder_cli_can_run_directly(self) -> None:
         result = subprocess.run(
             [sys.executable, 'tools/build_site.py', '--help'],
-            cwd='/mnt/data/workcore-extensions',
+            cwd=REPOSITORY_ROOT,
             capture_output=True,
             text=True,
         )
@@ -154,12 +156,12 @@ class SiteCatalogueTests(unittest.TestCase):
             first_zip = temporary_root / 'first.zip'
             second_zip = temporary_root / 'second.zip'
             build_site(
-                Path('/mnt/data/workcore-extensions'),
+                REPOSITORY_ROOT,
                 temporary_root / 'site-one',
                 zip_path=first_zip,
             )
             build_site(
-                Path('/mnt/data/workcore-extensions'),
+                REPOSITORY_ROOT,
                 temporary_root / 'site-two',
                 zip_path=second_zip,
             )
@@ -172,7 +174,7 @@ class SiteCatalogueTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary_directory:
             site_root = Path(temporary_directory) / 'site'
             build_site(
-                Path('/mnt/data/workcore-extensions'),
+                REPOSITORY_ROOT,
                 site_root,
                 zip_path=Path(temporary_directory) / 'site.zip',
             )

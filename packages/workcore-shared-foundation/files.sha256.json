@@ -7,9 +7,9 @@
       "sha256": "b51d0474f694c11018d441306dc77d7763c484d5e303b6ef4d6717df1b244dc0"
     },
     {
-      "bytes": 406,
+      "bytes": 582,
       "path": "composer.json",
-      "sha256": "b5292850af2ba39f2ea798dcb6308080377eb509e1cc45cbf3caf92bfe8d2aa0"
+      "sha256": "1fc4107b8b2887b5d7071e07d0c53dbae2adb86cb664fa55ae97d04aaec8387a"
     },
     {
       "bytes": 4916,
@@ -32,9 +32,9 @@
       "sha256": "f9283dbae8b86e44cc9f5368ba0cf7304f786775a574597c148d951724a1319d"
     },
     {
-      "bytes": 111675,
+      "bytes": 111842,
       "path": "src/Domains/WorkCore/Config/workcore.php",
-      "sha256": "08052bfa176855fd4212585fd431053e4c284e52b0f84a3d308ef463c4feadef"
+      "sha256": "2b35e67c9d72e0ecd17091f4e6cf37791b39ff060aad25af9309d1f72e5bf49d"
     },
     {
       "bytes": 7103,
@@ -2057,9 +2057,9 @@
       "sha256": "a49ef9d978f04d6cd08cce2307ddafab97d90431f6321d8620af3ebcfa94a04a"
     },
     {
-      "bytes": 11996,
+      "bytes": 12084,
       "path": "src/Domains/WorkCore/WorkCoreServiceProvider.php",
-      "sha256": "70ff7c905a381988792d2eb7295650818a50a1805fe6e1c04001fce16f1924b0"
+      "sha256": "298735ca5a013d27289659726f0cfbfc30dfea851ff683406ca50d3c4f6ebb57"
     }
   ]
 }

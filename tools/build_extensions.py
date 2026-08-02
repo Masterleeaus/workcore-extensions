@@ -9,6 +9,8 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Any, Iterable
 
+PACKAGE_VERSION = '0.1.0'
+
 GROUPS: dict[str, dict[str, Any]] = {
     'business-network': {
         'title': 'WorkCore Business Network',
@@ -51,6 +53,28 @@ GROUPS: dict[str, dict[str, Any]] = {
             'attendance', 'compliance', 'assurance',
         ],
         'system_slices': [],
+    },
+}
+
+OPTIONAL_INTEGRATIONS: dict[str, dict[str, str]] = {
+    'business-network': {
+        'workcore/work-operations': 'Enables support-ticket conversion into governed Work Orders.',
+    },
+    'commercial': {
+        'workcore/business-network': 'Connects customer, receivable and CRM context to financial workflows.',
+        'workcore/work-operations': 'Enables completed-job invoicing and job profitability workflows.',
+    },
+    'work-operations': {
+        'workcore/business-network': 'Connects jobs with customers, services and support flows.',
+        'workcore/property-operations': 'Enables premises, asset and trade-compliance context for field work.',
+    },
+    'property-operations': {
+        'workcore/work-operations': 'Enables property jobs, permits, callbacks and compliance workflows.',
+        'workcore/workforce-assurance': 'Enables NDIS, worker and assurance-backed vertical operations.',
+    },
+    'workforce-assurance': {
+        'workcore/work-operations': 'Connects rosters, attendance and compliance to scheduled field work.',
+        'workcore/property-operations': 'Enables premises evidence, NDIS accommodation and property assurance.',
     },
 }
 
@@ -134,6 +158,7 @@ def _files(root: Path) -> Iterable[Path]:
 def _write_package_metadata(package_root: Path, package_name: str, title: str, package_type: str) -> None:
     composer: dict[str, Any] = {
         'name': f'workcore/{package_name}',
+        'version': PACKAGE_VERSION,
         'description': title,
         'type': 'library',
         'license': 'proprietary',
@@ -147,8 +172,14 @@ def _write_package_metadata(package_root: Path, package_name: str, title: str, p
             },
         },
     }
-    if package_type == 'domain-extension':
+    if package_type == 'shared-foundation':
+        composer['require']['laravel/framework'] = '^11.0 || ^12.0'
+        composer['extra']['laravel'] = {
+            'providers': ['App\\Domains\\WorkCore\\WorkCoreServiceProvider'],
+        }
+    else:
         composer['require']['workcore/shared-foundation'] = 'self.version'
+        composer['suggest'] = OPTIONAL_INTEGRATIONS.get(package_name, {})
     _write_json(package_root / 'composer.json', composer)
     (package_root / 'README.md').write_text(
         f'# {title}\n\n'
@@ -190,6 +221,7 @@ def _build_shared(source_root: Path, packages_root: Path) -> Path:
         'shared-foundation',
     )
     _patch_shared_provider(package_root)
+    _patch_shared_config(package_root)
     return package_root
 
 
@@ -229,6 +261,7 @@ def _build_group(source_root: Path, packages_root: Path, group: str, definition:
             'runtime_keys': definition['runtime_keys'],
             'system_slices': definition['system_slices'],
             'requires': ['workcore/shared-foundation'],
+            'integrates_with': sorted(OPTIONAL_INTEGRATIONS.get(group, {})),
             'canonical_namespace_preserved': True,
             'destructive_uninstall': False,
         },
@@ -242,6 +275,17 @@ def _patch_shared_provider(package_root: Path) -> None:
     source = source.replace(
         'use App\\Domains\\WorkCore\\Providers\\{BusinessNetworkServiceProvider, CommercialServiceProvider, PropertyOperationsServiceProvider, WorkforceAssuranceServiceProvider, WorkOperationsServiceProvider};\n',
         '',
+    )
+    helpers_marker = "        $helpers = __DIR__ . '/System/Support/helpers.php';"
+    if helpers_marker not in source:
+        raise RuntimeError('Unable to locate the WorkCore helper registration marker.')
+    source = source.replace(
+        helpers_marker,
+        "        if (! (bool) config('workcore.enabled', true)) {\n"
+        "            return;\n"
+        "        }\n\n"
+        + helpers_marker,
+        1,
     )
     start = source.index('    private function registerModules(): void\n')
     end = source.index('    private function registerRateLimiters(): void\n', start)
@@ -283,6 +327,20 @@ def _patch_shared_provider(package_root: Path) -> None:
 '''
     provider_path.write_text(source[:start] + replacement + source[end:], encoding='utf-8')
 
+
+
+def _patch_shared_config(package_root: Path) -> None:
+    config_path = package_root / 'src/Domains/WorkCore/Config/workcore.php'
+    source = config_path.read_text(encoding='utf-8')
+    old = """$financeConfig = require __DIR__ . '/../System/Modules/Finance/config/titan-money.php';
+$financePermissions = require __DIR__ . '/../System/Modules/Finance/config/permissions.php';"""
+    new = """$financeConfigPath = __DIR__ . '/../System/Modules/Finance/config/titan-money.php';
+$financePermissionsPath = __DIR__ . '/../System/Modules/Finance/config/permissions.php';
+$financeConfig = is_file($financeConfigPath) ? require $financeConfigPath : [];
+$financePermissions = is_file($financePermissionsPath) ? require $financePermissionsPath : [];"""
+    if old not in source:
+        raise RuntimeError('Unable to locate the WorkCore Finance config imports for optional-package patching.')
+    config_path.write_text(source.replace(old, new, 1), encoding='utf-8')
 
 def _write_group_provider(package_root: Path, group: str, definition: dict[str, Any]) -> None:
     class_name = GROUP_PROVIDER_CLASSES[group]
@@ -454,6 +512,18 @@ def _copy_host_overlay(source_root: Path, output_root: Path) -> None:
         shutil.copy2(source_file, destination)
 
 
+def _patch_host_overlay(output_root: Path) -> None:
+    providers_path = output_root / 'integration/host-overlay/bootstrap/providers.php'
+    if not providers_path.is_file():
+        raise RuntimeError('Host overlay bootstrap/providers.php was not emitted.')
+    source = providers_path.read_text(encoding='utf-8')
+    source = source.replace(
+        "    App\\Domains\\WorkCore\\WorkCoreServiceProvider::class,\n",
+        '',
+    )
+    providers_path.write_text(source, encoding='utf-8')
+
+
 def build(source_root: Path, output_root: Path, include_host_overlay: bool = False) -> dict[str, Path]:
     source_root = source_root.resolve()
     output_root = output_root.resolve()
@@ -480,6 +550,7 @@ def build(source_root: Path, output_root: Path, include_host_overlay: bool = Fal
 
     if include_host_overlay:
         _copy_host_overlay(source_root, output_root)
+        _patch_host_overlay(output_root)
         baseline_zip = source_root.parent / 'WorkCore-MagicAI-Consolidated-2026-08-02.zip'
         if baseline_zip.is_file():
             shutil.copy2(baseline_zip, output_root / 'dist' / baseline_zip.name)

@@ -18,5 +18,9 @@
     "php": "^8.2",
     "workcore/shared-foundation": "self.version"
   },
-  "type": "library"
+  "suggest": {
+    "workcore/work-operations": "Enables support-ticket conversion into governed Work Orders."
+  },
+  "type": "library",
+  "version": "0.1.0"
 }

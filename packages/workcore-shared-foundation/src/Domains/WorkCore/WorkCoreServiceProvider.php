@@ -63,6 +63,10 @@ final class WorkCoreServiceProvider extends ServiceProvider
             }
         }
 
+        if (! (bool) config('workcore.enabled', true)) {
+            return;
+        }
+
         $helpers = __DIR__ . '/System/Support/helpers.php';
         if (is_file($helpers)) {
             require_once $helpers;

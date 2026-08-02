@@ -7,9 +7,9 @@
       "sha256": "dea94f54121aa8a423a9d0667c1b7f459f8dbe19180d34f7be23fc6bf25bf03f"
     },
     {
-      "bytes": 441,
+      "bytes": 688,
       "path": "composer.json",
-      "sha256": "85b6f46dabdaaf049d5058db9210bc56d7d75df7f71098b96b0626822c3e3cfd"
+      "sha256": "c0d370887e347830c33eaedf0cd8bd459db31f79a3d7598e921d6e05df275278"
     },
     {
       "bytes": 10656,
@@ -17,9 +17,9 @@
       "sha256": "9be92b02ed5a9acc59ae198df0d85c3def9ab056a561866496e3021a07df2ba5"
     },
     {
-      "bytes": 455,
+      "bytes": 547,
       "path": "extension.json",
-      "sha256": "064798e27419c6da1f0c5cc66e1a22222712d3d2dd7fd7c18d5a4e9407d07a96"
+      "sha256": "26552476b1442872cb70c7721af978e8ec122ed7daefce1cae9e5cce90b82c01"
     },
     {
       "bytes": 607,

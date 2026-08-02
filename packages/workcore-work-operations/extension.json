@@ -1,6 +1,10 @@
 {
   "canonical_namespace_preserved": true,
   "destructive_uninstall": false,
+  "integrates_with": [
+    "workcore/business-network",
+    "workcore/property-operations"
+  ],
   "modules": [
     "Operations",
     "Scheduling",

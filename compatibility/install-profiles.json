@@ -1,0 +1,43 @@
+{
+  "foundation": {
+    "description": "Shared runtime, schema and host contracts only.",
+    "packages": [
+      "workcore/shared-foundation"
+    ]
+  },
+  "commercial": {
+    "description": "Finance, payroll, inventory, supply, vault and trust accounting.",
+    "packages": [
+      "workcore/shared-foundation",
+      "workcore/commercial"
+    ]
+  },
+  "business-operations": {
+    "description": "CRM and customer network with jobs, scheduling, dispatch and recurring work.",
+    "packages": [
+      "workcore/shared-foundation",
+      "workcore/business-network",
+      "workcore/work-operations"
+    ]
+  },
+  "property-workforce": {
+    "description": "Premises, vertical operations, workforce, assurance and field operations.",
+    "packages": [
+      "workcore/shared-foundation",
+      "workcore/work-operations",
+      "workcore/property-operations",
+      "workcore/workforce-assurance"
+    ]
+  },
+  "full": {
+    "description": "All five WorkCore domain extensions.",
+    "packages": [
+      "workcore/shared-foundation",
+      "workcore/business-network",
+      "workcore/commercial",
+      "workcore/work-operations",
+      "workcore/property-operations",
+      "workcore/workforce-assurance"
+    ]
+  }
+}

@@ -36,11 +36,11 @@
     },
     {
       "destination": "packages/workcore-shared-foundation/src/Domains/WorkCore/Config/workcore.php",
-      "destination_sha256": "08052bfa176855fd4212585fd431053e4c284e52b0f84a3d308ef463c4feadef",
+      "destination_sha256": "2b35e67c9d72e0ecd17091f4e6cf37791b39ff060aad25af9309d1f72e5bf49d",
       "owner": "shared-foundation",
       "source": "app/Domains/WorkCore/Config/workcore.php",
       "source_sha256": "08052bfa176855fd4212585fd431053e4c284e52b0f84a3d308ef463c4feadef",
-      "transformed": false
+      "transformed": true
     },
     {
       "destination": "packages/workcore-shared-foundation/src/Domains/WorkCore/Config/workcore_ai.php",
@@ -17028,7 +17028,7 @@
     },
     {
       "destination": "packages/workcore-shared-foundation/src/Domains/WorkCore/WorkCoreServiceProvider.php",
-      "destination_sha256": "70ff7c905a381988792d2eb7295650818a50a1805fe6e1c04001fce16f1924b0",
+      "destination_sha256": "298735ca5a013d27289659726f0cfbfc30dfea851ff683406ca50d3c4f6ebb57",
       "owner": "shared-foundation",
       "source": "app/Domains/WorkCore/WorkCoreServiceProvider.php",
       "source_sha256": "bb46e5e833d776f2053e3e86b47d3e21e512ad9cded4d0dc7739065aa93f92b8",

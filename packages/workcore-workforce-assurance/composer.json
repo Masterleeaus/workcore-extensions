@@ -18,5 +18,10 @@
     "php": "^8.2",
     "workcore/shared-foundation": "self.version"
   },
-  "type": "library"
+  "suggest": {
+    "workcore/property-operations": "Enables premises evidence, NDIS accommodation and property assurance.",
+    "workcore/work-operations": "Connects rosters, attendance and compliance to scheduled field work."
+  },
+  "type": "library",
+  "version": "0.1.0"
 }

@@ -18,5 +18,10 @@
     "php": "^8.2",
     "workcore/shared-foundation": "self.version"
   },
-  "type": "library"
+  "suggest": {
+    "workcore/work-operations": "Enables property jobs, permits, callbacks and compliance workflows.",
+    "workcore/workforce-assurance": "Enables NDIS, worker and assurance-backed vertical operations."
+  },
+  "type": "library",
+  "version": "0.1.0"
 }

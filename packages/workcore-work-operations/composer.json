@@ -18,5 +18,10 @@
     "php": "^8.2",
     "workcore/shared-foundation": "self.version"
   },
-  "type": "library"
+  "suggest": {
+    "workcore/business-network": "Connects jobs with customers, services and support flows.",
+    "workcore/property-operations": "Enables premises, asset and trade-compliance context for field work."
+  },
+  "type": "library",
+  "version": "0.1.0"
 }

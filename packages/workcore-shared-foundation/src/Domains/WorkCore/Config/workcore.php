@@ -42,8 +42,10 @@ use App\Domains\WorkCore\System\Expansion\Providers\WorkExpansionServiceProvider
 use App\Domains\WorkCore\System\Intelligence\Providers\WorkCoreIntelligenceServiceProvider;
 use App\Domains\WorkCore\System\Outbox\NullOutboxTransport;
 
-$financeConfig = require __DIR__ . '/../System/Modules/Finance/config/titan-money.php';
-$financePermissions = require __DIR__ . '/../System/Modules/Finance/config/permissions.php';
+$financeConfigPath = __DIR__ . '/../System/Modules/Finance/config/titan-money.php';
+$financePermissionsPath = __DIR__ . '/../System/Modules/Finance/config/permissions.php';
+$financeConfig = is_file($financeConfigPath) ? require $financeConfigPath : [];
+$financePermissions = is_file($financePermissionsPath) ? require $financePermissionsPath : [];
 
 return [
     'enabled' => env('WORKCORE_ENABLED', true),
