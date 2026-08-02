@@ -87,10 +87,12 @@ jobs:
           python -B tools/validate_repository.py --repo .
           php -l packages/workcore-shared-foundation/src/Domains/WorkCore/Database/Migrations/2026_07_23_120058_create_tz_ai_knowledge_tables.php
 
-      - name: Commit migration fix
+      - name: Commit migration fix on latest branch head
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add tools/build_extensions.py tests/test_build_extensions.py tests/test_host_compatibility.py ownership-manifest.json packages/workcore-shared-foundation/files.sha256.json packages/workcore-shared-foundation/src/Domains/WorkCore/Database/Migrations/2026_07_23_120058_create_tz_ai_knowledge_tables.php
           git commit -m 'fix: guard full-text migration on SQLite'
+          git fetch origin feature/five-domain-extension-split
+          git merge --no-edit origin/feature/five-domain-extension-split
           git push origin HEAD:feature/five-domain-extension-split
