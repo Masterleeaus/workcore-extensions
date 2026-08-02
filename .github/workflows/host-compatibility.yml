@@ -1,0 +1,209 @@
+name: Validate MagicAI host compatibility
+
+on:
+  pull_request:
+    paths:
+      - 'packages/**'
+      - 'integration/host-overlay/**'
+      - 'compatibility/**'
+      - 'tools/build_extensions.py'
+      - 'tools/generate_host_profile.py'
+      - 'tools/analyze_package_dependencies.py'
+      - 'tests/test_host_compatibility.py'
+      - '.github/workflows/host-compatibility.yml'
+  push:
+    branches:
+      - feature/five-domain-extension-split
+    paths:
+      - 'packages/**'
+      - 'integration/host-overlay/**'
+      - 'compatibility/**'
+      - 'tools/build_extensions.py'
+      - 'tools/generate_host_profile.py'
+      - 'tools/analyze_package_dependencies.py'
+      - 'tests/test_host_compatibility.py'
+      - '.github/workflows/host-compatibility.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  package-profiles:
+    name: Host profile — ${{ matrix.profile }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - profile: foundation
+            migrate: true
+          - profile: commercial
+            migrate: false
+          - profile: business-operations
+            migrate: false
+          - profile: property-workforce
+            migrate: false
+          - profile: full
+            migrate: true
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Set up PHP and Composer
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          tools: composer:v2
+          coverage: none
+
+      - name: Run host compatibility regressions
+        run: python -m unittest tests/test_host_compatibility.py -v
+
+      - name: Generate host Composer profile
+        run: |
+          python tools/generate_host_profile.py \
+            --host-composer integration/host-overlay/composer.json \
+            --packages-root packages \
+            --profiles compatibility/install-profiles.json \
+            --profile '${{ matrix.profile }}' \
+            --output integration/host-overlay/composer.json
+          rm -f integration/host-overlay/composer.lock
+
+      - name: Prepare isolated SQLite host
+        run: |
+          cp integration/host-overlay/.env.example integration/host-overlay/.env
+          mkdir -p integration/host-overlay/database
+          touch integration/host-overlay/database/database.sqlite
+          python - <<'PY'
+          from pathlib import Path
+          import base64
+          import os
+
+          path = Path('integration/host-overlay/.env')
+          replacements = {
+              'APP_ENV': 'testing',
+              'APP_DEBUG': 'false',
+              'APP_KEY': 'base64:' + base64.b64encode(os.urandom(32)).decode(),
+              'DB_CONNECTION': 'sqlite',
+              'DB_DATABASE': str(Path('integration/host-overlay/database/database.sqlite').resolve()),
+              'CACHE_STORE': 'array',
+              'SESSION_DRIVER': 'array',
+              'QUEUE_CONNECTION': 'sync',
+              'MAIL_MAILER': 'array',
+              'WORKCORE_ENABLED': 'true',
+              'WORKCORE_API_ROUTES_ENABLED': 'false',
+              'WORKCORE_TENANCY_ROUTES_ENABLED': 'false',
+          }
+          existing = []
+          for line in path.read_text(encoding='utf-8').splitlines():
+              key = line.split('=', 1)[0] if '=' in line else None
+              if key not in replacements:
+                  existing.append(line)
+          existing.extend(f'{key}={value}' for key, value in replacements.items())
+          path.write_text('\n'.join(existing) + '\n', encoding='utf-8')
+          PY
+
+      - name: Resolve selected packages
+        run: composer update --working-dir=integration/host-overlay --no-interaction --no-progress --prefer-dist --no-scripts
+
+      - name: Discover packages and boot Laravel
+        run: |
+          php integration/host-overlay/artisan package:discover --ansi
+          php integration/host-overlay/artisan about --no-ansi
+          php integration/host-overlay/artisan config:cache --no-ansi
+          php integration/host-overlay/artisan config:clear --no-ansi
+          WORKCORE_ENABLED=false php integration/host-overlay/artisan about --no-ansi
+
+      - name: Verify installed WorkCore package set
+        run: composer show --working-dir=integration/host-overlay 'workcore/*'
+
+      - name: Run migration compatibility check
+        if: ${{ matrix.migrate }}
+        run: php integration/host-overlay/artisan migrate:fresh --force --no-interaction --no-ansi
+
+  upgrade-foundation-to-full:
+    name: Upgrade foundation profile to full
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Set up PHP and Composer
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          tools: composer:v2
+          coverage: none
+
+      - name: Prepare SQLite host
+        run: |
+          cp integration/host-overlay/.env.example integration/host-overlay/.env
+          mkdir -p integration/host-overlay/database
+          touch integration/host-overlay/database/database.sqlite
+          python - <<'PY'
+          from pathlib import Path
+          import base64
+          import os
+
+          path = Path('integration/host-overlay/.env')
+          replacements = {
+              'APP_ENV': 'testing',
+              'APP_DEBUG': 'false',
+              'APP_KEY': 'base64:' + base64.b64encode(os.urandom(32)).decode(),
+              'DB_CONNECTION': 'sqlite',
+              'DB_DATABASE': str(Path('integration/host-overlay/database/database.sqlite').resolve()),
+              'CACHE_STORE': 'array',
+              'SESSION_DRIVER': 'array',
+              'QUEUE_CONNECTION': 'sync',
+              'WORKCORE_ENABLED': 'true',
+              'WORKCORE_API_ROUTES_ENABLED': 'false',
+              'WORKCORE_TENANCY_ROUTES_ENABLED': 'false',
+          }
+          existing = []
+          for line in path.read_text(encoding='utf-8').splitlines():
+              key = line.split('=', 1)[0] if '=' in line else None
+              if key not in replacements:
+                  existing.append(line)
+          existing.extend(f'{key}={value}' for key, value in replacements.items())
+          path.write_text('\n'.join(existing) + '\n', encoding='utf-8')
+          PY
+
+      - name: Install foundation profile and migrate
+        run: |
+          python tools/generate_host_profile.py \
+            --host-composer integration/host-overlay/composer.json \
+            --packages-root packages \
+            --profiles compatibility/install-profiles.json \
+            --profile foundation \
+            --output integration/host-overlay/composer.json
+          rm -f integration/host-overlay/composer.lock
+          composer update --working-dir=integration/host-overlay --no-interaction --no-progress --prefer-dist --no-scripts
+          php integration/host-overlay/artisan package:discover --ansi
+          php integration/host-overlay/artisan migrate:fresh --force --no-interaction --no-ansi
+          php -r '$db = new PDO("sqlite:integration/host-overlay/database/database.sqlite"); $db->exec("CREATE TABLE workcore_upgrade_sentinel (id INTEGER PRIMARY KEY, value TEXT NOT NULL)"); $db->exec("INSERT INTO workcore_upgrade_sentinel (id, value) VALUES (1, \"preserved\")");'
+
+      - name: Upgrade to full profile
+        run: |
+          python tools/generate_host_profile.py \
+            --host-composer integration/host-overlay/composer.json \
+            --packages-root packages \
+            --profiles compatibility/install-profiles.json \
+            --profile full \
+            --output integration/host-overlay/composer.json
+          composer update --working-dir=integration/host-overlay --no-interaction --no-progress --prefer-dist --no-scripts
+          php integration/host-overlay/artisan package:discover --ansi
+          php integration/host-overlay/artisan migrate --force --no-interaction --no-ansi
+          php -r '$db = new PDO("sqlite:integration/host-overlay/database/database.sqlite"); $value = $db->query("SELECT value FROM workcore_upgrade_sentinel WHERE id = 1")->fetchColumn(); if ($value !== "preserved") { fwrite(STDERR, "upgrade sentinel was not preserved\n"); exit(1); }'
+          composer show --working-dir=integration/host-overlay 'workcore/*'
