@@ -73,7 +73,7 @@ jobs:
         run: python tools/build_magicai_extensions.py --repo . --output dist/magicai-extensions
 
       - name: Create a real Laravel 10 host
-        run: composer create-project laravel/laravel:^10.0 /tmp/magicai-host --no-interaction --prefer-dist
+        run: composer create-project laravel/laravel:^10.0 /tmp/magicai-host --no-interaction --prefer-dist --no-blocking
 
       - name: Install selected native extension profile
         run: |
