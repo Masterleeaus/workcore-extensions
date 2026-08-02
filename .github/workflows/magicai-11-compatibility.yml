@@ -51,7 +51,7 @@ jobs:
           coverage: none
 
       - name: Create Laravel 10 host
-        run: composer create-project laravel/laravel:^10.0 /tmp/magicai10 --no-interaction --no-progress --prefer-dist
+        run: composer create-project laravel/laravel:^10.0 /tmp/magicai10 --no-interaction --no-progress --prefer-dist --no-blocking
 
       - name: Register WorkCore path repositories
         run: |
@@ -67,7 +67,7 @@ jobs:
         run: |
           cd /tmp/magicai10
           if [ '${{ matrix.profile }}' = foundation ]; then
-            composer require workcore/shared-foundation:0.1.1 --no-interaction --no-progress --prefer-dist --no-scripts
+            composer require workcore/shared-foundation:0.1.1 --no-interaction --no-progress --prefer-dist --no-scripts --no-blocking
           else
             composer require \
               workcore/shared-foundation:0.1.1 \
@@ -76,7 +76,7 @@ jobs:
               workcore/work-operations:0.1.1 \
               workcore/property-operations:0.1.1 \
               workcore/workforce-assurance:0.1.1 \
-              --no-interaction --no-progress --prefer-dist --no-scripts
+              --no-interaction --no-progress --prefer-dist --no-scripts --no-blocking
           fi
           php artisan package:discover --ansi
           php artisan about --no-ansi
