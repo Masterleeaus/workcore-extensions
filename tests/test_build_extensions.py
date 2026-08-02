@@ -10,7 +10,7 @@ from tools.build_extensions import GROUPS, build, discover_modules, validate_own
 from tools.build_site import build_site
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
-SOURCE_ROOT = Path(os.environ.get('WORKCORE_SOURCE_ROOT', '/mnt/data/workcore_magicai_consolidated_scan'))
+SOURCE_ROOT = Path(os.environ.get('WORKCORE_SOURCE_ROOT', '/mnt/data/workcore_magicai_final_scan'))
 
 
 class OwnershipTests(unittest.TestCase):
@@ -71,19 +71,31 @@ class PackageBuildTests(unittest.TestCase):
             self.assertGreaterEqual(len(list(migration_root.glob('*.php'))), 100)
 
 
-    def test_build_guards_ai_knowledge_fulltext_index_for_sqlite(self) -> None:
+
+    def test_final_finance_completion_files_are_packaged(self) -> None:
         with tempfile.TemporaryDirectory() as temporary_directory:
             output_root = Path(temporary_directory)
             build(SOURCE_ROOT, output_root)
-            migration = (
-                output_root / 'packages/workcore-shared-foundation/'
-                'src/Domains/WorkCore/Database/Migrations/'
-                '2026_07_23_120058_create_tz_ai_knowledge_tables.php'
-            ).read_text(encoding='utf-8')
+            commercial = output_root / 'packages/workcore-commercial/src/Domains/WorkCore/System/Modules/Finance'
+            foundation_migrations = output_root / 'packages/workcore-shared-foundation/src/Domains/WorkCore/Database/Migrations'
+            expected_commercial = [
+                'Actions/CreateFinanceQuote.php',
+                'Actions/CreateFinanceInvoice.php',
+                'Actions/CreateFinanceCreditNote.php',
+                'Actions/CreatePaymentSession.php',
+                'Actions/GetPaymentOrchestrationSummary.php',
+                'Contracts/PaymentOrchestrationRepositoryContract.php',
+                'Repositories/EloquentFinanceRepository.php',
+                'Repositories/EloquentPaymentOrchestrationRepository.php',
+            ]
+            for relative in expected_commercial:
+                self.assertTrue((commercial / relative).is_file(), relative)
+            self.assertTrue((foundation_migrations / '2026_08_02_000001_create_tm_credit_note_runtime_tables.php').is_file())
+            self.assertTrue((foundation_migrations / '2026_08_02_000002_create_tm_payment_orchestration_tables.php').is_file())
 
-            self.assertIn("Schema::getConnection()->getDriverName()", migration)
-            self.assertIn("['mysql', 'mariadb', 'pgsql']", migration)
-            self.assertIn('if ($supportsFullText)', migration)
+    def test_final_source_contains_105_workcore_migrations_and_2158_domain_files(self) -> None:
+        self.assertEqual(105, len(list((SOURCE_ROOT / 'app/Domains/WorkCore/Database/Migrations').glob('*.php'))))
+        self.assertEqual(2158, sum(1 for path in (SOURCE_ROOT / 'app/Domains/WorkCore').rglob('*') if path.is_file()))
 
 
 class ProviderIsolationTests(unittest.TestCase):

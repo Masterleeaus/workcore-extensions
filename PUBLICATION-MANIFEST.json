@@ -1,0 +1,8 @@
+{
+  "target_branch": "feature/magicai-native-workcore-extensions",
+  "base_branch": "feature/five-domain-extension-split",
+  "source_release": "WorkCore-MagicAI-Final-Consolidated-2026-08-02",
+  "owned_files": 2158,
+  "native_extensions": 6,
+  "release_version": "0.1.1"
+}

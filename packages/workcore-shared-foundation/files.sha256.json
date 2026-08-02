@@ -1,5 +1,5 @@
 {
-  "file_count": 412,
+  "file_count": 414,
   "files": [
     {
       "bytes": 227,
@@ -7,9 +7,9 @@
       "sha256": "b51d0474f694c11018d441306dc77d7763c484d5e303b6ef4d6717df1b244dc0"
     },
     {
-      "bytes": 582,
+      "bytes": 764,
       "path": "composer.json",
-      "sha256": "1fc4107b8b2887b5d7071e07d0c53dbae2adb86cb664fa55ae97d04aaec8387a"
+      "sha256": "ffe8bed550bfc8d55be08b3a65d1d2446c58cac96e47fef661165cee6ffeb8a0"
     },
     {
       "bytes": 4916,
@@ -595,6 +595,16 @@
       "bytes": 9843,
       "path": "src/Domains/WorkCore/Database/Migrations/2026_07_26_040000_create_tz_trust_accounting_tables.php",
       "sha256": "50a9773a756cd342b472e1feb8f0c95bcfa6f568eb1a50d251142c3f1023c53a"
+    },
+    {
+      "bytes": 1826,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_08_02_000001_create_tm_credit_note_runtime_tables.php",
+      "sha256": "9deb70f5d03d37ca33ff44b630a16cf62131834a0e4ee98b21342675344933d1"
+    },
+    {
+      "bytes": 2508,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_08_02_000002_create_tm_payment_orchestration_tables.php",
+      "sha256": "ba9383c506aee1d2343069439fddd38819753165373771a84ac5b095c3dc9e23"
     },
     {
       "bytes": 450,

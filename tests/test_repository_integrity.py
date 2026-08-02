@@ -16,7 +16,7 @@ class RepositoryIntegrityTests(unittest.TestCase):
         self.assertEqual([], report.errors)
         self.assertEqual(6, report.package_count)
         self.assertEqual(35, report.module_count)
-        self.assertEqual(2129, report.owned_file_count)
+        self.assertEqual(2158, report.owned_file_count)
 
     def test_exact_package_set_is_present(self) -> None:
         actual = {path.name for path in (REPO_ROOT / 'packages').iterdir() if path.is_dir()}

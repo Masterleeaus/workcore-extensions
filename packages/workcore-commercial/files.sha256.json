@@ -1,5 +1,5 @@
 {
-  "file_count": 408,
+  "file_count": 435,
   "files": [
     {
       "bytes": 220,
@@ -7,9 +7,9 @@
       "sha256": "dea94f54121aa8a423a9d0667c1b7f459f8dbe19180d34f7be23fc6bf25bf03f"
     },
     {
-      "bytes": 688,
+      "bytes": 861,
       "path": "composer.json",
-      "sha256": "c0d370887e347830c33eaedf0cd8bd459db31f79a3d7598e921d6e05df275278"
+      "sha256": "a1be218325d86c13bccece218989b3cfb58452f43396ab9dc5c87f72dc9fd8de"
     },
     {
       "bytes": 10656,
@@ -45,6 +45,121 @@
       "bytes": 1346,
       "path": "src/Domains/WorkCore/System/Modules/Finance/AI/Tools/IngestPaymentEvidenceTool.php",
       "sha256": "f2bc0303717f54bbf56939151dd014c86701285c7c3de150f354c4e386148b64"
+    },
+    {
+      "bytes": 1670,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/AllocateFinanceCredit.php",
+      "sha256": "0318329a382cd4c73618b14f607a83090866b6dc4c4a1b41910ef203b3e4cd40"
+    },
+    {
+      "bytes": 1562,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/AllocateFinanceReceivable.php",
+      "sha256": "cd5e2c54cc6f36cc24e28ce3879376c5df01a70a1690399b2bb498e82a9d305f"
+    },
+    {
+      "bytes": 1562,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/ApproveFinanceExpense.php",
+      "sha256": "167d8390749e60ea5975fae4ab4c599fb83e6252c5dd909e2ca3679054fcd66f"
+    },
+    {
+      "bytes": 1656,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/ChangeFinanceInvoiceStatus.php",
+      "sha256": "dd5c25fb0f3a10964fd715590baec83b83830ef5d222c892498ed90a01fc3bca"
+    },
+    {
+      "bytes": 1644,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/ChangeFinanceQuoteStatus.php",
+      "sha256": "59299dce83004be17a5747da0e0a7e6e7885a32c9be02af4d9015763ce4b8e79"
+    },
+    {
+      "bytes": 1603,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/CloseFinanceAccountingPeriod.php",
+      "sha256": "f3a738cf7f19e640a20164f42f8cfaaf5a4f2e3854e2f6d95708503b713cb65b"
+    },
+    {
+      "bytes": 1469,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/CreateFinanceAccount.php",
+      "sha256": "bc95a7d552daf183513dc5a5e145acd385a04a494916a2f179f074e1a57a30ea"
+    },
+    {
+      "bytes": 1496,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/CreateFinanceAccountingPeriod.php",
+      "sha256": "db4590ee827a144d378ecf5537994d11b8c3017910a630a6188f882d2c06d216"
+    },
+    {
+      "bytes": 1483,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/CreateFinanceCreditNote.php",
+      "sha256": "955f056e59f4751e6846d0b95b28ead6659f7f1e30b40b0ba727aff573f4aae6"
+    },
+    {
+      "bytes": 1469,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/CreateFinanceInvoice.php",
+      "sha256": "042a6a1d6e4724e4393f6774f4215c81bb64c6f982d2f10833f86e89dab1a169"
+    },
+    {
+      "bytes": 1461,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/CreateFinanceQuote.php",
+      "sha256": "6377d8abc2d9e4f1b0cd1822dd1fe49a5acfdcb0a055dde6416c27a1d7c8b487"
+    },
+    {
+      "bytes": 1005,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/CreatePaymentSession.php",
+      "sha256": "90a0cf9adac4e8a78bb6b1692b01f0e9b4309da4776193fd849b07e46da13921"
+    },
+    {
+      "bytes": 460,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/GetFinanceSummary.php",
+      "sha256": "f1adeb7142768b9dfb24244cb93d45d404bb6a3c2cd6ceadd4bbd7733ebf36c5"
+    },
+    {
+      "bytes": 631,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/GetInvoiceProfile.php",
+      "sha256": "fa322b6b247b611f1e0b3ba1eab1b1f36958d3ec4226d683ffa75601ebd8daa9"
+    },
+    {
+      "bytes": 452,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/GetPaymentOrchestrationSummary.php",
+      "sha256": "54206ce2093196667bd4594a6a4154d9df6f9dcb95e25e601dddba43d39c240f"
+    },
+    {
+      "bytes": 633,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/GetPaymentSession.php",
+      "sha256": "eef5fe921d94b448ad1e58f71aacba0f74b42df68f6625881689fd355ea64282"
+    },
+    {
+      "bytes": 621,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/GetQuoteProfile.php",
+      "sha256": "cb9ff7028b66cd876d0c9e5db714c2099500ed2b25bc13386a48100e5353a39f"
+    },
+    {
+      "bytes": 1556,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/IssueFinanceInvoice.php",
+      "sha256": "da1992754f7a47f65de9bbf9ddb73179415cbfecc00b1fb5a20778c9727902f0"
+    },
+    {
+      "bytes": 1464,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/PostFinanceJournal.php",
+      "sha256": "2055e5ece460699e81af934b8282164edd11760f920e38049e93610251b3d123"
+    },
+    {
+      "bytes": 1470,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/RecordFinanceExpense.php",
+      "sha256": "590d44a808d5277f999667763f34345a22f6dcedeb9000f082f5659faecbdbea"
+    },
+    {
+      "bytes": 1450,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/RecordPaymentAttempt.php",
+      "sha256": "43a8b78e25e334a326fade523be1c8b5d6c8394018158c1de7a5f5a062838882"
+    },
+    {
+      "bytes": 483,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/SearchReceivables.php",
+      "sha256": "e9216cb965211c4908e4595f22418dedbf3a617be91fa7e5b74c005747a1679b"
+    },
+    {
+      "bytes": 1043,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/UpsertPaymentProviderConnection.php",
+      "sha256": "a82fc1d198cea29d6e432c27d19522ec5dccc2a7d3705a8d853ec51bbd1ba464"
     },
     {
       "bytes": 1334,
@@ -432,9 +547,9 @@
       "sha256": "85685e7036263bfe36c691323f60865d1bde8948bcdcff337041635f7f3c8c49"
     },
     {
-      "bytes": 294,
+      "bytes": 1962,
       "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/FinanceRepositoryContract.php",
-      "sha256": "15eb7277294eed4c8b82832f4ab22abdc2fea19a3474a16f2ce912b2f3430cfd"
+      "sha256": "99a170b06087bcc772af0b0ecf794a39af294ab9b05ae06779178ecd70e2dddd"
     },
     {
       "bytes": 444,
@@ -520,6 +635,11 @@
       "bytes": 433,
       "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/PaymentMethodConfigurationRepository.php",
       "sha256": "0f04a1d73220bf64e09a7caa05d3c3dd64f23c3e1107100b3de0a33288aa67cb"
+    },
+    {
+      "bytes": 539,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/PaymentOrchestrationRepositoryContract.php",
+      "sha256": "e4592f60d263857daaafa4c722e2ff04fef5cd3871c23bb8615d75dac3e57bb5"
     },
     {
       "bytes": 717,
@@ -1362,6 +1482,11 @@
       "sha256": "243dd20c105c7a2f60eb3a5e41c1d0a206b274448ea37b0b53f1a0bae02c8745"
     },
     {
+      "bytes": 1063,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Persistence/DatabasePaymentMethodConfigurationRepository.php",
+      "sha256": "eb74726c1cb8de6670c9d7182c0fb051254e442659f59de255de47f5f428f1c6"
+    },
+    {
       "bytes": 3717,
       "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Persistence/DatabasePaymentRepository.php",
       "sha256": "31ad05f1908312709fdd36f1dcc95ae7f370eb89669c90f34add14320a75e50d"
@@ -1512,6 +1637,16 @@
       "sha256": "192933526a1671ba6c7e85c19ed90c280aa68719713f496846a46900eb3bdaab"
     },
     {
+      "bytes": 32482,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Repositories/EloquentFinanceRepository.php",
+      "sha256": "87d4e4fc7895f5d0cc25667e47670587fd083b2de127d0560434840d6c3810ce"
+    },
+    {
+      "bytes": 6195,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Repositories/EloquentPaymentOrchestrationRepository.php",
+      "sha256": "01788b95ddd150cba64fd203dea384689ddf3e639ad98da58973a02f8580d536"
+    },
+    {
       "bytes": 2485,
       "path": "src/Domains/WorkCore/System/Modules/Finance/Settings/FinancialSettings.php",
       "sha256": "4859a9991c2aa3abf5a46486e6608be3f897238c22834e06e9e48aa25b920e55"
@@ -1567,9 +1702,9 @@
       "sha256": "f37b03be51c1958d67a8fa5387bf4e115a05f62ae22e3bedce3bace47d58d003"
     },
     {
-      "bytes": 35083,
+      "bytes": 39645,
       "path": "src/Domains/WorkCore/System/Modules/Finance/WorkCoreFinanceServiceProvider.php",
-      "sha256": "58c7cf476c5586b9b031bc220790eb75394eeb8ae675b8b532873270e7723259"
+      "sha256": "f14fafdea6ff5507da77f8a661d0491e326fa0d58e8a037a1f692780b139f740"
     },
     {
       "bytes": 696,
