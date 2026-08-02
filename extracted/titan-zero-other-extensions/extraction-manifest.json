@@ -1,0 +1,162 @@
+{
+  "exclusions": [
+    "Titan Maps without extension",
+    "Meetup-specific adapters",
+    ".titan Agent OS simulation",
+    "unsafe maintenance routes",
+    "unsafe extension installer",
+    "duplicate WorkCore authorities",
+    "secrets and fixed keys"
+  ],
+  "generated_at": "2026-08-02T23:19:00+10:00",
+  "package_count": 13,
+  "packages": [
+    {
+      "file_count": 389,
+      "id": "titan-interaction-engine",
+      "name": "Titan Zero Interaction Engine",
+      "production_activation": "requires-host-mapping",
+      "provider": "TitanZero\\Interaction\\Providers\\InteractionServiceProvider",
+      "requires": ["workcore/shared-foundation"],
+      "status": "extracted",
+      "type": "laravel-module",
+      "version": "1.0.0-extracted.1"
+    },
+    {
+      "file_count": 24,
+      "id": "titan-core",
+      "name": "Titan Core Integration Kernel",
+      "production_activation": "requires-company-model-review",
+      "provider": "TitanZero\\Core\\Providers\\TitanCoreServiceProvider",
+      "requires": [],
+      "status": "extracted",
+      "type": "laravel-package",
+      "version": "0.1.0-extracted.1"
+    },
+    {
+      "file_count": 37,
+      "id": "titan-intelligence",
+      "name": "Titan Intelligence",
+      "production_activation": "requires-host-integration",
+      "provider": "App\\Titan\\Intelligence\\Providers\\TitanIntelligenceServiceProvider",
+      "requires": ["titan-core"],
+      "status": "extracted",
+      "type": "laravel-module",
+      "version": "0.5.0-extracted.1"
+    },
+    {
+      "file_count": 37,
+      "id": "titan-creative",
+      "name": "Titan Creative",
+      "production_activation": "requires-host-integration",
+      "provider": "App\\Titan\\Creative\\Providers\\TitanCreativeServiceProvider",
+      "requires": ["titan-core"],
+      "status": "extracted",
+      "type": "laravel-module",
+      "version": "0.6.0-extracted.1"
+    },
+    {
+      "file_count": 58,
+      "id": "titan-train",
+      "name": "TitanTrain",
+      "optional": ["titan-interaction-engine"],
+      "production_activation": "requires-worker-identity-mapping",
+      "provider": "App\\Domains\\TitanTrain\\Infrastructure\\Providers\\TitanTrainServiceProvider",
+      "requires": ["workcore-shared-foundation"],
+      "status": "extracted",
+      "type": "laravel-module",
+      "version": "0.1.0-extracted.1"
+    },
+    {
+      "file_count": 51,
+      "id": "titan-ai-engine",
+      "name": "Titan AI Engine",
+      "production_activation": "requires-provider-configuration",
+      "provider": "App\\Domains\\Engine\\EngineServiceProvider",
+      "requires": [],
+      "status": "extracted",
+      "type": "laravel-package",
+      "version": "0.1.0-extracted.1"
+    },
+    {
+      "file_count": 309,
+      "id": "titan-ai-catalogue",
+      "name": "Titan AI Catalogue",
+      "optional": ["media-provider-adapters"],
+      "production_activation": "requires-catalogue-refresh",
+      "provider": "App\\Domains\\Entity\\EntityServiceProvider",
+      "requires": ["titan-ai-engine"],
+      "status": "extracted",
+      "type": "laravel-package",
+      "version": "0.1.0-extracted.1"
+    },
+    {
+      "file_count": 27,
+      "id": "media-creatify",
+      "name": "Creatify Provider Adapter",
+      "production_activation": "requires-api-credentials-and-contract-tests",
+      "provider": null,
+      "requires": ["titan-ai-engine"],
+      "status": "extracted",
+      "type": "provider-adapter",
+      "version": "0.1.0-extracted.1"
+    },
+    {
+      "file_count": 11,
+      "id": "media-elevenlabs",
+      "name": "Elevenlabs Provider Adapter",
+      "production_activation": "requires-api-credentials-and-contract-tests",
+      "provider": null,
+      "requires": ["titan-ai-engine"],
+      "status": "extracted",
+      "type": "provider-adapter",
+      "version": "0.1.0-extracted.1"
+    },
+    {
+      "file_count": 29,
+      "id": "media-falai",
+      "name": "FalAI Provider Adapter",
+      "production_activation": "requires-api-credentials-and-contract-tests",
+      "provider": null,
+      "requires": ["titan-ai-engine"],
+      "status": "extracted",
+      "type": "provider-adapter",
+      "version": "0.1.0-extracted.1"
+    },
+    {
+      "file_count": 13,
+      "id": "media-klap",
+      "name": "Klap Provider Adapter",
+      "production_activation": "requires-api-credentials-and-contract-tests",
+      "provider": null,
+      "requires": ["titan-ai-engine"],
+      "status": "extracted",
+      "type": "provider-adapter",
+      "version": "0.1.0-extracted.1"
+    },
+    {
+      "file_count": 20,
+      "id": "media-topview",
+      "name": "Topview Provider Adapter",
+      "production_activation": "requires-api-credentials-and-contract-tests",
+      "provider": null,
+      "requires": ["titan-ai-engine"],
+      "status": "extracted",
+      "type": "provider-adapter",
+      "version": "0.1.0-extracted.1"
+    },
+    {
+      "file_count": 13,
+      "id": "media-vizard",
+      "name": "Vizard Provider Adapter",
+      "production_activation": "requires-api-credentials-and-contract-tests",
+      "provider": null,
+      "requires": ["titan-ai-engine"],
+      "status": "extracted",
+      "type": "provider-adapter",
+      "version": "0.1.0-extracted.1"
+    }
+  ],
+  "source_archive": "clean-main.zip",
+  "source_archive_sha256": "8360df3c44dbf114c6c5242590609a320d74ad7827b474cf55c5cb6d0ccd68a8"
+}
