@@ -45,6 +45,18 @@ class MigrationPortabilityTests(unittest.TestCase):
         self.assertIn("$table->fullText('content', 'ai_kchunk_content_ft');", migration)
 
 
+class HostOverlayMigrationTests(unittest.TestCase):
+    def test_meetup_tenancy_migration_guards_optional_donor_tables(self) -> None:
+        migration = (
+            REPOSITORY_ROOT / 'integration/host-overlay/database/migrations/'
+            '2026_07_25_000001_add_workcore_tenancy_to_meetup.php'
+        ).read_text(encoding='utf-8')
+
+        for table in ['conversations', 'participants', 'messages']:
+            self.assertIn(f"Schema::hasTable('{table}')", migration)
+        self.assertIn("Schema::hasColumn('users', 'active_company_id')", migration)
+
+
 class ComposerPackageTests(unittest.TestCase):
     def test_all_packages_share_an_explicit_release_version(self) -> None:
         for composer_path in sorted(PACKAGES_ROOT.glob('*/composer.json')):
@@ -118,6 +130,19 @@ class InstallProfileTests(unittest.TestCase):
             build(SOURCE_ROOT, output_root, include_host_overlay=True)
             providers = (output_root / 'integration/host-overlay/bootstrap/providers.php').read_text(encoding='utf-8')
             self.assertNotIn('App\\Domains\\WorkCore\\WorkCoreServiceProvider::class', providers)
+
+
+    @unittest.skipUnless(SOURCE_ROOT.is_dir(), 'Consolidated source archive is not available in this environment.')
+    def test_builder_guards_optional_meetup_tables_in_host_overlay(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            output_root = Path(temporary_directory)
+            build(SOURCE_ROOT, output_root, include_host_overlay=True)
+            migration = (
+                output_root / 'integration/host-overlay/database/migrations/'
+                '2026_07_25_000001_add_workcore_tenancy_to_meetup.php'
+            ).read_text(encoding='utf-8')
+            for table in ['conversations', 'participants', 'messages']:
+                self.assertIn(f"Schema::hasTable('{table}')", migration)
 
 
 class DisableAndDependencySafetyTests(unittest.TestCase):
