@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use App\Domains\WorkCore\Contracts\OperationContextContract;
-use App\Domains\WorkCore\Contracts\TenantContextContract;
+use App\Domains\WorkCore\System\Contracts\OperationContextContract;
+use App\Domains\WorkCore\System\Contracts\TenantContextContract;
 use App\Domains\WorkCore\System\Actions\BusinessActionDispatcher;
 use App\Domains\WorkCore\System\Actions\BusinessActionRegistry;
 use App\Domains\WorkCore\System\Capabilities\CapabilityRegistry;
