@@ -161,6 +161,10 @@ jobs:
         run: |
           git config user.name 'OpenAI'
           git config user.email 'noreply@openai.com'
+          rm -f \
+            .github/workflows/magicai-11-compatibility.yml \
+            .github/workflows/magicai-native-extensions.yml \
+            .github/workflows/magicai-native-laravel10.yml
           git checkout -- .github/workflows
           git add -A
           git commit -m 'feat: convert WorkCore into MagicAI-native extensions'
