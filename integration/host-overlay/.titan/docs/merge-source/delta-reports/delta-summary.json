@@ -1,0 +1,12 @@
+{
+  "authoritative_base_files_excluding_macos_metadata": 137,
+  "final_release_files": 2156,
+  "unchanged_files_not_in_delta": 122,
+  "created_files": 2019,
+  "modified_files": 15,
+  "moved_files": 0,
+  "removed_paths_not_replaced_by_hash": 0,
+  "delta_payload_code_and_assets": 2034,
+  "database_sha256": "b39907636f5d30001533a5cd75f31475aae58842ff848a4ec1d70cfd67ab8d0c",
+  "database_bytes": 17089
+}

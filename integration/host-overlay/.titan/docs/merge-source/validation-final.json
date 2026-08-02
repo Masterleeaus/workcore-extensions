@@ -1,0 +1,201 @@
+{
+  "json_files": 86,
+  "json_errors": [],
+  "runtime_duplicate_symbols": {},
+  "extension_manifests": [
+    {
+      "path": "app/Extensions/chatbot-customer-tag/extension.json",
+      "name": "ChatbotCustomerTag",
+      "version": "2.0.0"
+    },
+    {
+      "path": "app/Extensions/titan-duo-assistants/extension.json",
+      "name": "Titan Duo Assistants",
+      "version": "1.0.0"
+    },
+    {
+      "path": "app/Extensions/agent-slack/extension.json",
+      "name": "AI Agent: Slack Channel",
+      "version": "1.0"
+    },
+    {
+      "path": "app/Extensions/ai-chat-pro-highlight-to-ask-upgraded-v1.8.0/extension.json",
+      "name": "AIChatPro Highlight to Ask",
+      "version": "1.8.0"
+    },
+    {
+      "path": "app/Extensions/agent-marketing/extension.json",
+      "name": "AI Agent Tool: Marketing Bot",
+      "version": "1.0"
+    },
+    {
+      "path": "app/Extensions/agent-google/extension.json",
+      "name": "Agent Google",
+      "version": "1.0.0"
+    },
+    {
+      "path": "app/Extensions/chatbot-agent/extension.json",
+      "name": "Chatbot agent",
+      "version": "3.0.0"
+    },
+    {
+      "path": "app/Extensions/agent-booking/extension.json",
+      "name": "Agent Booking",
+      "version": "1.0.0"
+    },
+    {
+      "path": "app/Extensions/chatbot-ecommerce/extension.json",
+      "name": "Ecommerce for External Chatbot",
+      "version": "3.8.0"
+    },
+    {
+      "path": "app/Extensions/chat-share-upgraded-v2.8.0/extension.json",
+      "name": "Chat share",
+      "version": "2.8.0"
+    },
+    {
+      "path": "app/Extensions/ai-agent-work-core/extension.json",
+      "name": "AI Agent WorkCore",
+      "version": "1.0.0"
+    },
+    {
+      "path": "app/Extensions/agent-whatsapp/extension.json",
+      "name": "AI Agent: WhatsApp Channel",
+      "version": "1.0"
+    },
+    {
+      "path": "app/Extensions/agent-social-media/extension.json",
+      "name": "AI Agent Tool: Social Media Agent",
+      "version": "1.0"
+    },
+    {
+      "path": "app/Extensions/ai-chat-pro-notion-upgraded-v1.1.0/extension.json",
+      "name": "AI Chat Pro Notion Connector",
+      "version": "1.1.0"
+    },
+    {
+      "path": "app/Extensions/chat-setting-upgraded-v3.8.0/extension.json",
+      "name": "Chat Setting",
+      "version": "3.8.0"
+    },
+    {
+      "path": "app/Extensions/agent-microsoft/extension.json",
+      "name": "Agent Microsoft",
+      "version": "1.0.0"
+    },
+    {
+      "path": "app/Extensions/chat-setting-wizard/extension.json",
+      "name": "Chat Setting Wizard",
+      "version": "1.0.0"
+    },
+    {
+      "path": "app/Extensions/ai-chat-pro-deep-research-upgraded-v1.10.0/extension.json",
+      "name": "AIChatPro Deep Research",
+      "version": "1.10.0"
+    },
+    {
+      "path": "app/Extensions/ai-chat-pro-folders-upgraded-v1.11.0/extension.json",
+      "name": "AIChatPro Folders",
+      "version": "1.11.0"
+    },
+    {
+      "path": "app/Extensions/chat-pro-temp-chat-upgraded-v1.5.0/extension.json",
+      "name": "ChatPro Temporary Chat",
+      "version": "1.5.0"
+    },
+    {
+      "path": "app/Extensions/custom-agent-factory/extension.json",
+      "name": "Custom Agent Factory",
+      "version": "1.0.0"
+    },
+    {
+      "path": "app/Extensions/voice-isolator-upgraded-v2.10.0/extension.json",
+      "name": "AI Voice Isolator",
+      "version": "2.10.0"
+    },
+    {
+      "path": "app/Extensions/agent-chatbot/extension.json",
+      "name": "AI Agent Tool: Chatbot",
+      "version": "1.0"
+    },
+    {
+      "path": "app/Extensions/titan-zero/extension.json",
+      "name": "Titan Zero Workspace",
+      "version": "3.10.0"
+    },
+    {
+      "path": "app/Extensions/titan-zero-mobile/extension.json",
+      "name": "Chatbot",
+      "version": "7.7.0"
+    },
+    {
+      "path": "app/Extensions/ai-chat-pro-file-chat-upgraded-v1.11.0/extension.json",
+      "name": "AIChatPro File Chat",
+      "version": "1.11.0"
+    },
+    {
+      "path": "app/Extensions/ai-chat-pro-smart-image-upgraded-v1.3.0/extension.json",
+      "name": "AI Chat Pro Smart Image",
+      "version": "1.3.0"
+    },
+    {
+      "path": "app/Extensions/ai-chat-pro-skills-upgraded-pass7-v1.9.0/extension.json",
+      "name": "AI Chat Pro Skills",
+      "version": "1.9.0"
+    },
+    {
+      "path": "app/Extensions/ai-chat-pro-memory-upgraded-v1.12.0/extension.json",
+      "name": "AIChatPro Memory",
+      "version": "1.12.0"
+    },
+    {
+      "path": "app/Extensions/agent-messaging/extension.json",
+      "name": "Agent Messaging",
+      "version": "1.0.0"
+    },
+    {
+      "path": "app/Extensions/ai-web-chat-upgraded-v3.0.0/extension.json",
+      "name": "AI Web Chat",
+      "version": "3.0.0"
+    },
+    {
+      "path": "app/Extensions/chatbot-review/extension.json",
+      "name": "ChatbotReview",
+      "version": "2.0.0"
+    },
+    {
+      "path": "app/Extensions/titan-trio-agents/extension.json",
+      "name": "Titan Trio Agents",
+      "version": "1.1"
+    },
+    {
+      "path": "app/Extensions/agent-phone/extension.json",
+      "name": "Agent Phone",
+      "version": "1.0.0"
+    },
+    {
+      "path": "app/Extensions/titan-quattro-tools/extension.json",
+      "name": "Titan Quattro Tools",
+      "version": "1.0.0"
+    },
+    {
+      "path": "app/Extensions/ai-chat-pro-canvas-upgraded-v1.12.0/extension.json",
+      "name": "AI Chat Pro Canvas",
+      "version": "1.12.0"
+    },
+    {
+      "path": "app/Extensions/titan-uno-managers/extension.json",
+      "name": "Titan Uno Managers",
+      "version": "1.0.0"
+    },
+    {
+      "path": "app/Extensions/ai-chat-pro-entity-highlight-upgraded-v1.10.0/extension.json",
+      "name": "AIChatPro Entity Highlight",
+      "version": "1.10.0"
+    }
+  ],
+  "files": 3873,
+  "php_files": 3509,
+  "migrations": 164,
+  "database_base_sha256": "a19845af907d1c9b7cc88083f45f4331a739ea07c6dfc6060033f9b5a7ce0f05"
+}

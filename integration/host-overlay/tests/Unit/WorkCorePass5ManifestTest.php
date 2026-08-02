@@ -1,0 +1,2 @@
+<?php
+it('publishes relational scheduling and recurrence capabilities',function(){ $m=require __DIR__.'/../../app/Domains/WorkCore/config/workcore.php'; expect($m['version'])->toBe('7.0.0')->and($m['actions'])->toContain('project.update','work_order.update','task.update','recurring_service.update','recurring_service.run_due')->and($m['capabilities'])->toContain('relational_integrity','scheduling_conflict_detection','recurrence_execution'); });
