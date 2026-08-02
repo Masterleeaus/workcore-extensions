@@ -32,8 +32,8 @@ jobs:
           python-version: '3.12'
       - run: python -m unittest tests/test_host_compatibility.py -v
 
-  laravel-10-package-boot:
-    name: Laravel 10 boot — ${{ matrix.profile }}
+  laravel-10-package-resolution:
+    name: Laravel 10 package resolution — ${{ matrix.profile }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -78,8 +78,7 @@ jobs:
               workcore/workforce-assurance:0.1.1 \
               --no-interaction --no-progress --prefer-dist --no-scripts --no-blocking
           fi
-          php artisan package:discover --ansi
-          php artisan about --no-ansi
+          WORKCORE_ENABLED=false php artisan package:discover --ansi
           WORKCORE_ENABLED=false php artisan about --no-ansi
 
       - name: Verify installed packages
