@@ -1,0 +1,7 @@
+{
+  "name": "WorkCore Work Operations",
+  "type": "extension",
+  "version": "0.1.1",
+  "description": "Jobs, scheduling, dispatch, recurring work, forms, repairs and fleet capabilities for WorkCore.",
+  "support_telegram": ""
+}

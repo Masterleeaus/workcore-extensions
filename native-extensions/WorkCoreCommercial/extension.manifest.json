@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.0",
+  "key": "workcore-commercial",
+  "name": "WorkCore Commercial",
+  "version": "0.1.1",
+  "folder": "WorkCoreCommercial",
+  "namespace": "App\\Extensions\\WorkCoreCommercial",
+  "provider": "App\\Extensions\\WorkCoreCommercial\\System\\WorkCoreCommercialServiceProvider",
+  "family": "addon",
+  "compatibility": {
+    "magicai": ">=11.0",
+    "php": "^8.2",
+    "laravel": "^10.0"
+  },
+  "dependencies": {
+    "parent": {
+      "key": "workcore",
+      "version": "^0.1"
+    },
+    "required": [],
+    "optional": [],
+    "peers": [],
+    "conflicts": []
+  },
+  "capabilities": [
+    "workcore.finance",
+    "workcore.payroll",
+    "workcore.inventory",
+    "workcore.supply",
+    "workcore.vault",
+    "workcore.trust_accounting"
+  ],
+  "contributions": [
+    {
+      "registry": "workcore.module-groups",
+      "key": "workcore-commercial",
+      "priority": 100,
+      "class": "App\\Extensions\\WorkCoreCommercial\\System\\WorkCoreCommercialServiceProvider",
+      "module_keys": [
+        "finance",
+        "payroll",
+        "inventory",
+        "supply",
+        "vault",
+        "trust_accounting"
+      ]
+    }
+  ],
+  "permissions": [],
+  "external_hosts": [],
+  "routes": [],
+  "database": {
+    "migrations": false,
+    "owned_tables": [],
+    "shared_tables": []
+  },
+  "queues": {
+    "used": false,
+    "queue_names": [],
+    "tenant_context_required": true
+  },
+  "schedules": [],
+  "webhooks": [],
+  "billing": {
+    "mode": "none",
+    "reservation_required": false,
+    "ledger": ""
+  },
+  "data": {
+    "tenant_key": "company_id",
+    "default_uninstall_policy": "retain",
+    "owned_paths": [],
+    "credential_storage": "host-vault"
+  },
+  "lifecycle": {
+    "register_key": true,
+    "uninstall": true,
+    "idempotent": true,
+    "supports_disable": true,
+    "upgrade_strategy": "forward-only migrations"
+  },
+  "tests": [
+    "unit",
+    "feature",
+    "architecture",
+    "security"
+  ],
+  "support": {
+    "telegram": "",
+    "documentation": "docs/integration/magicai-native-extensions.md"
+  }
+}

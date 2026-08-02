@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0",
+  "key": "workcore-workforce-assurance",
+  "name": "WorkCore Workforce Assurance",
+  "version": "0.1.1",
+  "folder": "WorkCoreWorkforceAssurance",
+  "namespace": "App\\Extensions\\WorkCoreWorkforceAssurance",
+  "provider": "App\\Extensions\\WorkCoreWorkforceAssurance\\System\\WorkCoreWorkforceAssuranceServiceProvider",
+  "family": "addon",
+  "compatibility": {
+    "magicai": ">=11.0",
+    "php": "^8.2",
+    "laravel": "^10.0"
+  },
+  "dependencies": {
+    "parent": {
+      "key": "workcore",
+      "version": "^0.1"
+    },
+    "required": [],
+    "optional": [],
+    "peers": [],
+    "conflicts": []
+  },
+  "capabilities": [
+    "workcore.workforce",
+    "workcore.people",
+    "workcore.attendance_verification",
+    "workcore.rosters",
+    "workcore.attendance",
+    "workcore.compliance",
+    "workcore.assurance"
+  ],
+  "contributions": [
+    {
+      "registry": "workcore.module-groups",
+      "key": "workcore-workforce-assurance",
+      "priority": 100,
+      "class": "App\\Extensions\\WorkCoreWorkforceAssurance\\System\\WorkCoreWorkforceAssuranceServiceProvider",
+      "module_keys": [
+        "workforce",
+        "people",
+        "attendance_verification",
+        "rosters",
+        "attendance",
+        "compliance",
+        "assurance"
+      ]
+    }
+  ],
+  "permissions": [],
+  "external_hosts": [],
+  "routes": [],
+  "database": {
+    "migrations": false,
+    "owned_tables": [],
+    "shared_tables": []
+  },
+  "queues": {
+    "used": false,
+    "queue_names": [],
+    "tenant_context_required": true
+  },
+  "schedules": [],
+  "webhooks": [],
+  "billing": {
+    "mode": "none",
+    "reservation_required": false,
+    "ledger": ""
+  },
+  "data": {
+    "tenant_key": "company_id",
+    "default_uninstall_policy": "retain",
+    "owned_paths": [],
+    "credential_storage": "host-vault"
+  },
+  "lifecycle": {
+    "register_key": true,
+    "uninstall": true,
+    "idempotent": true,
+    "supports_disable": true,
+    "upgrade_strategy": "forward-only migrations"
+  },
+  "tests": [
+    "unit",
+    "feature",
+    "architecture",
+    "security"
+  ],
+  "support": {
+    "telegram": "",
+    "documentation": "docs/integration/magicai-native-extensions.md"
+  }
+}

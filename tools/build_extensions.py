@@ -9,7 +9,10 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Any, Iterable
 
-PACKAGE_VERSION = '0.1.0'
+PACKAGE_VERSION = '0.1.1'
+SOURCE_RELEASE = 'WorkCore-MagicAI-Final-Consolidated-2026-08-02'
+SOURCE_ARCHIVE_SHA256 = '6d735fc6716bb08bd0ab7fdab74d390a6a009318f75ecb3f1a9b663c8cdba327'
+SOURCE_ARCHIVE_BYTES = 4021361
 
 GROUPS: dict[str, dict[str, Any]] = {
     'business-network': {
@@ -245,11 +248,13 @@ def _write_package_metadata(package_root: Path, package_name: str, title: str, p
                 'package_type': package_type,
                 'phase': 'canonical-namespace-extraction',
                 'destructive_uninstall': False,
+                'source_release': SOURCE_RELEASE,
+                'source_archive_sha256': SOURCE_ARCHIVE_SHA256,
             },
         },
     }
     if package_type == 'shared-foundation':
-        composer['require']['laravel/framework'] = '^11.0 || ^12.0'
+        composer['require']['laravel/framework'] = '^10.0 || ^11.0 || ^12.0'
         composer['extra']['laravel'] = {
             'providers': ['App\\Domains\\WorkCore\\WorkCoreServiceProvider'],
         }
@@ -560,6 +565,9 @@ def _write_ownership_manifest(source_root: Path, output_root: Path) -> Path:
     manifest = {
         'architecture': 'five-domain-composition-with-shared-foundation',
         'source_root': str(source_root),
+        'source_release': SOURCE_RELEASE,
+        'source_archive_sha256': SOURCE_ARCHIVE_SHA256,
+        'source_archive_bytes': SOURCE_ARCHIVE_BYTES,
         'module_count': 35,
         'groups': GROUPS,
         'files': files,
@@ -674,9 +682,23 @@ def build(source_root: Path, output_root: Path, include_host_overlay: bool = Fal
     if include_host_overlay:
         _copy_host_overlay(source_root, output_root)
         _patch_host_overlay(output_root)
-        baseline_zip = source_root.parent / 'WorkCore-MagicAI-Consolidated-2026-08-02.zip'
-        if baseline_zip.is_file():
-            shutil.copy2(baseline_zip, output_root / 'dist' / baseline_zip.name)
+        archive_candidates = [
+            source_root.parent / 'WorkCore-MagicAI-Final-Consolidated-2026-08-02(1).zip',
+            source_root.parent / 'WorkCore-MagicAI-Final-Consolidated-2026-08-02.zip',
+        ]
+        for baseline_zip in archive_candidates:
+            if baseline_zip.is_file():
+                shutil.copy2(
+                    baseline_zip,
+                    output_root / 'dist' / 'WorkCore-MagicAI-Final-Consolidated-2026-08-02.zip',
+                )
+                break
+
+        completion_manifest = source_root / 'MAGICAI-WORKCORE-FINAL-COMPLETION-MANIFEST.md'
+        if completion_manifest.is_file():
+            destination = output_root / 'docs/source/MAGICAI-WORKCORE-FINAL-COMPLETION-MANIFEST.md'
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(completion_manifest, destination)
 
     return built
 

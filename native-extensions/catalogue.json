@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0",
+  "release_version": "0.1.1",
+  "tenant_key": "company_id",
+  "parent_key": "workcore",
+  "extensions": {
+    "workcore": {
+      "folder": "WorkCore",
+      "provider": "App\\Extensions\\WorkCore\\System\\WorkCoreServiceProvider",
+      "family": "vertical-suite",
+      "source_package": null,
+      "group_provider": null
+    },
+    "workcore-business-network": {
+      "folder": "WorkCoreBusinessNetwork",
+      "provider": "App\\Extensions\\WorkCoreBusinessNetwork\\System\\WorkCoreBusinessNetworkServiceProvider",
+      "family": "addon",
+      "source_package": "workcore-business-network",
+      "module_keys": [
+        "crm",
+        "catalogue",
+        "support",
+        "knowledge",
+        "reviews",
+        "territories",
+        "intelligence",
+        "expansion",
+        "wizards",
+        "ai"
+      ]
+    },
+    "workcore-commercial": {
+      "folder": "WorkCoreCommercial",
+      "provider": "App\\Extensions\\WorkCoreCommercial\\System\\WorkCoreCommercialServiceProvider",
+      "family": "addon",
+      "source_package": "workcore-commercial",
+      "module_keys": [
+        "finance",
+        "payroll",
+        "inventory",
+        "supply",
+        "vault",
+        "trust_accounting"
+      ]
+    },
+    "workcore-work-operations": {
+      "folder": "WorkCoreWorkOperations",
+      "provider": "App\\Extensions\\WorkCoreWorkOperations\\System\\WorkCoreWorkOperationsServiceProvider",
+      "family": "addon",
+      "source_package": "workcore-work-operations",
+      "module_keys": [
+        "operations",
+        "scheduling",
+        "dispatch",
+        "recurring",
+        "forms",
+        "repairs",
+        "fleet"
+      ]
+    },
+    "workcore-property-operations": {
+      "folder": "WorkCorePropertyOperations",
+      "provider": "App\\Extensions\\WorkCorePropertyOperations\\System\\WorkCorePropertyOperationsServiceProvider",
+      "family": "addon",
+      "source_package": "workcore-property-operations",
+      "module_keys": [
+        "premises",
+        "assets",
+        "documents",
+        "vertical_operations"
+      ]
+    },
+    "workcore-workforce-assurance": {
+      "folder": "WorkCoreWorkforceAssurance",
+      "provider": "App\\Extensions\\WorkCoreWorkforceAssurance\\System\\WorkCoreWorkforceAssuranceServiceProvider",
+      "family": "addon",
+      "source_package": "workcore-workforce-assurance",
+      "module_keys": [
+        "workforce",
+        "people",
+        "attendance_verification",
+        "rosters",
+        "attendance",
+        "compliance",
+        "assurance"
+      ]
+    }
+  }
+}

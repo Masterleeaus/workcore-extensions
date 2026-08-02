@@ -143,6 +143,12 @@ use App\Domains\WorkCore\System\Modules\Finance\Support\DependencyDiagnostics;
 use App\Domains\WorkCore\System\Modules\Finance\Support\MoneyDomainCatalogue;
 use App\Domains\WorkCore\System\Modules\Finance\Support\TitanMoneyHealth;
 use App\Domains\WorkCore\System\Modules\Finance\Tenancy\FailClosedCompanyContextResolver;
+use App\Domains\WorkCore\System\Actions\{ActionDefinition as WorkCoreActionDefinition, BusinessActionRegistry};
+use App\Domains\WorkCore\System\ReadModels\{ReadModelDefinition, ReadModelRegistry};
+use App\Domains\WorkCore\System\Modules\Finance\Contracts\{FinanceRepositoryContract, PaymentOrchestrationRepositoryContract};
+use App\Domains\WorkCore\System\Modules\Finance\Repositories\{EloquentFinanceRepository, EloquentPaymentOrchestrationRepository};
+use App\Domains\WorkCore\System\Modules\Finance\Infrastructure\Persistence\DatabasePaymentMethodConfigurationRepository;
+use App\Domains\WorkCore\System\Modules\Finance\Actions\{AllocateFinanceCredit, AllocateFinanceReceivable, ApproveFinanceExpense, ChangeFinanceInvoiceStatus, ChangeFinanceQuoteStatus, CloseFinanceAccountingPeriod, CreateFinanceAccount, CreateFinanceAccountingPeriod, CreateFinanceCreditNote, CreateFinanceInvoice, CreateFinanceQuote, IssueFinanceInvoice, PostFinanceJournal, RecordFinanceExpense, GetFinanceSummary, GetInvoiceProfile, GetQuoteProfile, SearchReceivables, UpsertPaymentProviderConnection, CreatePaymentSession, RecordPaymentAttempt, GetPaymentSession, GetPaymentOrchestrationSummary};
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use App\Domains\WorkCore\System\Modules\Finance\Contracts\CustomerRepository;
@@ -206,6 +212,7 @@ final class WorkCoreFinanceServiceProvider extends ServiceProvider
         $this->registerWorkCoreRepositories();
         $this->registerFailClosedSecurityDefaults();
         $this->registerRuntimeBindings();
+        $this->registerWorkCoreCapabilityBridge();
 
         $this->app->singleton(FinanceAccessGate::class, static function ($app): FinanceAccessGate {
             return new FinanceAccessGate(
@@ -282,6 +289,8 @@ final class WorkCoreFinanceServiceProvider extends ServiceProvider
 
     private function registerRuntimeBindings(): void
     {
+        $this->app->bind(FinanceRepositoryContract::class, EloquentFinanceRepository::class);
+        $this->app->bind(PaymentOrchestrationRepositoryContract::class, EloquentPaymentOrchestrationRepository::class);
         $this->app->singleton(Clock::class, SystemClock::class);
         $this->app->singleton(IdentifierGenerator::class, RandomUuidGenerator::class);
         $this->app->singleton(TransactionManager::class, LaravelTransactionManager::class);
@@ -334,7 +343,7 @@ final class WorkCoreFinanceServiceProvider extends ServiceProvider
             $this->app->singleton(WorkCoreCommercialSource::class, FailClosedWorkCoreCommercialSource::class);
         }
         if (! $this->app->bound(PaymentMethodConfigurationRepository::class)) {
-            $this->app->singleton(PaymentMethodConfigurationRepository::class, FailClosedPaymentMethodConfigurationRepository::class);
+            $this->app->singleton(PaymentMethodConfigurationRepository::class, DatabasePaymentMethodConfigurationRepository::class);
         }
         if (! $this->app->bound(ArtifactStore::class)) {
             $this->app->singleton(ArtifactStore::class, FailClosedArtifactStore::class);
@@ -381,6 +390,41 @@ final class WorkCoreFinanceServiceProvider extends ServiceProvider
         $this->app->singleton(TitanMoneyOutboxRelay::class);
         $this->app->singleton(CloseReconciliation::class);
         $this->app->singleton(ImportBankStatement::class);
+    }
+
+
+    private function registerWorkCoreCapabilityBridge(): void
+    {
+        $actions = $this->app->make(BusinessActionRegistry::class);
+        $definitions = [
+            ['workcore.finance.quote.create', CreateFinanceQuote::class, 'medium'],
+            ['workcore.finance.quote.transition', ChangeFinanceQuoteStatus::class, 'high'],
+            ['workcore.finance.invoice.create', CreateFinanceInvoice::class, 'medium'],
+            ['workcore.finance.invoice.issue', IssueFinanceInvoice::class, 'high'],
+            ['workcore.finance.invoice.transition', ChangeFinanceInvoiceStatus::class, 'high'],
+            ['workcore.finance.credit_note.create', CreateFinanceCreditNote::class, 'high'],
+            ['workcore.finance.credit.allocate', AllocateFinanceCredit::class, 'high'],
+            ['workcore.finance.receivable.allocate', AllocateFinanceReceivable::class, 'high'],
+            ['workcore.finance.expense.record', RecordFinanceExpense::class, 'medium'],
+            ['workcore.finance.expense.approve', ApproveFinanceExpense::class, 'high'],
+            ['workcore.finance.account.create', CreateFinanceAccount::class, 'high'],
+            ['workcore.finance.period.create', CreateFinanceAccountingPeriod::class, 'high'],
+            ['workcore.finance.period.close', CloseFinanceAccountingPeriod::class, 'critical'],
+            ['workcore.finance.journal.post', PostFinanceJournal::class, 'critical'],
+            ['workcore.payment.provider.upsert', UpsertPaymentProviderConnection::class, 'high'],
+            ['workcore.payment.session.create', CreatePaymentSession::class, 'medium'],
+            ['workcore.payment.attempt.record', RecordPaymentAttempt::class, 'medium'],
+        ];
+        foreach ($definitions as [$key, $handler, $risk]) {
+            $actions->register(new WorkCoreActionDefinition(key: $key, handler: $handler, risk: $risk, requiresConfirmation: in_array($risk, ['high','critical'], true), capability: 'workcore.finance', permission: 'finance.manage', metadata: ['domain'=>'titan_money','canonical_owner'=>'WorkCore Titan Money']));
+        }
+        $reads = $this->app->make(ReadModelRegistry::class);
+        $reads->register(new ReadModelDefinition('workcore.finance.summary', GetFinanceSummary::class, 'workcore.finance', permission: 'finance.view'));
+        $reads->register(new ReadModelDefinition('workcore.finance.quote.profile', GetQuoteProfile::class, 'workcore.finance', permission: 'finance.view'));
+        $reads->register(new ReadModelDefinition('workcore.finance.invoice.profile', GetInvoiceProfile::class, 'workcore.finance', permission: 'finance.view'));
+        $reads->register(new ReadModelDefinition('workcore.finance.receivables.search', SearchReceivables::class, 'workcore.finance', permission: 'finance.view'));
+        $reads->register(new ReadModelDefinition('workcore.payment.session', GetPaymentSession::class, 'workcore.finance', permission: 'finance.view'));
+        $reads->register(new ReadModelDefinition('workcore.payment.orchestration.summary', GetPaymentOrchestrationSummary::class, 'workcore.finance', permission: 'finance.view'));
     }
 
     private function registerRoutes(): void

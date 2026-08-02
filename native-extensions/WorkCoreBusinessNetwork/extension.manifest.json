@@ -1,0 +1,100 @@
+{
+  "schema_version": "1.0",
+  "key": "workcore-business-network",
+  "name": "WorkCore Business Network",
+  "version": "0.1.1",
+  "folder": "WorkCoreBusinessNetwork",
+  "namespace": "App\\Extensions\\WorkCoreBusinessNetwork",
+  "provider": "App\\Extensions\\WorkCoreBusinessNetwork\\System\\WorkCoreBusinessNetworkServiceProvider",
+  "family": "addon",
+  "compatibility": {
+    "magicai": ">=11.0",
+    "php": "^8.2",
+    "laravel": "^10.0"
+  },
+  "dependencies": {
+    "parent": {
+      "key": "workcore",
+      "version": "^0.1"
+    },
+    "required": [],
+    "optional": [],
+    "peers": [],
+    "conflicts": []
+  },
+  "capabilities": [
+    "workcore.crm",
+    "workcore.catalogue",
+    "workcore.support",
+    "workcore.knowledge",
+    "workcore.reviews",
+    "workcore.territories",
+    "workcore.intelligence",
+    "workcore.expansion",
+    "workcore.wizards",
+    "workcore.ai"
+  ],
+  "contributions": [
+    {
+      "registry": "workcore.module-groups",
+      "key": "workcore-business-network",
+      "priority": 100,
+      "class": "App\\Extensions\\WorkCoreBusinessNetwork\\System\\WorkCoreBusinessNetworkServiceProvider",
+      "module_keys": [
+        "crm",
+        "catalogue",
+        "support",
+        "knowledge",
+        "reviews",
+        "territories",
+        "intelligence",
+        "expansion",
+        "wizards",
+        "ai"
+      ]
+    }
+  ],
+  "permissions": [],
+  "external_hosts": [],
+  "routes": [],
+  "database": {
+    "migrations": false,
+    "owned_tables": [],
+    "shared_tables": []
+  },
+  "queues": {
+    "used": false,
+    "queue_names": [],
+    "tenant_context_required": true
+  },
+  "schedules": [],
+  "webhooks": [],
+  "billing": {
+    "mode": "none",
+    "reservation_required": false,
+    "ledger": ""
+  },
+  "data": {
+    "tenant_key": "company_id",
+    "default_uninstall_policy": "retain",
+    "owned_paths": [],
+    "credential_storage": "host-vault"
+  },
+  "lifecycle": {
+    "register_key": true,
+    "uninstall": true,
+    "idempotent": true,
+    "supports_disable": true,
+    "upgrade_strategy": "forward-only migrations"
+  },
+  "tests": [
+    "unit",
+    "feature",
+    "architecture",
+    "security"
+  ],
+  "support": {
+    "telegram": "",
+    "documentation": "docs/integration/magicai-native-extensions.md"
+  }
+}

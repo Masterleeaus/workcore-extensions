@@ -6,6 +6,7 @@ on:
     branches:
       - main
       - feature/five-domain-extension-split
+      - feature/magicai-native-workcore-extensions
 
 permissions:
   contents: read
@@ -39,7 +40,7 @@ jobs:
         run: |
           set -euo pipefail
           php_files="$(find packages -type f -name '*.php' | wc -l)"
-          test "$php_files" -eq 2061
+          test "$php_files" -eq 2090
           find packages -type f -name '*.php' -print0 \
             | xargs -0 -n1 -P4 php -l \
             > /tmp/workcore-php-lint.txt

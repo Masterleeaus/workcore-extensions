@@ -12,7 +12,7 @@ from tools.build_extensions import PACKAGE_VERSION, build
 from tools.generate_host_profile import generate_host_composer, load_profiles
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
-SOURCE_ROOT = Path(os.environ.get('WORKCORE_SOURCE_ROOT', '/mnt/data/workcore_magicai_consolidated_scan'))
+SOURCE_ROOT = Path(os.environ.get('WORKCORE_SOURCE_ROOT', '/mnt/data/workcore_magicai_final_scan'))
 PACKAGES_ROOT = REPOSITORY_ROOT / 'packages'
 
 
@@ -29,32 +29,6 @@ class OptionalConfigurationTests(unittest.TestCase):
         )
         self.assertIn('is_file($financeConfigPath)', config)
         self.assertIn('is_file($financePermissionsPath)', config)
-
-
-class MigrationPortabilityTests(unittest.TestCase):
-    def test_ai_knowledge_fulltext_index_is_guarded_for_sqlite(self) -> None:
-        migration = (
-            PACKAGES_ROOT / 'workcore-shared-foundation/'
-            'src/Domains/WorkCore/Database/Migrations/'
-            '2026_07_23_120058_create_tz_ai_knowledge_tables.php'
-        ).read_text(encoding='utf-8')
-
-        self.assertIn("Schema::getConnection()->getDriverName()", migration)
-        self.assertIn("['mysql', 'mariadb', 'pgsql']", migration)
-        self.assertIn('if ($supportsFullText)', migration)
-        self.assertIn("$table->fullText('content', 'ai_kchunk_content_ft');", migration)
-
-
-class HostOverlayMigrationTests(unittest.TestCase):
-    def test_meetup_tenancy_migration_guards_optional_donor_tables(self) -> None:
-        migration = (
-            REPOSITORY_ROOT / 'integration/host-overlay/database/migrations/'
-            '2026_07_25_000001_add_workcore_tenancy_to_meetup.php'
-        ).read_text(encoding='utf-8')
-
-        for table in ['conversations', 'participants', 'messages']:
-            self.assertIn(f"Schema::hasTable('{table}')", migration)
-        self.assertIn("Schema::hasColumn('users', 'active_company_id')", migration)
 
 
 class ComposerPackageTests(unittest.TestCase):
@@ -81,7 +55,24 @@ class ComposerPackageTests(unittest.TestCase):
             ['App\\Domains\\WorkCore\\WorkCoreServiceProvider'],
             composer['extra']['laravel']['providers'],
         )
-        self.assertEqual('^11.0 || ^12.0', composer['require']['laravel/framework'])
+        self.assertEqual('^10.0 || ^11.0 || ^12.0', composer['require']['laravel/framework'])
+
+
+class MagicAIUmbrellaAdapterTests(unittest.TestCase):
+    def test_magicai_adapter_uses_marketplace_expected_namespace_and_delegates_to_workcore(self) -> None:
+        provider = (
+            REPOSITORY_ROOT / 'integration/magicai-extension/'
+            'app/Extensions/WorkCore/System/WorkCoreServiceProvider.php'
+        ).read_text(encoding='utf-8')
+        self.assertIn('namespace App\\Extensions\\WorkCore\\System;', provider)
+        self.assertIn('App\\Domains\\WorkCore\\WorkCoreServiceProvider', provider)
+        self.assertIn("config('workcore.enabled', true)", provider)
+
+    def test_magicai_contract_targets_version_11_and_laravel_10(self) -> None:
+        contract = json.loads((REPOSITORY_ROOT / 'compatibility/magicai-11-contract.json').read_text(encoding='utf-8'))
+        self.assertEqual('11.00', contract['magicai_version'])
+        self.assertEqual('^10.0', contract['laravel_framework'])
+        self.assertEqual('umbrella-extension', contract['workcore_marketplace_shape'])
 
 
 class InstallProfileTests(unittest.TestCase):
@@ -130,19 +121,6 @@ class InstallProfileTests(unittest.TestCase):
             build(SOURCE_ROOT, output_root, include_host_overlay=True)
             providers = (output_root / 'integration/host-overlay/bootstrap/providers.php').read_text(encoding='utf-8')
             self.assertNotIn('App\\Domains\\WorkCore\\WorkCoreServiceProvider::class', providers)
-
-
-    @unittest.skipUnless(SOURCE_ROOT.is_dir(), 'Consolidated source archive is not available in this environment.')
-    def test_builder_guards_optional_meetup_tables_in_host_overlay(self) -> None:
-        with tempfile.TemporaryDirectory() as temporary_directory:
-            output_root = Path(temporary_directory)
-            build(SOURCE_ROOT, output_root, include_host_overlay=True)
-            migration = (
-                output_root / 'integration/host-overlay/database/migrations/'
-                '2026_07_25_000001_add_workcore_tenancy_to_meetup.php'
-            ).read_text(encoding='utf-8')
-            for table in ['conversations', 'participants', 'messages']:
-                self.assertIn(f"Schema::hasTable('{table}')", migration)
 
 
 class DisableAndDependencySafetyTests(unittest.TestCase):

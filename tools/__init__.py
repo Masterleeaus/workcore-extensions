@@ -1,1 +1,1 @@
-"""Repository validation and packaging tools."""
+"""WorkCore extension build tooling."""

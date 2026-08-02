@@ -1,6 +1,6 @@
 {
   "architecture": "five-domain-composition-with-shared-foundation",
-  "file_count": 2129,
+  "file_count": 2158,
   "files": [
     {
       "destination": "packages/workcore-shared-foundation/src/Domains/WorkCore/Config/trade_compliance.php",
@@ -936,6 +936,22 @@
       "owner": "shared-foundation",
       "source": "app/Domains/WorkCore/Database/Migrations/2026_07_26_040000_create_tz_trust_accounting_tables.php",
       "source_sha256": "50a9773a756cd342b472e1feb8f0c95bcfa6f568eb1a50d251142c3f1023c53a",
+      "transformed": false
+    },
+    {
+      "destination": "packages/workcore-shared-foundation/src/Domains/WorkCore/Database/Migrations/2026_08_02_000001_create_tm_credit_note_runtime_tables.php",
+      "destination_sha256": "9deb70f5d03d37ca33ff44b630a16cf62131834a0e4ee98b21342675344933d1",
+      "owner": "shared-foundation",
+      "source": "app/Domains/WorkCore/Database/Migrations/2026_08_02_000001_create_tm_credit_note_runtime_tables.php",
+      "source_sha256": "9deb70f5d03d37ca33ff44b630a16cf62131834a0e4ee98b21342675344933d1",
+      "transformed": false
+    },
+    {
+      "destination": "packages/workcore-shared-foundation/src/Domains/WorkCore/Database/Migrations/2026_08_02_000002_create_tm_payment_orchestration_tables.php",
+      "destination_sha256": "ba9383c506aee1d2343069439fddd38819753165373771a84ac5b095c3dc9e23",
+      "owner": "shared-foundation",
+      "source": "app/Domains/WorkCore/Database/Migrations/2026_08_02_000002_create_tm_payment_orchestration_tables.php",
+      "source_sha256": "ba9383c506aee1d2343069439fddd38819753165373771a84ac5b095c3dc9e23",
       "transformed": false
     },
     {
@@ -7083,6 +7099,190 @@
       "transformed": false
     },
     {
+      "destination": "packages/workcore-commercial/src/Domains/WorkCore/System/Modules/Finance/Actions/AllocateFinanceCredit.php",
+      "destination_sha256": "0318329a382cd4c73618b14f607a83090866b6dc4c4a1b41910ef203b3e4cd40",
+      "owner": "commercial",
+      "source": "app/Domains/WorkCore/System/Modules/Finance/Actions/AllocateFinanceCredit.php",
+      "source_sha256": "0318329a382cd4c73618b14f607a83090866b6dc4c4a1b41910ef203b3e4cd40",
+      "transformed": false
+    },
+    {
+      "destination": "packages/workcore-commercial/src/Domains/WorkCore/System/Modules/Finance/Actions/AllocateFinanceReceivable.php",
+      "destination_sha256": "cd5e2c54cc6f36cc24e28ce3879376c5df01a70a1690399b2bb498e82a9d305f",
+      "owner": "commercial",
+      "source": "app/Domains/WorkCore/System/Modules/Finance/Actions/AllocateFinanceReceivable.php",
+      "source_sha256": "cd5e2c54cc6f36cc24e28ce3879376c5df01a70a1690399b2bb498e82a9d305f",
+      "transformed": false
+    },
+    {
+      "destination": "packages/workcore-commercial/src/Domains/WorkCore/System/Modules/Finance/Actions/ApproveFinanceExpense.php",
+      "destination_sha256": "167d8390749e60ea5975fae4ab4c599fb83e6252c5dd909e2ca3679054fcd66f",
+      "owner": "commercial",
+      "source": "app/Domains/WorkCore/System/Modules/Finance/Actions/ApproveFinanceExpense.php",
+      "source_sha256": "167d8390749e60ea5975fae4ab4c599fb83e6252c5dd909e2ca3679054fcd66f",
+      "transformed": false
+    },
+    {
+      "destination": "packages/workcore-commercial/src/Domains/WorkCore/System/Modules/Finance/Actions/ChangeFinanceInvoiceStatus.php",
+      "destination_sha256": "dd5c25fb0f3a10964fd715590baec83b83830ef5d222c892498ed90a01fc3bca",
+      "owner": "commercial",
+      "source": "app/Domains/WorkCore/System/Modules/Finance/Actions/ChangeFinanceInvoiceStatus.php",
+      "source_sha256": "dd5c25fb0f3a10964fd715590baec83b83830ef5d222c892498ed90a01fc3bca",
+      "transformed": false
+    },
+    {
+      "destination": "packages/workcore-commercial/src/Domains/WorkCore/System/Modules/Finance/Actions/ChangeFinanceQuoteStatus.php",
+      "destination_sha256": "59299dce83004be17a5747da0e0a7e6e7885a32c9be02af4d9015763ce4b8e79",
+      "owner": "commercial",
+      "source": "app/Domains/WorkCore/System/Modules/Finance/Actions/ChangeFinanceQuoteStatus.php",
+      "source_sha256": "59299dce83004be17a5747da0e0a7e6e7885a32c9be02af4d9015763ce4b8e79",
+      "transformed": false
+    },
+    {
+      "destination": "packages/workcore-commercial/src/Domains/WorkCore/System/Modules/Finance/Actions/CloseFinanceAccountingPeriod.php",
+      "destination_sha256": "f3a738cf7f19e640a20164f42f8cfaaf5a4f2e3854e2f6d95708503b713cb65b",
+      "owner": "commercial",
+      "source": "app/Domains/WorkCore/System/Modules/Finance/Actions/CloseFinanceAccountingPeriod.php",
+      "source_sha256": "f3a738cf7f19e640a20164f42f8cfaaf5a4f2e3854e2f6d95708503b713cb65b",
+      "transformed": false
+    },
+    {
+      "destination": "packages/workcore-commercial/src/Domains/WorkCore/System/Modules/Finance/Actions/CreateFinanceAccount.php",
+      "destination_sha256": "bc95a7d552daf183513dc5a5e145acd385a04a494916a2f179f074e1a57a30ea",
+      "owner": "commercial",
+      "source": "app/Domains/WorkCore/System/Modules/Finance/Actions/CreateFinanceAccount.php",
+      "source_sha256": "bc95a7d552daf183513dc5a5e145acd385a04a494916a2f179f074e1a57a30ea",
+      "transformed": false
+    },
+    {
+      "destination": "packages/workcore-commercial/src/Domains/WorkCore/System/Modules/Finance/Actions/CreateFinanceAccountingPeriod.php",
+      "destination_sha256": "db4590ee827a144d378ecf5537994d11b8c3017910a630a6188f882d2c06d216",
+      "owner": "commercial",
+      "source": "app/Domains/WorkCore/System/Modules/Finance/Actions/CreateFinanceAccountingPeriod.php",
+      "source_sha256": "db4590ee827a144d378ecf5537994d11b8c3017910a630a6188f882d2c06d216",
+      "transformed": false
+    },
+    {
+      "destination": "packages/workcore-commercial/src/Domains/WorkCore/System/Modules/Finance/Actions/CreateFinanceCreditNote.php",
+      "destination_sha256": "955f056e59f4751e6846d0b95b28ead6659f7f1e30b40b0ba727aff573f4aae6",
+      "owner": "commercial",
+      "source": "app/Domains/WorkCore/System/Modules/Finance/Actions/CreateFinanceCreditNote.php",
+      "source_sha256": "955f056e59f4751e6846d0b95b28ead6659f7f1e30b40b0ba727aff573f4aae6",
+      "transformed": false
+    },
+    {
+      "destination": "packages/workcore-commercial/src/Domains/WorkCore/System/Modules/Finance/Actions/CreateFinanceInvoice.php",
+      "destination_sha256": "042a6a1d6e4724e4393f6774f4215c81bb64c6f982d2f10833f86e89dab1a169",
+      "owner": "commercial",
+      "source": "app/Domains/WorkCore/System/Modules/Finance/Actions/CreateFinanceInvoice.php",
+      "source_sha256": "042a6a1d6e4724e4393f6774f4215c81bb64c6f982d2f10833f86e89dab1a169",
+      "transformed": false
+    },
+    {
+      "destination": "packages/workcore-commercial/src/Domains/WorkCore/System/Modules/Finance/Actions/CreateFinanceQuote.php",
+      "destination_sha256": "6377d8abc2d9e4f1b0cd1822dd1fe49a5acfdcb0a055dde6416c27a1d7c8b487",
+      "owner": "commercial",
+      "source": "app/Domains/WorkCore/System/Modules/Finance/Actions/CreateFinanceQuote.php",
+      "source_sha256": "6377d8abc2d9e4f1b0cd1822dd1fe49a5acfdcb0a055dde6416c27a1d7c8b487",
+      "transformed": false
+    },
+    {
+      "destination": "packages/workcore-commercial/src/Domains/WorkCore/System/Modules/Finance/Actions/CreatePaymentSession.php",
+      "destination_sha256": "90a0cf9adac4e8a78bb6b1692b01f0e9b4309da4776193fd849b07e46da13921",
+      "owner": "commercial",
+      "source": "app/Domains/WorkCore/System/Modules/Finance/Actions/CreatePaymentSession.php",
+      "source_sha256": "90a0cf9adac4e8a78bb6b1692b01f0e9b4309da4776193fd849b07e46da13921",
+      "transformed": false
+    },
+    {
+      "destination": "packages/workcore-commercial/src/Domains/WorkCore/System/Modules/Finance/Actions/GetFinanceSummary.php",
+      "destination_sha256": "f1adeb7142768b9dfb24244cb93d45d404bb6a3c2cd6ceadd4bbd7733ebf36c5",
+      "owner": "commercial",
+      "source": "app/Domains/WorkCore/System/Modules/Finance/Actions/GetFinanceSummary.php",
+      "source_sha256": "f1adeb7142768b9dfb24244cb93d45d404bb6a3c2cd6ceadd4bbd7733ebf36c5",
+      "transformed": false
+    },
+    {
+      "destination": "packages/workcore-commercial/src/Domains/WorkCore/System/Modules/Finance/Actions/GetInvoiceProfile.php",
+      "destination_sha256": "fa322b6b247b611f1e0b3ba1eab1b1f36958d3ec4226d683ffa75601ebd8daa9",
+      "owner": "commercial",
+      "source": "app/Domains/WorkCore/System/Modules/Finance/Actions/GetInvoiceProfile.php",
+      "source_sha256": "fa322b6b247b611f1e0b3ba1eab1b1f36958d3ec4226d683ffa75601ebd8daa9",
+      "transformed": false
+    },
+    {
+      "destination": "packages/workcore-commercial/src/Domains/WorkCore/System/Modules/Finance/Actions/GetPaymentOrchestrationSummary.php",
+      "destination_sha256": "54206ce2093196667bd4594a6a4154d9df6f9dcb95e25e601dddba43d39c240f",
+      "owner": "commercial",
+      "source": "app/Domains/WorkCore/System/Modules/Finance/Actions/GetPaymentOrchestrationSummary.php",
+      "source_sha256": "54206ce2093196667bd4594a6a4154d9df6f9dcb95e25e601dddba43d39c240f",
+      "transformed": false
+    },
+    {
+      "destination": "packages/workcore-commercial/src/Domains/WorkCore/System/Modules/Finance/Actions/GetPaymentSession.php",
+      "destination_sha256": "eef5fe921d94b448ad1e58f71aacba0f74b42df68f6625881689fd355ea64282",
+      "owner": "commercial",
+      "source": "app/Domains/WorkCore/System/Modules/Finance/Actions/GetPaymentSession.php",
+      "source_sha256": "eef5fe921d94b448ad1e58f71aacba0f74b42df68f6625881689fd355ea64282",
+      "transformed": false
+    },
+    {
+      "destination": "packages/workcore-commercial/src/Domains/WorkCore/System/Modules/Finance/Actions/GetQuoteProfile.php",
+      "destination_sha256": "cb9ff7028b66cd876d0c9e5db714c2099500ed2b25bc13386a48100e5353a39f",
+      "owner": "commercial",
+      "source": "app/Domains/WorkCore/System/Modules/Finance/Actions/GetQuoteProfile.php",
+      "source_sha256": "cb9ff7028b66cd876d0c9e5db714c2099500ed2b25bc13386a48100e5353a39f",
+      "transformed": false
+    },
+    {
+      "destination": "packages/workcore-commercial/src/Domains/WorkCore/System/Modules/Finance/Actions/IssueFinanceInvoice.php",
+      "destination_sha256": "da1992754f7a47f65de9bbf9ddb73179415cbfecc00b1fb5a20778c9727902f0",
+      "owner": "commercial",
+      "source": "app/Domains/WorkCore/System/Modules/Finance/Actions/IssueFinanceInvoice.php",
+      "source_sha256": "da1992754f7a47f65de9bbf9ddb73179415cbfecc00b1fb5a20778c9727902f0",
+      "transformed": false
+    },
+    {
+      "destination": "packages/workcore-commercial/src/Domains/WorkCore/System/Modules/Finance/Actions/PostFinanceJournal.php",
+      "destination_sha256": "2055e5ece460699e81af934b8282164edd11760f920e38049e93610251b3d123",
+      "owner": "commercial",
+      "source": "app/Domains/WorkCore/System/Modules/Finance/Actions/PostFinanceJournal.php",
+      "source_sha256": "2055e5ece460699e81af934b8282164edd11760f920e38049e93610251b3d123",
+      "transformed": false
+    },
+    {
+      "destination": "packages/workcore-commercial/src/Domains/WorkCore/System/Modules/Finance/Actions/RecordFinanceExpense.php",
+      "destination_sha256": "590d44a808d5277f999667763f34345a22f6dcedeb9000f082f5659faecbdbea",
+      "owner": "commercial",
+      "source": "app/Domains/WorkCore/System/Modules/Finance/Actions/RecordFinanceExpense.php",
+      "source_sha256": "590d44a808d5277f999667763f34345a22f6dcedeb9000f082f5659faecbdbea",
+      "transformed": false
+    },
+    {
+      "destination": "packages/workcore-commercial/src/Domains/WorkCore/System/Modules/Finance/Actions/RecordPaymentAttempt.php",
+      "destination_sha256": "43a8b78e25e334a326fade523be1c8b5d6c8394018158c1de7a5f5a062838882",
+      "owner": "commercial",
+      "source": "app/Domains/WorkCore/System/Modules/Finance/Actions/RecordPaymentAttempt.php",
+      "source_sha256": "43a8b78e25e334a326fade523be1c8b5d6c8394018158c1de7a5f5a062838882",
+      "transformed": false
+    },
+    {
+      "destination": "packages/workcore-commercial/src/Domains/WorkCore/System/Modules/Finance/Actions/SearchReceivables.php",
+      "destination_sha256": "e9216cb965211c4908e4595f22418dedbf3a617be91fa7e5b74c005747a1679b",
+      "owner": "commercial",
+      "source": "app/Domains/WorkCore/System/Modules/Finance/Actions/SearchReceivables.php",
+      "source_sha256": "e9216cb965211c4908e4595f22418dedbf3a617be91fa7e5b74c005747a1679b",
+      "transformed": false
+    },
+    {
+      "destination": "packages/workcore-commercial/src/Domains/WorkCore/System/Modules/Finance/Actions/UpsertPaymentProviderConnection.php",
+      "destination_sha256": "a82fc1d198cea29d6e432c27d19522ec5dccc2a7d3705a8d853ec51bbd1ba464",
+      "owner": "commercial",
+      "source": "app/Domains/WorkCore/System/Modules/Finance/Actions/UpsertPaymentProviderConnection.php",
+      "source_sha256": "a82fc1d198cea29d6e432c27d19522ec5dccc2a7d3705a8d853ec51bbd1ba464",
+      "transformed": false
+    },
+    {
       "destination": "packages/workcore-commercial/src/Domains/WorkCore/System/Modules/Finance/Application/ActionRegistry.php",
       "destination_sha256": "9e372915cfa61c351200b1e07ed7a6545961f808ee41de0518fdc1f2cfee4e82",
       "owner": "commercial",
@@ -7700,10 +7900,10 @@
     },
     {
       "destination": "packages/workcore-commercial/src/Domains/WorkCore/System/Modules/Finance/Contracts/FinanceRepositoryContract.php",
-      "destination_sha256": "15eb7277294eed4c8b82832f4ab22abdc2fea19a3474a16f2ce912b2f3430cfd",
+      "destination_sha256": "99a170b06087bcc772af0b0ecf794a39af294ab9b05ae06779178ecd70e2dddd",
       "owner": "commercial",
       "source": "app/Domains/WorkCore/System/Modules/Finance/Contracts/FinanceRepositoryContract.php",
-      "source_sha256": "15eb7277294eed4c8b82832f4ab22abdc2fea19a3474a16f2ce912b2f3430cfd",
+      "source_sha256": "99a170b06087bcc772af0b0ecf794a39af294ab9b05ae06779178ecd70e2dddd",
       "transformed": false
     },
     {
@@ -7840,6 +8040,14 @@
       "owner": "commercial",
       "source": "app/Domains/WorkCore/System/Modules/Finance/Contracts/PaymentMethodConfigurationRepository.php",
       "source_sha256": "0f04a1d73220bf64e09a7caa05d3c3dd64f23c3e1107100b3de0a33288aa67cb",
+      "transformed": false
+    },
+    {
+      "destination": "packages/workcore-commercial/src/Domains/WorkCore/System/Modules/Finance/Contracts/PaymentOrchestrationRepositoryContract.php",
+      "destination_sha256": "e4592f60d263857daaafa4c722e2ff04fef5cd3871c23bb8615d75dac3e57bb5",
+      "owner": "commercial",
+      "source": "app/Domains/WorkCore/System/Modules/Finance/Contracts/PaymentOrchestrationRepositoryContract.php",
+      "source_sha256": "e4592f60d263857daaafa4c722e2ff04fef5cd3871c23bb8615d75dac3e57bb5",
       "transformed": false
     },
     {
@@ -9187,6 +9395,14 @@
       "transformed": false
     },
     {
+      "destination": "packages/workcore-commercial/src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Persistence/DatabasePaymentMethodConfigurationRepository.php",
+      "destination_sha256": "eb74726c1cb8de6670c9d7182c0fb051254e442659f59de255de47f5f428f1c6",
+      "owner": "commercial",
+      "source": "app/Domains/WorkCore/System/Modules/Finance/Infrastructure/Persistence/DatabasePaymentMethodConfigurationRepository.php",
+      "source_sha256": "eb74726c1cb8de6670c9d7182c0fb051254e442659f59de255de47f5f428f1c6",
+      "transformed": false
+    },
+    {
       "destination": "packages/workcore-commercial/src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Persistence/DatabasePaymentRepository.php",
       "destination_sha256": "31ad05f1908312709fdd36f1dcc95ae7f370eb89669c90f34add14320a75e50d",
       "owner": "commercial",
@@ -9427,6 +9643,22 @@
       "transformed": false
     },
     {
+      "destination": "packages/workcore-commercial/src/Domains/WorkCore/System/Modules/Finance/Repositories/EloquentFinanceRepository.php",
+      "destination_sha256": "87d4e4fc7895f5d0cc25667e47670587fd083b2de127d0560434840d6c3810ce",
+      "owner": "commercial",
+      "source": "app/Domains/WorkCore/System/Modules/Finance/Repositories/EloquentFinanceRepository.php",
+      "source_sha256": "87d4e4fc7895f5d0cc25667e47670587fd083b2de127d0560434840d6c3810ce",
+      "transformed": false
+    },
+    {
+      "destination": "packages/workcore-commercial/src/Domains/WorkCore/System/Modules/Finance/Repositories/EloquentPaymentOrchestrationRepository.php",
+      "destination_sha256": "01788b95ddd150cba64fd203dea384689ddf3e639ad98da58973a02f8580d536",
+      "owner": "commercial",
+      "source": "app/Domains/WorkCore/System/Modules/Finance/Repositories/EloquentPaymentOrchestrationRepository.php",
+      "source_sha256": "01788b95ddd150cba64fd203dea384689ddf3e639ad98da58973a02f8580d536",
+      "transformed": false
+    },
+    {
       "destination": "packages/workcore-commercial/src/Domains/WorkCore/System/Modules/Finance/Settings/FinancialSettings.php",
       "destination_sha256": "4859a9991c2aa3abf5a46486e6608be3f897238c22834e06e9e48aa25b920e55",
       "owner": "commercial",
@@ -9516,10 +9748,10 @@
     },
     {
       "destination": "packages/workcore-commercial/src/Domains/WorkCore/System/Modules/Finance/WorkCoreFinanceServiceProvider.php",
-      "destination_sha256": "58c7cf476c5586b9b031bc220790eb75394eeb8ae675b8b532873270e7723259",
+      "destination_sha256": "f14fafdea6ff5507da77f8a661d0491e326fa0d58e8a037a1f692780b139f740",
       "owner": "commercial",
       "source": "app/Domains/WorkCore/System/Modules/Finance/WorkCoreFinanceServiceProvider.php",
-      "source_sha256": "58c7cf476c5586b9b031bc220790eb75394eeb8ae675b8b532873270e7723259",
+      "source_sha256": "f14fafdea6ff5507da77f8a661d0491e326fa0d58e8a037a1f692780b139f740",
       "transformed": false
     },
     {
@@ -17160,5 +17392,8 @@
     "destructive_uninstall": false,
     "historical_migrations_owner": "shared-foundation"
   },
-  "source_root": "/mnt/data/workcore_magicai_consolidated_scan"
+  "source_archive_bytes": 4021361,
+  "source_archive_sha256": "6d735fc6716bb08bd0ab7fdab74d390a6a009318f75ecb3f1a9b663c8cdba327",
+  "source_release": "WorkCore-MagicAI-Final-Consolidated-2026-08-02",
+  "source_root": "/mnt/data/workcore_magicai_final_scan"
 }

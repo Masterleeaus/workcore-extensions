@@ -7,7 +7,7 @@
       "modules": [],
       "runtimeKeys": [],
       "archive": "downloads/workcore-shared-foundation.zip",
-      "archiveSize": "386.4 KB"
+      "archiveSize": "388.7 KB"
     },
     {
       "slug": "business-network",
@@ -37,7 +37,7 @@
         "ai"
       ],
       "archive": "downloads/workcore-business-network.zip",
-      "archiveSize": "455.6 KB"
+      "archiveSize": "455.8 KB"
     },
     {
       "slug": "commercial",
@@ -60,7 +60,7 @@
         "trust_accounting"
       ],
       "archive": "downloads/workcore-commercial.zip",
-      "archiveSize": "337.5 KB"
+      "archiveSize": "367.8 KB"
     },
     {
       "slug": "work-operations",
@@ -86,7 +86,7 @@
         "fleet"
       ],
       "archive": "downloads/workcore-work-operations.zip",
-      "archiveSize": "130.0 KB"
+      "archiveSize": "130.2 KB"
     },
     {
       "slug": "property-operations",
@@ -104,7 +104,7 @@
         "vertical_operations"
       ],
       "archive": "downloads/workcore-property-operations.zip",
-      "archiveSize": "642.3 KB"
+      "archiveSize": "642.6 KB"
     },
     {
       "slug": "workforce-assurance",
@@ -131,7 +131,7 @@
         "assurance"
       ],
       "archive": "downloads/workcore-workforce-assurance.zip",
-      "archiveSize": "164.6 KB"
+      "archiveSize": "164.8 KB"
     }
   ]
 }

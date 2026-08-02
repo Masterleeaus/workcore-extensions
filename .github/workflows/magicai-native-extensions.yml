@@ -1,0 +1,92 @@
+name: Validate MagicAI-native WorkCore extensions
+
+on:
+  pull_request:
+    paths:
+      - 'native-extensions/**'
+      - 'packages/**'
+      - 'ownership-manifest.json'
+      - 'tools/build_magicai_extensions.py'
+      - 'tools/validate_magicai_extensions.py'
+      - 'tests/test_build_extensions.py'
+      - 'tests/test_magicai_native_extensions.py'
+      - 'tests/test_magicai_extension_builder.py'
+      - 'tests/test_magicai_native_host_fixture.py'
+      - 'integration/magicai-extension/**'
+      - '.github/workflows/magicai-native-extensions.yml'
+      - '.github/workflows/magicai-native-laravel10.yml'
+  push:
+    branches:
+      - feature/magicai-native-workcore-extensions
+    paths:
+      - 'native-extensions/**'
+      - 'packages/**'
+      - 'ownership-manifest.json'
+      - 'tools/build_magicai_extensions.py'
+      - 'tools/validate_magicai_extensions.py'
+      - 'tests/test_build_extensions.py'
+      - 'tests/test_magicai_native_extensions.py'
+      - 'tests/test_magicai_extension_builder.py'
+      - 'tests/test_magicai_native_host_fixture.py'
+      - 'integration/magicai-extension/**'
+      - '.github/workflows/magicai-native-extensions.yml'
+      - '.github/workflows/magicai-native-laravel10.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          coverage: none
+
+      - name: Run repository tests
+        run: python -m unittest discover -s tests -p 'test_*.py' -v
+
+      - name: Build MagicAI extension packages
+        run: python tools/build_magicai_extensions.py --repo . --output dist/magicai-extensions
+
+      - name: Validate generated extension folders
+        run: |
+          python tools/validate_magicai_extensions.py \
+            dist/magicai-extensions/WorkCore \
+            dist/magicai-extensions/WorkCoreBusinessNetwork \
+            dist/magicai-extensions/WorkCoreCommercial \
+            dist/magicai-extensions/WorkCoreWorkOperations \
+            dist/magicai-extensions/WorkCorePropertyOperations \
+            dist/magicai-extensions/WorkCoreWorkforceAssurance
+
+      - name: Validate generated PHP syntax
+        run: find dist/magicai-extensions -type f -name '*.php' -print0 | xargs -0 -n1 -P4 php -l
+
+      - name: Verify release report and ZIP integrity
+        run: |
+          test -f dist/magicai-extensions/release-report.json
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+
+          root = Path('dist/magicai-extensions')
+          report = json.loads((root / 'release-report.json').read_text(encoding='utf-8'))
+          assert len(report['extensions']) == 6
+          for item in report['extensions']:
+              path = root / item['zip_path']
+              assert path.is_file(), path
+              assert path.stat().st_size == item['bytes']
+              assert hashlib.sha256(path.read_bytes()).hexdigest() == item['sha256']
+          PY

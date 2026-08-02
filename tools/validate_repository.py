@@ -18,7 +18,7 @@ EXPECTED_PACKAGES = {
 DOMAIN_PACKAGES = EXPECTED_PACKAGES - {'workcore-shared-foundation'}
 EXPECTED_ARCHITECTURE = 'five-domain-composition-with-shared-foundation'
 EXPECTED_MODULE_COUNT = 35
-EXPECTED_OWNED_FILE_COUNT = 2129
+EXPECTED_OWNED_FILE_COUNT = 2158
 
 
 @dataclass(frozen=True)

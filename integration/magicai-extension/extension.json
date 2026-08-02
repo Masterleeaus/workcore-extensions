@@ -1,0 +1,18 @@
+{
+  "slug": "workcore",
+  "name": "WorkCore",
+  "version": "0.1.1",
+  "provider": "App\\Extensions\\WorkCore\\System\\WorkCoreServiceProvider",
+  "minimum_magicai_version": "11.00",
+  "host_framework": "laravel-10",
+  "package_shape": "umbrella-extension",
+  "internal_packages": [
+    "workcore/shared-foundation",
+    "workcore/business-network",
+    "workcore/commercial",
+    "workcore/work-operations",
+    "workcore/property-operations",
+    "workcore/workforce-assurance"
+  ],
+  "destructive_uninstall": false
+}

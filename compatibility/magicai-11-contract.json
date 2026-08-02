@@ -1,0 +1,38 @@
+{
+  "source": "Masterleeaus/Documents/workcore/magicai-integration scans 01-06",
+  "scan_date": "2026-08-02",
+  "magicai_version": "11.00",
+  "php": "^8.2",
+  "laravel_framework": "^10.0",
+  "workcore_marketplace_shape": "umbrella-extension",
+  "marketplace_provider": "App\\Extensions\\WorkCore\\System\\WorkCoreServiceProvider",
+  "internal_domain_packages": 5,
+  "shared_foundation": true,
+  "mandatory_host_prerequisites": [
+    "remove queue rewriting and queue:work --once from AppServiceProvider boot",
+    "remove or override dashboard-wide CSRF exemption for WorkCore writes",
+    "require super-administrator authorisation for extension install and uninstall",
+    "keep WorkCore operational tenancy authoritative",
+    "use company-scoped fail-closed reads and governed actions",
+    "preserve data on extension disable or uninstall",
+    "use provider-owned routes, migrations, views, commands and event registrations"
+  ],
+  "host_authorities": [
+    "authentication",
+    "SaaS subscription billing",
+    "team seats and shared AI credits",
+    "AI Engine and Entity model routing",
+    "marketplace presentation",
+    "dynamic menus and plan entitlements",
+    "themes, notifications, mail, storage and API authentication"
+  ],
+  "workcore_authorities": [
+    "operational companies and memberships",
+    "operational roles and permissions",
+    "customers, premises, jobs and recurring work",
+    "scheduling, dispatch, workforce, rosters and attendance",
+    "forms, assurance, compliance and evidence",
+    "assets, fleet, inventory, procurement and operational finance",
+    "offline synchronisation, governed actions, audit and Rewind"
+  ]
+}
