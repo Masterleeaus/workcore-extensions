@@ -6,6 +6,11 @@ on:
       - feature/five-domain-extension-split
     paths:
       - .github/workflows/import-final-consolidated-correction.yml
+      - .github/workflows/import-final-trigger.txt
+
+concurrency:
+  group: import-final-consolidated-correction
+  cancel-in-progress: true
 
 permissions:
   contents: write
@@ -94,6 +99,7 @@ jobs:
           sed -i 's/EXPECTED_OWNED_FILE_COUNT = 2129/EXPECTED_OWNED_FILE_COUNT = 2158/' tools/validate_repository.py
           sed -i 's/self.assertEqual(2129, report.owned_file_count)/self.assertEqual(2158, report.owned_file_count)/' tests/test_repository_integrity.py
           rm -f .github/workflows/import-final-consolidated-correction.yml
+          rm -f .github/workflows/import-final-trigger.txt
 
       - name: Verify corrected repository
         run: |
@@ -110,6 +116,6 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add packages ownership-manifest.json compatibility integration docs site tools/build_extensions.py tests/test_build_extensions.py tests/test_host_compatibility.py tests/test_repository_integrity.py tools/validate_repository.py .github/workflows/magicai-11-compatibility.yml .github/workflows/import-final-consolidated-correction.yml
+          git add packages ownership-manifest.json compatibility integration docs site tools/build_extensions.py tests/test_build_extensions.py tests/test_host_compatibility.py tests/test_repository_integrity.py tools/validate_repository.py .github/workflows/magicai-11-compatibility.yml .github/workflows/import-final-consolidated-correction.yml .github/workflows/import-final-trigger.txt
           git commit -m 'fix: restore final WorkCore finance completion files'
           git push origin HEAD:feature/five-domain-extension-split
