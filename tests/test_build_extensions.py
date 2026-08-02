@@ -11,12 +11,16 @@ from tools.build_site import build_site
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 SOURCE_ROOT = Path(os.environ.get('WORKCORE_SOURCE_ROOT', '/mnt/data/workcore_magicai_final_scan'))
+SOURCE_ARCHIVE_AVAILABLE = (SOURCE_ROOT / 'app/Domains/WorkCore/System/Modules').is_dir()
+LEGACY_RELEASES_AVAILABLE = (REPOSITORY_ROOT / 'dist/workcore-business-network.zip').is_file()
 
 
 class OwnershipTests(unittest.TestCase):
+    @unittest.skipUnless(SOURCE_ARCHIVE_AVAILABLE, 'Consolidated source archive is not available in this environment.')
     def test_discovers_all_35_module_directories(self) -> None:
         self.assertEqual(35, len(discover_modules(SOURCE_ROOT)))
 
+    @unittest.skipUnless(SOURCE_ARCHIVE_AVAILABLE, 'Consolidated source archive is not available in this environment.')
     def test_every_module_has_exactly_one_owner(self) -> None:
         result = validate_ownership(SOURCE_ROOT)
         self.assertEqual([], result['missing'])
@@ -36,6 +40,7 @@ class OwnershipTests(unittest.TestCase):
         )
 
 
+@unittest.skipUnless(SOURCE_ARCHIVE_AVAILABLE, 'Consolidated source archive is not available in this environment.')
 class PackageBuildTests(unittest.TestCase):
     def test_build_creates_shared_and_five_group_packages(self) -> None:
         with tempfile.TemporaryDirectory() as temporary_directory:
@@ -70,8 +75,6 @@ class PackageBuildTests(unittest.TestCase):
             )
             self.assertGreaterEqual(len(list(migration_root.glob('*.php'))), 100)
 
-
-
     def test_final_finance_completion_files_are_packaged(self) -> None:
         with tempfile.TemporaryDirectory() as temporary_directory:
             output_root = Path(temporary_directory)
@@ -98,6 +101,7 @@ class PackageBuildTests(unittest.TestCase):
         self.assertEqual(2158, sum(1 for path in (SOURCE_ROOT / 'app/Domains/WorkCore').rglob('*') if path.is_file()))
 
 
+@unittest.skipUnless(SOURCE_ARCHIVE_AVAILABLE, 'Consolidated source archive is not available in this environment.')
 class ProviderIsolationTests(unittest.TestCase):
     def test_shared_provider_skips_unavailable_module_providers_and_has_no_fallback_loader(self) -> None:
         with tempfile.TemporaryDirectory() as temporary_directory:
@@ -130,6 +134,7 @@ class ProviderIsolationTests(unittest.TestCase):
                     self.assertIn(f"'{runtime_key}'", provider)
 
 
+@unittest.skipUnless(SOURCE_ARCHIVE_AVAILABLE, 'Consolidated source archive is not available in this environment.')
 class ReleaseIntegrityTests(unittest.TestCase):
     def test_build_emits_ownership_manifest_and_package_checksums(self) -> None:
         with tempfile.TemporaryDirectory() as temporary_directory:
@@ -177,6 +182,7 @@ class SiteCatalogueTests(unittest.TestCase):
         )
         self.assertEqual(0, result.returncode, result.stderr)
 
+    @unittest.skipUnless(LEGACY_RELEASES_AVAILABLE, 'Legacy split release ZIPs are not available in this environment.')
     def test_site_archive_is_deterministic(self) -> None:
         with tempfile.TemporaryDirectory() as temporary_directory:
             temporary_root = Path(temporary_directory)
@@ -197,6 +203,7 @@ class SiteCatalogueTests(unittest.TestCase):
                 hashlib.sha256(second_zip.read_bytes()).hexdigest(),
             )
 
+    @unittest.skipUnless(LEGACY_RELEASES_AVAILABLE, 'Legacy split release ZIPs are not available in this environment.')
     def test_site_builder_creates_multi_page_catalogue_and_downloads(self) -> None:
         with tempfile.TemporaryDirectory() as temporary_directory:
             site_root = Path(temporary_directory) / 'site'
