@@ -1,0 +1,46 @@
+name: Validate WorkCore extensions
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - feature/five-domain-extension-split
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run repository integrity tests
+        run: python -m unittest tests/test_repository_integrity.py -v
+
+      - name: Validate ownership and package checksums
+        run: python tools/validate_repository.py --repo .
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          coverage: none
+
+      - name: Validate PHP syntax
+        shell: bash
+        run: |
+          set -euo pipefail
+          php_files="$(find packages -type f -name '*.php' | wc -l)"
+          test "$php_files" -eq 2061
+          find packages -type f -name '*.php' -print0 \
+            | xargs -0 -n1 -P4 php -l \
+            > /tmp/workcore-php-lint.txt
+          echo "Validated $php_files PHP files."
