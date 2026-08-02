@@ -1,0 +1,146 @@
+{
+  "key": "property_management",
+  "label": "Property Management",
+  "version": "1.0.0",
+  "type": "vertical",
+  "extends": [
+    "premises_services_core"
+  ],
+  "capabilities": [
+    "workcore.dispatch",
+    "workcore.rosters",
+    "workcore.inventory",
+    "workcore.attendance",
+    "workcore.reviews",
+    "workcore.recurring",
+    "workcore.territories",
+    "workcore.compliance",
+    "workcore.money.procurement"
+  ],
+  "features": {
+    "property.owners": true,
+    "property.tenancies": true,
+    "property.rentals": true,
+    "property.inspections": true,
+    "property.maintenance_approvals": true
+  },
+  "terminology": {
+    "entity.customer.singular": "Owner",
+    "entity.customer.plural": "Owners",
+    "entity.premises.singular": "Property",
+    "entity.premises.plural": "Properties",
+    "entity.work_order.singular": "Maintenance request",
+    "entity.work_order.plural": "Maintenance requests",
+    "entity.worker.singular": "Property manager",
+    "entity.worker.plural": "Property managers"
+  },
+  "metadata": {
+    "managed_premises_profile": "residential_rental",
+    "rebased_for_workcore": "0.42.0-unified"
+  },
+  "setup": {
+    "default_business_lines": [
+      {
+        "key": "residential_property_management",
+        "name": "Residential Property Management"
+      }
+    ],
+    "questions": [
+      {
+        "key": "property.portfolio_types",
+        "section": "vertical_details",
+        "prompt": "Which property portfolio types should be configured?",
+        "type": "multiselect",
+        "required": true,
+        "options": [
+          "residential",
+          "commercial",
+          "owners_corporation",
+          "mixed"
+        ]
+      },
+      {
+        "key": "property.parties",
+        "section": "vertical_details",
+        "prompt": "Which party records are required?",
+        "type": "multiselect",
+        "required": true,
+        "options": [
+          "owners",
+          "tenants",
+          "occupants",
+          "applicants",
+          "contractors",
+          "agents"
+        ]
+      },
+      {
+        "key": "property.trust_accounting",
+        "section": "commercial",
+        "prompt": "Is property trust-accounting integration required?",
+        "type": "boolean",
+        "required": true,
+        "default": false
+      }
+    ],
+    "documents": [
+      "resident_handbook",
+      "property_owner_report",
+      "maintenance_report",
+      "emergency_procedure"
+    ]
+  },
+  "codebooks": {
+    "roster.type": {
+      "include": [
+        "property_management",
+        "inspection",
+        "maintenance",
+        "leasing",
+        "open_home"
+      ],
+      "default": "property_management"
+    },
+    "roster.shift_type": {
+      "include": [
+        "property_management",
+        "inspection",
+        "maintenance",
+        "leasing",
+        "open_home"
+      ],
+      "default": "property_management"
+    },
+    "worker.type": {
+      "include": [
+        "property_manager",
+        "agent",
+        "inspector",
+        "maintenance"
+      ],
+      "default": "property_manager"
+    },
+    "appointment.type": {
+      "include": [
+        "viewing",
+        "inspection",
+        "meeting",
+        "move_in",
+        "move_out",
+        "maintenance"
+      ],
+      "default": "inspection"
+    },
+    "dispatch.assignment_type": {
+      "include": [
+        "maintenance",
+        "inspection",
+        "viewing",
+        "move_in",
+        "move_out",
+        "contractor_callout"
+      ],
+      "default": "maintenance"
+    }
+  }
+}

@@ -1,0 +1,85 @@
+name: Validate MagicAI 11 compatibility
+
+on:
+  pull_request:
+    paths:
+      - 'packages/**'
+      - 'compatibility/magicai-11-contract.json'
+      - 'integration/magicai-extension/**'
+      - 'tests/test_host_compatibility.py'
+      - '.github/workflows/magicai-11-compatibility.yml'
+  push:
+    branches:
+      - feature/magicai-native-workcore-extensions
+    paths:
+      - 'packages/**'
+      - 'compatibility/magicai-11-contract.json'
+      - 'integration/magicai-extension/**'
+      - 'tests/test_host_compatibility.py'
+      - '.github/workflows/magicai-11-compatibility.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  scan-contract:
+    name: MagicAI scan contract
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests/test_host_compatibility.py -v
+
+  laravel-10-package-resolution:
+    name: Laravel 10 package resolution — ${{ matrix.profile }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        profile: [foundation, full]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up PHP and Composer
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          tools: composer:v2
+          coverage: none
+
+      - name: Create Laravel 10 host
+        run: composer create-project laravel/laravel:^10.0 /tmp/magicai10 --no-interaction --no-progress --prefer-dist --no-blocking
+
+      - name: Register WorkCore path repositories
+        run: |
+          cd /tmp/magicai10
+          composer config repositories.workcore-foundation path "$GITHUB_WORKSPACE/packages/workcore-shared-foundation"
+          composer config repositories.workcore-business path "$GITHUB_WORKSPACE/packages/workcore-business-network"
+          composer config repositories.workcore-commercial path "$GITHUB_WORKSPACE/packages/workcore-commercial"
+          composer config repositories.workcore-operations path "$GITHUB_WORKSPACE/packages/workcore-work-operations"
+          composer config repositories.workcore-property path "$GITHUB_WORKSPACE/packages/workcore-property-operations"
+          composer config repositories.workcore-workforce path "$GITHUB_WORKSPACE/packages/workcore-workforce-assurance"
+
+      - name: Install selected package profile
+        run: |
+          cd /tmp/magicai10
+          if [ '${{ matrix.profile }}' = foundation ]; then
+            composer require workcore/shared-foundation:0.1.1 --no-interaction --no-progress --prefer-dist --no-scripts --no-blocking
+          else
+            composer require \
+              workcore/shared-foundation:0.1.1 \
+              workcore/business-network:0.1.1 \
+              workcore/commercial:0.1.1 \
+              workcore/work-operations:0.1.1 \
+              workcore/property-operations:0.1.1 \
+              workcore/workforce-assurance:0.1.1 \
+              --no-interaction --no-progress --prefer-dist --no-scripts --no-blocking
+          fi
+          WORKCORE_ENABLED=false php artisan package:discover --ansi
+          WORKCORE_ENABLED=false php artisan about --no-ansi
+
+      - name: Verify installed packages
+        run: composer show --working-dir=/tmp/magicai10 'workcore/*'

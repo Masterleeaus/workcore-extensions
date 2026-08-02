@@ -1,0 +1,2 @@
+<?php
+declare(strict_types=1); namespace App\Domains\WorkCore\System\Modules\Forms\Http\Requests; use Illuminate\Foundation\Http\FormRequest; final class SubmitFormSubmissionRequest extends FormRequest { public function authorize(): bool{return true;} public function rules(): array{return ['signature_name'=>['nullable','string','max:255'],'signature_path'=>['nullable','string','max:1024'],'notes'=>['nullable','string']];}}

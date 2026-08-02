@@ -1,0 +1,3 @@
+<?php
+
+declare(strict_types=1);namespace App\Domains\WorkCore\System\Modules\Wizards\Http\Controllers;use App\Domains\WorkCore\System\Contracts\TenantContextContract;use App\Domains\WorkCore\System\Modules\Wizards\Services\WizardDefinitionRegistry;use Illuminate\Contracts\View\View;final class WizardPageController{public function index(WizardDefinitionRegistry $registry,TenantContextContract $tenant):View{return view('workcore-wizards::index',['wizards'=>$registry->all((int)$tenant->companyId())]);}public function run(string $wizard,WizardDefinitionRegistry $registry,TenantContextContract $tenant):View{return view('workcore-wizards::run',['wizard'=>$registry->get($wizard,(int)$tenant->companyId())]);}}

@@ -1,0 +1,126 @@
+{
+  "key": "short_stay_management",
+  "label": "Short-stay and Airbnb Management",
+  "version": "1.0.0",
+  "type": "vertical",
+  "extends": [
+    "accommodation_core"
+  ],
+  "capabilities": [
+    "workcore.recurring",
+    "workcore.money.sales"
+  ],
+  "features": {
+    "short_stay.channels": true,
+    "short_stay.reservations": true,
+    "short_stay.turnovers": true,
+    "short_stay.guest_messaging": true,
+    "short_stay.owner_statements": true
+  },
+  "terminology": {
+    "entity.customer.singular": "Guest",
+    "entity.customer.plural": "Guests",
+    "entity.premises.singular": "Listing",
+    "entity.premises.plural": "Listings",
+    "entity.work_order.singular": "Turnover task",
+    "entity.work_order.plural": "Turnover tasks"
+  },
+  "metadata": {
+    "managed_premises_profile": "service_site",
+    "rebased_for_workcore": "0.42.0-unified"
+  },
+  "setup": {
+    "default_business_lines": [
+      {
+        "key": "short_stay_operations",
+        "name": "Short-Stay Operations"
+      }
+    ],
+    "questions": [
+      {
+        "key": "short_stay.channels",
+        "section": "vertical_details",
+        "prompt": "Which booking channels should be prepared?",
+        "type": "multiselect",
+        "required": true,
+        "options": [
+          "direct",
+          "airbnb",
+          "booking_com",
+          "vrbo",
+          "expedia",
+          "other"
+        ]
+      },
+      {
+        "key": "short_stay.turnover_model",
+        "section": "operations",
+        "prompt": "How are cleaning and turnover services delivered?",
+        "type": "select",
+        "required": true,
+        "options": [
+          "in_house",
+          "contracted",
+          "mixed"
+        ]
+      },
+      {
+        "key": "short_stay.dynamic_pricing",
+        "section": "commercial",
+        "prompt": "Should rate and availability integrations be prepared?",
+        "type": "boolean",
+        "required": true,
+        "default": true
+      }
+    ],
+    "documents": [
+      "guest_welcome_guide",
+      "cleaning_checklist",
+      "maintenance_report",
+      "emergency_procedure"
+    ]
+  },
+  "codebooks": {
+    "roster.type": {
+      "include": [
+        "room_turnover",
+        "housekeeping",
+        "guest_services",
+        "maintenance"
+      ],
+      "default": "room_turnover"
+    },
+    "roster.shift_type": {
+      "include": [
+        "room_turnover",
+        "housekeeping",
+        "guest_services",
+        "maintenance"
+      ],
+      "default": "room_turnover"
+    },
+    "worker.type": {
+      "include": [
+        "housekeeper",
+        "concierge",
+        "maintenance"
+      ],
+      "default": "housekeeper"
+    },
+    "appointment.type": {
+      "include": [
+        "room_turnover",
+        "guest_service"
+      ],
+      "default": "room_turnover"
+    },
+    "dispatch.assignment_type": {
+      "include": [
+        "room_turnover",
+        "maintenance",
+        "delivery"
+      ],
+      "default": "room_turnover"
+    }
+  }
+}

@@ -1,0 +1,101 @@
+name: Validate MagicAI 11 Laravel 10 native extensions
+
+on:
+  pull_request:
+    paths:
+      - 'native-extensions/**'
+      - 'packages/**'
+      - 'integration/magicai-10-fixture/**'
+      - 'tools/build_magicai_extensions.py'
+      - 'tools/prepare_magicai_10_fixture.py'
+      - 'tools/verify_magicai_native_host.php'
+      - 'tests/test_magicai_native_host_fixture.py'
+      - '.github/workflows/magicai-native-laravel10.yml'
+  push:
+    branches:
+      - feature/magicai-native-workcore-extensions
+    paths:
+      - 'native-extensions/**'
+      - 'packages/**'
+      - 'integration/magicai-10-fixture/**'
+      - 'tools/build_magicai_extensions.py'
+      - 'tools/prepare_magicai_10_fixture.py'
+      - 'tools/verify_magicai_native_host.php'
+      - 'tests/test_magicai_native_host_fixture.py'
+      - '.github/workflows/magicai-native-laravel10.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  native-host:
+    name: Laravel 10 host — ${{ matrix.profile }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - profile: parent
+            migrate: true
+          - profile: commercial
+            migrate: false
+          - profile: business-operations
+            migrate: false
+          - profile: property-workforce
+            migrate: false
+          - profile: full
+            migrate: true
+          - profile: disabled
+            migrate: false
+          - profile: parent-absent-commercial
+            migrate: false
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Set up PHP and Composer
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          tools: composer:v2
+          coverage: none
+
+      - name: Run native fixture contract tests
+        run: python -m unittest tests/test_magicai_native_host_fixture.py -v
+
+      - name: Build MagicAI extension folders and ZIPs
+        run: python tools/build_magicai_extensions.py --repo . --output dist/magicai-extensions
+
+      - name: Create a real Laravel 10 host
+        run: composer create-project laravel/laravel:^10.0 /tmp/magicai-host --no-interaction --prefer-dist --no-blocking
+
+      - name: Install selected native extension profile
+        run: |
+          python tools/prepare_magicai_10_fixture.py \
+            --repo . \
+            --build dist/magicai-extensions \
+            --host /tmp/magicai-host \
+            --profile '${{ matrix.profile }}'
+
+      - name: Confirm disabled fixture state
+        if: ${{ matrix.profile == 'disabled' }}
+        run: grep -q '^WORKCORE_ENABLED=false$' /tmp/magicai-host/.env
+
+      - name: Boot Laravel 10 and verify native runtime
+        run: |
+          php /tmp/magicai-host/artisan about --no-ansi
+          php tools/verify_magicai_native_host.php \
+            --host=/tmp/magicai-host \
+            --profiles=integration/magicai-10-fixture/profiles.json \
+            --profile='${{ matrix.profile }}'
+
+      - name: Run full migration sequence
+        if: ${{ matrix.migrate }}
+        working-directory: /tmp/magicai-host
+        run: php artisan migrate:fresh --force --no-interaction --no-ansi

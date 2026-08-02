@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Verified five-domain WorkCore extension release catalogue.">
+  <title>Architecture · WorkCore Extensions</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="WorkCore Extensions home">
+      <span class="brand-mark" aria-hidden="true">W</span>
+      <span><strong>WorkCore</strong><small>Extension Foundry</small></span>
+    </a>
+    <nav aria-label="Primary navigation"><a href="index.html" class="nav-link">Overview</a><a href="packages.html" class="nav-link">Packages</a><a href="architecture.html" class="nav-link active">Architecture</a></nav>
+  </header>
+  <main>
+<section class="page-intro shell">
+  <p class="section-label">Ownership architecture</p>
+  <h1>Boundaries follow operational authority.</h1>
+  <p>Modules are grouped by the records and decisions they own, while cross-domain infrastructure remains in the shared foundation.</p>
+</section>
+<section class="shell architecture-list"><article class="architecture-row">
+  <div><span>01</span><h2>Business Network</h2></div>
+  <p>CRM, Catalogue, Support, Knowledge, KnowledgeBase, Reviews, Territories, Feedback, Wizards</p>
+  <strong>9 modules</strong>
+</article><article class="architecture-row">
+  <div><span>02</span><h2>Commercial</h2></div>
+  <p>Finance, Payroll, Inventory, Supply, TitanVault, TrustAccounting</p>
+  <strong>6 modules</strong>
+</article><article class="architecture-row">
+  <div><span>03</span><h2>Work Operations</h2></div>
+  <p>Operations, Scheduling, Dispatch, RecurringServices, Forms, Repairs, Fleet, QRCode</p>
+  <strong>8 modules</strong>
+</article><article class="architecture-row">
+  <div><span>04</span><h2>Property Operations</h2></div>
+  <p>Premises, Assets, Documents</p>
+  <strong>3 modules</strong>
+</article><article class="architecture-row">
+  <div><span>05</span><h2>Workforce Assurance</h2></div>
+  <p>Workforce, People, AttendanceVerification, Rosters, Attendance, Compliance, Assurance, Credentials, NDIS</p>
+  <strong>9 modules</strong>
+</article></section>
+<section class="shell principles">
+  <h2>Extraction principles</h2>
+  <div class="principle-grid">
+    <article><h3>Single ownership</h3><p>No module directory appears in more than one extension.</p></article>
+    <article><h3>Canonical namespaces</h3><p>Phase one changes packaging, not thousands of PHP class names.</p></article>
+    <article><h3>Safe optional loading</h3><p>Unavailable providers are skipped and the old load-everything fallback is removed.</p></article>
+    <article><h3>Schema preservation</h3><p>Historical migrations stay centralized until clean-install baselines are proven.</p></article>
+  </div>
+</section>
+</main>
+  <footer>
+    <p>Generated from the verified WorkCore–MagicAI consolidated source on 2 August 2026.</p>
+  </footer>
+  <script type="module" src="js/catalogue.js"></script>
+</body>
+</html>

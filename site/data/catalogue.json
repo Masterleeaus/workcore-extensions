@@ -1,0 +1,137 @@
+{
+  "packages": [
+    {
+      "slug": "shared-foundation",
+      "name": "WorkCore Shared Foundation",
+      "type": "Required runtime",
+      "modules": [],
+      "runtimeKeys": [],
+      "archive": "downloads/workcore-shared-foundation.zip",
+      "archiveSize": "388.7 KB"
+    },
+    {
+      "slug": "business-network",
+      "name": "WorkCore Business Network",
+      "type": "Domain extension",
+      "modules": [
+        "CRM",
+        "Catalogue",
+        "Support",
+        "Knowledge",
+        "KnowledgeBase",
+        "Reviews",
+        "Territories",
+        "Feedback",
+        "Wizards"
+      ],
+      "runtimeKeys": [
+        "crm",
+        "catalogue",
+        "support",
+        "knowledge",
+        "reviews",
+        "territories",
+        "intelligence",
+        "expansion",
+        "wizards",
+        "ai"
+      ],
+      "archive": "downloads/workcore-business-network.zip",
+      "archiveSize": "455.8 KB"
+    },
+    {
+      "slug": "commercial",
+      "name": "WorkCore Commercial",
+      "type": "Domain extension",
+      "modules": [
+        "Finance",
+        "Payroll",
+        "Inventory",
+        "Supply",
+        "TitanVault",
+        "TrustAccounting"
+      ],
+      "runtimeKeys": [
+        "finance",
+        "payroll",
+        "inventory",
+        "supply",
+        "vault",
+        "trust_accounting"
+      ],
+      "archive": "downloads/workcore-commercial.zip",
+      "archiveSize": "367.8 KB"
+    },
+    {
+      "slug": "work-operations",
+      "name": "WorkCore Work Operations",
+      "type": "Domain extension",
+      "modules": [
+        "Operations",
+        "Scheduling",
+        "Dispatch",
+        "RecurringServices",
+        "Forms",
+        "Repairs",
+        "Fleet",
+        "QRCode"
+      ],
+      "runtimeKeys": [
+        "operations",
+        "scheduling",
+        "dispatch",
+        "recurring",
+        "forms",
+        "repairs",
+        "fleet"
+      ],
+      "archive": "downloads/workcore-work-operations.zip",
+      "archiveSize": "130.2 KB"
+    },
+    {
+      "slug": "property-operations",
+      "name": "WorkCore Property Operations",
+      "type": "Domain extension",
+      "modules": [
+        "Premises",
+        "Assets",
+        "Documents"
+      ],
+      "runtimeKeys": [
+        "premises",
+        "assets",
+        "documents",
+        "vertical_operations"
+      ],
+      "archive": "downloads/workcore-property-operations.zip",
+      "archiveSize": "642.6 KB"
+    },
+    {
+      "slug": "workforce-assurance",
+      "name": "WorkCore Workforce Assurance",
+      "type": "Domain extension",
+      "modules": [
+        "Workforce",
+        "People",
+        "AttendanceVerification",
+        "Rosters",
+        "Attendance",
+        "Compliance",
+        "Assurance",
+        "Credentials",
+        "NDIS"
+      ],
+      "runtimeKeys": [
+        "workforce",
+        "people",
+        "attendance_verification",
+        "rosters",
+        "attendance",
+        "compliance",
+        "assurance"
+      ],
+      "archive": "downloads/workcore-workforce-assurance.zip",
+      "archiveSize": "164.8 KB"
+    }
+  ]
+}

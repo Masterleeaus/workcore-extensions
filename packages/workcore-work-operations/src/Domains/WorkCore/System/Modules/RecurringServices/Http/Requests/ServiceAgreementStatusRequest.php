@@ -1,0 +1,1 @@
+<?php declare(strict_types=1); namespace App\Domains\WorkCore\System\Modules\RecurringServices\Http\Requests; use Illuminate\Foundation\Http\FormRequest; final class ServiceAgreementStatusRequest extends FormRequest { public function rules(): array{return ['status'=>'required|in:draft,active,paused,completed,cancelled,expired','reason'=>'nullable|string|max:10000'];}}

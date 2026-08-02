@@ -1,0 +1,2075 @@
+{
+  "file_count": 414,
+  "files": [
+    {
+      "bytes": 227,
+      "path": "README.md",
+      "sha256": "b51d0474f694c11018d441306dc77d7763c484d5e303b6ef4d6717df1b244dc0"
+    },
+    {
+      "bytes": 764,
+      "path": "composer.json",
+      "sha256": "ffe8bed550bfc8d55be08b3a65d1d2446c58cac96e47fef661165cee6ffeb8a0"
+    },
+    {
+      "bytes": 4916,
+      "path": "src/Domains/WorkCore/Config/trade_compliance.php",
+      "sha256": "c9b54d53024a32b109f7eb1439e8ad756cac5ff38cd7d22dbca448d27ef00398"
+    },
+    {
+      "bytes": 5279,
+      "path": "src/Domains/WorkCore/Config/vertical_codebooks.php",
+      "sha256": "18bb331ee2bbe50c5563c3974893192129f6aa86a7e7c5149c4587e1428ee928"
+    },
+    {
+      "bytes": 17475,
+      "path": "src/Domains/WorkCore/Config/vertical_operations.php",
+      "sha256": "3e67980e715fc904100328bc7725899992a6e97bf30a57901a670c7c49cf1091"
+    },
+    {
+      "bytes": 4618,
+      "path": "src/Domains/WorkCore/Config/vertical_setup.php",
+      "sha256": "f9283dbae8b86e44cc9f5368ba0cf7304f786775a574597c148d951724a1319d"
+    },
+    {
+      "bytes": 111842,
+      "path": "src/Domains/WorkCore/Config/workcore.php",
+      "sha256": "2b35e67c9d72e0ecd17091f4e6cf37791b39ff060aad25af9309d1f72e5bf49d"
+    },
+    {
+      "bytes": 7103,
+      "path": "src/Domains/WorkCore/Config/workcore_ai.php",
+      "sha256": "6e5adf87f8ff621f177a2e905c79e3548f9240163e05891c1236dae78a6c3131"
+    },
+    {
+      "bytes": 153,
+      "path": "src/Domains/WorkCore/Contracts/CalendarGateway.php",
+      "sha256": "69fa843cf394df19b49f2e377552e2ec4d27e2d0ee791180f41d66a82f9dee8a"
+    },
+    {
+      "bytes": 168,
+      "path": "src/Domains/WorkCore/Contracts/DocumentSigningGateway.php",
+      "sha256": "d850ec782ea7b77da50f54f789a48d8e8f6ace8cc930d51e74f77648bcca12df"
+    },
+    {
+      "bytes": 194,
+      "path": "src/Domains/WorkCore/Contracts/FileStorageGateway.php",
+      "sha256": "28f45692ccef3c1c8936e0998b275280729dacc1185fc4b2bafc78bf213bba44"
+    },
+    {
+      "bytes": 153,
+      "path": "src/Domains/WorkCore/Contracts/GeocodingGateway.php",
+      "sha256": "f7ab6ac0922ee0e20a13f0f0c6dea7f5a2518ee79aaaaea13916ea27f5ec3822"
+    },
+    {
+      "bytes": 158,
+      "path": "src/Domains/WorkCore/Contracts/MalwareScannerGateway.php",
+      "sha256": "4f0a6902080327079355a381ba5071ecb1c1174fa898bf08eaab4c5674a1869a"
+    },
+    {
+      "bytes": 150,
+      "path": "src/Domains/WorkCore/Contracts/MessagingGateway.php",
+      "sha256": "64cd961b8d504f0ca72403e60a9d8a1d7e600a4fa405b7dac1667d6c5f7a4431"
+    },
+    {
+      "bytes": 150,
+      "path": "src/Domains/WorkCore/Contracts/PaymentGateway.php",
+      "sha256": "4c1f4da51dee2d90c6e35e220ec067104785c01e0eb42ee4105f5fa3924be854"
+    },
+    {
+      "bytes": 333,
+      "path": "src/Domains/WorkCore/Contracts/WorkCoreActor.php",
+      "sha256": "6b1c0c931dc585d5706166f960f832e1799b1616ac3e8dd8e4f529af62c064af"
+    },
+    {
+      "bytes": 1223,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120001_create_tz_companies_table.php",
+      "sha256": "38762080de965a0ca563788eeb730faaf43eba4f55cda9def36ca2d38b57e1d8"
+    },
+    {
+      "bytes": 832,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120002_create_tz_company_roles_table.php",
+      "sha256": "16882b90ee68dae9176b2ac1828d749e9bb75775682d6ec9a20d8920846b021f"
+    },
+    {
+      "bytes": 1116,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120003_create_tz_company_memberships_table.php",
+      "sha256": "c636061e0db6467b0a52be2e140b3c7005369c551ee4d9d515b6c4019f539da6"
+    },
+    {
+      "bytes": 1563,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120004_create_tz_company_permissions_tables.php",
+      "sha256": "b69afabd9a9a9d7e59a4e8236273c6b5ab8fcdf1b505580e449909bbf652d126"
+    },
+    {
+      "bytes": 3575,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120005_create_tz_crm_tables.php",
+      "sha256": "095fd65439eade087cd48b7141391dd6c458f3ab9e18d8e64d2e6d2d361388fa"
+    },
+    {
+      "bytes": 1433,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120006_create_tz_company_invitations_table.php",
+      "sha256": "e55b1e0929abc134c82b3737672663a7ae4bf5f6e668b0df54fd5ad1c6392a68"
+    },
+    {
+      "bytes": 3406,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120007_create_tz_action_governance_tables.php",
+      "sha256": "095f341fc4a54889942b4acfb792d850086aea7c18ee28215f122074fde1f61b"
+    },
+    {
+      "bytes": 1481,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120008_create_tz_outbox_messages_table.php",
+      "sha256": "efb9a0a1a631446e7c0769ca0f0b14551a12735a4c6edde269b1c8358beb5b59"
+    },
+    {
+      "bytes": 5591,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120009_complete_tz_crm_foundation.php",
+      "sha256": "730626cee397c1e6bb1431a29f9754ffe3cf7ad0da400bd889a13b70f93737d9"
+    },
+    {
+      "bytes": 1922,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120010_create_tz_premises_table.php",
+      "sha256": "4030ef99a05de44a48a67d55edfeb5f0e015e7679f118e7f40cc11614a668cc2"
+    },
+    {
+      "bytes": 3762,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120011_create_tz_service_catalogue_tables.php",
+      "sha256": "2df5344a86e5f7c7d586fbfc4a0f68428b3f4ac3028561b6c1ece08f0b89c23c"
+    },
+    {
+      "bytes": 6834,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120012_create_tz_work_order_tables.php",
+      "sha256": "d90b0d8712ce8f40654e9a52f245a22c0316b6399cfd3889e587232e50013024"
+    },
+    {
+      "bytes": 4166,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120013_create_tz_appointment_tables.php",
+      "sha256": "504ba9a98564c4a33543a6662eabdb03845e51ffa85dceb7bb19555c51e61786"
+    },
+    {
+      "bytes": 4300,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120014_create_tz_dispatch_tables.php",
+      "sha256": "3b593cbe96554bc9f2eda653db5f8117f5d567d507ef6b55651e83ba10eb2061"
+    },
+    {
+      "bytes": 4339,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120015_create_tz_worker_tables.php",
+      "sha256": "fa35695103dcba81e284c8476060c06f096e2121de782e6bd2336934d81eb80d"
+    },
+    {
+      "bytes": 6911,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120016_create_tz_availability_and_roster_tables.php",
+      "sha256": "748798e7682a70e470207750d2845b993f81809fe8efb34b2ba87da8fa6b656f"
+    },
+    {
+      "bytes": 9031,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120017_create_tz_asset_and_equipment_tables.php",
+      "sha256": "94710f1c3017e330112bc06ad4796ddad4b7efaea8fa3adaac8bdc72e73e99a5"
+    },
+    {
+      "bytes": 9554,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120018_create_tz_inventory_and_material_tables.php",
+      "sha256": "db79ed980b7018aa724769d26508956d801a5513eca03d75cd4e4db9f505ba70"
+    },
+    {
+      "bytes": 9695,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120019_create_tz_forms_and_checklists_tables.php",
+      "sha256": "104d63d4152a271c55735620895be159a0b8bd8d312e0eb7130ae1d6bb141ff5"
+    },
+    {
+      "bytes": 10918,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120020_create_tz_attendance_and_leave_tables.php",
+      "sha256": "9292f9a918300bb256330ffca24bc452910ae14c9c24f1ab0f7c43f281b43d7d"
+    },
+    {
+      "bytes": 6998,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120021_create_tz_support_ticket_tables.php",
+      "sha256": "60542de755e9b5999b194be9787f22242e25ca8bc2364ba80da76f1808011afd"
+    },
+    {
+      "bytes": 6432,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120022_create_tz_knowledge_base_tables.php",
+      "sha256": "fd74c7a918c036d4d7901afbe4d3d1eceb0229265d589fc9a591707923056486"
+    },
+    {
+      "bytes": 5025,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120023_create_tz_reviews_and_rebooking_tables.php",
+      "sha256": "8b28f8bf2be6f639e02a5d3ec34b18f916e2088203e6c238fc69548559df8b77"
+    },
+    {
+      "bytes": 33575,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120024_merge_titan_assets_into_workcore.php",
+      "sha256": "2fbab809007a13bcb2dcf3526177dd0164c1e8770917d46300d0d0df2fbbad32"
+    },
+    {
+      "bytes": 1342,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120025_integrate_assets_with_scheduling.php",
+      "sha256": "75e49e777103eacaaa80d0ff60540c531e2091ed9809034f0d48937ff1ee1675"
+    },
+    {
+      "bytes": 4509,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120026_harden_asset_runtime_wiring.php",
+      "sha256": "9cf3e88c3b5519b4ef08769b2d802cb2a7d526c59372dfd6c807bfa87ac331a2"
+    },
+    {
+      "bytes": 45648,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120027_expand_premises_supply_fleet_and_repairs.php",
+      "sha256": "1884247e7c8bbe69842aa67331783c58ce544bfaa23827020ad2a619ce85b072"
+    },
+    {
+      "bytes": 7719,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120028_create_tz_vault_tables.php",
+      "sha256": "af8b41bffdf8a7cb1b53b231d01081c6db5826cb875620619f9a36748024e095"
+    },
+    {
+      "bytes": 5997,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120029_create_tz_vertical_system_tables.php",
+      "sha256": "8dfd652c519b78fdb6a08bdf76bb2143d3751b6c494f6830cd18dd942a64dad3"
+    },
+    {
+      "bytes": 4333,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120030_create_tz_vertical_setup_tables.php",
+      "sha256": "496d1aab8c2503e32d556fef6e686d788f88d1e849657be85642b71d4d940afe"
+    },
+    {
+      "bytes": 6538,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120031_create_tz_vertical_operations_tables.php",
+      "sha256": "9c731d822ea361ad2b7fe203aad3df91d181ff995e9615752966585b3fa1b812"
+    },
+    {
+      "bytes": 11524,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120032_create_tz_trade_field_compliance_tables.php",
+      "sha256": "823c8402bcbb05df840cba95ff4ec47967953a15a0b8e729bd1dfb6bfb25770a"
+    },
+    {
+      "bytes": 8006,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120033_create_tz_compliance_and_safety_tables.php",
+      "sha256": "020c617105b3aeb4f283d46b511242102304c7bc09e2e55e89859f31c94b74d7"
+    },
+    {
+      "bytes": 32919,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120034_merge_titan_feedback_into_workcore.php",
+      "sha256": "158501bb1e8ca9ba52a3fbe02f46e5a34faab7535499f23ee82b3b86c06b0ac4"
+    },
+    {
+      "bytes": 8403,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120035_create_tz_recurring_service_tables.php",
+      "sha256": "658dd571a841a1ee5ff85fc66d8195f01bb44232476119d32f4ea549e02d0117"
+    },
+    {
+      "bytes": 6062,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120036_wire_feedback_across_workcore.php",
+      "sha256": "34006bc6aca0bcd4f5062c5457f3988048a0bb7e0360c65d699e50b196d6807b"
+    },
+    {
+      "bytes": 6587,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120037_create_tz_territory_tables.php",
+      "sha256": "88f82490de0bb7ca57f0812cc2bd94e2b861985bb1cac5bd339a3816e39b5279"
+    },
+    {
+      "bytes": 3994,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120038_create_tz_qr_tables.php",
+      "sha256": "4447ec45ca155a542c91041fd14e20cb73f634b021c189a1e763f2b786adf492"
+    },
+    {
+      "bytes": 1855,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120039_create_tm_financial_settings_table.php",
+      "sha256": "04259b036f75f7f53683c4643c7586327bf58030cfc5ed9b7859839fcf93a95d"
+    },
+    {
+      "bytes": 1688,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120040_create_tm_tax_registrations_table.php",
+      "sha256": "4c1280674df18fd589105e0ec732130e0cb7fc373c9e6535fdfe5008cfa1e335"
+    },
+    {
+      "bytes": 1561,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120041_create_tm_number_sequences_table.php",
+      "sha256": "6920e0a5d1c85db3b5689f8e2b4eaa6cf59138ddf8337f76f5f4007a5f24838d"
+    },
+    {
+      "bytes": 1576,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120042_create_tm_idempotency_keys_table.php",
+      "sha256": "9c61523b6e87a014d41a5a7af6e5dc9410e227d2d11ebd3b9c3fa5de93b05134"
+    },
+    {
+      "bytes": 1532,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120043_create_tm_document_snapshots_table.php",
+      "sha256": "229947b8b37a24351dadc0a2a25f0c7be88d86aed3bf699c0b46a3b1d86cac06"
+    },
+    {
+      "bytes": 14376,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120044_create_tm_commercial_documents_tables.php",
+      "sha256": "bc0c036fe16edab0ce854808fcfced6767861cd98b85d0e022685ff1e818a272"
+    },
+    {
+      "bytes": 11474,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120045_create_tm_payments_expenses_and_payables_tables.php",
+      "sha256": "f5580556d962c52fde4ac9e68e86d10c49a6fc39dfdb12f4928edf93fbf61b9b"
+    },
+    {
+      "bytes": 5289,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120046_create_tm_ledger_tax_and_period_tables.php",
+      "sha256": "47f2cc934baa1be4acd8f4e515f0d636e5af66b7297b2b594722a6e128dab235"
+    },
+    {
+      "bytes": 6471,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120047_create_tm_reconciliation_forecasting_and_export_tables.php",
+      "sha256": "c7a160c86dd93476de22d7f3451195040dd4d8b30b523c35cc2cad5310090aff"
+    },
+    {
+      "bytes": 9624,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120048_create_tm_autonomous_money_management_tables.php",
+      "sha256": "93d9d228d865ccc052b8d8587176bf3df6a299da4a7333f54d15154c1845df30"
+    },
+    {
+      "bytes": 2036,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120049_create_tm_runtime_audit_and_inbox_tables.php",
+      "sha256": "b2729d9998d0f8f1bd5f066a67ca0ecf3c8a460a872152c0896ad6ed590ea144"
+    },
+    {
+      "bytes": 4564,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120050_create_tm_collections_and_payment_runtime_tables.php",
+      "sha256": "c7b7ec831f1ef5b07209c05f32bb8cc01b5aa96547610f70a8a2ae6bb42d6878"
+    },
+    {
+      "bytes": 3681,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120051_create_tm_integration_runtime_tables.php",
+      "sha256": "e80911d70b5d9fc62a53ae5911ec00ad6984953c20550a9926e454a71cc6cfb3"
+    },
+    {
+      "bytes": 20962,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120052_create_tm_missing_money_domains_tables.php",
+      "sha256": "671bdac64fd5ce929ab88274ea8022aaca67b937fe19efe8ef29765db5fac8e0"
+    },
+    {
+      "bytes": 4412,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120053_create_tz_capability_expansion_tables.php",
+      "sha256": "6ea46a2120b24286172942f9de08d08c2cac082046fdafac6f0d9f84c123ee0a"
+    },
+    {
+      "bytes": 8183,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120054_create_tz_sales_pipeline_tables.php",
+      "sha256": "5a60e9228447fc6e08a79885e606efc7e60e2d65c1a2b24b7e33ce4dbc6652eb"
+    },
+    {
+      "bytes": 41374,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120055_create_tz_workforce_team_domains.php",
+      "sha256": "1675fdee13048adee9b3b915b2a46a3ea800c495af30189f493fbb96a3e4ec8f"
+    },
+    {
+      "bytes": 4337,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120056_create_tz_adaptive_feature_tables.php",
+      "sha256": "6aacdd0a604c7a8da0cd42dac2236914a660756c1e9fbfb64cb28e1acba5b62f"
+    },
+    {
+      "bytes": 5641,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120057_create_tz_intelligence_core_tables.php",
+      "sha256": "c7903a13735c2f28d27ddf3a00283f7bf5b7d5847d63031ba6f6e4621729d2d9"
+    },
+    {
+      "bytes": 3802,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120058_create_tz_ai_knowledge_tables.php",
+      "sha256": "cdcb5de0861589913a360701fda7af6ed98d00c65bd9dabdee23554b40b52566"
+    },
+    {
+      "bytes": 2643,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120059_create_tz_service_variants_and_faqs_tables.php",
+      "sha256": "a047cb6ffe9c0f37eabd7cd780d015bad92f41ee0916a0504c037326ce361921"
+    },
+    {
+      "bytes": 2494,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120060_create_pm_properties_table.php",
+      "sha256": "0f373ae572867115224a9ad87ef9afd249d39ea97079ce24de660e10b0998457"
+    },
+    {
+      "bytes": 1206,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120061_create_pm_property_units_table.php",
+      "sha256": "da78eaebbcfc575a3d12bd13a8d20bd60eb4220d88804cd54a163ffa0521fbce"
+    },
+    {
+      "bytes": 1209,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120062_create_pm_property_contacts_table.php",
+      "sha256": "3e81577b8ecc263c1ddfe5db686673f55322519a575db5a734c1eeac97cc6280"
+    },
+    {
+      "bytes": 1372,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120063_create_pm_property_jobs_table.php",
+      "sha256": "1263481a8d58543e6ee9f0da1e81c27751524925ac41ac2ed70b78fb3ed16d0d"
+    },
+    {
+      "bytes": 984,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120064_create_pm_property_keys_table.php",
+      "sha256": "a15aec9df9ec49c5ded8b92062b12e613a4ac93d39b41ecab451a3a4c52664d8"
+    },
+    {
+      "bytes": 885,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120065_create_pm_property_photos_table.php",
+      "sha256": "0fdc5f0fb4339f340f30ff3e6125547f19389f6f4f6ebb9dd048a3606ef7317b"
+    },
+    {
+      "bytes": 1008,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120066_create_pm_property_checklists_table.php",
+      "sha256": "b8565fe710552268594dfa11679197546242eee3d911fe12aebad355fd529ce7"
+    },
+    {
+      "bytes": 709,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120067_create_pm_settings_table.php",
+      "sha256": "534833bc9818e55536fa1b1be8612b6fce514a4778694cc3a9ee3a618a42f2b3"
+    },
+    {
+      "bytes": 749,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120068_create_pm_property_tags_table.php",
+      "sha256": "0328b00caa6d82a6266f5606d72685f9cc681430535c140541e11d23d92710ad"
+    },
+    {
+      "bytes": 832,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120069_create_pm_property_rooms_table.php",
+      "sha256": "8ebc7960595cbcd4c48a218d8f853c93330803f8a4b77b7fc160a3f46b4d5268"
+    },
+    {
+      "bytes": 856,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120070_create_pm_property_hazards_table.php",
+      "sha256": "dee7a78890351d20b323f6791542d952188335549b42d9cfe8035a98a2900d05"
+    },
+    {
+      "bytes": 941,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120071_create_pm_property_service_windows_table.php",
+      "sha256": "c0b87eb099e9205b9ecb9d85d7f050f1f691d9efa6741097cea7b09d3f34b2d9"
+    },
+    {
+      "bytes": 940,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120072_create_pm_property_assets_table.php",
+      "sha256": "f2619a874654926b2646ec1c8f18a14f9b68e1055dbbc04a0e8cb9498a0eda4f"
+    },
+    {
+      "bytes": 1273,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120073_create_pm_property_service_plans_table.php",
+      "sha256": "076ba4f67ab3f2c07ca3a31ad33e9f4e2bf81362334f5f4c788f9be413300eec"
+    },
+    {
+      "bytes": 1256,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120074_create_pm_property_visits_table.php",
+      "sha256": "92462158e124b635f59d08ed619b837709e60fdf0682adcc9a349f2e34d6158d"
+    },
+    {
+      "bytes": 1300,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120075_create_pm_property_inspections_table.php",
+      "sha256": "4c72a692935db52ea56fd2605cd2afdcaf1777dff13ab24c4c95c59841b7ce55"
+    },
+    {
+      "bytes": 1165,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120076_create_pm_property_documents_table.php",
+      "sha256": "c4a9ffeda78090953f01533e81322f4354c1fda730c494c7a29dc2ecd0fe25ed"
+    },
+    {
+      "bytes": 1260,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120077_create_pm_property_approvals_table.php",
+      "sha256": "646ca3899b17de518d9ec9ba7a357e7635b7087afd429740cee3aeba674869b2"
+    },
+    {
+      "bytes": 1503,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120078_create_pm_meter_readings_table.php",
+      "sha256": "be26ef775c8e76072e742b0e4b2e9229d4a2bebb243be88e351d3391dea06e4d"
+    },
+    {
+      "bytes": 1620,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120079_add_job_link_to_photos_and_documents.php",
+      "sha256": "44d5a90636a4cec91f15f3d4185e5be7f95fb5a13522b53be9ce1234b7c0ec37"
+    },
+    {
+      "bytes": 4267,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120080_add_cleaning_fields_to_pm_properties.php",
+      "sha256": "6cf7708f6e9d057993a205a5c2b8669baa65735c4221426d4f6f99fe09d5865b"
+    },
+    {
+      "bytes": 1366,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120081_add_uploaded_at_to_pm_property_photos.php",
+      "sha256": "3fd4cb5f63101c1a3a11b1fb439cde90ef8c51e8b09ebb5b3a2056da53ddbe10"
+    },
+    {
+      "bytes": 1893,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120082_add_profile_layer_to_pm_properties.php",
+      "sha256": "f9b3df3bd8902b28cc71f2d59df3d7dd43537d857510c7173a58fbe2c84085f7"
+    },
+    {
+      "bytes": 5398,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120083_create_pm_premise_spaces_table.php",
+      "sha256": "e993737d287ddbaecd3545aefc7a926b133b757d3e810f73d2b8add25011f6d5"
+    },
+    {
+      "bytes": 6691,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120084_create_pm_premise_parties_and_occupancies.php",
+      "sha256": "d9b5f302a3da9ef17c3fd8bcffd6221344e49563e8b4c5ee2fd93c17afcf1017"
+    },
+    {
+      "bytes": 13132,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120085_create_pm_premise_agreements.php",
+      "sha256": "01cefd2c71b6479e80ccf16b14f36cbdc374500ad1fca8d7f7b8b76c0134a4d8"
+    },
+    {
+      "bytes": 11974,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120086_create_pm_access_condition_incident_tables.php",
+      "sha256": "03ca01349b87de674d171390aa661c56286bab4ce1f4179aac2b49a35cf13a08"
+    },
+    {
+      "bytes": 2775,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120087_create_pm_premise_workflows.php",
+      "sha256": "3e00a4fa81ff005c74acabe650e24fd763dd550efd8c2484c8b793460858933b"
+    },
+    {
+      "bytes": 6992,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120088_create_pm_portal_and_vacancy_tables.php",
+      "sha256": "7ec2df5bf2b4a8bf9d8e0f388e5b23e0952122ddaa703c86dfe7f9d905bf78ed"
+    },
+    {
+      "bytes": 15585,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120089_create_pm_applications_communications_requests.php",
+      "sha256": "98a9c2b4fe28f31e72761b9c359d8153348dd5e2f8601c33babd9c6b89f4a966"
+    },
+    {
+      "bytes": 7992,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120090_create_pm_access_card_requests_and_work_permits.php",
+      "sha256": "34841b30fb4fcedcf3a5e3c56a08080e6a7fec8144f915bc3000ca642729ba08"
+    },
+    {
+      "bytes": 11786,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120091_create_pm_portfolios_ownership_management_approvals.php",
+      "sha256": "0330207d2817466bc3504c06b7d95734260363dd0f2c7f60929b40b0816aaf46"
+    },
+    {
+      "bytes": 4244,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120092_premises_deduplication_links.php",
+      "sha256": "fde50a13636b95c433d8e1344bce5bd5dde754db712ed465f8b8771b54d009fc"
+    },
+    {
+      "bytes": 2921,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120093_premises_forms_and_assets_deduplication_links.php",
+      "sha256": "544d1e8f6f0a682676cc74244947c40e0acaf1274b845979b0db44471acef0b2"
+    },
+    {
+      "bytes": 1797,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120094_add_public_ids_to_managed_premises.php",
+      "sha256": "51be439ecc205e25aa683b7bae61d5745070fb2de25211bff797a63163f666f2"
+    },
+    {
+      "bytes": 18559,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120095_create_pm_accommodation_operations_tables.php",
+      "sha256": "713eb3d9782a8a61b6be18f78a4199f1fead87074b4526a6083f477a75d9e03e"
+    },
+    {
+      "bytes": 24705,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120096_create_tz_ndis_operations_tables.php",
+      "sha256": "a6bbd1a05e8c8c058bb1a5025cbd5e16a222d4979237314ac313f8be3ab65c50"
+    },
+    {
+      "bytes": 3952,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120097_create_tz_wizard_runtime_tables.php",
+      "sha256": "6eec04bab4e2adeaccfab3f723665c7da84e11696dbe897b79d05cb947477bc9"
+    },
+    {
+      "bytes": 11982,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120098_create_tz_native_ai_kernel_tables.php",
+      "sha256": "7eb8a364f34da7ba4d84e5d23768c82842fad24e7f0a58c71e92055e79b0b74a"
+    },
+    {
+      "bytes": 7919,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120099_create_tz_ai_orchestration_tables.php",
+      "sha256": "b5266a238322ab7115e1e0281b68e3566bfc8cc525e8f6885f981d6de79b0dee"
+    },
+    {
+      "bytes": 8435,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_23_120100_create_pm_compliance_register_tables.php",
+      "sha256": "6b3436825094bb4587e5488e56e69ec9ff3c44153071149ff4f55e8b7ed75a78"
+    },
+    {
+      "bytes": 10879,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_26_020000_create_tz_documents_and_evidence_tables.php",
+      "sha256": "90897c3817701ee37f7e2bb525732b7b6c0115643ee2b74fab69b1c2b9839cdc"
+    },
+    {
+      "bytes": 10663,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_26_020010_create_tz_assurance_extension_tables.php",
+      "sha256": "810d4d582ae87ab30508e52b27c2c6ab4f171cc733f6915acc4c3fe066186603"
+    },
+    {
+      "bytes": 9843,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_07_26_040000_create_tz_trust_accounting_tables.php",
+      "sha256": "50a9773a756cd342b472e1feb8f0c95bcfa6f568eb1a50d251142c3f1023c53a"
+    },
+    {
+      "bytes": 1826,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_08_02_000001_create_tm_credit_note_runtime_tables.php",
+      "sha256": "9deb70f5d03d37ca33ff44b630a16cf62131834a0e4ee98b21342675344933d1"
+    },
+    {
+      "bytes": 2508,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_08_02_000002_create_tm_payment_orchestration_tables.php",
+      "sha256": "ba9383c506aee1d2343069439fddd38819753165373771a84ac5b095c3dc9e23"
+    },
+    {
+      "bytes": 450,
+      "path": "src/Domains/WorkCore/Database/Seeders/WorkCoreDatabaseSeeder.php",
+      "sha256": "2922869f612470ba3062e0e57f6c83e510212fb2060feeb02db43c5490ba8159"
+    },
+    {
+      "bytes": 646,
+      "path": "src/Domains/WorkCore/Manifests/workcore-five-domain-manifest.json",
+      "sha256": "3045d31e5c95e432ec0a931e2ce3978d8edbd707e0043a5f07fd8f93057ac6ca"
+    },
+    {
+      "bytes": 31100,
+      "path": "src/Domains/WorkCore/Resources/views/rosters/index.blade.php",
+      "sha256": "c7a2ee2c47a11209a873c0867c3ebf58170b3072567667481f9d1612cbc4d007"
+    },
+    {
+      "bytes": 1168,
+      "path": "src/Domains/WorkCore/Routes/api.php",
+      "sha256": "46543afadb6de042cf6909723e2d2799ad26192c48320a0faf9251e7a42074bf"
+    },
+    {
+      "bytes": 242,
+      "path": "src/Domains/WorkCore/Routes/web.php",
+      "sha256": "b5598103a64ac5f0a51317d999fc4f5b596dc1a24f6e8511b0cf20e3c7b744cd"
+    },
+    {
+      "bytes": 491,
+      "path": "src/Domains/WorkCore/Shared/Support/TenantContext.php",
+      "sha256": "01401807f63508d7686defd971230594a6472277c130276e67ed9e5d0d39450a"
+    },
+    {
+      "bytes": 863,
+      "path": "src/Domains/WorkCore/System/Actions/ActionDefinition.php",
+      "sha256": "d8aba52d9ae971f881099336a4d9a7cdbfd26574fc1e7b0823e19b608100b4f5"
+    },
+    {
+      "bytes": 430,
+      "path": "src/Domains/WorkCore/System/Actions/ActionHandlerResult.php",
+      "sha256": "0aa6a25efd948d89fdc7a8d3d84e6a4b08b6a0e54e72eed1a05f727cd7184412"
+    },
+    {
+      "bytes": 900,
+      "path": "src/Domains/WorkCore/System/Actions/ActionRequest.php",
+      "sha256": "a5668c35eb62efc42838126a845e2554cd70b41238a629a9139d07112d7cc667"
+    },
+    {
+      "bytes": 825,
+      "path": "src/Domains/WorkCore/System/Actions/ActionResult.php",
+      "sha256": "888dde7fe4264a33d28480551215e2a2a11f3bcefbf315c812b9c45795f4531b"
+    },
+    {
+      "bytes": 5518,
+      "path": "src/Domains/WorkCore/System/Actions/BusinessActionDispatcher.php",
+      "sha256": "c9d73731b17f044bb74ac501bde82f2154c30c6401f241545dce16dd8e274086"
+    },
+    {
+      "bytes": 954,
+      "path": "src/Domains/WorkCore/System/Actions/BusinessActionRegistry.php",
+      "sha256": "8cea966fb456f8897aa438426e87888a6b5bc76e06674552a61ff3489901ca66"
+    },
+    {
+      "bytes": 595,
+      "path": "src/Domains/WorkCore/System/Actions/Contracts/ActionAuditRecorderContract.php",
+      "sha256": "1bfb9c73bf2585be0c06a9f16074bc24bef6a2b4262f1491a4a165d07d5a54b1"
+    },
+    {
+      "bytes": 527,
+      "path": "src/Domains/WorkCore/System/Actions/Contracts/ActionIdempotencyStoreContract.php",
+      "sha256": "7a54f3997a1da42b8e526ac41e1deb74b5b614fe6bb42c679dffa165ea54e9d9"
+    },
+    {
+      "bytes": 325,
+      "path": "src/Domains/WorkCore/System/Actions/Contracts/BusinessActionHandlerContract.php",
+      "sha256": "3cff950097d2ac1605bce9d294fb5c04d6ed2682cc0eabbc6c33f0bd97b20c78"
+    },
+    {
+      "bytes": 336,
+      "path": "src/Domains/WorkCore/System/Actions/Contracts/ConfirmationVerifierContract.php",
+      "sha256": "04bd74f2aed18ea02d1f1af0fd5daa875e038caf5ba169016f3a80d3fe5eb9b2"
+    },
+    {
+      "bytes": 420,
+      "path": "src/Domains/WorkCore/System/Actions/Contracts/DomainEventRecorderContract.php",
+      "sha256": "ff2a6dd3ba7fe1fcb55c5db1c23e2ae5d6a9009f7fcc10cbeb275d72ce95a0a1"
+    },
+    {
+      "bytes": 204,
+      "path": "src/Domains/WorkCore/System/Actions/Contracts/EntitlementResolverContract.php",
+      "sha256": "4f85f481d8a786fd40d5d7a248475dead8f2889110f32758e459d2115cad1ba3"
+    },
+    {
+      "bytes": 325,
+      "path": "src/Domains/WorkCore/System/Actions/Exceptions/ActionConflictException.php",
+      "sha256": "368e2ea67e09535e76ffe79d709123d29e7ef1bb79c044917534d206d88a9825"
+    },
+    {
+      "bytes": 398,
+      "path": "src/Domains/WorkCore/System/Actions/Exceptions/ActionDispatchException.php",
+      "sha256": "52964a7aa587f1b5c92f6e5e8fcd688f8f8e54eccaff442a4e2a547c1492d349"
+    },
+    {
+      "bytes": 2512,
+      "path": "src/Domains/WorkCore/System/Actions/Infrastructure/DatabaseActionAuditRecorder.php",
+      "sha256": "c4c42fa96730b465b96f008fc8aa68b1cee1869a0dc73d2293842d1b9bc2b09d"
+    },
+    {
+      "bytes": 3789,
+      "path": "src/Domains/WorkCore/System/Actions/Infrastructure/DatabaseActionIdempotencyStore.php",
+      "sha256": "c2f95816c8ec0c2463c0e992e584dbadd5a2c1e15500e752fdca0a59382cca30"
+    },
+    {
+      "bytes": 3319,
+      "path": "src/Domains/WorkCore/System/Actions/Infrastructure/DatabaseDomainEventRecorder.php",
+      "sha256": "b121a0021c6248e76d75d9b9b313f9f1fdc8d72ccd544bec3776d336a48c9b8b"
+    },
+    {
+      "bytes": 312,
+      "path": "src/Domains/WorkCore/System/Actions/PendingDomainEvent.php",
+      "sha256": "6509f0bce2d14b4cfeda3651f692bbf10a61f20ce639a5d0ad59dc605119d463"
+    },
+    {
+      "bytes": 691,
+      "path": "src/Domains/WorkCore/System/Actions/Policies/ExplicitConfirmationVerifier.php",
+      "sha256": "a0fe7cb63f65b2ad6e8decc50678fefb220fd814b3c465e80d7e9ab4837c6213"
+    },
+    {
+      "bytes": 568,
+      "path": "src/Domains/WorkCore/System/Actions/Policies/RegisteredCapabilityEntitlementResolver.php",
+      "sha256": "61bda562fc22341ae87e5997a613cefb2987e5cf11ab2d855376fe46fcbee10b"
+    },
+    {
+      "bytes": 1454,
+      "path": "src/Domains/WorkCore/System/Actions/Policies/VerticalAwareEntitlementResolver.php",
+      "sha256": "3ae7b7b1198e5c6318170bc9a40e23d7175c479b3c27c80b5c57377c4659ec94"
+    },
+    {
+      "bytes": 2120,
+      "path": "src/Domains/WorkCore/System/Api/ApiResponseFactory.php",
+      "sha256": "e97a633791bddf02b38c9bd36ec7d4703db01595cbbde82bfc146711235e76ec"
+    },
+    {
+      "bytes": 2464,
+      "path": "src/Domains/WorkCore/System/Api/Middleware/WorkCoreApiExceptionMiddleware.php",
+      "sha256": "33d66c2313d361356f494091abb4260155556ebf3be9461bb13e8b72a1e8928e"
+    },
+    {
+      "bytes": 2942,
+      "path": "src/Domains/WorkCore/System/Api/Resources/AppointmentResource.php",
+      "sha256": "d98fdc808bfe900ca84b32ca1ae9c539ebd83138c74d159bfcd30416e19fc2a9"
+    },
+    {
+      "bytes": 802,
+      "path": "src/Domains/WorkCore/System/Api/Resources/AssetResource.php",
+      "sha256": "177dfd12e254043ce110cecda55b1acfe5cf6efcdb11f0fafc47ff597c821efa"
+    },
+    {
+      "bytes": 382,
+      "path": "src/Domains/WorkCore/System/Api/Resources/AttendanceResource.php",
+      "sha256": "3555181190ce00a30cfe2b8d923fded79e00c8ed4dbd6f5a0f17a60eb6c6604b"
+    },
+    {
+      "bytes": 440,
+      "path": "src/Domains/WorkCore/System/Api/Resources/AvailabilityRuleResource.php",
+      "sha256": "6074ec7df58a119b0cdbcfc8af55968d22bb83be95d3f64b3b57f36f2c468481"
+    },
+    {
+      "bytes": 529,
+      "path": "src/Domains/WorkCore/System/Api/Resources/ComplianceObligationResource.php",
+      "sha256": "95135057e1ae1cf5c27527f255322bc48eb2d30a8292dcd7635e9021718d09b8"
+    },
+    {
+      "bytes": 614,
+      "path": "src/Domains/WorkCore/System/Api/Resources/ContactResource.php",
+      "sha256": "2fcfd9b410961e46dbf319869d41cd21656ed1f8181ca7d1c4550eaa797045ee"
+    },
+    {
+      "bytes": 1133,
+      "path": "src/Domains/WorkCore/System/Api/Resources/CrmActivityResource.php",
+      "sha256": "d1056b5978780847e9af4430af81b6b78f0113986c168069a738cc0defb62d34"
+    },
+    {
+      "bytes": 772,
+      "path": "src/Domains/WorkCore/System/Api/Resources/CustomerResource.php",
+      "sha256": "008951c655cf2fdf0ffa2dffca0f9b8c02eb26911fee3dabf3a079a8e4e15335"
+    },
+    {
+      "bytes": 2822,
+      "path": "src/Domains/WorkCore/System/Api/Resources/DispatchAssignmentResource.php",
+      "sha256": "8c1c15fd750d95ea423bc5ffbd93c649b21a90f5199da8da5c75ac4045dbe803"
+    },
+    {
+      "bytes": 712,
+      "path": "src/Domains/WorkCore/System/Api/Resources/FeedbackResource.php",
+      "sha256": "e864ad9ca84990d5e26f5845e7ed7d2d538b253aa487e4c57c9008acbc4bc84d"
+    },
+    {
+      "bytes": 447,
+      "path": "src/Domains/WorkCore/System/Api/Resources/FormSubmissionResource.php",
+      "sha256": "1bfd05fd01677e78d1fb55c77f33efab1ec048351a46d13c27bc3b9dfe2ca897"
+    },
+    {
+      "bytes": 443,
+      "path": "src/Domains/WorkCore/System/Api/Resources/FormTemplateResource.php",
+      "sha256": "ebe41b8a1e3dca557ffe400976a8025229fec9febbaec15914c8a5e32aaa6921"
+    },
+    {
+      "bytes": 615,
+      "path": "src/Domains/WorkCore/System/Api/Resources/InventoryItemResource.php",
+      "sha256": "b1d2805679e36d971af6f5fc2b4e24bf5fc7c23b159720b47386bc5ae831d990"
+    },
+    {
+      "bytes": 511,
+      "path": "src/Domains/WorkCore/System/Api/Resources/KnowledgeArticleResource.php",
+      "sha256": "3c220cc21b07598cbae590c261cf73ab1e1a27968dd26f7071dfc3c1c3e80cb5"
+    },
+    {
+      "bytes": 1352,
+      "path": "src/Domains/WorkCore/System/Api/Resources/LeadResource.php",
+      "sha256": "1757ac576f0b3f9ea2d953ae82437d596d9caed25d13bf6c7c55958415d8e57c"
+    },
+    {
+      "bytes": 411,
+      "path": "src/Domains/WorkCore/System/Api/Resources/LeaveRequestResource.php",
+      "sha256": "1e6f75fad0dd735cca8eacdaeb34250e5fd0e962724e9bd97c4df8a24eb0d1e4"
+    },
+    {
+      "bytes": 2166,
+      "path": "src/Domains/WorkCore/System/Api/Resources/OpportunityResource.php",
+      "sha256": "30bf1477e7730436060948ce769c51d06218c12727ce8eb3790b199227fbefb2"
+    },
+    {
+      "bytes": 987,
+      "path": "src/Domains/WorkCore/System/Api/Resources/PremisesResource.php",
+      "sha256": "85885277707130e0ed5e7e38ef51204bd410e265db7f18a4ecfc66983e3aadff"
+    },
+    {
+      "bytes": 421,
+      "path": "src/Domains/WorkCore/System/Api/Resources/RosterResource.php",
+      "sha256": "343de046d3bb83c0c10cb145c1b440368bebf684b579d84da1ceb7222f3eaf3f"
+    },
+    {
+      "bytes": 1772,
+      "path": "src/Domains/WorkCore/System/Api/Resources/SalesPipelineResource.php",
+      "sha256": "b5a645e8d2ddd0989c29e83e83d693bcd095deba92961f3f1de23eb6feb767d5"
+    },
+    {
+      "bytes": 536,
+      "path": "src/Domains/WorkCore/System/Api/Resources/ServiceAgreementResource.php",
+      "sha256": "9c52dac1348c38380878e152395491c0aa27be5b387d7b2e8545b52824888072"
+    },
+    {
+      "bytes": 1028,
+      "path": "src/Domains/WorkCore/System/Api/Resources/ServiceResource.php",
+      "sha256": "7f0236ffd0ae8e6b6b03526f44ac9cf5b4d4dfe5b21348db19595aab363db663"
+    },
+    {
+      "bytes": 795,
+      "path": "src/Domains/WorkCore/System/Api/Resources/SupportTicketResource.php",
+      "sha256": "279509303a9db6d97a28f097df2ad0929b55f1959e2807fee472fb1862ee0f11"
+    },
+    {
+      "bytes": 582,
+      "path": "src/Domains/WorkCore/System/Api/Resources/TerritoryAssignmentResource.php",
+      "sha256": "81c12299728f5976aa9ecfff5b474ba95952f384efa3371fc5494fd425dcebd4"
+    },
+    {
+      "bytes": 395,
+      "path": "src/Domains/WorkCore/System/Api/Resources/TerritoryNodeResource.php",
+      "sha256": "9deba0985e7141a915f337bce5c23e6afa3cc35eacc9e49fc8330188e58a6ffb"
+    },
+    {
+      "bytes": 1364,
+      "path": "src/Domains/WorkCore/System/Api/Resources/TerritoryResource.php",
+      "sha256": "63bb0392b8f66be312d6a51dc054b69fc4b9314759364d4ba17c973985c47963"
+    },
+    {
+      "bytes": 4614,
+      "path": "src/Domains/WorkCore/System/Api/Resources/WorkOrderResource.php",
+      "sha256": "21339dd98ed1f1d186bf43d7ff6ff0293a8c55b1fe929f7d65ce2abbe012f281"
+    },
+    {
+      "bytes": 433,
+      "path": "src/Domains/WorkCore/System/Api/Resources/WorkerResource.php",
+      "sha256": "8eeae6528be8890113d61e22d31cfb4417ec225aa5d2e2f962ba294386de9847"
+    },
+    {
+      "bytes": 2439,
+      "path": "src/Domains/WorkCore/System/Authorization/CompanyRecordAuthorizer.php",
+      "sha256": "ecbce622c9fcc716016fbc42043f12ed0b5c5c43e457a2f5e2befd6f33c10a06"
+    },
+    {
+      "bytes": 432,
+      "path": "src/Domains/WorkCore/System/Authorization/WorkCoreAccessLevel.php",
+      "sha256": "aee5ef727b1fba07227a819dcbab57eb46e87f7b656bae2f67572b16bf263e0f"
+    },
+    {
+      "bytes": 958,
+      "path": "src/Domains/WorkCore/System/Capabilities/CapabilityDefinition.php",
+      "sha256": "b93d99999c4c48b7a975aecc9220ddacdbc25f5dea2b4ae4b9d55dbf5bda5d48"
+    },
+    {
+      "bytes": 966,
+      "path": "src/Domains/WorkCore/System/Capabilities/CapabilityRegistry.php",
+      "sha256": "f50107014b133b6c7c8f981f0bd73332b3ef2ad083e1ad85a955c2009811d9be"
+    },
+    {
+      "bytes": 1287,
+      "path": "src/Domains/WorkCore/System/Capabilities/Middleware/RequireWorkCoreCapability.php",
+      "sha256": "4ed5959ca0d524e8e67ab45aff1f7e6e2497d4383edcad82f2f8075e4bbf777e"
+    },
+    {
+      "bytes": 1575,
+      "path": "src/Domains/WorkCore/System/Company/Actions/AcceptCompanyInvitation.php",
+      "sha256": "65ba8e44cfd5ce6bd0d823d23f5bd9c299b6d5fdf8452ca6eb773cd290b07bde"
+    },
+    {
+      "bytes": 3845,
+      "path": "src/Domains/WorkCore/System/Company/Actions/CreateCompany.php",
+      "sha256": "2a80a5d0a9b349ac933c61030602b31a0ae2c332f0f63ac384d351e1ddb829ee"
+    },
+    {
+      "bytes": 1326,
+      "path": "src/Domains/WorkCore/System/Company/Actions/InviteCompanyMember.php",
+      "sha256": "4d75b450afc551a00628cb3bc1635f907cc6dda0d8745278293e81dc967e02e2"
+    },
+    {
+      "bytes": 323,
+      "path": "src/Domains/WorkCore/System/Company/Actions/SuspendCompany.php",
+      "sha256": "89c3142256a82ea721295b7718368411d62766e96d83cdfb89bfb59393a2375f"
+    },
+    {
+      "bytes": 1582,
+      "path": "src/Domains/WorkCore/System/Company/Actions/TransferCompanyOwnership.php",
+      "sha256": "3a02ceb28e1daac6991bf9c1290b69e841c7fd9a7984d8ebd5db02c1bc8d3391"
+    },
+    {
+      "bytes": 487,
+      "path": "src/Domains/WorkCore/System/Company/DTOs/CreateCompanyData.php",
+      "sha256": "b3bb669b5d48dad38edb430362861dd26f5ac49169971273956efa2854cae06e"
+    },
+    {
+      "bytes": 1235,
+      "path": "src/Domains/WorkCore/System/Console/Commands/InspectWorkCoreDonorsCommand.php",
+      "sha256": "c0aac1fadbb76279b92f66330e72593c88e97b0b29ae3a87919860a7bfe639df"
+    },
+    {
+      "bytes": 900,
+      "path": "src/Domains/WorkCore/System/Console/Commands/PublishWorkCoreOutboxCommand.php",
+      "sha256": "32850741802918b35895fda2e56e0b9a077bc4e4fa9f545fec48b51d321e2b2a"
+    },
+    {
+      "bytes": 3329,
+      "path": "src/Domains/WorkCore/System/Console/Commands/WorkCoreDiagnoseCommand.php",
+      "sha256": "f38b76af135299e3045bc1543fb90080ba87b19d97b561382f938585def90cd7"
+    },
+    {
+      "bytes": 314,
+      "path": "src/Domains/WorkCore/System/Context/CompanyOperatingContext.php",
+      "sha256": "3b3a6b5a9681525e4f252e22127394f8945fdee9e77a10d1f25d51eaa4567509"
+    },
+    {
+      "bytes": 1201,
+      "path": "src/Domains/WorkCore/System/Context/CompanyOperatingContextResolver.php",
+      "sha256": "dbb4a57ddfba3d18f737309095725639c993befdb867f53bcc6cbbefc82a313d"
+    },
+    {
+      "bytes": 912,
+      "path": "src/Domains/WorkCore/System/Context/ContextIdNormalizer.php",
+      "sha256": "fc9e9b56c06c4a0de8e769bf838deb57013ffb423373d3182c9af8fd54ddf557"
+    },
+    {
+      "bytes": 1794,
+      "path": "src/Domains/WorkCore/System/Context/OperationContext.php",
+      "sha256": "aa65a82bd4400acad2c6f1d48ab021b5c3bf0a405d0eb7d28350c8742fb861db"
+    },
+    {
+      "bytes": 2101,
+      "path": "src/Domains/WorkCore/System/Context/OperationContextSnapshot.php",
+      "sha256": "ccbb5c38df2b505f04073397878d595b1d4cfa5abc4ecb1288d4b28340abe15e"
+    },
+    {
+      "bytes": 958,
+      "path": "src/Domains/WorkCore/System/Context/TenantContextSnapshot.php",
+      "sha256": "09c0477a52c7825e25429ea86438ac04c723c8b1007ae84e0af40bf0d5d0ab46"
+    },
+    {
+      "bytes": 814,
+      "path": "src/Domains/WorkCore/System/Contracts/OperationContextContract.php",
+      "sha256": "007bf510ccd4aab5569f893675b96889efa6756fb483a2b96c9c6bf5188124a5"
+    },
+    {
+      "bytes": 393,
+      "path": "src/Domains/WorkCore/System/Contracts/PermissionResolverContract.php",
+      "sha256": "f62c8c49c67411f98511fbec0d2c95e460808feffe872e8f4809d4065a2adbac"
+    },
+    {
+      "bytes": 2122,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/AbstractDatabaseRecordAccess.php",
+      "sha256": "3d32f511ff89375eb27a9e12c9eb2136ff68425037354edceb904e15b32182a1"
+    },
+    {
+      "bytes": 809,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/AppointmentAccessAdapter.php",
+      "sha256": "4c1cfb1288639b5c76ba7209b5b7b07e2d82ed0a438781ce9d80468695b7f392"
+    },
+    {
+      "bytes": 1507,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/AssetAccessAdapter.php",
+      "sha256": "aa9c254733677c03a044a57d6e8a38bce675fade4968f441bf1c4dd64bf20642"
+    },
+    {
+      "bytes": 742,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/AttendanceAccessAdapter.php",
+      "sha256": "003b085df7797a3fb600c337814d426eccc020ade65775fc0a06eafca6e53635"
+    },
+    {
+      "bytes": 682,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/AvailabilityAccessAdapter.php",
+      "sha256": "a441c65da296e49903d658d3ad5f975dc6fb848922ad36b6c875feca1046c595"
+    },
+    {
+      "bytes": 729,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/CompanyAccessAdapter.php",
+      "sha256": "315402f159fca7b4d0b5268c859d5ebc89aaf60f7e8ccb7c3a362e35dfb26e8e"
+    },
+    {
+      "bytes": 537,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/CompanyMemberAccessAdapter.php",
+      "sha256": "a5d4465c40cf6edb66384ec134e55ed138b78ba384a4dc0e8ca7a5eda50a7107"
+    },
+    {
+      "bytes": 1046,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/ComplianceObligationAccessAdapter.php",
+      "sha256": "956b2d1f57430868caf8a6e8a4dbcebff0202a3b94d75561f07ddf8aad1e3f1a"
+    },
+    {
+      "bytes": 1010,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/ComplianceSnapshotAccessAdapter.php",
+      "sha256": "ab9a6e3b351ec319602252acc120072df12018070a2ee3880e15456f5d480046"
+    },
+    {
+      "bytes": 512,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/ContactAccessAdapter.php",
+      "sha256": "ee6900745f100b4fa400e2ccd022c636518a59e7d59522e8f92032898e5f8bf3"
+    },
+    {
+      "bytes": 519,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/CustomerAccessAdapter.php",
+      "sha256": "addbd70f6948bfa900b04dc056d46151ce3934cd9cc67e588597a26559020443"
+    },
+    {
+      "bytes": 853,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/DispatchAssignmentAccessAdapter.php",
+      "sha256": "f80abe91ac05614a0c7cb1572f8d13a334a9f0185f318d42f40678a39721db8c"
+    },
+    {
+      "bytes": 1010,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/FeedbackAccessAdapter.php",
+      "sha256": "817676930fe745aa38e71f00dfd27828ed6662558ded7e97725e37356b9886f7"
+    },
+    {
+      "bytes": 708,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/FormSubmissionAccessAdapter.php",
+      "sha256": "8ec776c637090c3a46761687abb673c72cf16316bcd8d5a1b576510313a2f09a"
+    },
+    {
+      "bytes": 629,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/FormTemplateAccessAdapter.php",
+      "sha256": "e17994e11c1cbe3ea6df8ede51ddc4e0f415bb144d1d4136a6f8f185b6216880"
+    },
+    {
+      "bytes": 1215,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/InspectionAccessAdapter.php",
+      "sha256": "45e49e98b0b22fd9a8d8e3faf2b77681b898d23cb59eb8ec443090e4586cce89"
+    },
+    {
+      "bytes": 728,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/ItemAccessAdapter.php",
+      "sha256": "25e7f86a63858f26d20393d2c4c56b92b36e067de64dd49eca2165acc8af8a58"
+    },
+    {
+      "bytes": 819,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/KnowledgeArticleAccessAdapter.php",
+      "sha256": "e1ea2bca2de3b02a22b318563ea47950c5b415c8b1235b7a417c5c8854fe41b0"
+    },
+    {
+      "bytes": 535,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/LeadAccessAdapter.php",
+      "sha256": "1ddd0fbc27ad72a9a360d7cb333f53f759eed4f15e258ff868c626500007cc7f"
+    },
+    {
+      "bytes": 751,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/LeaveRequestAccessAdapter.php",
+      "sha256": "402920d70e204a631d6d7ade1f66cf844fe463616b50e484e9954c422dad676c"
+    },
+    {
+      "bytes": 819,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/OpportunityAccessAdapter.php",
+      "sha256": "7a5cfe16ea921f7d51570d07e5988ea8ed74d92ad2c09a3dfa407726ec10d306"
+    },
+    {
+      "bytes": 685,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/PremisesAccessAdapter.php",
+      "sha256": "6760811bef4f58b66d69892e4ac54c09f4987ea788284978f112bb24d78f31ee"
+    },
+    {
+      "bytes": 1048,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/QualityAuditAccessAdapter.php",
+      "sha256": "048d631d46c118cc2a638f0accfcd44b55411e6297baee28070abc8e50582916"
+    },
+    {
+      "bytes": 1018,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/QualityCorrectiveActionAccessAdapter.php",
+      "sha256": "10d7a653c230ea852c058d25647bcac1207e659be67b32faef3610f8d3be1372"
+    },
+    {
+      "bytes": 1184,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/QualityIncidentAccessAdapter.php",
+      "sha256": "4ca31288345134099e69bd1f37421a1395ba6831a2cb2f90ad32d8d8dad789a5"
+    },
+    {
+      "bytes": 1124,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/QualityNonconformanceAccessAdapter.php",
+      "sha256": "f1b6400588561d08ed01826851a1ef62547ebd97b0d55dbf5a4b9be58b8f889b"
+    },
+    {
+      "bytes": 880,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/QualitySignoffAccessAdapter.php",
+      "sha256": "2373e7e09fb57c677fd08ad6d5079830d2b7885326ec41f0ef66f8b00625996f"
+    },
+    {
+      "bytes": 921,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/QualityStandardAccessAdapter.php",
+      "sha256": "75956178c5513e3436ef1e4926bbb8bc7fc5a57c23c07e5f334ae32cb4e04333"
+    },
+    {
+      "bytes": 605,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/RecurringServiceAccessAdapter.php",
+      "sha256": "272719b50c2339cdaefa6827cfb5ef7d72e0d78200e21f9594c57cf402c2ab7a"
+    },
+    {
+      "bytes": 564,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/ReviewAccessAdapter.php",
+      "sha256": "0f834141a5e679ba27b0a90ee0b356548266666480b00fd35c93f4125041c4a3"
+    },
+    {
+      "bytes": 605,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/RosterAccessAdapter.php",
+      "sha256": "684aa32f84b917c4f6a8ff9edb1927fc67875f64de065dd038dc94655aecd745"
+    },
+    {
+      "bytes": 574,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/SalesPipelineAccessAdapter.php",
+      "sha256": "b56184d873d5710fd2b9d81941cd7b89b1342b7dbee226cf8134d35e723941b4"
+    },
+    {
+      "bytes": 558,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/ServiceAccessAdapter.php",
+      "sha256": "685c0bfe6eda04592154700732ac9d3583fd24c9df3fcf86a593e99daf1018e1"
+    },
+    {
+      "bytes": 691,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/ShiftAccessAdapter.php",
+      "sha256": "840649e84033b0cb2c99876327ca7970d825408dae211ccfa384dd518529069a"
+    },
+    {
+      "bytes": 940,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/SupportTicketAccessAdapter.php",
+      "sha256": "56006c9c5da10ab258cf84d0e4895c321227cf6df61418e2eb78a97b8b126360"
+    },
+    {
+      "bytes": 718,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/TaskAccessAdapter.php",
+      "sha256": "653ab840457b6ab9249cfcf7889e34523e739397499425473a164495fe3bde2d"
+    },
+    {
+      "bytes": 653,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/TerritoryAccessAdapter.php",
+      "sha256": "af9e1a7181a129fc31c4e4715e0ed88b902ec5d5e601e4352f3217f3d9bea3da"
+    },
+    {
+      "bytes": 749,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/WorkOrderAccessAdapter.php",
+      "sha256": "f3ef61c8577eac23b27a944e0a633d1d84d66d60775faddacc6f5321d6ab9a69"
+    },
+    {
+      "bytes": 601,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/WorkerAccessAdapter.php",
+      "sha256": "fb930dd8d8ff115954ee51df2179e0769fff5c130c746406bbec826eb8a96e10"
+    },
+    {
+      "bytes": 1029,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/Adapters/WorkerCredentialAccessAdapter.php",
+      "sha256": "479c53c10ee3cf44774cfab5bf41e74b5e017807eb5bdf27c12e6708e4127770"
+    },
+    {
+      "bytes": 168,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/AppointmentAccessContract.php",
+      "sha256": "adcdaac95caac1fa713c84c765b9bbc9dc24c6e6c8b7287074bbab280acd04b3"
+    },
+    {
+      "bytes": 162,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/AssetAccessContract.php",
+      "sha256": "4037aedcdc482defdf312d2a9be3c50483f561155d2141a2bf19837fb92d902b"
+    },
+    {
+      "bytes": 167,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/AttendanceAccessContract.php",
+      "sha256": "d69f914e9a57730b7544e0a612bd90df15b480f202338b28f31ea360c69dea77"
+    },
+    {
+      "bytes": 168,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/AvailabilityAccessContract.php",
+      "sha256": "937a6aaddbcfe2610b4c1fe6d2c8db45cca3ba7c656795f7b5478bd9757edccb"
+    },
+    {
+      "bytes": 451,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/BusinessRecordAccessContract.php",
+      "sha256": "8fc3b2e9f3d98da6e50e230e3c465d196038b93cd7bdf134b120d83fe1071db8"
+    },
+    {
+      "bytes": 892,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/BusinessRecordSnapshot.php",
+      "sha256": "ac6946f6b9070d10a183b90d3413d43fb47d5f4a35190f9a28a821572779c165"
+    },
+    {
+      "bytes": 164,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/CompanyAccessContract.php",
+      "sha256": "0539728190cbd126aa9aafa7e4652611b8520d5cc9b0101389a762c426dcf6a4"
+    },
+    {
+      "bytes": 170,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/CompanyMemberAccessContract.php",
+      "sha256": "7a3cfac4be6c580e998ea76441060616e97647652519a553221fa770662bb7a3"
+    },
+    {
+      "bytes": 177,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/ComplianceObligationAccessContract.php",
+      "sha256": "dae955f6d2ca0d04dd94ce5f0486a90426070d0363c262a706bb5decb7b39954"
+    },
+    {
+      "bytes": 175,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/ComplianceSnapshotAccessContract.php",
+      "sha256": "d32a766e8c447527b0ef22913f21e377ed1d42c127dd73fd3d58f4fb60678962"
+    },
+    {
+      "bytes": 164,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/ContactAccessContract.php",
+      "sha256": "a40c5bf383f2f2920a82618f11ebbc9d89605cbdc4f5a9a7f5b1699a0704d83a"
+    },
+    {
+      "bytes": 165,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/CustomerAccessContract.php",
+      "sha256": "096a19bf8f804784ed435debb816f8ba020eb9ee934ad55ee9e939bce0039ef2"
+    },
+    {
+      "bytes": 174,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/DispatchAssignmentAccessContract.php",
+      "sha256": "372fe4972cf60f2247410cd8748784c3fd06a7698ae51c5cd9bb4514dedde1a6"
+    },
+    {
+      "bytes": 165,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/DocumentAccessContract.php",
+      "sha256": "00edd9caaf8828f678f87d77e55c1db29e6b2db1f9ae1abeff3742b31f520017"
+    },
+    {
+      "bytes": 165,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/EvidenceAccessContract.php",
+      "sha256": "b58d14addf5dbecc6747580ffccbbf4a5ef1367144255ce9a1bda71ebff81d2b"
+    },
+    {
+      "bytes": 164,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/ExpenseAccessContract.php",
+      "sha256": "635cde00eba4c6a71a2ca424496f97bfe1c5be2e1e27cc7d00fa2067e71ae824"
+    },
+    {
+      "bytes": 278,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/FeedbackAccessContract.php",
+      "sha256": "767ce1aa38b7bc46274f6b72da6eac73f8b462dbacc7a938c61d18b38c91bf1c"
+    },
+    {
+      "bytes": 168,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/FormSubmissionAccessContract.php",
+      "sha256": "081142055d8616a44ec152519cc1a40bd5c28a8c049b63e71a455f5a7e0d237f"
+    },
+    {
+      "bytes": 166,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/FormTemplateAccessContract.php",
+      "sha256": "dbad08228d0d26259d7d50479500141632d05324f553c800dcf5cdb306d06503"
+    },
+    {
+      "bytes": 167,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/InspectionAccessContract.php",
+      "sha256": "3d75c7942b491cefb351de13fae12cc2653a292aea993ac3129a3c741ed268f0"
+    },
+    {
+      "bytes": 164,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/InvoiceAccessContract.php",
+      "sha256": "962f96b2977447ae9dae326ac81c91735249b601652f762264efd0b43ff9a2da"
+    },
+    {
+      "bytes": 161,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/ItemAccessContract.php",
+      "sha256": "4ba81b46f8eabc825bcb6d912fe0bcdaf8c378e857232fccc76a768e5ffa2784"
+    },
+    {
+      "bytes": 170,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/KnowledgeArticleAccessContract.php",
+      "sha256": "650f15a5f40f704c5c796f02e4c6e7556910112934757064f198e365825f1a2a"
+    },
+    {
+      "bytes": 161,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/LeadAccessContract.php",
+      "sha256": "cc886191c4a735db9e0ada225f512fbebc20c7fd4face51a4aacd77d081efeb7"
+    },
+    {
+      "bytes": 169,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/LeaveRequestAccessContract.php",
+      "sha256": "590a92d61548a92274e22b5ebbdc99ebe19b6d994cbd9e962163c439912d4488"
+    },
+    {
+      "bytes": 168,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/OpportunityAccessContract.php",
+      "sha256": "eacfeef610b614ffc2c40bd43293fd6d859cd6137152a519225b8fcdae9cdeb1"
+    },
+    {
+      "bytes": 164,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/PaymentAccessContract.php",
+      "sha256": "0fcb1897c15adf4540f34ae131a1b4ebddf0e7c1243a36758a5326cd5f883732"
+    },
+    {
+      "bytes": 165,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/PremisesAccessContract.php",
+      "sha256": "e1fe4f74c35eb8482cb0bae2919163e93e2bbd45ff4681967cdda5a4031cf739"
+    },
+    {
+      "bytes": 169,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/QualityAuditAccessContract.php",
+      "sha256": "134233fa5acba32da6e9f67ea8d655e0b9c7db33cf10f9a1051ad2216d936cb6"
+    },
+    {
+      "bytes": 180,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/QualityCorrectiveActionAccessContract.php",
+      "sha256": "3e2e1c50220ecd96d97694376c566b0fd06e53f11b5458dab258bab3658adea1"
+    },
+    {
+      "bytes": 172,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/QualityIncidentAccessContract.php",
+      "sha256": "e65cc6ba474dd68642b609aac27b3410759b9054228629ba545e8cc5cdef4911"
+    },
+    {
+      "bytes": 178,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/QualityNonconformanceAccessContract.php",
+      "sha256": "e4f5aa332fb5db96b1f07ddf89f0294f8f14d596723aa8ac4365574cd83d99c5"
+    },
+    {
+      "bytes": 171,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/QualitySignoffAccessContract.php",
+      "sha256": "d284615eb00733c833a836c04321be536a979b35f6a1b234764d12742e81676b"
+    },
+    {
+      "bytes": 172,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/QualityStandardAccessContract.php",
+      "sha256": "6edc6d2a4db742602cb258ed830681e0b243773fbad03974bbaca880258c64e4"
+    },
+    {
+      "bytes": 162,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/QuoteAccessContract.php",
+      "sha256": "d38b9619d3f513fc0bdc840ff0eae23b2fa120a628b0d021c9b05d65f8a6b23d"
+    },
+    {
+      "bytes": 196,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/RecurringServiceAccessContract.php",
+      "sha256": "4a05f436920c7cba038c40dab30174436365440723b5ed2fac857353f56d3e1b"
+    },
+    {
+      "bytes": 186,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/ReviewAccessContract.php",
+      "sha256": "01df9f86c622ce02f8e954411a912e55c93faf687cee5a2cbf31578f876f9b44"
+    },
+    {
+      "bytes": 162,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/RosterAccessContract.php",
+      "sha256": "7ce839be334e9f8c068bfb35f9fcd25cd48e0d1de24819b8a6893b2b2ee07533"
+    },
+    {
+      "bytes": 170,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/SalesPipelineAccessContract.php",
+      "sha256": "ee8ad1f854abe65ece1f70e1e8488800cbd82762021e576ef02915d834f6b323"
+    },
+    {
+      "bytes": 164,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/ServiceAccessContract.php",
+      "sha256": "1f49ce611ba5db1e595c9fa488d11df3f7f3d4cf05f8931c69ae00a0f23d4e4e"
+    },
+    {
+      "bytes": 161,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/ShiftAccessContract.php",
+      "sha256": "df5938216913ea023a8d7ec4f673cb350fceb9911e3fdb4dd71b1627b6f35c9b"
+    },
+    {
+      "bytes": 167,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/SupportTicketAccessContract.php",
+      "sha256": "928b1cc1d3efe75b38f62554f3134dff90310c6a95f9de2b9089d3e0787a477c"
+    },
+    {
+      "bytes": 161,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/TaskAccessContract.php",
+      "sha256": "0cef5f5102597c235aa9f2ca6296db733de8f0228b0f5ad5d045a9490a91915d"
+    },
+    {
+      "bytes": 163,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/TerritoryAccessContract.php",
+      "sha256": "87882a800be3cec802081a1a5035dbc0be70da0ee7933c21c2866e8b71f53e55"
+    },
+    {
+      "bytes": 166,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/WorkOrderAccessContract.php",
+      "sha256": "2fda4742448dd933877c2ea1f76338caa56db21392b5421bce7bed6f104881a0"
+    },
+    {
+      "bytes": 160,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/WorkerAccessContract.php",
+      "sha256": "24424b2a5bb23f7bf02443f4df03d856661f8385f773c1a15b8108575a5f10b9"
+    },
+    {
+      "bytes": 173,
+      "path": "src/Domains/WorkCore/System/Contracts/Records/WorkerCredentialAccessContract.php",
+      "sha256": "dc825cb9ad22548d48036c4c8ff99a13954adf0eb983ab26205aef366239514a"
+    },
+    {
+      "bytes": 522,
+      "path": "src/Domains/WorkCore/System/Contracts/TenantContextContract.php",
+      "sha256": "7fc31563c2fc1e247651a474a7fac5d9d4d4633f938ec6d5b8cae35d7efac325"
+    },
+    {
+      "bytes": 264,
+      "path": "src/Domains/WorkCore/System/Contracts/TenantResolverContract.php",
+      "sha256": "09a092983bd14abf8140432f9c42d2cc56dcca6db2800eebdf80d00dfe5a6d08"
+    },
+    {
+      "bytes": 1035,
+      "path": "src/Domains/WorkCore/System/Donors/DonorSourceDefinition.php",
+      "sha256": "116b1bf5c523315ec20f809c06629fb957a3b0857100f48e114e0a967e3ea5c9"
+    },
+    {
+      "bytes": 935,
+      "path": "src/Domains/WorkCore/System/Donors/DonorSourceRegistry.php",
+      "sha256": "6f1f2fd986b69fcbfdb81b06087c2419f95f4aa7d00f52cc7cdbbadf976cad09"
+    },
+    {
+      "bytes": 744,
+      "path": "src/Domains/WorkCore/System/Donors/FeatureSourceDefinition.php",
+      "sha256": "f1d6796817817bdb5ec6bbdba7d37d990cf338ee59dec2d6ecdced5c734f2bb9"
+    },
+    {
+      "bytes": 642,
+      "path": "src/Domains/WorkCore/System/Donors/FeatureSourceRegistry.php",
+      "sha256": "6469bd313e5974cd96115e82b84c9625e8df441ade9711184fe6cfc236e617e5"
+    },
+    {
+      "bytes": 397,
+      "path": "src/Domains/WorkCore/System/Events/DomainEvent.php",
+      "sha256": "ba06f2916328a8b8140dbb75b0b7a4bef0aa69cf1aee41808a5bef668efdea41"
+    },
+    {
+      "bytes": 167,
+      "path": "src/Domains/WorkCore/System/Events/DomainEventContract.php",
+      "sha256": "4791f91dee423ad966190335329ff1ba66596b272889798ba6f20f90ec8a4bcb"
+    },
+    {
+      "bytes": 1706,
+      "path": "src/Domains/WorkCore/System/Events/DomainEventEnvelope.php",
+      "sha256": "0880888570b003af18208dab45ac7103f9741d8307a47ecd9762cd4975ffbd86"
+    },
+    {
+      "bytes": 329,
+      "path": "src/Domains/WorkCore/System/Events/EventIdempotencyStoreContract.php",
+      "sha256": "782d425524d09bbe7554ab2e82295815afa5c0ef311a3bbc6f1db113b96f8de3"
+    },
+    {
+      "bytes": 538,
+      "path": "src/Domains/WorkCore/System/Events/RecordsDomainEvents.php",
+      "sha256": "e20d4d39389b2110b8c3db61767ef6f264c0c5e16dd820d5e7b41d6a59ee0fa7"
+    },
+    {
+      "bytes": 1221,
+      "path": "src/Domains/WorkCore/System/External/ExternalCandidateLookup.php",
+      "sha256": "8a15c177b719699c4089b7c409152b193d3ec0fa66ff57fabd9ac75f62ae15bf"
+    },
+    {
+      "bytes": 753,
+      "path": "src/Domains/WorkCore/System/Host/CompanyCacheKey.php",
+      "sha256": "ce9f2d9d39444e1cdaf046fa947d7d58411d344a54bf348b1ecf30c3228ca74d"
+    },
+    {
+      "bytes": 899,
+      "path": "src/Domains/WorkCore/System/Host/CompanyStoragePath.php",
+      "sha256": "d2f2ea843d1a92251d14b2bd80f50358eda3dc0b3935972fe04de604a1cee0a8"
+    },
+    {
+      "bytes": 200,
+      "path": "src/Domains/WorkCore/System/Host/Contracts/MenuAdapterContract.php",
+      "sha256": "0519e613d6b3110af0f00fd17f7bcb63591d3dc64f117e1dc31f715193923ae5"
+    },
+    {
+      "bytes": 261,
+      "path": "src/Domains/WorkCore/System/Host/Contracts/NotificationAdapterContract.php",
+      "sha256": "449b38ab8a70ff8862bbe8b8df2100b4504de31ffbbea4958abbfdc881c63a3a"
+    },
+    {
+      "bytes": 333,
+      "path": "src/Domains/WorkCore/System/Host/Contracts/StorageAdapterContract.php",
+      "sha256": "1bc9a1644db967e34dc4902db4d3dd9f34456ee0dac528f2ed49a449e9ba4fa7"
+    },
+    {
+      "bytes": 210,
+      "path": "src/Domains/WorkCore/System/Host/Contracts/ToolBridgeContract.php",
+      "sha256": "eee227e5ce3e6c186b664e6ccc8898bd8f1002844f773a7977effb7d3802f94e"
+    },
+    {
+      "bytes": 592,
+      "path": "src/Domains/WorkCore/System/Host/EventNotificationAdapter.php",
+      "sha256": "0ac98d6b8124418aa5564722ba92198f6c53923083265c2487d0f552a638143e"
+    },
+    {
+      "bytes": 1527,
+      "path": "src/Domains/WorkCore/System/Host/LaravelPrivateStorageAdapter.php",
+      "sha256": "53a6cbb9f2910cf9542885ee34ced9ba255c1e008f735d026b19c254489db1db"
+    },
+    {
+      "bytes": 546,
+      "path": "src/Domains/WorkCore/System/Host/MagicAINotificationAdapter.php",
+      "sha256": "59d93ccbc930ba78619717acd3b9864cd12e7f17931d991ccd620953f123a02e"
+    },
+    {
+      "bytes": 1286,
+      "path": "src/Domains/WorkCore/System/Host/MagicAIStorageAdapter.php",
+      "sha256": "174b89906eafaba88f552f91f9037844d5897d1a27e141c514df81b383fc1a24"
+    },
+    {
+      "bytes": 293,
+      "path": "src/Domains/WorkCore/System/Host/NullMenuAdapter.php",
+      "sha256": "d08f2ea0b5f1be6211a31f822f998164f4ad86782894d70397a55fb0d841ed14"
+    },
+    {
+      "bytes": 2470,
+      "path": "src/Domains/WorkCore/System/Host/WorkCoreToolBridge.php",
+      "sha256": "f8f4cf2650d4dd04e2a8910c18c7f4d0d660959cf6a31e67b84b98de5f5dec2c"
+    },
+    {
+      "bytes": 6353,
+      "path": "src/Domains/WorkCore/System/Http/Controllers/AccommodationManagementController.php",
+      "sha256": "e517287c6204201f30c49f3b7982a65be7bf612d05cefe1b1347201553b01db3"
+    },
+    {
+      "bytes": 1510,
+      "path": "src/Domains/WorkCore/System/Http/Controllers/CompanyContextController.php",
+      "sha256": "50712a42e05f55ce8cbfbb77f30b9db9ef00d80f2371d041b5ec322596bfdb71"
+    },
+    {
+      "bytes": 1151,
+      "path": "src/Domains/WorkCore/System/Http/Controllers/CompanyLifecycleController.php",
+      "sha256": "2db2ff78007f984e7903fda117fcee8775e3b5d51ba37f78f1527b1e1dadb663"
+    },
+    {
+      "bytes": 6876,
+      "path": "src/Domains/WorkCore/System/Http/Controllers/NDISManagementController.php",
+      "sha256": "c5f0d0d43384372161b414b8407b4741abd8bf130d9bcbaf458fdbcdbc4aab74"
+    },
+    {
+      "bytes": 9142,
+      "path": "src/Domains/WorkCore/System/Http/Controllers/VerticalManagementController.php",
+      "sha256": "8a5c1d8f09effbb1cb8f39532ce255e9edf5b26434f2b0b2ab4b62b5da58f69d"
+    },
+    {
+      "bytes": 1230,
+      "path": "src/Domains/WorkCore/System/Http/Requests/AddAccommodationChargeRequest.php",
+      "sha256": "20f116752407ab5c68bbd4a654d07d2cef5c2259f586a53b13fceba285b7070d"
+    },
+    {
+      "bytes": 1026,
+      "path": "src/Domains/WorkCore/System/Http/Requests/AddNDISCaseNoteRequest.php",
+      "sha256": "ebd289c583fcddc5909cdb6a48534484d1893eabf80b1fc9eeb65a6726e52e60"
+    },
+    {
+      "bytes": 1127,
+      "path": "src/Domains/WorkCore/System/Http/Requests/AddWorkOrderEvidenceRequest.php",
+      "sha256": "1ff9228244e354c0b8af78a5dc53d94e866bbea34983c27b34022b152714d123"
+    },
+    {
+      "bytes": 612,
+      "path": "src/Domains/WorkCore/System/Http/Requests/ApplyVerticalSetupRequest.php",
+      "sha256": "21a21552b6a2631a1eeb958ac142b61e14d8190207c9edd97eb5f5a93c1a1633"
+    },
+    {
+      "bytes": 696,
+      "path": "src/Domains/WorkCore/System/Http/Requests/AssignWorkerBusinessLineRequest.php",
+      "sha256": "a573e2a80cbde5ba48bf998970d53ffa112f3a7bc0d8feaaaceeecab6c6956c0"
+    },
+    {
+      "bytes": 524,
+      "path": "src/Domains/WorkCore/System/Http/Requests/ChangeAccommodationReservationStatusRequest.php",
+      "sha256": "65081e529e35d734e689b92b2eef3a8f4386fa2fa980cd852f9e52331ba39b1a"
+    },
+    {
+      "bytes": 754,
+      "path": "src/Domains/WorkCore/System/Http/Requests/CheckInAccommodationStayRequest.php",
+      "sha256": "a19de6c6dd7b4ff20976dad6200e6932718296d3edd912bbd62b71b66b4b716d"
+    },
+    {
+      "bytes": 720,
+      "path": "src/Domains/WorkCore/System/Http/Requests/CheckOutAccommodationStayRequest.php",
+      "sha256": "1033350cea0f5ff6f6d89ec15674a5167e5180671a3ea3034c003bdba8efce34"
+    },
+    {
+      "bytes": 3086,
+      "path": "src/Domains/WorkCore/System/Http/Requests/CreateAccommodationReservationRequest.php",
+      "sha256": "951551a819ab143c4125aa9c57867a926044ac6624624ba30c979b916ac606b9"
+    },
+    {
+      "bytes": 774,
+      "path": "src/Domains/WorkCore/System/Http/Requests/CreateCompanyRequest.php",
+      "sha256": "7e44831d01ada3a91cb5d37e7c49486bacb84850136ad1a250c3d7d0e879a79e"
+    },
+    {
+      "bytes": 693,
+      "path": "src/Domains/WorkCore/System/Http/Requests/CreateWorkOrderCallbackRequest.php",
+      "sha256": "f93ac5be01abc9bb4c41ad9c170153d834f13eff1788f603f0afa6f6da509cae"
+    },
+    {
+      "bytes": 1148,
+      "path": "src/Domains/WorkCore/System/Http/Requests/IssueWorkOrderCertificateRequest.php",
+      "sha256": "758cf786f9e06b7351a935fdd7c19755aa2473e4ab5b59f3284aeb4a6c7d801e"
+    },
+    {
+      "bytes": 906,
+      "path": "src/Domains/WorkCore/System/Http/Requests/LinkNDISParticipantIncidentRequest.php",
+      "sha256": "8d6b92ae552ca804e56aa630821216b5463139d2879ff3af3882e45218fe0975"
+    },
+    {
+      "bytes": 874,
+      "path": "src/Domains/WorkCore/System/Http/Requests/MatchNDISWorkerRequest.php",
+      "sha256": "21905ad4ff1cdf97abc926b10c08d9c30de853ba959288eb7d1355ddc3cb641e"
+    },
+    {
+      "bytes": 817,
+      "path": "src/Domains/WorkCore/System/Http/Requests/PrepareNDISClaimLineRequest.php",
+      "sha256": "b34353057e51df1b0f639acde467bb37d028ee9a72f404258fee004475b7a5fa"
+    },
+    {
+      "bytes": 632,
+      "path": "src/Domains/WorkCore/System/Http/Requests/PrepareWorkOrderComplianceRequest.php",
+      "sha256": "be7339c30e7cc80c332cf6da91700314e705e7a39b37d90fc2c8282a84cf0a15"
+    },
+    {
+      "bytes": 614,
+      "path": "src/Domains/WorkCore/System/Http/Requests/PreviewVerticalSetupRequest.php",
+      "sha256": "444e4a7bfbe9e240c8d155c12625c9f529559d21e66573b4e160c8a95caae622"
+    },
+    {
+      "bytes": 1934,
+      "path": "src/Domains/WorkCore/System/Http/Requests/RecordNDISSupportDeliveryRequest.php",
+      "sha256": "24a77261e922eea15e76b9f209dc81715c79d59abb80589f6a0445b05d9275bf"
+    },
+    {
+      "bytes": 1175,
+      "path": "src/Domains/WorkCore/System/Http/Requests/RecordWorkOrderPermitRequest.php",
+      "sha256": "be54325e04893fd2887cb38e9593a6ccdc065c9d6cd8e35fa1d6dfe9d21d68c5"
+    },
+    {
+      "bytes": 1002,
+      "path": "src/Domains/WorkCore/System/Http/Requests/RecordWorkOrderSafetyControlRequest.php",
+      "sha256": "6c699bfa14508755c705f4641be31153cdb4716196151f6cd4afd89f4f3c9dc1"
+    },
+    {
+      "bytes": 1282,
+      "path": "src/Domains/WorkCore/System/Http/Requests/RecordWorkOrderTestResultRequest.php",
+      "sha256": "049e86b8b842e1d90e1c2193763a37fbbadf0e04517f4cba29564bdb081e1ae0"
+    },
+    {
+      "bytes": 971,
+      "path": "src/Domains/WorkCore/System/Http/Requests/RegisterWorkOrderWarrantyRequest.php",
+      "sha256": "0f488050e5357a6ff550ddea6e6e6763c55f582abbfafea3e7f1b3a133751b78"
+    },
+    {
+      "bytes": 393,
+      "path": "src/Domains/WorkCore/System/Http/Requests/SwitchCompanyRequest.php",
+      "sha256": "2037a87542c96389f86a2bcec6fd5c2a97dbd8662c9d6f1429f7dbea39ee6ccf"
+    },
+    {
+      "bytes": 887,
+      "path": "src/Domains/WorkCore/System/Http/Requests/UpdateAccommodationHousekeepingRequest.php",
+      "sha256": "6b96c94587089bb1f3f70a811ab07fd6d83ec71ccbd562dcf0c9a840ffb41014"
+    },
+    {
+      "bytes": 548,
+      "path": "src/Domains/WorkCore/System/Http/Requests/UpdateBusinessLineRequest.php",
+      "sha256": "eb72c43326fc672b449cda5aad76e1add0d346e6c20a81e93f0fa0fa838c73b3"
+    },
+    {
+      "bytes": 1231,
+      "path": "src/Domains/WorkCore/System/Http/Requests/UpsertAccommodationRatePlanRequest.php",
+      "sha256": "3a427b7943e3d1dbdcaa1f7c0eda219942fbc1adc454d7ec9d2d995dd29e75ce"
+    },
+    {
+      "bytes": 858,
+      "path": "src/Domains/WorkCore/System/Http/Requests/UpsertNDISGoalRequest.php",
+      "sha256": "187a524b0a54f57acf5446f9fa1deceea26297792f00d265819ad33841c14d05"
+    },
+    {
+      "bytes": 1262,
+      "path": "src/Domains/WorkCore/System/Http/Requests/UpsertNDISParticipantContactRequest.php",
+      "sha256": "5b012cd78e8efcb79963c2d5948b1f12b1758390469dc3f18e193d88bf57849f"
+    },
+    {
+      "bytes": 1889,
+      "path": "src/Domains/WorkCore/System/Http/Requests/UpsertNDISParticipantRequest.php",
+      "sha256": "ba34dc6d1fff5a622b2278585588dbdcc191e42528dac9c4950e517fdfb39602"
+    },
+    {
+      "bytes": 1662,
+      "path": "src/Domains/WorkCore/System/Http/Requests/UpsertNDISPlanRequest.php",
+      "sha256": "f01b4beba27d7d554a1f91eec848b65ec1f8825b24ea88653a63d68bfceb98b2"
+    },
+    {
+      "bytes": 2067,
+      "path": "src/Domains/WorkCore/System/Http/Requests/UpsertNDISServiceAgreementRequest.php",
+      "sha256": "c0b2cc542bea0367874919ee978a44bda1471f44be8fad74a6c7981dd479feb9"
+    },
+    {
+      "bytes": 1580,
+      "path": "src/Domains/WorkCore/System/Http/Requests/UpsertTradeComplianceProfileRequest.php",
+      "sha256": "8830d4f74b86267bf557bd7cbaf37d5cc3c78af75de01525fce393aa3847a83b"
+    },
+    {
+      "bytes": 1315,
+      "path": "src/Domains/WorkCore/System/Http/Requests/UpsertTradeLicenceRequest.php",
+      "sha256": "e6da20e53ae24fdb08912953c220d22cd40218cdbcef65d8c9499c0fe5699c4f"
+    },
+    {
+      "bytes": 1256,
+      "path": "src/Domains/WorkCore/System/Identity/MagicAIUserCompanyAdapter.php",
+      "sha256": "bbe3ca97912590641a584ee9de85e9753bd01cc36b51e141ec15cd588b2d41b4"
+    },
+    {
+      "bytes": 1460,
+      "path": "src/Domains/WorkCore/System/Models/BusinessLine.php",
+      "sha256": "89e503697e009848dde96b7f3097bf4a166e9d3ab7a6bb14dc967d75247db822"
+    },
+    {
+      "bytes": 2133,
+      "path": "src/Domains/WorkCore/System/Models/Company.php",
+      "sha256": "28ab8be0e02d43bb4f5e5ec0b54c99b110e9f27ff3cecc710dd38312d5107d42"
+    },
+    {
+      "bytes": 990,
+      "path": "src/Domains/WorkCore/System/Models/CompanyDocumentTemplate.php",
+      "sha256": "2f89fc5cfce7e8e0533ff99169ccc709eaffa0e7c1cf65e2ee51790041adf5c6"
+    },
+    {
+      "bytes": 657,
+      "path": "src/Domains/WorkCore/System/Models/CompanyFeature.php",
+      "sha256": "8de21e78cc639a7e670b9ac31475b77625977494d7ef5a7f1cb16578e4b656e9"
+    },
+    {
+      "bytes": 964,
+      "path": "src/Domains/WorkCore/System/Models/CompanyInvitation.php",
+      "sha256": "29c57bd567d189e8937dbdcf79788f3aa57caa847778cdf9056138e70800e7ea"
+    },
+    {
+      "bytes": 721,
+      "path": "src/Domains/WorkCore/System/Models/CompanyLocale.php",
+      "sha256": "27feb2a0df57b1c3e2ccddb696660fd41896f3ea505f31d59e6c811bc3294d4c"
+    },
+    {
+      "bytes": 1115,
+      "path": "src/Domains/WorkCore/System/Models/CompanyMember.php",
+      "sha256": "9df1171be26edb961d97055b108d8b726e2b31e78099e88899e4f8579aee2f7c"
+    },
+    {
+      "bytes": 589,
+      "path": "src/Domains/WorkCore/System/Models/CompanyMemberPermission.php",
+      "sha256": "6b8ddbb0d85df19ad18786f557e9437c2c732fc6daeb0226b35e26aee0df68c1"
+    },
+    {
+      "bytes": 802,
+      "path": "src/Domains/WorkCore/System/Models/CompanyRole.php",
+      "sha256": "3f0b4620684842084398d09aab89821041e82aa73f6b5f89e0d758af46670279"
+    },
+    {
+      "bytes": 565,
+      "path": "src/Domains/WorkCore/System/Models/CompanyRolePermission.php",
+      "sha256": "edec3fb97d55262be71edcd3059ead4f1b2c25d3303db24677739c11e211110c"
+    },
+    {
+      "bytes": 646,
+      "path": "src/Domains/WorkCore/System/Models/CompanySetting.php",
+      "sha256": "4ba82bd84e31f6ac3a25b0c800a2701e81afb7e727965014634ee85ea0ff65ca"
+    },
+    {
+      "bytes": 597,
+      "path": "src/Domains/WorkCore/System/Models/CompanyTerminologyOverride.php",
+      "sha256": "25d7a9617a9baf7bf44921db69798973715c5c95a3f7c5841bcc2f61bb9c3ea7"
+    },
+    {
+      "bytes": 1111,
+      "path": "src/Domains/WorkCore/System/Models/CompanyVertical.php",
+      "sha256": "177eb9f6008b967d488355c1f878a5de7ec1ed20a58c9177ea4c8a86cd0fcee2"
+    },
+    {
+      "bytes": 1363,
+      "path": "src/Domains/WorkCore/System/Models/TradeLicence.php",
+      "sha256": "8a9b806176cb7038763af092e1eca9ef0346645f7942c2225dda54137c72147a"
+    },
+    {
+      "bytes": 969,
+      "path": "src/Domains/WorkCore/System/Models/VerticalInstallation.php",
+      "sha256": "ee8768b77987f15879df79c798f73e1c373bd0210513494d2ed3e9c2f605a56e"
+    },
+    {
+      "bytes": 764,
+      "path": "src/Domains/WorkCore/System/Models/VerticalSeedProvenance.php",
+      "sha256": "e37d22b2e7c4a12952e6e2fcddba75af926f8553fce4d6677441dfa5fe36c4e1"
+    },
+    {
+      "bytes": 1050,
+      "path": "src/Domains/WorkCore/System/Models/VerticalSetupSession.php",
+      "sha256": "cf88524f146a0c2bfa3731d99b012b5a255288ecdde4df98b2ced2a35983b8e5"
+    },
+    {
+      "bytes": 1369,
+      "path": "src/Domains/WorkCore/System/Models/WorkOrderCertificate.php",
+      "sha256": "e1c4c357ee08a9c3cb36a66bb0137a5c2ce9a4231fe89ce6d4c5d85633d0100b"
+    },
+    {
+      "bytes": 996,
+      "path": "src/Domains/WorkCore/System/Models/WorkerBusinessLine.php",
+      "sha256": "61ee8866adb60f89e3fc12096cb9b022998b13d8e6142c100157b805bdc9a3b8"
+    },
+    {
+      "bytes": 196,
+      "path": "src/Domains/WorkCore/System/Notifications/NotificationDispatcherContract.php",
+      "sha256": "f1e2e8bb2b449b0135c38a0baf17f6fcbb8bcb1fd2b8f24d0b6eee05b70d847a"
+    },
+    {
+      "bytes": 806,
+      "path": "src/Domains/WorkCore/System/Notifications/NotificationIntent.php",
+      "sha256": "58d724ff0b8bf2ece9220cb072824ae791547dc6124475cb6d0fc39411ecaf9d"
+    },
+    {
+      "bytes": 4606,
+      "path": "src/Domains/WorkCore/System/Outbox/DatabaseOutboxPublisher.php",
+      "sha256": "7be4a3a2d501e70162db230c19731b0c03d6d1117957fe41b99ff671df1fc911"
+    },
+    {
+      "bytes": 439,
+      "path": "src/Domains/WorkCore/System/Outbox/NullOutboxTransport.php",
+      "sha256": "e7190e10db6d18d08bd971a43d12c9b0e0a66d382bb89af2b8bbaacd0076b591"
+    },
+    {
+      "bytes": 473,
+      "path": "src/Domains/WorkCore/System/Outbox/OutboxMessage.php",
+      "sha256": "184091899d830c9d9cc56257a3badd47081b33d01130103a59e56239a0cafffb"
+    },
+    {
+      "bytes": 242,
+      "path": "src/Domains/WorkCore/System/Outbox/OutboxPublisherContract.php",
+      "sha256": "249f6c5b8c26c9199422a69d80ad256a7887cd63cb11a3247f276b01054722f1"
+    },
+    {
+      "bytes": 177,
+      "path": "src/Domains/WorkCore/System/Outbox/OutboxTransportContract.php",
+      "sha256": "ac329e2f84723c5ab705fb82d29d9b5fbd7472f17e1fcc64c1973c0b7cfa7dc0"
+    },
+    {
+      "bytes": 596,
+      "path": "src/Domains/WorkCore/System/Permissions/DenyByDefaultPermissionResolver.php",
+      "sha256": "2d71106df7dc1e4e7535bdb19ad15fd0cf3cea4e8bafed6d6a8d1d62dac7de27"
+    },
+    {
+      "bytes": 2481,
+      "path": "src/Domains/WorkCore/System/Permissions/MagicAIPermissionResolver.php",
+      "sha256": "8966896130cb8d79310a93030732b604e6f36eb4e2bade9a2b76403acec741b0"
+    },
+    {
+      "bytes": 1197,
+      "path": "src/Domains/WorkCore/System/Persistence/TenantScopedRepository.php",
+      "sha256": "8e47dce777a5ec8d8cb812ac73cffa7bfbc5186edcc77d77ba5b0e55d8c79387"
+    },
+    {
+      "bytes": 252,
+      "path": "src/Domains/WorkCore/System/Queue/CarriesWorkCoreContext.php",
+      "sha256": "a31d6d342d787aaf2c0e4edfc2aeef83bd5047946550b22989e8fd1b46b8c0b0"
+    },
+    {
+      "bytes": 640,
+      "path": "src/Domains/WorkCore/System/Queue/HasWorkCoreContext.php",
+      "sha256": "1e0903af9c44d9713370ea55c1e583efef4db056fba4696269a630815d63388e"
+    },
+    {
+      "bytes": 2059,
+      "path": "src/Domains/WorkCore/System/Queue/RestoreWorkCoreContext.php",
+      "sha256": "51923d428763916b61d9a7742daef3268aeb58b93fa98468f408dce371c13f4e"
+    },
+    {
+      "bytes": 863,
+      "path": "src/Domains/WorkCore/System/Queue/WorkCoreContextPayloadFactory.php",
+      "sha256": "9a54523d7e00089cf951668d4ed6fca4759ed79ffc100d1edf399a442204c7be"
+    },
+    {
+      "bytes": 1019,
+      "path": "src/Domains/WorkCore/System/Queue/WorkCoreJob.php",
+      "sha256": "1b1eb042e6c07b0a173b8be9e81fd910c1decc26fefaeeb7fe52e75241c37c0b"
+    },
+    {
+      "bytes": 615,
+      "path": "src/Domains/WorkCore/System/ReadModels/ReadModelDefinition.php",
+      "sha256": "912515db01891ff21fc346c01043d58d140d6c184b6ec77efb61167a16efab76"
+    },
+    {
+      "bytes": 414,
+      "path": "src/Domains/WorkCore/System/ReadModels/ReadModelExecutionException.php",
+      "sha256": "ee2bfc00d3860029fd6f6efd9b4ede4dcafb41ed86bc0880cc181fd2aa5741b4"
+    },
+    {
+      "bytes": 2791,
+      "path": "src/Domains/WorkCore/System/ReadModels/ReadModelExecutor.php",
+      "sha256": "94ac686e444798392cf1671d4b08556778353b7c3ff683e9edad2cc2048df973"
+    },
+    {
+      "bytes": 959,
+      "path": "src/Domains/WorkCore/System/ReadModels/ReadModelRegistry.php",
+      "sha256": "6e41811a058b2a85cf8a3bb5807396e227c0455cc17b1670f3f97821c572819f"
+    },
+    {
+      "bytes": 1116,
+      "path": "src/Domains/WorkCore/System/References/RecordTypeRegistry.php",
+      "sha256": "b11b35889975f2aee28ab80f53e3659d36346734abe4a30faaccab006bb71f75"
+    },
+    {
+      "bytes": 792,
+      "path": "src/Domains/WorkCore/System/References/TypedReference.php",
+      "sha256": "0fa03068ce9281037ea04e12700c699fbca1dd465bca84743906cbcabe721af2"
+    },
+    {
+      "bytes": 2420,
+      "path": "src/Domains/WorkCore/System/Registry/WorkModuleRegistry.php",
+      "sha256": "b0273b77ae203890ed85b76856a0a686decb1c09ea9ebe5f6c345a721695491a"
+    },
+    {
+      "bytes": 6081,
+      "path": "src/Domains/WorkCore/System/Rewind/BranchExecution/WorkCoreBranchMutationTranslator.php",
+      "sha256": "bf39d89637584f5bde9258c2abdd2e2d3e671c0994d493a099906839443b7670"
+    },
+    {
+      "bytes": 185,
+      "path": "src/Domains/WorkCore/System/Rewind/Models/Appointment.php",
+      "sha256": "09bb87cb81ca6c227f4f033d1cc5512b695903bef430de156c7617b5b6d354f9"
+    },
+    {
+      "bytes": 179,
+      "path": "src/Domains/WorkCore/System/Rewind/Models/Customer.php",
+      "sha256": "b22fcb55d11744c4a36174ec577ec496239dff81ba9545bbc31651631a965307"
+    },
+    {
+      "bytes": 187,
+      "path": "src/Domains/WorkCore/System/Rewind/Models/ManagedProperty.php",
+      "sha256": "674fce27b3829d605a5cbeef36c9fe10cbc18eb9221d9d77bfb0700c1a7547a4"
+    },
+    {
+      "bytes": 205,
+      "path": "src/Domains/WorkCore/System/Rewind/Models/ManagedPropertyChecklist.php",
+      "sha256": "7c0665da693fea12f1c6f82fcbe69bade36425707366e97ff4d48e832e52d6a5"
+    },
+    {
+      "bytes": 201,
+      "path": "src/Domains/WorkCore/System/Rewind/Models/ManagedPropertyContact.php",
+      "sha256": "bb53e876efc49825574d9d853ce370311eb2bb25c0955a8ee589b9aaf47c6ec9"
+    },
+    {
+      "bytes": 193,
+      "path": "src/Domains/WorkCore/System/Rewind/Models/ManagedPropertyJob.php",
+      "sha256": "c47111dc06f3384708d9b7b88fbccd88ed15b075d58d20489b0f178383bd503a"
+    },
+    {
+      "bytes": 193,
+      "path": "src/Domains/WorkCore/System/Rewind/Models/ManagedPropertyKey.php",
+      "sha256": "e5c4879a76def695251375d6db3369be236f3b543515d1c92ffb7704c2a2122e"
+    },
+    {
+      "bytes": 197,
+      "path": "src/Domains/WorkCore/System/Rewind/Models/ManagedPropertyPhoto.php",
+      "sha256": "ca6cef3c404fd799668fac330ba0011ff16f45c771d6286a838538aeb0b596f3"
+    },
+    {
+      "bytes": 195,
+      "path": "src/Domains/WorkCore/System/Rewind/Models/ManagedPropertyUnit.php",
+      "sha256": "87824fc4450ca54308e8dfd5a3bb260792b2802fa040461fdcd8212d0dabb17b"
+    },
+    {
+      "bytes": 178,
+      "path": "src/Domains/WorkCore/System/Rewind/Models/Premises.php",
+      "sha256": "6c4585256ac0e011b84bf10bdcd2c19bcee3e7ccb17476216c581d29efd75e0a"
+    },
+    {
+      "bytes": 358,
+      "path": "src/Domains/WorkCore/System/Rewind/Models/RewindResourceModel.php",
+      "sha256": "d8e8b304728b6e3b10f643050e5f1e56d081c28e0a740deabd07492d6e53da45"
+    },
+    {
+      "bytes": 190,
+      "path": "src/Domains/WorkCore/System/Rewind/Models/SupportTicket.php",
+      "sha256": "c4eddfc2207e0e23b3749758e44606a579470039106616a971746550f11fb854"
+    },
+    {
+      "bytes": 182,
+      "path": "src/Domains/WorkCore/System/Rewind/Models/WorkOrder.php",
+      "sha256": "3d8f410d1101003092c62b91bab997cbf3a0dcd4e79d97e44ff11a42c08ede3d"
+    },
+    {
+      "bytes": 384,
+      "path": "src/Domains/WorkCore/System/Support/HasPublicId.php",
+      "sha256": "bd38e96c7f40866b19ba1349e1b060a08254554ccf45a603106bf6640d346cde"
+    },
+    {
+      "bytes": 1842,
+      "path": "src/Domains/WorkCore/System/Support/helpers.php",
+      "sha256": "65076bf7f1c1b5d948af17097573484e2e53f5e30f9ab074745098a7a87b355c"
+    },
+    {
+      "bytes": 1536,
+      "path": "src/Domains/WorkCore/System/Tenancy/BelongsToCompany.php",
+      "sha256": "38c19c291e8c323f7ce5fa6b3c56b6befbea2cc3c5ed7a2147e7c00d1db27dfb"
+    },
+    {
+      "bytes": 1411,
+      "path": "src/Domains/WorkCore/System/Tenancy/MagicAITenantResolver.php",
+      "sha256": "0de1a8491ad2ff0c2759a1ae41f372cc1908b0d74d373ed9aa94352d02bd0c05"
+    },
+    {
+      "bytes": 317,
+      "path": "src/Domains/WorkCore/System/Tenancy/NullTenantResolver.php",
+      "sha256": "aced2618b10470dbccc8ac7be68b80c084b75a9773b42ae83a6bf0e8a9189fdc"
+    },
+    {
+      "bytes": 2881,
+      "path": "src/Domains/WorkCore/System/Tenancy/ResolveWorkCoreTenant.php",
+      "sha256": "ade5afa15e192c3e3526c0af8ce3ee55f7e619907dafe63e85d7772734e91969"
+    },
+    {
+      "bytes": 1225,
+      "path": "src/Domains/WorkCore/System/Tenancy/TenantContext.php",
+      "sha256": "845411a6f59f9a36b5859a7f86efc49453fdf37430bba969038a9483946e02a3"
+    },
+    {
+      "bytes": 1874,
+      "path": "src/Domains/WorkCore/System/Validation/CompanyScopedReferenceValidator.php",
+      "sha256": "a49ef9d978f04d6cd08cce2307ddafab97d90431f6321d8620af3ebcfa94a04a"
+    },
+    {
+      "bytes": 12084,
+      "path": "src/Domains/WorkCore/WorkCoreServiceProvider.php",
+      "sha256": "298735ca5a013d27289659726f0cfbfc30dfea851ff683406ca50d3c4f6ebb57"
+    }
+  ]
+}

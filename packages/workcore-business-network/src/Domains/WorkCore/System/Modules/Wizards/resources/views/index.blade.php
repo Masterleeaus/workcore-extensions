@@ -1,0 +1,5 @@
+@extends('panel.layout.app')
+@section('title','WorkCore Wizards')
+@section('content')
+<div class="container-xl py-6"><div class="mb-6"><h1 class="text-3xl font-semibold">WorkCore Wizards</h1><p class="text-muted">Start with Titan in conversation mode, use guided forms, or switch between both.</p></div><div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">@foreach($wizards as $wizard)<a href="{{ route('workcore.wizards.run',$wizard['key']) }}" class="rounded-2xl border bg-card p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><div class="text-xs uppercase tracking-wide text-muted">{{ $wizard['category'] ?? 'setup' }}</div><h2 class="mt-2 text-xl font-semibold">{{ $wizard['title'] }}</h2><p class="mt-2 text-sm text-muted">{{ $wizard['description'] }}</p><div class="mt-4 flex gap-2 text-xs"><span class="rounded-full border px-2 py-1">AI guided</span><span class="rounded-full border px-2 py-1">Resumable</span><span class="rounded-full border px-2 py-1">Risk based</span></div></a>@endforeach</div></div>
+@endsection

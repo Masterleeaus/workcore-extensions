@@ -1,0 +1,113 @@
+{
+  "key": "premises_services_core",
+  "label": "Premises Services Core",
+  "version": "1.0.0",
+  "type": "foundation",
+  "extends": [],
+  "capabilities": [
+    "workcore.core",
+    "workcore.tenancy",
+    "workcore.authorization",
+    "workcore.crm",
+    "workcore.premises",
+    "workcore.catalogue",
+    "workcore.operations",
+    "workcore.scheduling",
+    "workcore.workforce",
+    "workcore.assets",
+    "workcore.forms",
+    "workcore.support",
+    "workcore.knowledge",
+    "workcore.finance",
+    "workcore.people",
+    "workcore.recruitment",
+    "workcore.onboarding",
+    "workcore.people.compliance",
+    "workcore.performance",
+    "workcore.compliance",
+    "workcore.territories"
+  ],
+  "features": {
+    "premises.enabled": true,
+    "operations.work_orders": true,
+    "scheduling.appointments": true,
+    "finance.enabled": true,
+    "reviews.enabled": true
+  },
+  "terminology": {
+    "entity.customer.singular": "Customer",
+    "entity.customer.plural": "Customers",
+    "entity.premises.singular": "Premises",
+    "entity.premises.plural": "Premises",
+    "entity.work_order.singular": "Work order",
+    "entity.work_order.plural": "Work orders",
+    "entity.worker.singular": "Worker",
+    "entity.worker.plural": "Workers",
+    "navigation.operations": "Operations",
+    "message.assignment": "Assigned :worker to :job"
+  },
+  "metadata": {
+    "rebased_for_workcore": "0.42.0-unified"
+  },
+  "codebooks": {
+    "work_order.priority": {
+      "include": [
+        "low",
+        "normal",
+        "high",
+        "urgent"
+      ],
+      "default": "normal"
+    },
+    "work_order.status": {
+      "include": [
+        "draft",
+        "ready",
+        "in_progress",
+        "paused",
+        "completed",
+        "cancelled"
+      ],
+      "default": "draft"
+    },
+    "appointment.type": {
+      "include": [
+        "job",
+        "inspection",
+        "maintenance",
+        "meeting",
+        "other"
+      ],
+      "default": "job"
+    }
+  },
+  "workflows": {
+    "work_order.status": {
+      "transitions": {
+        "draft": [
+          "ready",
+          "cancelled"
+        ],
+        "ready": [
+          "in_progress",
+          "cancelled"
+        ],
+        "in_progress": [
+          "paused",
+          "completed",
+          "cancelled"
+        ],
+        "paused": [
+          "in_progress",
+          "cancelled"
+        ],
+        "completed": [
+          "in_progress"
+        ],
+        "cancelled": [
+          "draft"
+        ]
+      }
+    }
+  }
+}

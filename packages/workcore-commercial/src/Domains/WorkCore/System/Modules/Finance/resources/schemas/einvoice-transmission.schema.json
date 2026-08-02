@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Electronic Invoice Transmission",
+  "type": "object",
+  "required": [
+    "invoice_id",
+    "format",
+    "receiver_endpoint",
+    "document_hash"
+  ],
+  "properties": {
+    "invoice_id": {
+      "type": "string"
+    },
+    "format": {
+      "type": "string"
+    },
+    "receiver_endpoint": {
+      "type": "string"
+    },
+    "document_hash": {
+      "type": "string",
+      "pattern": "^[a-fA-F0-9]{64}$"
+    }
+  },
+  "additionalProperties": true
+}

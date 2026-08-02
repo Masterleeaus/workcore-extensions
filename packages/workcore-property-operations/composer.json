@@ -1,0 +1,29 @@
+{
+  "autoload": {
+    "classmap": [
+      "src/"
+    ]
+  },
+  "description": "WorkCore Property Operations",
+  "extra": {
+    "workcore": {
+      "destructive_uninstall": false,
+      "package_type": "domain-extension",
+      "phase": "canonical-namespace-extraction",
+      "source_archive_sha256": "6d735fc6716bb08bd0ab7fdab74d390a6a009318f75ecb3f1a9b663c8cdba327",
+      "source_release": "WorkCore-MagicAI-Final-Consolidated-2026-08-02"
+    }
+  },
+  "license": "proprietary",
+  "name": "workcore/property-operations",
+  "require": {
+    "php": "^8.2",
+    "workcore/shared-foundation": "self.version"
+  },
+  "suggest": {
+    "workcore/work-operations": "Enables property jobs, permits, callbacks and compliance workflows.",
+    "workcore/workforce-assurance": "Enables NDIS, worker and assurance-backed vertical operations."
+  },
+  "type": "library",
+  "version": "0.1.1"
+}

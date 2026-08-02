@@ -1,0 +1,39 @@
+{
+  "architecture": "installable-domain-extension",
+  "dependencies": [
+    "workcore/shared-foundation"
+  ],
+  "destructive_uninstall": false,
+  "domain": "BusinessNetwork",
+  "modules": [
+    "CRM",
+    "Catalogue",
+    "Support",
+    "Knowledge",
+    "KnowledgeBase",
+    "Reviews",
+    "Territories",
+    "Feedback",
+    "Wizards"
+  ],
+  "package": "workcore/business-network",
+  "provider": "App\\Domains\\WorkCore\\Providers\\BusinessNetworkServiceProvider",
+  "runtime_keys": [
+    "crm",
+    "catalogue",
+    "support",
+    "knowledge",
+    "reviews",
+    "territories",
+    "intelligence",
+    "expansion",
+    "wizards",
+    "ai"
+  ],
+  "status": "phase-one canonical namespace extraction",
+  "system_slices": [
+    "System/Intelligence",
+    "System/Expansion",
+    "System/AI"
+  ]
+}

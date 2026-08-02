@@ -1,0 +1,122 @@
+name: Import final consolidated WorkCore correction
+
+on:
+  push:
+    branches:
+      - feature/five-domain-extension-split
+    paths:
+      - .github/workflows/import-final-consolidated-correction.yml
+      - .github/workflows/import-final-trigger.txt
+
+concurrency:
+  group: import-final-consolidated-correction
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  import-final-correction:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out feature branch
+        uses: actions/checkout@v4
+        with:
+          ref: feature/five-domain-extension-split
+          fetch-depth: 0
+
+      - name: Install Parquet reader
+        run: python -m pip install --disable-pip-version-check pyarrow==17.0.0
+
+      - name: Download correction transfer
+        run: |
+          curl --fail --location --retry 4 --retry-delay 3 \
+            'https://titan-builder-ob009-artifact.miniup.app/api/data-file/titan-builder-ob009-artifact/workcore-final-consolidated-correction-v2.parquet' \
+            --output /tmp/workcore-final-correction.parquet
+
+      - name: Reconstruct and verify correction archive
+        env:
+          EXPECTED_SHA256: 035091143f4580c01ce352fb4571a05f3eafa040b99cf77deb732151415da6d5
+          EXPECTED_BYTES: '2543523'
+        run: |
+          python - <<'PY'
+          import base64
+          import hashlib
+          import os
+          from pathlib import Path
+          import pyarrow.parquet as pq
+
+          rows = sorted(
+              pq.read_table('/tmp/workcore-final-correction.parquet').to_pylist(),
+              key=lambda row: int(row['Sequence']),
+          )
+          archive = base64.b64decode(
+              ''.join(str(row['Payload_Base64']) for row in rows),
+              validate=True,
+          )
+          actual_sha = hashlib.sha256(archive).hexdigest()
+          expected_sha = os.environ['EXPECTED_SHA256']
+          expected_bytes = int(os.environ['EXPECTED_BYTES'])
+          if len(archive) != expected_bytes:
+              raise SystemExit(f'archive size mismatch: {len(archive)} != {expected_bytes}')
+          if actual_sha != expected_sha:
+              raise SystemExit(f'archive SHA-256 mismatch: {actual_sha} != {expected_sha}')
+          Path('/tmp/workcore-final-correction.zip').write_bytes(archive)
+          print(f'verified {len(archive)} bytes with SHA-256 {actual_sha}')
+          PY
+
+      - name: Apply corrected packages and integration assets
+        run: |
+          rm -rf /tmp/workcore-final-correction-expanded
+          mkdir -p /tmp/workcore-final-correction-expanded
+          unzip -q /tmp/workcore-final-correction.zip -d /tmp/workcore-final-correction-expanded
+          source=/tmp/workcore-final-correction-expanded/workcore-final-correction-v2
+
+          test -f "$source/packages/workcore-commercial/src/Domains/WorkCore/System/Modules/Finance/Actions/CreateFinanceInvoice.php"
+          test -f "$source/packages/workcore-shared-foundation/src/Domains/WorkCore/Database/Migrations/2026_08_02_000002_create_tm_payment_orchestration_tables.php"
+          test -f "$source/integration/magicai-extension/extension.json"
+          grep -q 'supportsFullText' "$source/packages/workcore-shared-foundation/src/Domains/WorkCore/Database/Migrations/2026_07_23_120058_create_tz_ai_knowledge_tables.php"
+
+          rm -rf packages compatibility site integration/magicai-extension
+          cp -a "$source/packages" ./packages
+          cp -a "$source/compatibility" ./compatibility
+          cp -a "$source/site" ./site
+          cp -a "$source/integration/magicai-extension" ./integration/magicai-extension
+          cp "$source/ownership-manifest.json" ./ownership-manifest.json
+          cp "$source/tools/build_extensions.py" ./tools/build_extensions.py
+          cp "$source/tests/test_build_extensions.py" ./tests/test_build_extensions.py
+          cp "$source/tests/test_host_compatibility.py" ./tests/test_host_compatibility.py
+          cp "$source/.github/workflows/magicai-11-compatibility.yml" ./.github/workflows/magicai-11-compatibility.yml
+
+          mkdir -p docs/source docs/integration
+          cp -a "$source/docs/source/." ./docs/source/
+          cp -a "$source/docs/integration/." ./docs/integration/
+          cp "$source/integration/host-overlay/MAGICAI-WORKCORE-FINAL-COMPLETION-MANIFEST.md" ./integration/host-overlay/
+          cp "$source/integration/host-overlay/tests/Architecture/verify_magicai_finance_completion.php" ./integration/host-overlay/tests/Architecture/
+          mkdir -p ./integration/host-overlay/tests/Standalone/FinanceCompletion
+          cp "$source/integration/host-overlay/tests/Standalone/FinanceCompletion/run.php" ./integration/host-overlay/tests/Standalone/FinanceCompletion/
+
+          sed -i 's/EXPECTED_OWNED_FILE_COUNT = 2129/EXPECTED_OWNED_FILE_COUNT = 2158/' tools/validate_repository.py
+          sed -i 's/self.assertEqual(2129, report.owned_file_count)/self.assertEqual(2158, report.owned_file_count)/' tests/test_repository_integrity.py
+          rm -f .github/workflows/import-final-consolidated-correction.yml
+          rm -f .github/workflows/import-final-trigger.txt
+
+      - name: Verify corrected repository
+        run: |
+          python -m unittest discover -s tests -p 'test_*.py' -v
+          python tools/validate_repository.py --repo .
+          find packages -type f -name '*.php' -print0 | xargs -0 -n1 -P4 php -l >/tmp/php-lint.txt
+          test "$(find packages -type f -name '*.php' | wc -l)" -eq 2090
+          grep -q 'CreateFinanceCreditNote.php' ownership-manifest.json
+          grep -q '2026_08_02_000002_create_tm_payment_orchestration_tables.php' ownership-manifest.json
+          grep -q 'supportsFullText' packages/workcore-shared-foundation/src/Domains/WorkCore/Database/Migrations/2026_07_23_120058_create_tz_ai_knowledge_tables.php
+          grep -q 'Schema::hasTable' integration/host-overlay/database/migrations/2026_07_25_000001_add_workcore_tenancy_to_meetup.php
+
+      - name: Commit final consolidated correction
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add packages ownership-manifest.json compatibility integration docs site tools/build_extensions.py tests/test_build_extensions.py tests/test_host_compatibility.py tests/test_repository_integrity.py tools/validate_repository.py .github/workflows/magicai-11-compatibility.yml .github/workflows/import-final-consolidated-correction.yml .github/workflows/import-final-trigger.txt
+          git commit -m 'fix: restore final WorkCore finance completion files'
+          git pull --rebase origin feature/five-domain-extension-split
+          git push origin HEAD:feature/five-domain-extension-split

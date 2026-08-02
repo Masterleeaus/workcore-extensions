@@ -1,0 +1,12 @@
+<?php
+
+declare(strict_types=1);
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+return new class extends Migration{
+public function up():void{
+Schema::create('tm_payment_provider_connections',function(Blueprint $table):void{$table->uuid('id')->primary();$table->string('company_id',64)->index();$table->string('payment_method',32);$table->string('provider_key',64);$table->string('connection_label',255);$table->string('state',32)->default('active');$table->json('configuration');$table->string('credentials_reference',255)->nullable();$table->string('created_by_actor_id',128);$table->string('updated_by_actor_id',128);$table->timestamps();$table->unique(['company_id','payment_method','provider_key'],'tm_payment_provider_connections_unique');});
+Schema::create('tm_payment_sessions',function(Blueprint $table):void{$table->uuid('id')->primary();$table->string('company_id',64)->index();$table->uuid('payment_request_id')->nullable()->index();$table->uuid('provider_connection_id')->nullable()->index();$table->string('payment_method',32);$table->string('state',32)->default('created');$table->bigInteger('amount_minor');$table->char('currency_code',3);$table->char('session_token_hash',64)->unique();$table->string('provider_session_reference',255)->nullable();$table->text('return_url')->nullable();$table->timestamp('expires_at')->nullable();$table->json('metadata')->nullable();$table->string('created_by_actor_id',128);$table->timestamps();$table->index(['company_id','state','expires_at'],'tm_payment_sessions_state_expiry_index');});
+Schema::create('tm_payment_attempts',function(Blueprint $table):void{$table->uuid('id')->primary();$table->string('company_id',64)->index();$table->uuid('payment_session_id')->index();$table->unsignedInteger('attempt_number');$table->string('state',32)->default('initiated');$table->string('provider_reference',255)->nullable();$table->string('failure_code',128)->nullable();$table->text('failure_message')->nullable();$table->char('request_fingerprint',64)->nullable();$table->json('response_metadata')->nullable();$table->timestamp('attempted_at');$table->string('created_by_actor_id',128);$table->timestamps();$table->unique(['payment_session_id','attempt_number'],'tm_payment_attempts_number_unique');});}
+public function down():void{Schema::dropIfExists('tm_payment_attempts');Schema::dropIfExists('tm_payment_sessions');Schema::dropIfExists('tm_payment_provider_connections');}};

@@ -1,0 +1,19 @@
+{
+  "name": "titan/workcore-managed-premises",
+  "description": "Embedded WorkCore premises and property operations module.",
+  "type": "library",
+  "authors": [{"name": "Titan"}],
+  "extra": {
+    "laravel": {
+      "providers": [
+        "App\\Extensions\\WorkCore\\System\\Modules\\Premises\\Providers\\WorkPremisesServiceProvider"
+      ],
+      "aliases": {}
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\Extensions\\WorkCore\\System\\Modules\\Premises\\": ""
+    }
+  }
+}

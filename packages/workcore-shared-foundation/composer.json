@@ -1,0 +1,30 @@
+{
+  "autoload": {
+    "classmap": [
+      "src/"
+    ]
+  },
+  "description": "WorkCore Shared Foundation",
+  "extra": {
+    "laravel": {
+      "providers": [
+        "App\\Domains\\WorkCore\\WorkCoreServiceProvider"
+      ]
+    },
+    "workcore": {
+      "destructive_uninstall": false,
+      "package_type": "shared-foundation",
+      "phase": "canonical-namespace-extraction",
+      "source_archive_sha256": "6d735fc6716bb08bd0ab7fdab74d390a6a009318f75ecb3f1a9b663c8cdba327",
+      "source_release": "WorkCore-MagicAI-Final-Consolidated-2026-08-02"
+    }
+  },
+  "license": "proprietary",
+  "name": "workcore/shared-foundation",
+  "require": {
+    "laravel/framework": "^10.0 || ^11.0 || ^12.0",
+    "php": "^8.2"
+  },
+  "type": "library",
+  "version": "0.1.1"
+}

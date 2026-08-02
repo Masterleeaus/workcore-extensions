@@ -1,0 +1,132 @@
+{
+  "key": "facilities_management",
+  "label": "Facilities Management",
+  "version": "1.0.0",
+  "type": "vertical",
+  "extends": [
+    "premises_services_core"
+  ],
+  "capabilities": [
+    "workcore.dispatch",
+    "workcore.rosters",
+    "workcore.inventory",
+    "workcore.attendance",
+    "workcore.reviews",
+    "workcore.recurring",
+    "workcore.territories",
+    "workcore.compliance",
+    "workcore.money.procurement"
+  ],
+  "features": {
+    "facilities.contracts": true,
+    "facilities.sla": true,
+    "facilities.planned_maintenance": true,
+    "facilities.vendor_management": true,
+    "facilities.compliance_register": true
+  },
+  "terminology": {
+    "entity.customer.singular": "Client organisation",
+    "entity.customer.plural": "Client organisations",
+    "entity.premises.singular": "Facility",
+    "entity.premises.plural": "Facilities",
+    "entity.work_order.singular": "Service request",
+    "entity.work_order.plural": "Service requests"
+  },
+  "metadata": {
+    "managed_premises_profile": "commercial_property",
+    "rebased_for_workcore": "0.42.0-unified"
+  },
+  "setup": {
+    "default_business_lines": [
+      {
+        "key": "facilities_operations",
+        "name": "Facilities Operations"
+      }
+    ],
+    "questions": [
+      {
+        "key": "facilities.asset_classes",
+        "section": "vertical_details",
+        "prompt": "Which facility and asset classes should be configured?",
+        "type": "list",
+        "required": true
+      },
+      {
+        "key": "facilities.contract_model",
+        "section": "vertical_details",
+        "prompt": "How is facilities work delivered?",
+        "type": "select",
+        "required": true,
+        "options": [
+          "in_house",
+          "contracted",
+          "mixed"
+        ]
+      },
+      {
+        "key": "facilities.preventive_maintenance",
+        "section": "operations",
+        "prompt": "Should preventive maintenance programs be generated?",
+        "type": "boolean",
+        "required": true,
+        "default": true
+      }
+    ],
+    "documents": [
+      "maintenance_report",
+      "risk_assessment",
+      "emergency_procedure",
+      "staff_induction"
+    ]
+  },
+  "codebooks": {
+    "roster.type": {
+      "include": [
+        "facilities",
+        "maintenance",
+        "inspection",
+        "compliance",
+        "security",
+        "groundskeeping"
+      ],
+      "default": "facilities"
+    },
+    "roster.shift_type": {
+      "include": [
+        "facilities",
+        "maintenance",
+        "inspection",
+        "compliance",
+        "security",
+        "groundskeeping"
+      ],
+      "default": "facilities"
+    },
+    "worker.type": {
+      "include": [
+        "maintenance",
+        "inspector",
+        "groundskeeper"
+      ],
+      "default": "maintenance"
+    },
+    "appointment.type": {
+      "include": [
+        "maintenance",
+        "inspection",
+        "compliance"
+      ],
+      "default": "maintenance"
+    },
+    "dispatch.assignment_type": {
+      "include": [
+        "maintenance",
+        "inspection",
+        "compliance",
+        "contractor_callout",
+        "delivery"
+      ],
+      "default": "maintenance"
+    }
+  }
+}

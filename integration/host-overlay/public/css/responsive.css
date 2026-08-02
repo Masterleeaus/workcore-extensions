@@ -1,0 +1,360 @@
+/* Responsive Utilities for Meetup Chat */
+
+/* ==================== Mobile-First Breakpoints ==================== */
+/* 
+  xs: 0-479px (mobile portrait)
+  sm: 480-767px (mobile landscape)
+  md: 768-1023px (tablet)
+  lg: 1024-1279px (desktop)
+  xl: 1280px+ (large desktop)
+*/
+
+/* ==================== Base Mobile Styles ==================== */
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Touch-friendly minimum sizes */
+button,
+a,
+input[type="checkbox"],
+input[type="radio"] {
+    min-height: 44px;
+    min-width: 44px;
+}
+
+/* Prevent text selection on double-tap */
+.no-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* ==================== Sidebar Overlay ==================== */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 40;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* ==================== Mobile Navigation ==================== */
+.mobile-nav-toggle {
+    display: none;
+    padding: 0.5rem;
+    background: transparent;
+    border: none;
+    color: #6b7280;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.mobile-nav-toggle:hover {
+    color: #1B5E3F;
+}
+
+/* ==================== Responsive Grid System ==================== */
+.grid-responsive {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+    .grid-responsive {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid-responsive {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ==================== Mobile Sidebar Styles ==================== */
+@media (max-width: 1023px) {
+
+    /* Show mobile toggle buttons */
+    .mobile-nav-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Left Sidebar (Conversations) */
+    .left-sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 320px;
+        max-width: 85vw;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 50;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .left-sidebar.active {
+        transform: translateX(0);
+    }
+
+    /* Right Sidebar (Chat Info) */
+    .right-sidebar,
+    #chat-info-sidebar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 320px;
+        max-width: 85vw;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 50;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .right-sidebar.active,
+    #chat-info-sidebar.active {
+        transform: translateX(0);
+    }
+}
+
+/* ==================== Tablet Adjustments ==================== */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .left-sidebar {
+        width: 360px;
+    }
+
+    .right-sidebar,
+    #chat-info-sidebar {
+        width: 360px;
+    }
+}
+
+/* ==================== Mobile Chat Layout ==================== */
+@media (max-width: 767px) {
+
+    /* Reduce padding on mobile */
+    .p-6 {
+        padding: 1rem !important;
+    }
+
+    .p-8 {
+        padding: 1.5rem !important;
+    }
+
+    /* Smaller text on mobile */
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    h3 {
+        font-size: 1.125rem;
+    }
+
+    /* Stack navigation icons vertically on very small screens */
+    .nav-icon-container {
+        flex-wrap: wrap;
+    }
+
+    /* Full width buttons on mobile */
+    .mobile-full-width {
+        width: 100% !important;
+    }
+
+    /* Reduce gap spacing */
+    .gap-6 {
+        gap: 1rem !important;
+    }
+
+    .space-y-6>*+* {
+        margin-top: 1rem !important;
+    }
+}
+
+/* ==================== Message Bubbles Responsive ==================== */
+@media (max-width: 640px) {
+    .message-bubble {
+        max-width: 85% !important;
+        font-size: 0.9375rem;
+    }
+
+    .message-bubble img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* ==================== Form Inputs Mobile ==================== */
+@media (max-width: 767px) {
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    textarea {
+        font-size: 16px !important;
+        /* Prevents zoom on iOS */
+    }
+
+    select {
+        font-size: 16px !important;
+    }
+}
+
+/* ==================== Modal Responsive ==================== */
+@media (max-width: 640px) {
+    .modal-content {
+        width: 95% !important;
+        max-width: 95% !important;
+        padding: 1.5rem !important;
+        margin: 1rem;
+    }
+}
+
+/* ==================== Dashboard Cards Mobile ==================== */
+@media (max-width: 767px) {
+    .dashboard-card {
+        padding: 1rem !important;
+    }
+
+    .stat-number {
+        font-size: 2rem !important;
+    }
+}
+
+/* ==================== Chat Header Mobile ==================== */
+@media (max-width: 767px) {
+    .chat-header {
+        padding: 0.75rem 1rem !important;
+    }
+
+    .chat-header h2 {
+        font-size: 1.125rem !important;
+    }
+
+    /* Hide tabs on mobile, show only messages */
+    .tab-btn:not(.active) {
+        display: none;
+    }
+}
+
+/* ==================== Hide Elements on Mobile ==================== */
+@media (max-width: 767px) {
+    .hide-mobile {
+        display: none !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .hide-desktop {
+        display: none !important;
+    }
+}
+
+/* ==================== Landscape Orientation ==================== */
+@media (max-height: 500px) and (orientation: landscape) {
+    .chat-header {
+        padding: 0.5rem 1rem !important;
+    }
+
+    .message-input-area {
+        padding: 0.75rem !important;
+    }
+}
+
+/* ==================== Touch Gestures ==================== */
+.swipeable {
+    touch-action: pan-y;
+}
+
+/* ==================== Loading States ==================== */
+.skeleton {
+    background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s ease-in-out infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* ==================== Safe Area Insets (for notched devices) ==================== */
+@supports (padding: max(0px)) {
+    .safe-top {
+        padding-top: max(env(safe-area-inset-top), 0px);
+    }
+
+    .safe-bottom {
+        padding-bottom: max(env(safe-area-inset-bottom), 0px);
+    }
+
+    .safe-left {
+        padding-left: max(env(safe-area-inset-left), 0px);
+    }
+
+    .safe-right {
+        padding-right: max(env(safe-area-inset-right), 0px);
+    }
+}
+
+/* ==================== Smooth Scrolling ==================== */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+/* ==================== High Contrast Mode Support ==================== */
+@media (prefers-contrast: high) {
+
+    button,
+    a {
+        outline: 2px solid currentColor;
+        outline-offset: 2px;
+    }
+}
+
+/* ==================== Dark Mode Preparation ==================== */
+@media (prefers-color-scheme: dark) {
+    /* Add dark mode styles here if needed in future */
+}
+
+/* ==================== Print Styles ==================== */
+@media print {
+
+    .no-print,
+    .sidebar,
+    .mobile-nav-toggle,
+    button {
+        display: none !important;
+    }
+
+    body {
+        background: white !important;
+    }
+}

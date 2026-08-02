@@ -1,0 +1,28 @@
+{
+  "architecture": "installable-domain-extension",
+  "dependencies": [
+    "workcore/shared-foundation"
+  ],
+  "destructive_uninstall": false,
+  "domain": "Commercial",
+  "modules": [
+    "Finance",
+    "Payroll",
+    "Inventory",
+    "Supply",
+    "TitanVault",
+    "TrustAccounting"
+  ],
+  "package": "workcore/commercial",
+  "provider": "App\\Domains\\WorkCore\\Providers\\CommercialServiceProvider",
+  "runtime_keys": [
+    "finance",
+    "payroll",
+    "inventory",
+    "supply",
+    "vault",
+    "trust_accounting"
+  ],
+  "status": "phase-one canonical namespace extraction",
+  "system_slices": []
+}

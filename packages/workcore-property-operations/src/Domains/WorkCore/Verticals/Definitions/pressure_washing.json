@@ -1,0 +1,89 @@
+{
+  "key": "pressure_washing",
+  "label": "Pressure Washing",
+  "version": "1.0.0",
+  "type": "vertical",
+  "extends": [
+    "field_services_core"
+  ],
+  "capabilities": [],
+  "features": {
+    "pressure_washing.surface_assessment": true,
+    "pressure_washing.water_controls": true,
+    "pressure_washing.before_after_evidence": true
+  },
+  "terminology": {
+    "entity.work_order.singular": "Pressure-washing job",
+    "entity.work_order.plural": "Pressure-washing jobs",
+    "entity.worker.singular": "Operator",
+    "entity.worker.plural": "Operators"
+  },
+  "metadata": {
+    "rebased_for_workcore": "0.42.0-unified"
+  },
+  "setup": {
+    "default_business_lines": [
+      {
+        "key": "exterior_cleaning",
+        "name": "Exterior and Pressure Cleaning"
+      }
+    ],
+    "questions": [
+      {
+        "key": "pressure_washing.service_types",
+        "section": "vertical_details",
+        "prompt": "Which exterior cleaning services should be configured?",
+        "type": "multiselect",
+        "required": true,
+        "options": [
+          "driveways",
+          "paths",
+          "building_wash",
+          "roof_wash",
+          "decks",
+          "commercial_surfaces",
+          "graffiti_removal"
+        ]
+      },
+      {
+        "key": "pressure_washing.water_recovery",
+        "section": "compliance",
+        "prompt": "Is wastewater containment or recovery required for some jobs?",
+        "type": "boolean",
+        "required": true,
+        "default": false
+      }
+    ],
+    "documents": [
+      "risk_assessment",
+      "job_checklist",
+      "maintenance_report"
+    ]
+  },
+  "codebooks": {
+    "roster.type": {
+      "include": [
+        "pressure_washing"
+      ],
+      "default": "pressure_washing"
+    },
+    "roster.shift_type": {
+      "include": [
+        "pressure_washing"
+      ],
+      "default": "pressure_washing"
+    },
+    "appointment.type": {
+      "include": [
+        "pressure_washing"
+      ],
+      "default": "pressure_washing"
+    },
+    "dispatch.assignment_type": {
+      "include": [
+        "pressure_washing"
+      ],
+      "default": "pressure_washing"
+    }
+  }
+}

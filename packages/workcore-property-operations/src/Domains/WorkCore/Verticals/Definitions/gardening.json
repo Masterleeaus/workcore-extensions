@@ -1,0 +1,100 @@
+{
+  "key": "gardening",
+  "label": "Gardening and Grounds Maintenance",
+  "version": "1.0.0",
+  "type": "vertical",
+  "extends": [
+    "field_services_core"
+  ],
+  "capabilities": [],
+  "features": {
+    "operations.recurring_jobs": true,
+    "gardening.seasonal_programs": true,
+    "gardening.green_waste": true,
+    "gardening.site_plans": true
+  },
+  "terminology": {
+    "entity.work_order.singular": "Garden visit",
+    "entity.work_order.plural": "Garden visits",
+    "entity.worker.singular": "Gardener",
+    "entity.worker.plural": "Gardeners"
+  },
+  "metadata": {
+    "rebased_for_workcore": "0.42.0-unified"
+  },
+  "setup": {
+    "default_business_lines": [
+      {
+        "key": "garden_maintenance",
+        "name": "Garden Maintenance"
+      }
+    ],
+    "questions": [
+      {
+        "key": "gardening.service_types",
+        "section": "vertical_details",
+        "prompt": "Which gardening and grounds services should be configured?",
+        "type": "multiselect",
+        "required": true,
+        "options": [
+          "lawn_mowing",
+          "garden_maintenance",
+          "hedging",
+          "weeding",
+          "green_waste",
+          "irrigation",
+          "grounds_maintenance",
+          "tree_work"
+        ]
+      },
+      {
+        "key": "gardening.seasonal_programs",
+        "section": "vertical_details",
+        "prompt": "Should seasonal maintenance programs be generated?",
+        "type": "boolean",
+        "required": true,
+        "default": true
+      }
+    ],
+    "documents": [
+      "job_checklist",
+      "risk_assessment",
+      "maintenance_report"
+    ]
+  },
+  "codebooks": {
+    "roster.type": {
+      "include": [
+        "gardening",
+        "groundskeeping"
+      ],
+      "default": "gardening"
+    },
+    "roster.shift_type": {
+      "include": [
+        "gardening",
+        "groundskeeping"
+      ],
+      "default": "gardening"
+    },
+    "worker.type": {
+      "include": [
+        "gardener",
+        "groundskeeper"
+      ],
+      "default": "gardener"
+    },
+    "appointment.type": {
+      "include": [
+        "gardening"
+      ],
+      "default": "gardening"
+    },
+    "dispatch.assignment_type": {
+      "include": [
+        "gardening"
+      ],
+      "default": "gardening"
+    }
+  }
+}

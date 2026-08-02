@@ -1,0 +1,29 @@
+{
+  "autoload": {
+    "classmap": [
+      "src/"
+    ]
+  },
+  "description": "WorkCore Commercial",
+  "extra": {
+    "workcore": {
+      "destructive_uninstall": false,
+      "package_type": "domain-extension",
+      "phase": "canonical-namespace-extraction",
+      "source_archive_sha256": "6d735fc6716bb08bd0ab7fdab74d390a6a009318f75ecb3f1a9b663c8cdba327",
+      "source_release": "WorkCore-MagicAI-Final-Consolidated-2026-08-02"
+    }
+  },
+  "license": "proprietary",
+  "name": "workcore/commercial",
+  "require": {
+    "php": "^8.2",
+    "workcore/shared-foundation": "self.version"
+  },
+  "suggest": {
+    "workcore/business-network": "Connects customer, receivable and CRM context to financial workflows.",
+    "workcore/work-operations": "Enables completed-job invoicing and job profitability workflows."
+  },
+  "type": "library",
+  "version": "0.1.1"
+}

@@ -1,0 +1,120 @@
+{
+  "key": "cleaning",
+  "label": "Cleaning Services",
+  "version": "1.0.0",
+  "type": "vertical",
+  "extends": [
+    "field_services_core"
+  ],
+  "capabilities": [],
+  "features": {
+    "operations.recurring_jobs": true,
+    "cleaning.checklists": true,
+    "cleaning.quality_inspections": true,
+    "cleaning.supplies": true
+  },
+  "terminology": {
+    "entity.work_order.singular": "Cleaning job",
+    "entity.work_order.plural": "Cleaning jobs",
+    "entity.worker.singular": "Cleaner",
+    "entity.worker.plural": "Cleaners",
+    "entity.premises.singular": "Service location"
+  },
+  "metadata": {
+    "rebased_for_workcore": "0.42.0-unified"
+  },
+  "setup": {
+    "default_business_lines": [
+      {
+        "key": "residential_cleaning",
+        "name": "Residential Cleaning"
+      },
+      {
+        "key": "commercial_cleaning",
+        "name": "Commercial Cleaning"
+      }
+    ],
+    "questions": [
+      {
+        "key": "cleaning.service_types",
+        "section": "vertical_details",
+        "prompt": "Which cleaning services should be configured?",
+        "type": "multiselect",
+        "required": true,
+        "options": [
+          "domestic",
+          "commercial",
+          "end_of_lease",
+          "deep_cleaning",
+          "carpet",
+          "window",
+          "short_stay_turnover",
+          "supported_accommodation"
+        ]
+      },
+      {
+        "key": "cleaning.supplies_model",
+        "section": "vertical_details",
+        "prompt": "Who normally supplies cleaning products and consumables?",
+        "type": "select",
+        "required": true,
+        "default": "business",
+        "options": [
+          "business",
+          "customer",
+          "mixed"
+        ]
+      },
+      {
+        "key": "cleaning.quality_signoff",
+        "section": "vertical_details",
+        "prompt": "Should jobs require a cleaning quality sign-off?",
+        "type": "boolean",
+        "required": true,
+        "default": true
+      }
+    ],
+    "documents": [
+      "cleaning_checklist",
+      "risk_assessment"
+    ]
+  },
+  "codebooks": {
+    "roster.type": {
+      "include": [
+        "cleaning"
+      ],
+      "default": "cleaning",
+      "labels": {
+        "cleaning": "Cleaning roster"
+      }
+    },
+    "roster.shift_type": {
+      "include": [
+        "cleaning"
+      ],
+      "default": "cleaning",
+      "labels": {
+        "cleaning": "Cleaning service"
+      }
+    },
+    "worker.type": {
+      "include": [
+        "cleaner"
+      ],
+      "default": "cleaner"
+    },
+    "appointment.type": {
+      "include": [
+        "cleaning"
+      ],
+      "default": "cleaning"
+    },
+    "dispatch.assignment_type": {
+      "include": [
+        "cleaning"
+      ],
+      "default": "cleaning"
+    }
+  }
+}

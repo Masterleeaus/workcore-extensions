@@ -1,0 +1,2180 @@
+{
+  "file_count": 435,
+  "files": [
+    {
+      "bytes": 220,
+      "path": "README.md",
+      "sha256": "dea94f54121aa8a423a9d0667c1b7f459f8dbe19180d34f7be23fc6bf25bf03f"
+    },
+    {
+      "bytes": 861,
+      "path": "composer.json",
+      "sha256": "a1be218325d86c13bccece218989b3cfb58452f43396ab9dc5c87f72dc9fd8de"
+    },
+    {
+      "bytes": 10656,
+      "path": "docs/original-composition-manifest.json",
+      "sha256": "9be92b02ed5a9acc59ae198df0d85c3def9ab056a561866496e3021a07df2ba5"
+    },
+    {
+      "bytes": 547,
+      "path": "extension.json",
+      "sha256": "26552476b1442872cb70c7721af978e8ec122ed7daefce1cae9e5cce90b82c01"
+    },
+    {
+      "bytes": 607,
+      "path": "src/Domains/WorkCore/Manifests/Commercial.json",
+      "sha256": "c8b26ec91736405e334c8ce21b0443afe90e9c87e206faed0fddea94f8178985"
+    },
+    {
+      "bytes": 672,
+      "path": "src/Domains/WorkCore/Providers/CommercialServiceProvider.php",
+      "sha256": "6823a9104da45dab7b0a765b056e5463b54a4a172aa8071dbfc0b6333a547807"
+    },
+    {
+      "bytes": 371,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/AI/FinanceToolRegistry.php",
+      "sha256": "ca48e5707f932a7e9472e2167fed71c22737f9ec2465fa130b90e2d224058aad"
+    },
+    {
+      "bytes": 2515,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/AI/Tools/CreateInvoiceFromJobTool.php",
+      "sha256": "74095e87aacbeec98a80bee5e850ef5898060b2cd371dda09b305549aa7d4562"
+    },
+    {
+      "bytes": 1346,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/AI/Tools/IngestPaymentEvidenceTool.php",
+      "sha256": "f2bc0303717f54bbf56939151dd014c86701285c7c3de150f354c4e386148b64"
+    },
+    {
+      "bytes": 1670,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/AllocateFinanceCredit.php",
+      "sha256": "0318329a382cd4c73618b14f607a83090866b6dc4c4a1b41910ef203b3e4cd40"
+    },
+    {
+      "bytes": 1562,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/AllocateFinanceReceivable.php",
+      "sha256": "cd5e2c54cc6f36cc24e28ce3879376c5df01a70a1690399b2bb498e82a9d305f"
+    },
+    {
+      "bytes": 1562,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/ApproveFinanceExpense.php",
+      "sha256": "167d8390749e60ea5975fae4ab4c599fb83e6252c5dd909e2ca3679054fcd66f"
+    },
+    {
+      "bytes": 1656,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/ChangeFinanceInvoiceStatus.php",
+      "sha256": "dd5c25fb0f3a10964fd715590baec83b83830ef5d222c892498ed90a01fc3bca"
+    },
+    {
+      "bytes": 1644,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/ChangeFinanceQuoteStatus.php",
+      "sha256": "59299dce83004be17a5747da0e0a7e6e7885a32c9be02af4d9015763ce4b8e79"
+    },
+    {
+      "bytes": 1603,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/CloseFinanceAccountingPeriod.php",
+      "sha256": "f3a738cf7f19e640a20164f42f8cfaaf5a4f2e3854e2f6d95708503b713cb65b"
+    },
+    {
+      "bytes": 1469,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/CreateFinanceAccount.php",
+      "sha256": "bc95a7d552daf183513dc5a5e145acd385a04a494916a2f179f074e1a57a30ea"
+    },
+    {
+      "bytes": 1496,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/CreateFinanceAccountingPeriod.php",
+      "sha256": "db4590ee827a144d378ecf5537994d11b8c3017910a630a6188f882d2c06d216"
+    },
+    {
+      "bytes": 1483,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/CreateFinanceCreditNote.php",
+      "sha256": "955f056e59f4751e6846d0b95b28ead6659f7f1e30b40b0ba727aff573f4aae6"
+    },
+    {
+      "bytes": 1469,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/CreateFinanceInvoice.php",
+      "sha256": "042a6a1d6e4724e4393f6774f4215c81bb64c6f982d2f10833f86e89dab1a169"
+    },
+    {
+      "bytes": 1461,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/CreateFinanceQuote.php",
+      "sha256": "6377d8abc2d9e4f1b0cd1822dd1fe49a5acfdcb0a055dde6416c27a1d7c8b487"
+    },
+    {
+      "bytes": 1005,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/CreatePaymentSession.php",
+      "sha256": "90a0cf9adac4e8a78bb6b1692b01f0e9b4309da4776193fd849b07e46da13921"
+    },
+    {
+      "bytes": 460,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/GetFinanceSummary.php",
+      "sha256": "f1adeb7142768b9dfb24244cb93d45d404bb6a3c2cd6ceadd4bbd7733ebf36c5"
+    },
+    {
+      "bytes": 631,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/GetInvoiceProfile.php",
+      "sha256": "fa322b6b247b611f1e0b3ba1eab1b1f36958d3ec4226d683ffa75601ebd8daa9"
+    },
+    {
+      "bytes": 452,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/GetPaymentOrchestrationSummary.php",
+      "sha256": "54206ce2093196667bd4594a6a4154d9df6f9dcb95e25e601dddba43d39c240f"
+    },
+    {
+      "bytes": 633,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/GetPaymentSession.php",
+      "sha256": "eef5fe921d94b448ad1e58f71aacba0f74b42df68f6625881689fd355ea64282"
+    },
+    {
+      "bytes": 621,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/GetQuoteProfile.php",
+      "sha256": "cb9ff7028b66cd876d0c9e5db714c2099500ed2b25bc13386a48100e5353a39f"
+    },
+    {
+      "bytes": 1556,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/IssueFinanceInvoice.php",
+      "sha256": "da1992754f7a47f65de9bbf9ddb73179415cbfecc00b1fb5a20778c9727902f0"
+    },
+    {
+      "bytes": 1464,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/PostFinanceJournal.php",
+      "sha256": "2055e5ece460699e81af934b8282164edd11760f920e38049e93610251b3d123"
+    },
+    {
+      "bytes": 1470,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/RecordFinanceExpense.php",
+      "sha256": "590d44a808d5277f999667763f34345a22f6dcedeb9000f082f5659faecbdbea"
+    },
+    {
+      "bytes": 1450,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/RecordPaymentAttempt.php",
+      "sha256": "43a8b78e25e334a326fade523be1c8b5d6c8394018158c1de7a5f5a062838882"
+    },
+    {
+      "bytes": 483,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/SearchReceivables.php",
+      "sha256": "e9216cb965211c4908e4595f22418dedbf3a617be91fa7e5b74c005747a1679b"
+    },
+    {
+      "bytes": 1043,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Actions/UpsertPaymentProviderConnection.php",
+      "sha256": "a82fc1d198cea29d6e432c27d19522ec5dccc2a7d3705a8d853ec51bbd1ba464"
+    },
+    {
+      "bytes": 1334,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Application/ActionRegistry.php",
+      "sha256": "9e372915cfa61c351200b1e07ed7a6545961f808ee41de0518fdc1f2cfee4e82"
+    },
+    {
+      "bytes": 5502,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Application/Actions/CloseReconciliation.php",
+      "sha256": "8ec3cd10ab83187c7ed32d568a34487c161225b36210926cc9b6e9d7d2c64827"
+    },
+    {
+      "bytes": 3620,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Application/Actions/ConfirmPaymentMatch.php",
+      "sha256": "fbcdbfebd965902341f5d007604ecfe2d2c971e957939cdb78c99045f50c03c7"
+    },
+    {
+      "bytes": 13124,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Application/Actions/CreateInvoiceFromCompletedJob.php",
+      "sha256": "321a79bf56192976cf2bc5fbf2101e98ea9d20369551a25fea0d345bca69f38c"
+    },
+    {
+      "bytes": 6261,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Application/Actions/ExecuteCollectionFollowup.php",
+      "sha256": "f7729d3cdaba19d10c3b927068e32706b964d626e6b8077fbf6f8899accfd7af"
+    },
+    {
+      "bytes": 2118,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Application/Actions/GetTitanMoneyHealth.php",
+      "sha256": "0603e348964420616402deff5396c4e974d38d2598adf421b1404d0c09fe8f66"
+    },
+    {
+      "bytes": 4245,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Application/Actions/ImportBankStatement.php",
+      "sha256": "4fdd1864c7d96081bba919c782b265507564ccd34435ab6e783310b4c90d0265"
+    },
+    {
+      "bytes": 9014,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Application/Actions/IngestAndMatchPaymentEvidence.php",
+      "sha256": "bc9e420eac13fb0881ea18404f429186d54b2544e5de6d7a47e797fb56d45827"
+    },
+    {
+      "bytes": 1916,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Application/DTOs/ActionContext.php",
+      "sha256": "3e43122441c3334a6f7a6d70dbd07ace5027eb057295e7dd82ced500eb9d06ab"
+    },
+    {
+      "bytes": 2161,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Application/DTOs/ActionDefinition.php",
+      "sha256": "57c4c064784316acfea0fd7a6696097e6785b37f489eadd16b87045932e706f6"
+    },
+    {
+      "bytes": 1147,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Application/DTOs/ActionResult.php",
+      "sha256": "90d1e48f5b33cb8364a96e86ea354447e9b83f2adee4cb8b0d2055e9647d7258"
+    },
+    {
+      "bytes": 1290,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Application/DTOs/ApprovalRequirement.php",
+      "sha256": "462aec51a9839d69d157890878038c827da0b084cadf760a1da8ec128fc92565"
+    },
+    {
+      "bytes": 442,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Application/DTOs/ArrayActionInput.php",
+      "sha256": "d8d775c56701d82117f4604a1d0b9d31db23dab413f0291b0d18cd7f37f62d5d"
+    },
+    {
+      "bytes": 541,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Application/DTOs/CloseReconciliationInput.php",
+      "sha256": "41b9593c49efb98f0e49bf838adb1049aaee62c53400d6b6b4621e11aef7ecbf"
+    },
+    {
+      "bytes": 624,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Application/DTOs/ConfirmPaymentMatchInput.php",
+      "sha256": "654041efdc701cd89107790f2874a34a972561ba2a4dd146036183a80c8e39bc"
+    },
+    {
+      "bytes": 1460,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Application/DTOs/CreateInvoiceFromCompletedJobInput.php",
+      "sha256": "dc93e170a8ada94f4c40d273d7a0c311f2e6534d5f28b7567e5fdc685df2653d"
+    },
+    {
+      "bytes": 1065,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Application/DTOs/ExecuteCollectionFollowupInput.php",
+      "sha256": "6b8ae5f6f5227875f659daad2e8d3e9a2929deb8f1f6e1f15058b86ca55dc8d8"
+    },
+    {
+      "bytes": 1606,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Application/DTOs/GenerativeUiEnvelope.php",
+      "sha256": "95c21499d1f51e632f8bb65e9656061c853ed6442af3ba916e134833a38f5e65"
+    },
+    {
+      "bytes": 1146,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Application/DTOs/ImportBankStatementInput.php",
+      "sha256": "3d42a3831cff60d2ae95196c3e886a06c326fa11bbca81008483b7637f33a8c0"
+    },
+    {
+      "bytes": 1921,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Application/DTOs/IngestPaymentEvidenceInput.php",
+      "sha256": "1e54edaf2ddce44d7707ff47c5a21a62c2cbeff91ab2227dde7ede718479eaca"
+    },
+    {
+      "bytes": 741,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Application/DTOs/RiskAssessment.php",
+      "sha256": "f4aa802d9c97388d112f0132b6fd56d7c8e674a58339eee9e7f4dc5a8af582c8"
+    },
+    {
+      "bytes": 300,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Application/Enums/ApprovalMode.php",
+      "sha256": "035c6e26a3135fda64dc73a1efbfa050d432f44d973382f40724f7e94f4498ab"
+    },
+    {
+      "bytes": 425,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Application/Enums/InterfaceOrigin.php",
+      "sha256": "16b78a81bf06af6c07355ffbaa3c174de7ded7ad9da9651af9e7ba739a0ee5e5"
+    },
+    {
+      "bytes": 323,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Application/Enums/ResultStatus.php",
+      "sha256": "35b72614792b6185c558a5b1230a0e173edd1c2a9e81e54d2aca77d73f560b25"
+    },
+    {
+      "bytes": 240,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Application/Enums/RiskLevel.php",
+      "sha256": "03c48f74b4e9995f64316a9507ba51015b779bc9abcde14b61ab9a59aa1d1515"
+    },
+    {
+      "bytes": 362,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Application/Enums/SurfaceType.php",
+      "sha256": "eebded395afd26720da233fc698eee47711f37cabc25de4d2d22d3c12d20a4b5"
+    },
+    {
+      "bytes": 1494,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Application/Services/InvoiceCollectionScheduler.php",
+      "sha256": "fde1d54245c394e3c3eb595b0b54e334d09e47d1c7c490cf5d0c1c89a33506db"
+    },
+    {
+      "bytes": 4173,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Application/Services/InvoiceIssuer.php",
+      "sha256": "15e98f15188698aaec83779320475b29fc056cf57e289995384a2c23745e6d55"
+    },
+    {
+      "bytes": 5173,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Application/Services/PaymentConfirmationService.php",
+      "sha256": "817dab65060a0eac99b2ad459f66d26bf5c7c898c8839e687ba6e2cedb7c8bee"
+    },
+    {
+      "bytes": 4228,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Application/Services/PaymentRequestService.php",
+      "sha256": "d1ba78a46dd529f223fc5e943ea5c54252b8074becc2a4e2463d9eb1fc003ec6"
+    },
+    {
+      "bytes": 6360,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Application/Services/WorkCoreJobInvoiceAssembler.php",
+      "sha256": "c09b536f118c9ec933df0154ee7e745c351919c838616b0243340d62835a2116"
+    },
+    {
+      "bytes": 303,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Audit/ActorType.php",
+      "sha256": "1f7ebe8a651ecbadc067afb8fc46681530ec859b857a540d68a49d6b2e64b845"
+    },
+    {
+      "bytes": 832,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Audit/AuditActor.php",
+      "sha256": "004650b6d5bdab6e65c701851c10dcfe2b1098bae32a983fc584140c4cfaccd6"
+    },
+    {
+      "bytes": 728,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Authorization/FailClosedCompanyMembershipAuthorizer.php",
+      "sha256": "d0734e8da69749ac0fa83f8213af93098615b8daa916e5deff38945871458ad8"
+    },
+    {
+      "bytes": 615,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Authorization/FailClosedPermissionAuthorizer.php",
+      "sha256": "51dbde91081ce0eb1d1f4b5cfeb7f204599f9760b2c28e6dbb93cdf193d64c6e"
+    },
+    {
+      "bytes": 1117,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Authorization/FinanceAccessGate.php",
+      "sha256": "762b61976f3b7772453c76bc256b10c82f588185584098c224250719e6fb4a4d"
+    },
+    {
+      "bytes": 3971,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Authorization/TitanMoneyPermission.php",
+      "sha256": "44fe23d86c78f80c1ff41f30f17293c8bc3eca766d3a2c2f90dbdbbefe48f0ab"
+    },
+    {
+      "bytes": 245,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Automation/AutomationDecision.php",
+      "sha256": "249aa4689047a9f1c2ca4780b463a5852a631d487ed4b1419c1e71e2e06d7df9"
+    },
+    {
+      "bytes": 2181,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Automation/AutomationPolicy.php",
+      "sha256": "10efaffa9b1409352e24031dd7c5fdc92dfa95de44a30f00dc87db75e160fd4d"
+    },
+    {
+      "bytes": 230,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Automation/AutonomyLevel.php",
+      "sha256": "77e7cbfe9bc9de8014101dcb1c3439e76f820677e253c6b96cf5d0b2fef85f4c"
+    },
+    {
+      "bytes": 1050,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Automation/Collections/CollectionAccountState.php",
+      "sha256": "92470ac403aa35d1005ab5d4e9c1df2cf562a26a84989c6b6746227102a6ae9f"
+    },
+    {
+      "bytes": 1488,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Automation/Collections/CollectionSequence.php",
+      "sha256": "58550d68dee09fbaae8eefb66726ccb843b366282e68d5302a6bcd279e325c21"
+    },
+    {
+      "bytes": 548,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Automation/Collections/CollectionSequenceStep.php",
+      "sha256": "73a5c7e26efde2120bfa35b57006ed64c8c732b048859a083a1c10e5eb14ad81"
+    },
+    {
+      "bytes": 368,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Automation/Collections/CollectionSuppression.php",
+      "sha256": "fe2936901cf2633e99646b129f347e89a078b33c18ca842d165cda5726b52212"
+    },
+    {
+      "bytes": 325,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Automation/Collections/CollectionSuppressionDecision.php",
+      "sha256": "e9c28a15c1f5df6a51077eb48a705a2e20dc4fe2633c103a25856f11c6af0e56"
+    },
+    {
+      "bytes": 1285,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Automation/Collections/CollectionSuppressionEvaluator.php",
+      "sha256": "cf5977ac87a023b890e3d4a3de390b6ba29247c43351aee90b1ff0e2f7858696"
+    },
+    {
+      "bytes": 1406,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Automation/FinancialActionType.php",
+      "sha256": "0c60bbd4529570625b841c52124079884ad350649a57726b5529d9465e2b16b8"
+    },
+    {
+      "bytes": 770,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Automation/Invoicing/InvoiceEligibilityEvaluator.php",
+      "sha256": "6fa50169788ea21b4b25ec9e37bdb7979f24ed2044f6ba1df1cadf183b4a5c1d"
+    },
+    {
+      "bytes": 383,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Automation/Invoicing/InvoiceEligibilityInput.php",
+      "sha256": "e7c7616c632a6f0ffab490e757e0a6ea0ce759260f69dce7a21e50bd57495e54"
+    },
+    {
+      "bytes": 386,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Automation/Invoicing/InvoiceEligibilityResult.php",
+      "sha256": "c613a4970a93b416f35e10c194893d16178be122185239517f235e44aa2f6e6e"
+    },
+    {
+      "bytes": 2962,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Automation/Runtime/PulseFinancialActionWorker.php",
+      "sha256": "ce141352ff70e703a528f856bfbcfd69e6f38965687c79d3330566273b64f926"
+    },
+    {
+      "bytes": 464,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Automation/Runtime/ScheduledActionRecord.php",
+      "sha256": "d9b986b74458439c823152999119cae1f8f8ad617c8e6119907534cc41acca8e"
+    },
+    {
+      "bytes": 840,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Console/RelayTitanMoneyOutboxCommand.php",
+      "sha256": "43a43da15cf5d8976c2c5581ecb0b9869392b454451bfac259ce4f4210c38965"
+    },
+    {
+      "bytes": 852,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Console/RunPulseFinancialActionsCommand.php",
+      "sha256": "5130619e82c2db8ffc04481ac37ac790910e29e442f29b3dafa2e932264ee038"
+    },
+    {
+      "bytes": 401,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/AccountantExportWriter.php",
+      "sha256": "54f115c742b03581fbac434bca1064f083dd4a5ec69431fc730c0a19c90d338b"
+    },
+    {
+      "bytes": 418,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/ActionAttemptRepository.php",
+      "sha256": "72508b20a47c5a97ec351c748b922f4b9f26160a0b95bf5a1a8d42a9de09bdc1"
+    },
+    {
+      "bytes": 203,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/ActionInput.php",
+      "sha256": "70f99a88f62b170ee41c3439a4857c9d9b08b28913919b5b6a632556a10512c4"
+    },
+    {
+      "bytes": 253,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/ActionInputFactory.php",
+      "sha256": "b2bf7be06b8dd905ac4cb9fcfee1d419a41a9531aa41a0975d872f5770be3caa"
+    },
+    {
+      "bytes": 523,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/ApprovalGateway.php",
+      "sha256": "127c5bd4db8175b421b2b501f67f1c833844a635ce7db20ce8e4bf1f8deb703c"
+    },
+    {
+      "bytes": 303,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/ArtifactStore.php",
+      "sha256": "1d8d569debd3840da21417280ff70201ce4dac1c4c441419723d06d77d044d1d"
+    },
+    {
+      "bytes": 505,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/AuditRecorder.php",
+      "sha256": "d48b41059a4f671ca95753b0faad08b9bb2bed629588777323ee875f55875e3a"
+    },
+    {
+      "bytes": 387,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/AutomationPolicyRepository.php",
+      "sha256": "db3320e1309a31d3539ea2b4f47e3bcd939102adfde01dd8caef3251aee68915"
+    },
+    {
+      "bytes": 561,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/AutomationScheduler.php",
+      "sha256": "680a1f76d8d7aebb05eded8e3e929f5c72cb26218a736bed85d03f8bc7238e53"
+    },
+    {
+      "bytes": 733,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/BankImportRepository.php",
+      "sha256": "6eecaf731da935036ff4ae85cdbbe6ca32190be85fc4003a60ae8fa401800a20"
+    },
+    {
+      "bytes": 338,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/BankTransactionWriter.php",
+      "sha256": "bacecc60149bd91692c2702dcd75dee5e00cfe3a49e62c223c125f6b8cb363e7"
+    },
+    {
+      "bytes": 189,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/Clock.php",
+      "sha256": "38969ef0a3c3c2336e308eb28042fa10077af26eeba685f0b96856732572ac8d"
+    },
+    {
+      "bytes": 330,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/CollectionAccountStateRepository.php",
+      "sha256": "9f0b34ed3b5d5d7dcf7e0b093b22f23f1e5c9a93d3ff94d3b1e62efc67835436"
+    },
+    {
+      "bytes": 448,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/CollectionMessageGateway.php",
+      "sha256": "d69dedbcd9dcd66b1558db381e2e2acdd172a670fbfb5b5d232701cc74a0a4d2"
+    },
+    {
+      "bytes": 256,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/CompanyContextResolver.php",
+      "sha256": "8bebc9341d942b1eb34c60972c73acbcd854dff66d9bb764fdee5ef7b40939e8"
+    },
+    {
+      "bytes": 290,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/CompanyMembershipAuthorizer.php",
+      "sha256": "b2b04f65eca49beddbff38b935ee7615d860854b499c4f83205d27dcdca52185"
+    },
+    {
+      "bytes": 721,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/CustomerPaymentAdapter.php",
+      "sha256": "d99dc7bac2a7c31dd85a349e08ef13e4d0f22e0d43f16a859b02fc84c1c2f323"
+    },
+    {
+      "bytes": 260,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/CustomerRepository.php",
+      "sha256": "aa188642dcef96f24db3df98ebc8a1ffee01467b940f95dc13ad6a90a1ff28f7"
+    },
+    {
+      "bytes": 340,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/DocumentNumberGenerator.php",
+      "sha256": "99ff872d758f70bf155b26d54213960236c8547db156d803ab99b7112a60e4f4"
+    },
+    {
+      "bytes": 254,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/DocumentRenderer.php",
+      "sha256": "018f6675a4c33545a089408e2cc4ca5099d21f5855e68a7acfe9ba978f2a5b26"
+    },
+    {
+      "bytes": 381,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/DocumentSnapshotRepository.php",
+      "sha256": "820140ae3d8ea7408198a5060c166fbce8797bb0ab6e3988a0756a87d436dadb"
+    },
+    {
+      "bytes": 386,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/EInvoiceAdapter.php",
+      "sha256": "e78bb2f9ca57af666b2ab8ed4c00a21cd5b16cb28b77d6002f080d4f034fdbb5"
+    },
+    {
+      "bytes": 696,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/ExternalEventInboxRepository.php",
+      "sha256": "85685e7036263bfe36c691323f60865d1bde8948bcdcff337041635f7f3c8c49"
+    },
+    {
+      "bytes": 1962,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/FinanceRepositoryContract.php",
+      "sha256": "99a170b06087bcc772af0b0ecf794a39af294ab9b05ae06779178ecd70e2dddd"
+    },
+    {
+      "bytes": 444,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/FinancialActionInvoker.php",
+      "sha256": "807df840ba30da5700dd8efc4a146dbe3a465f4bef62d5d0f9a18dc47d8aa36e"
+    },
+    {
+      "bytes": 420,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/FinancialExceptionRepository.php",
+      "sha256": "873b2b4bd2bd7870f407712a30925cc071f969048654ecb967c6d26f5b58054e"
+    },
+    {
+      "bytes": 438,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/FinancialSettingsRepository.php",
+      "sha256": "5a14dc7bfbdee422e386be1da0af46039e133df22269d0da63797c88552589a2"
+    },
+    {
+      "bytes": 904,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/IdempotencyStore.php",
+      "sha256": "fd0a5f9890ae6525a4106205c68db46619cb86d0d6044f7ca000864c3faa0a82"
+    },
+    {
+      "bytes": 169,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/IdentifierGenerator.php",
+      "sha256": "207eabaf151978f3dbbe1ed19fe626e3f25ca77785c64f4e5e414d148afb556f"
+    },
+    {
+      "bytes": 1134,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/InvoiceRepository.php",
+      "sha256": "0b13c43f2f58376054b6ec2a9e9eb501e868ff65403087b2f0e8eed0e3129465"
+    },
+    {
+      "bytes": 250,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/JobRepository.php",
+      "sha256": "5a1590a7f07d8256f2ade6503a159274dbf8f57845743616a70c1b5f07a56c52"
+    },
+    {
+      "bytes": 459,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/JournalRepository.php",
+      "sha256": "b86a1005c19cb7ef0f98e785f555ae5b36982a20e31d0ad22efc491954f8dd97"
+    },
+    {
+      "bytes": 741,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/OutboxRelayQueue.php",
+      "sha256": "a09d64fa40b4b0d60b0c37c000f222e3c4c24b7d583940bf71d39eb2729a30e7"
+    },
+    {
+      "bytes": 260,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/OutboxRepository.php",
+      "sha256": "2f568fef29119d5a538e21f8f120ece0a0a706355239b6eaca6be53e3968b283"
+    },
+    {
+      "bytes": 207,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/PayPalConnectionResolver.php",
+      "sha256": "19ab1106e0bbe7bd177d52ef7dfb03e205d7c9bfc922cd1b0c27bfbd59cccf63"
+    },
+    {
+      "bytes": 247,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/PayPalWebhookVerifier.php",
+      "sha256": "bd1e9c74014cf1c329da8b4a7b46bccec29026468b7b5d24ccec94283cd8c390"
+    },
+    {
+      "bytes": 491,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/PaymentEvidenceIngestor.php",
+      "sha256": "e9d97a83a281cd1390cb902a0ff2ca28c6d72462d2ee0f82bd1bd30675703df8"
+    },
+    {
+      "bytes": 720,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/PaymentEvidenceRepository.php",
+      "sha256": "6f8c442d27dd72e6084be854f1d6d680c2b834d4fbe28c85dfe6e92a94b7d925"
+    },
+    {
+      "bytes": 647,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/PaymentInstructionDeliveryGateway.php",
+      "sha256": "5b45f5297d05a1a5e2246dded91310b4927487fb3d044fe58b3a6cce7e57a9df"
+    },
+    {
+      "bytes": 508,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/PaymentMatchRepository.php",
+      "sha256": "5bb5874d6f976e5700cbb6b11a4000f04c475a23916e77340701e90ffd34760b"
+    },
+    {
+      "bytes": 433,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/PaymentMethodConfigurationRepository.php",
+      "sha256": "0f04a1d73220bf64e09a7caa05d3c3dd64f23c3e1107100b3de0a33288aa67cb"
+    },
+    {
+      "bytes": 539,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/PaymentOrchestrationRepositoryContract.php",
+      "sha256": "e4592f60d263857daaafa4c722e2ff04fef5cd3871c23bb8615d75dac3e57bb5"
+    },
+    {
+      "bytes": 717,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/PaymentRepository.php",
+      "sha256": "71f3839ea22dd0fc7bc21fe882f516f71b0461b1dfcd52a446a1a7251799045f"
+    },
+    {
+      "bytes": 512,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/PaymentRequestRepository.php",
+      "sha256": "af34258cd428163bbc4029279856cfcc77ec3bbf00a9145057f4dbae9b7ba443"
+    },
+    {
+      "bytes": 300,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/PermissionAuthorizer.php",
+      "sha256": "f2637cd7901167ac413123fb4f7c76cc3c34bc2c174eae2857556c3bbddec8f3"
+    },
+    {
+      "bytes": 266,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/QrArtifactRepository.php",
+      "sha256": "08110c1cc3686bcbeba4bb4701b9168a566946fa97dc5b5ad8a9c36350883538"
+    },
+    {
+      "bytes": 270,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/QrCodeRenderer.php",
+      "sha256": "1a707ec44a343d84d1a9262a22ce1a762b71556e7e3effb2fd4485bb66071892"
+    },
+    {
+      "bytes": 382,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/ReceiptRepository.php",
+      "sha256": "196a34f5d3c7e4db96e0f5de55d9340847f88f7fd24c84623ba13bf5bf99353d"
+    },
+    {
+      "bytes": 741,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/ReceivableRepository.php",
+      "sha256": "8f4216da3aadc07ba96de4e157fed3c23704fcc9368511ee24979363455bd8e5"
+    },
+    {
+      "bytes": 560,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/ReconciliationRepository.php",
+      "sha256": "9a9173b7bf4fe1d3a68514e98791b0ecb7787d6c9ad3eb9b70dba93379ae3462"
+    },
+    {
+      "bytes": 777,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/ScheduledActionQueue.php",
+      "sha256": "92895117feee222afa05a923d71aeec95d1b813d4829250915cd63695e2db2a1"
+    },
+    {
+      "bytes": 244,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/SignalPublisher.php",
+      "sha256": "c814c1052195a4421ee30a70f4d0274abd98434e84e816e77c2124db2363055e"
+    },
+    {
+      "bytes": 613,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/TitanMoneyAction.php",
+      "sha256": "0ba954236c6062674a17b9d875002b8b5396ad785b6b4c4dbcb948d453bd51e3"
+    },
+    {
+      "bytes": 290,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/TitanTalkTransport.php",
+      "sha256": "9ea3983c59b42395d336e67640994741601f6228463568816b2862b3a3ea5773"
+    },
+    {
+      "bytes": 247,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/TransactionManager.php",
+      "sha256": "4c983d91b471586f70589a20273c75144bc92d17d5403251d3031bdf50945cbf"
+    },
+    {
+      "bytes": 386,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Contracts/WorkCoreCommercialSource.php",
+      "sha256": "fede3d7804e8546512fc1951007073c35b20d2acd2df8b1be3c469ba4fb3eefd"
+    },
+    {
+      "bytes": 2150,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Documents/FinancialDocumentSnapshot.php",
+      "sha256": "207604defdf2a0b1be344d911e93dfb80e8a851067c68fe8d7fb420d46961d53"
+    },
+    {
+      "bytes": 617,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Ageing/AgeingBucket.php",
+      "sha256": "c4059025255a5bb1a30985bf6b779256e9f4ecc7111e80650fea68c54acf0868"
+    },
+    {
+      "bytes": 929,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Ageing/AgeingReport.php",
+      "sha256": "268a58dcdae056ee5c3431bb46fc4d1f1b9e480cb787cb2c87a2a33d9722b03e"
+    },
+    {
+      "bytes": 354,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Ageing/PayableBalance.php",
+      "sha256": "67370dddb18c64364561094267b5c46a2b36cf943825eb23e8266744463cfe1d"
+    },
+    {
+      "bytes": 1320,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Ageing/PayablesAgeingCalculator.php",
+      "sha256": "0769182668e306d85a7367b71b0e25b575cc713e8ba88cd6a630b6c583d4d15f"
+    },
+    {
+      "bytes": 360,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Ageing/ReceivableBalance.php",
+      "sha256": "8fdfc42c9ff54c7aedf02f947194088ae1c166cb63d440386a2f39b0df9b6922"
+    },
+    {
+      "bytes": 1538,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Ageing/ReceivablesAgeingCalculator.php",
+      "sha256": "75ccb26b107251e902b1ed3185c50a977e5c60ebabca76f48c18f34f0d4f8eee"
+    },
+    {
+      "bytes": 676,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Budgeting/BudgetApprovalPolicy.php",
+      "sha256": "90daacad32ec8866674609ab2577cedf6c0830d13f4361e3a6928e041243ebc8"
+    },
+    {
+      "bytes": 478,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Budgeting/BudgetApprovalThreshold.php",
+      "sha256": "0511cda612c1462602243c8f5f50577f52ae589fea4bf58ea6204270edfd6a90"
+    },
+    {
+      "bytes": 4102,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Budgeting/BudgetEnvelope.php",
+      "sha256": "70757575219340571309dc3aed5fbb6e571809a6f97d6cb13955a3804479d2f3"
+    },
+    {
+      "bytes": 315,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Budgeting/BudgetState.php",
+      "sha256": "70d14d7f2709fda66f6595bd54bfb3d022ba37b75b3450cff2aa59c2d6126490"
+    },
+    {
+      "bytes": 3561,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Commercial/InvoiceDraft.php",
+      "sha256": "fd52781f875b5fe21c35333046a294d1e13b6a02618d0e24ed50a4921b9aba94"
+    },
+    {
+      "bytes": 1324,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Commercial/InvoiceLifecycle.php",
+      "sha256": "4a3d2a5b2b7da43a410a00132f3a54a4a92b286a7ed6a18954eb29be6147ad93"
+    },
+    {
+      "bytes": 2886,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Commercial/InvoiceLineDraft.php",
+      "sha256": "d8cd62c351c2b1e1ef7289cffb9f6a469420c2a759513273eb57918ac9e0cd05"
+    },
+    {
+      "bytes": 1135,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Commercial/InvoiceRecord.php",
+      "sha256": "ffccb9816e533b740f890c3f41717006ae82c7bb05558fc97a59430bef58ae86"
+    },
+    {
+      "bytes": 382,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Commercial/InvoiceState.php",
+      "sha256": "688e6d7b24f647a21e29be0d9bee8f1acbe92f1356ea68b32e31818137621b30"
+    },
+    {
+      "bytes": 939,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Commercial/QuoteLifecycle.php",
+      "sha256": "50827b6fb21e35f3e4e91d49b2860c18ea8268d51ec4d9eebed8395785fd1fbe"
+    },
+    {
+      "bytes": 343,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Commercial/QuoteState.php",
+      "sha256": "d28a7e655701f279bfffc346b2dd449833090ac83913f3ec20538f3238f6535a"
+    },
+    {
+      "bytes": 255,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/EInvoicing/EInvoiceFormat.php",
+      "sha256": "ab2d1aa3e657135d5485bd27d238b988a4b60debb2264355e8f5a93728ef9a13"
+    },
+    {
+      "bytes": 348,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/EInvoicing/EInvoiceState.php",
+      "sha256": "33d78f71c5807a4cc8ba67c96edb0000e29d9e5f1d8348bd42c8bc1bf6d38258"
+    },
+    {
+      "bytes": 2686,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/EInvoicing/EInvoiceTransmission.php",
+      "sha256": "f04060d1e4143f0cef507d74be912d3832f01cc29917056919610554b3709162"
+    },
+    {
+      "bytes": 1609,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Events/OutboxEvent.php",
+      "sha256": "a8a35f709307a45a5c17cc27d7d31167b5d2d888e8fee99f23bf0a090820a7b3"
+    },
+    {
+      "bytes": 494,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Events/OutboxRelayRecord.php",
+      "sha256": "db98b01834c2a52f417c2319bf3ab63833cefea3a6ab42711dd1864762181539"
+    },
+    {
+      "bytes": 2949,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/ExpenseClaims/ExpenseClaim.php",
+      "sha256": "de82ebc5e434476e571a800d8034c04ecc8b6b20121e32a399577138432cb32b"
+    },
+    {
+      "bytes": 305,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/ExpenseClaims/ExpenseClaimState.php",
+      "sha256": "21a82302f04b21b8ad3299cf8381517b6a1b1752528a13abf7b8cda20148651e"
+    },
+    {
+      "bytes": 1713,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/ExpenseClaims/ReimbursementBatch.php",
+      "sha256": "072e2d62aa921c9562c2c3a66e0888ee0e3c64170a668e460ec4a72b429eac9c"
+    },
+    {
+      "bytes": 984,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Exports/AccountantExportPack.php",
+      "sha256": "ff4aad9e2749c86def630191a6601d8b194feb1e7912c5fc900a5c007d55fd95"
+    },
+    {
+      "bytes": 189,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Forecasting/CashflowDirection.php",
+      "sha256": "1ad83c535f860f2ad0d81b4d4aaf49bd84e6e75d224d73997129e7c0f919bd61"
+    },
+    {
+      "bytes": 404,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Forecasting/CashflowForecast.php",
+      "sha256": "ce78e7090bfb0eb1c5b035f50e29c2a29d968174fd34b8cbf77e2a76133e9572"
+    },
+    {
+      "bytes": 646,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Forecasting/CashflowForecastItem.php",
+      "sha256": "29f189c24abbf9fbe6e94a737609862056fc55c9ea79e96795f6bc7383998163"
+    },
+    {
+      "bytes": 656,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Forecasting/CashflowForecastPeriod.php",
+      "sha256": "57ea2b3c46d27a3100c28beff585a5902d998d3bf517564388020b64e0aebf30"
+    },
+    {
+      "bytes": 1827,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Forecasting/CashflowForecaster.php",
+      "sha256": "f0febbdd350615cf83a7fbbe087729abf2896461f045e8a895ec46ec48083968"
+    },
+    {
+      "bytes": 548,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Ledger/AccountRole.php",
+      "sha256": "bf550c3c1f8123e2677439b0e6cede711843e799e81981b910089f536ca432ea"
+    },
+    {
+      "bytes": 2804,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Ledger/JournalEntry.php",
+      "sha256": "e1de59a6ff9f78c7739871280873efd63dffaa8d06dcc029c5abc7da59c2ada8"
+    },
+    {
+      "bytes": 917,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Ledger/JournalLine.php",
+      "sha256": "95c9fb1487a173735fdad6e3891379e80ff1a37f4e7358c6233a29105f4ba4e9"
+    },
+    {
+      "bytes": 185,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Ledger/LedgerSide.php",
+      "sha256": "c30e95b463a2ee3bdf9a5e31ed4aca6decbb826c78fa39fdbcb0a8a4a057815d"
+    },
+    {
+      "bytes": 1456,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Ledger/PostingTemplates/InvoiceIssuedPostingTemplate.php",
+      "sha256": "1131efa535e95244fb89645586fbe54f476ad645b586ee4284d9dc7c6a47cc49"
+    },
+    {
+      "bytes": 1611,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Ledger/PostingTemplates/PaymentConfirmedPostingTemplate.php",
+      "sha256": "3524ab826896b234e27eafed94d5c634521f392245b5324aa5d1cdc2173d7eb8"
+    },
+    {
+      "bytes": 1261,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Ledger/PostingTemplates/PaymentReceivedPostingTemplate.php",
+      "sha256": "7b9483601afaddc2d170170cb7de718171777e9a36968a48c76168ca112dd5ca"
+    },
+    {
+      "bytes": 776,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Payments/PaymentEvidenceRecord.php",
+      "sha256": "bdc23b463dc273bfc02e7a462bba6b847794e51998f97c977c6292a56a3647f4"
+    },
+    {
+      "bytes": 674,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Payments/PaymentInstructions.php",
+      "sha256": "ca7ded6d0be62fd58bae5387165222597ec68d693f77ab41cdafaa8a4c1e601b"
+    },
+    {
+      "bytes": 822,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Payments/PaymentMethodConfiguration.php",
+      "sha256": "f978fecd9eef3a3ebb6f662f176fe33cd48093efd432027ef5960149bed5abdc"
+    },
+    {
+      "bytes": 243,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Payments/PaymentMethodKey.php",
+      "sha256": "59f96e953c4119f21584033d243373c3153e7cd97acd80118adb30cbdc46e00b"
+    },
+    {
+      "bytes": 438,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Payments/PaymentQrPayload.php",
+      "sha256": "61118fc37a41dfb527b7e50d0ef4367ea582f1721403e8dcef3689afce3e2cb3"
+    },
+    {
+      "bytes": 586,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Payments/PaymentQrPayloadBuilder.php",
+      "sha256": "84323b20e0c6691ba5815b9d826c813f018bd246aef707f39df624dcc5818a8b"
+    },
+    {
+      "bytes": 1117,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Payments/PaymentRecord.php",
+      "sha256": "287bd0ab44e16a582adb95198620ba2d3afdb943827503a1e688635a383b0569"
+    },
+    {
+      "bytes": 1715,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Payments/PaymentRequestRecord.php",
+      "sha256": "374d7ef23b23048696e614cae8d419d9a4089df4ecb36636955797370ae8c357"
+    },
+    {
+      "bytes": 1356,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Payments/QrArtifact.php",
+      "sha256": "de76f8c5e9fe02b289480230683f07db920d02328fc02b831f6d77f87dbdeaff"
+    },
+    {
+      "bytes": 561,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Payments/ReceiptRecord.php",
+      "sha256": "c1bc46e09b969c99b42238fd2339292cd6b2520231901c8a492512430a0e76d6"
+    },
+    {
+      "bytes": 3557,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Procurement/PurchaseOrder.php",
+      "sha256": "2a357cc13180f2999ab03902408273357534a8802e2002a054a54bf6330f7cab"
+    },
+    {
+      "bytes": 1316,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Procurement/PurchaseOrderLine.php",
+      "sha256": "6fb38ec4568c8279d69ddadf56b5cc6bb35f28d7db7a9211ce48ea0d9d6fb062"
+    },
+    {
+      "bytes": 433,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Procurement/PurchaseOrderState.php",
+      "sha256": "d395a7c32e59ad85097bcd999d149de1b3f8babe73c095f729997b872aaff3fd"
+    },
+    {
+      "bytes": 955,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Profitability/JobProfitabilityCalculator.php",
+      "sha256": "ce51249d2d9390fb274f3d5d21d66725e93c48444120720bead01f8c6ba9f925"
+    },
+    {
+      "bytes": 836,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Profitability/JobProfitabilityResult.php",
+      "sha256": "835491df3dcc225df80a9679a12962fe14bad13b8d92dca8dbe86869cf7191ee"
+    },
+    {
+      "bytes": 673,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Receivables/ReceivableAccount.php",
+      "sha256": "a4a4805d388dbda63c75e5d9b9b235ffe310289d73bfd5c86284f8b4ac7dec90"
+    },
+    {
+      "bytes": 634,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Reconciliation/BankDepositEvidence.php",
+      "sha256": "a8bef5d79948225c6c1f884af3acab0413658d6231cc38ff88778824ae415f07"
+    },
+    {
+      "bytes": 2342,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Reconciliation/BankDepositMatcher.php",
+      "sha256": "d5223bddbb0ff37aa0bf8c4159f2a679e92544c3bdc0b5f7e9d414ccfc203337"
+    },
+    {
+      "bytes": 243,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Reconciliation/MatchStatus.php",
+      "sha256": "98a5585c8fedd58d7241869e651565f1e9709a55a923f9a0a5b4af3069aa4a73"
+    },
+    {
+      "bytes": 435,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Reconciliation/OpenReceivableCandidate.php",
+      "sha256": "d5a33514bb3cebe536e8ac7f6799e229488630e3e2bcbd5f9d8452a796e577af"
+    },
+    {
+      "bytes": 612,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Reconciliation/PaymentMatchCandidate.php",
+      "sha256": "7199cdd6e323b512a06372026144c408825ad7234de4eb7d2f27f5a73750abe0"
+    },
+    {
+      "bytes": 818,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Reconciliation/ReconciliationBalance.php",
+      "sha256": "43610901085bade11a9ab55d0fb2d8c250e00b42fbad4d68df222360f8ecfb83"
+    },
+    {
+      "bytes": 873,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Reconciliation/ReconciliationSession.php",
+      "sha256": "d42b455970905e885f778fba18b92987a52a1280211e1b1714c046b25f3609f5"
+    },
+    {
+      "bytes": 3024,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Sales/PointOfSaleTransaction.php",
+      "sha256": "d00d08ea89c3b05d609c565cdaf5d1a15cda5381f1d604ecb1d49d9579082c3b"
+    },
+    {
+      "bytes": 757,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Sales/SaleLine.php",
+      "sha256": "fcc9c3a7cea07b80df8020cc68489109e8c5dbf460210c200767733913f1b012"
+    },
+    {
+      "bytes": 273,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Sales/SaleState.php",
+      "sha256": "8f93aec8c80e567d27eea0a2f868868ada0164c58979cac72637ac95f74280e1"
+    },
+    {
+      "bytes": 1811,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Sales/SalesOrder.php",
+      "sha256": "161a0990e073f70c0b8fdf480a3b37e413ff618eda03b5c15bd06d849818e58e"
+    },
+    {
+      "bytes": 327,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Sales/SalesOrderState.php",
+      "sha256": "bc3f4de8e8c8242116869af2cb2d739364555cd126c1633e332786cf16cdd15d"
+    },
+    {
+      "bytes": 711,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Shared/CurrencyCode.php",
+      "sha256": "5718c21336bb3d4e055367dd6a80cdfc80384bd52306125291f3aa43839334de"
+    },
+    {
+      "bytes": 1823,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Shared/DecimalMoneyParser.php",
+      "sha256": "38c946e5d213f42612b37da0dbc98d5c7700ff01c3915f56a04900a5be36f558"
+    },
+    {
+      "bytes": 2353,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Shared/Money.php",
+      "sha256": "57d0bfaa43f2609393745f9a501ab4f477debe6b808f5e1e28f87e8806cf81af"
+    },
+    {
+      "bytes": 549,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Tax/GstBreakdown.php",
+      "sha256": "d4040337a09892cea0b4315c203d6ff42372a3d6f5a1bcc02604050bb3e16bfe"
+    },
+    {
+      "bytes": 1573,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Tax/GstCalculator.php",
+      "sha256": "be51373699f391aa2010d1ebb04a38128cb62718aca25ea7ad3a22006d8ef1b8"
+    },
+    {
+      "bytes": 409,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Tax/GstReportCalculator.php",
+      "sha256": "98df2c039aad687fedb516199a85b54fda2c33bff4d16bb079466250f66d17c2"
+    },
+    {
+      "bytes": 514,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/Tax/GstReportSummary.php",
+      "sha256": "0d3c718d2187ebbfee2d1798678dc126e800526550c379b7159e2052ce28c8d1"
+    },
+    {
+      "bytes": 3490,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/WorkforceLoans/WorkforceLoan.php",
+      "sha256": "66d11a8f872d45215af9ff3277c63efb2266d77ddf377500456497bcef052912"
+    },
+    {
+      "bytes": 364,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Domain/WorkforceLoans/WorkforceLoanState.php",
+      "sha256": "d0ca5928f0308b20de277641f0e10b5a87b2072adb533ee376b05165081dbc25"
+    },
+    {
+      "bytes": 509,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Http/Controllers/HealthController.php",
+      "sha256": "da7a6045cae606a253c679bc02bda2253e6478e43ba79e3e13d2a64610833347"
+    },
+    {
+      "bytes": 1261,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Http/Controllers/PayPalWebhookController.php",
+      "sha256": "591ada5e2586e1e843b6fb59b60e8cd78ad07dd401c1480f0997c1d0f698a2b7"
+    },
+    {
+      "bytes": 218,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Http/Routes/api.php",
+      "sha256": "dac79ec98e75b5d39efa92a7e7100ec8873d9dca2692addc93ff7b73c5ae82fd"
+    },
+    {
+      "bytes": 218,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Http/Routes/web.php",
+      "sha256": "dac79ec98e75b5d39efa92a7e7100ec8873d9dca2692addc93ff7b73c5ae82fd"
+    },
+    {
+      "bytes": 249,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Http/Routes/webhooks.php",
+      "sha256": "5e7676bc4adbe40a29c432c0f6e196fcbe33630f2527ce16bf94e4b8eb07b92e"
+    },
+    {
+      "bytes": 1154,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Idempotency/IdempotencyClaim.php",
+      "sha256": "5ece3fab6e36353de36efc7cdc751f97fbb03031ece491d0712db391e3319feb"
+    },
+    {
+      "bytes": 270,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Idempotency/IdempotencyClaimStatus.php",
+      "sha256": "a538778d301608d108d94d1b1d420addd45064c732a981640d8d59145e7084c0"
+    },
+    {
+      "bytes": 725,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Idempotency/IdempotencyKey.php",
+      "sha256": "61e45446b6e4393423a0b7de4df5087887143c9598779cdee57ed8be8afc3aec"
+    },
+    {
+      "bytes": 483,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Idempotency/RequestFingerprint.php",
+      "sha256": "efcf828c108c9e694c59d559d09674df61ba374d7f32d9213f1d5a95ce682bed"
+    },
+    {
+      "bytes": 505,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/FailClosed/FailClosedArtifactStore.php",
+      "sha256": "6b41b27105bdeb561666a49279412da7d0e75ea334b73dd05496258bd1e1943f"
+    },
+    {
+      "bytes": 779,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/FailClosed/FailClosedAutomationPolicyRepository.php",
+      "sha256": "610a2d1480d3e658078bcd4db5fd895974e62c74407e2c50c1be3281c963967b"
+    },
+    {
+      "bytes": 480,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/FailClosed/FailClosedPayPalConnectionResolver.php",
+      "sha256": "6863da5c2316450268f3b475be2b0ff4a12a84e413af2d862a6015a072c6efa3"
+    },
+    {
+      "bytes": 354,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/FailClosed/FailClosedPayPalWebhookVerifier.php",
+      "sha256": "f88f5a77d4e41d84f861c5da70732c512015082debe8f82bb8a412426aab3d5e"
+    },
+    {
+      "bytes": 748,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/FailClosed/FailClosedPaymentMethodConfigurationRepository.php",
+      "sha256": "7e068e0799bbea6cc26f4aebeaa65a2898e831f9a77de9e98958afca65ffa63c"
+    },
+    {
+      "bytes": 415,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/FailClosed/FailClosedSignalPublisher.php",
+      "sha256": "7e356cbfcf98a9aad678f55fed99d9c88e42b193e06debe9440962c0ec6db11e"
+    },
+    {
+      "bytes": 464,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/FailClosed/FailClosedTitanTalkTransport.php",
+      "sha256": "5493e2ace2caa6250bbce06e23d7870c3fa732daacb5c1697aa78828db2cb44d"
+    },
+    {
+      "bytes": 926,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/FailClosed/FailClosedWorkCoreCommercialSource.php",
+      "sha256": "47f1f4903712f17c67ca27e35b6f0429bc326ac02db61fb84d37777da9793e39"
+    },
+    {
+      "bytes": 624,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Identifiers/RandomUuidGenerator.php",
+      "sha256": "d99f2bc40290affbfd9700cde7253ee035f80ce5600f69c4786956ee127463da"
+    },
+    {
+      "bytes": 395,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/InMemory/FrozenClock.php",
+      "sha256": "b8cfc10be3a3cf4c64fb4317870597f434cf1c638ff5a26cc7fc94d09a8a8431"
+    },
+    {
+      "bytes": 674,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/InMemory/InMemoryActionAttemptRepository.php",
+      "sha256": "f4b0e11e993d32c555af170f59657df5b6d8b2d67ebccd789f0da75f7dc79c5c"
+    },
+    {
+      "bytes": 688,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/InMemory/InMemoryArtifactStore.php",
+      "sha256": "e6d78059366ad233d8663f12cb84da3fa0b96aaafe6ea70a709c87a592804395"
+    },
+    {
+      "bytes": 676,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/InMemory/InMemoryAuditRecorder.php",
+      "sha256": "540168af687d6c5f681825c8a004031d93d806e48c1eacca72c224a6358b731b"
+    },
+    {
+      "bytes": 949,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/InMemory/InMemoryAutomationPolicyRepository.php",
+      "sha256": "99e449855a5396ce160ad65c5776f9fd8fec9a6adc59bf0fd877047bc257e22a"
+    },
+    {
+      "bytes": 1132,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/InMemory/InMemoryAutomationScheduler.php",
+      "sha256": "afc547746cee48b4b708775d341c46e1d05aeacd841af8ec5161b49cc30ae64f"
+    },
+    {
+      "bytes": 1491,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/InMemory/InMemoryBankImportRepository.php",
+      "sha256": "5a7aa3006b5ad7895a13fd594b2c305b3430987811f5b10d4ee1c37c4e613763"
+    },
+    {
+      "bytes": 775,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/InMemory/InMemoryBankTransactionWriter.php",
+      "sha256": "7a359f4986d8f574193feb90d99452a142af5efa31b23c69f69f570ca8698157"
+    },
+    {
+      "bytes": 719,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/InMemory/InMemoryCollectionAccountStateRepository.php",
+      "sha256": "1359221fd9dd1a7f32bfc0b4ba430e0dd851e21d7080a56e7359b59f1ab64807"
+    },
+    {
+      "bytes": 945,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/InMemory/InMemoryCollectionMessageGateway.php",
+      "sha256": "2fbad4c081c966152060f3512c11a355b45b568d3acd46cb8de2b2095d763e48"
+    },
+    {
+      "bytes": 760,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/InMemory/InMemoryDocumentNumberGenerator.php",
+      "sha256": "0a5e8c7fe39e92d0b7b415384e60bddd4def8a9619c2d5e8f0dcd93b02ffc5a1"
+    },
+    {
+      "bytes": 638,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/InMemory/InMemoryDocumentSnapshotRepository.php",
+      "sha256": "592f81ad6098afc6ea3674bd31d788a92a24811d817e9673bea19b21a005d4fe"
+    },
+    {
+      "bytes": 2852,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/InMemory/InMemoryExternalEventInboxRepository.php",
+      "sha256": "d7869183bba5ed83c26c31581fb954b9a7cf677259e3e71515168f8155a37190"
+    },
+    {
+      "bytes": 813,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/InMemory/InMemoryFinancialExceptionRepository.php",
+      "sha256": "2cff5ba4b5694f1b5b793a044194167d0875bf762e74761309a707e1e1eb5973"
+    },
+    {
+      "bytes": 1894,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/InMemory/InMemoryIdempotencyStore.php",
+      "sha256": "ba3ac972bce4c167c4b4e70890d06802e1852f2013391a8b87208a033381bbde"
+    },
+    {
+      "bytes": 398,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/InMemory/InMemoryIdentifierGenerator.php",
+      "sha256": "770d22e2da251de030afae281eebc55971897a25b25cef24931213629c143bd3"
+    },
+    {
+      "bytes": 2278,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/InMemory/InMemoryInvoiceRepository.php",
+      "sha256": "d5c1fb9080d22ae90e327ee6615c150654bd4699bfedda590ec435d648ce641b"
+    },
+    {
+      "bytes": 899,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/InMemory/InMemoryJournalRepository.php",
+      "sha256": "1e907c378879f55e64026953dcc8c36132c59be951ee98576170e38d3e111497"
+    },
+    {
+      "bytes": 2122,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/InMemory/InMemoryOutboxRelayQueue.php",
+      "sha256": "45fdce90becfaae17fa2b6f3cfc397daba46932a4414ceca99dcf88569d640d8"
+    },
+    {
+      "bytes": 478,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/InMemory/InMemoryOutboxRepository.php",
+      "sha256": "e2398a52d7e747fa22e7c0e2ba3f2225f37357120ef45fe8639a5424f7f6f2f4"
+    },
+    {
+      "bytes": 1539,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/InMemory/InMemoryPaymentEvidenceRepository.php",
+      "sha256": "85bb19123e83833502288c6f5448cfb92e6f67603c80359a91a3d027bc1886f4"
+    },
+    {
+      "bytes": 753,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/InMemory/InMemoryPaymentMatchRepository.php",
+      "sha256": "39ff48ca1cbc5f2055903d8786183db980b7646e477eacb8484acfa0b99d4965"
+    },
+    {
+      "bytes": 832,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/InMemory/InMemoryPaymentMethodConfigurationRepository.php",
+      "sha256": "8d3ff73d4a8713725984d3c817953e79aa6b5122185059d0fc1d335b13af9551"
+    },
+    {
+      "bytes": 1436,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/InMemory/InMemoryPaymentRepository.php",
+      "sha256": "e08f60683c4c9619f7b3b6f75030e79d626252b3b530e33af2a2bf8429053e64"
+    },
+    {
+      "bytes": 982,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/InMemory/InMemoryPaymentRequestRepository.php",
+      "sha256": "2a42f9397639c433b0e5f830ed8f8c4d24997090573507ea15837d01fef81b80"
+    },
+    {
+      "bytes": 521,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/InMemory/InMemoryQrArtifactRepository.php",
+      "sha256": "904eb769d7c0945c579fc0853945769a9201459039aa1ff2467b4adf9433038b"
+    },
+    {
+      "bytes": 595,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/InMemory/InMemoryQrCodeRenderer.php",
+      "sha256": "e79d558da8b8d8a22b06b23ab70f5fa080ebd271ac524f034e6b3065bb286e16"
+    },
+    {
+      "bytes": 632,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/InMemory/InMemoryReceiptRepository.php",
+      "sha256": "7adbfd4743756cd83142a2206a01ee4cbcbd24ae5372d5220bd9116e20e03b09"
+    },
+    {
+      "bytes": 1925,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/InMemory/InMemoryReceivableRepository.php",
+      "sha256": "99e076eddd76986b1d785d97f22dc56fcce9c6a6d32410f2c87343d7cb9f57cf"
+    },
+    {
+      "bytes": 1316,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/InMemory/InMemoryReconciliationRepository.php",
+      "sha256": "15b159b202177de9feb30c392ba2e735a0bf3cd76baaa41b92159463f7d8b030"
+    },
+    {
+      "bytes": 2102,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/InMemory/InMemoryScheduledActionQueue.php",
+      "sha256": "b1ba3da0040ca58b0c015d5691b857e04a564ad3f40ddf47d31662f05a164b19"
+    },
+    {
+      "bytes": 874,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/InMemory/InMemoryWorkCoreCommercialSource.php",
+      "sha256": "77356c95ba5df59bcd17bb565a48791a0a26f158ea2bb299912cfeeb5800c9b4"
+    },
+    {
+      "bytes": 1729,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Integration/WorkCoreSignalPublisher.php",
+      "sha256": "706ead79a7de526fcd245f5f7f7cc2cc78dcb4bcc39884ec34d3e697ce813d4e"
+    },
+    {
+      "bytes": 871,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Integrations/ActionPaymentEvidenceIngestor.php",
+      "sha256": "5310416a0637626e2f0e0efadfeefa79b9fde446a0365b035b7a272020ee36ed"
+    },
+    {
+      "bytes": 1003,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Payments/BaconQrCodeRenderer.php",
+      "sha256": "2c11a6adf7dfa3540c0dbb48795af4993c2e226ea7992631429a7c241039ef06"
+    },
+    {
+      "bytes": 1276,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Payments/BankTransferPaymentAdapter.php",
+      "sha256": "9dbfdb03d174b9625f29fe504ca1f79fbc4d9fbbcf57d3fd4961b9d1d3b6afa2"
+    },
+    {
+      "bytes": 1124,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Payments/CashPaymentAdapter.php",
+      "sha256": "8714434d2ce44700050c708b4e57e7c6c33cb3d087580e24577e1a15d572c645"
+    },
+    {
+      "bytes": 2330,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Payments/OutboxPaymentInstructionDeliveryGateway.php",
+      "sha256": "875d86d6dc98b9ab0d6ed98a84dfbd161509385f0943ee0db07f394ae7d81037"
+    },
+    {
+      "bytes": 1185,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Payments/PayIdPaymentAdapter.php",
+      "sha256": "68292f5cdcb6d8365fc1c80023f3cd3192ba7565679a86053c4cfbdc71431db4"
+    },
+    {
+      "bytes": 1155,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Payments/PayPalPaymentAdapter.php",
+      "sha256": "278755af9118e05ca68320f530cc49811dd5586549a17368774d429a29aebeb9"
+    },
+    {
+      "bytes": 1200,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Payments/PaymentAdapterRegistry.php",
+      "sha256": "c37a84064bd6931d0fc18165834f81a885b38897f70c44b83d1bc17e84b67b0f"
+    },
+    {
+      "bytes": 1479,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Persistence/DatabaseActionAttemptRepository.php",
+      "sha256": "9aeec52ecdfac2abcac50bc793989feaca199bf60e7a11a07429742bebdba1e3"
+    },
+    {
+      "bytes": 1257,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Persistence/DatabaseAuditRecorder.php",
+      "sha256": "4889864b30496982c5cfe0bc9568f0d32efb7fe2f99098f52006e1a7646f3dfd"
+    },
+    {
+      "bytes": 1219,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Persistence/DatabaseAutomationPolicyRepository.php",
+      "sha256": "1150f63cd56f107c8515a307010f7370b573d3aaadda3409a44335450b36bcd3"
+    },
+    {
+      "bytes": 2236,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Persistence/DatabaseAutomationScheduler.php",
+      "sha256": "56183d505c46ede00f09a6dc7a46241406a81a4a8935fc8cfc3a170986b18a45"
+    },
+    {
+      "bytes": 1743,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Persistence/DatabaseBankImportRepository.php",
+      "sha256": "6fb9c279f702ff8ec7a068e0c98a93525167a626472cd66e8b9baa83745a9c88"
+    },
+    {
+      "bytes": 1689,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Persistence/DatabaseBankTransactionWriter.php",
+      "sha256": "27178420af58e2cd1289de6bdc1d738d609aa8452ba3c3d8e68f234d3f7d3a68"
+    },
+    {
+      "bytes": 2147,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Persistence/DatabaseCollectionAccountStateRepository.php",
+      "sha256": "dc9a1e3529949ccb4c9d91456b470338932bbb17580cae1f5045a54f63ebe841"
+    },
+    {
+      "bytes": 1812,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Persistence/DatabaseCollectionMessageGateway.php",
+      "sha256": "45eb81d7a62f98e4f36f45f8f62ef44e9cb162e933b0a7d447d6c1ac1bac4763"
+    },
+    {
+      "bytes": 2480,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Persistence/DatabaseDocumentNumberGenerator.php",
+      "sha256": "c4e6c0570aed9ac9e7e8e7eb01cad00e087f43f7432e316e6da912cad3c1106f"
+    },
+    {
+      "bytes": 1298,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Persistence/DatabaseDocumentSnapshotRepository.php",
+      "sha256": "6d755aa34be20c9df4fed0494e3adec884886202b15749a007005d515b4bd490"
+    },
+    {
+      "bytes": 3836,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Persistence/DatabaseExternalEventInboxRepository.php",
+      "sha256": "dd6d32dc15d85ae3deb2cff189e1322a4fc920888e7f366beaca87e13b7e1ef4"
+    },
+    {
+      "bytes": 1156,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Persistence/DatabaseFinancialExceptionRepository.php",
+      "sha256": "fbfef594ffff6e39d5d24607652e6409cf410db2954fd8f0e865de3cc2dffdd3"
+    },
+    {
+      "bytes": 3240,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Persistence/DatabaseIdempotencyStore.php",
+      "sha256": "f09f67133b50be5e7696c95a9d2401c2e6a759f1af37de7cc990242384f8e11f"
+    },
+    {
+      "bytes": 7639,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Persistence/DatabaseInvoiceRepository.php",
+      "sha256": "c929391f92ab6213c213cefa80dd24b5577f5792dfa5ad60347a74b63106c958"
+    },
+    {
+      "bytes": 2695,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Persistence/DatabaseJournalRepository.php",
+      "sha256": "dbf88170b7e99295791e84ed5d2e5c5b6aa0fb8d5f6768619ac94e27c07bec52"
+    },
+    {
+      "bytes": 2713,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Persistence/DatabaseOutboxRelayQueue.php",
+      "sha256": "0888a925d63a4d963a2317da6e8b6d5f6c6c1ad99aa8169d910d07dec2928d13"
+    },
+    {
+      "bytes": 1188,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Persistence/DatabaseOutboxRepository.php",
+      "sha256": "fadb82028f6db0dd2d46095ab1a903e9e6529317edb1b2f1da7a8f79455c40e9"
+    },
+    {
+      "bytes": 2710,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Persistence/DatabasePaymentEvidenceRepository.php",
+      "sha256": "82ed89eec8759841ba586e6d408b7af81e8209483401824784bbab1ef1333135"
+    },
+    {
+      "bytes": 1529,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Persistence/DatabasePaymentMatchRepository.php",
+      "sha256": "243dd20c105c7a2f60eb3a5e41c1d0a206b274448ea37b0b53f1a0bae02c8745"
+    },
+    {
+      "bytes": 1063,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Persistence/DatabasePaymentMethodConfigurationRepository.php",
+      "sha256": "eb74726c1cb8de6670c9d7182c0fb051254e442659f59de255de47f5f428f1c6"
+    },
+    {
+      "bytes": 3717,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Persistence/DatabasePaymentRepository.php",
+      "sha256": "31ad05f1908312709fdd36f1dcc95ae7f370eb89669c90f34add14320a75e50d"
+    },
+    {
+      "bytes": 2479,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Persistence/DatabasePaymentRequestRepository.php",
+      "sha256": "77ef981c82e212c7c97089405ab0600925c5ffe0d8935af1d5b3908137b5ded4"
+    },
+    {
+      "bytes": 739,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Persistence/DatabaseQrArtifactRepository.php",
+      "sha256": "d6f36a436e1f9ae72f6f89f4b8b008987ee98d869764838af984e27a3c4c08b2"
+    },
+    {
+      "bytes": 1262,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Persistence/DatabaseReceiptRepository.php",
+      "sha256": "efcd1e6dde98dc29555aff1f389c550e0770197dfb7c5bd8a6f20808750e9320"
+    },
+    {
+      "bytes": 2834,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Persistence/DatabaseReceivableRepository.php",
+      "sha256": "c18af63d9f4d2fc3c6e7f909df66b7a8310c66e778e880517aab1ac5452716c4"
+    },
+    {
+      "bytes": 1673,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Persistence/DatabaseReconciliationRepository.php",
+      "sha256": "8d757efc5fc42bc4e9002f1dc0c22e8bf317923e10a6e279f029f76c6cbad16d"
+    },
+    {
+      "bytes": 2712,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Persistence/DatabaseScheduledActionQueue.php",
+      "sha256": "15ca076f1a820e18a7c5998c074bfb84c98d689e10c2acc0cd83b8b669dcdffd"
+    },
+    {
+      "bytes": 1515,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Persistence/WorkCoreCustomerRepository.php",
+      "sha256": "03a00e0bf37e50103821b855c6ae38e8f57b7d792ebd3aa495c34af0ef15a4e7"
+    },
+    {
+      "bytes": 1806,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Persistence/WorkCoreJobRepository.php",
+      "sha256": "8118a6cf845bd0c19182f48b3e4e18522d51c81713595a103c0260571decd050"
+    },
+    {
+      "bytes": 1296,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Runtime/LaravelFinancialActionInvoker.php",
+      "sha256": "2fd69ec1529a850ef0ebf5ee1ab89337d83b5e60780616442d918718d0b0b0f7"
+    },
+    {
+      "bytes": 1382,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Runtime/TitanMoneyActionInputFactory.php",
+      "sha256": "77a14fe24d9dce96e01db3b6a5b63f2173bd583d95b29f7536ee9c21bf2419fb"
+    },
+    {
+      "bytes": 345,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Time/SystemClock.php",
+      "sha256": "a5f53907f3ee8918747158d61571607c987fddc40c90d12e3ce436d9118242cc"
+    },
+    {
+      "bytes": 361,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Transactions/ImmediateTransactionManager.php",
+      "sha256": "14d126aa8284ad4eaf7f1ea2d1490b1d1589942be54d0cb0cd77d96465f03b46"
+    },
+    {
+      "bytes": 412,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Infrastructure/Transactions/LaravelTransactionManager.php",
+      "sha256": "3e58a0073c1c954f08ab755eb97607e8f906bd4c668f3bb07089637efa82535a"
+    },
+    {
+      "bytes": 5226,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Integrations/Banking/AustralianBankCsvParser.php",
+      "sha256": "120b335a21e637b1fe8ec0ce03779806554b126aa8e4a03c8c3613bdc2cf2a9c"
+    },
+    {
+      "bytes": 329,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Integrations/Banking/BankImportParseResult.php",
+      "sha256": "908e9684c3062bf9967ff573554d518df8ac95d7e920d6a1e64e9d538e92e02f"
+    },
+    {
+      "bytes": 798,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Integrations/Banking/BankImportRow.php",
+      "sha256": "22fc9833c2bf70c7f25dec650f51c92b2c054f671fe159e69037197679aebf19"
+    },
+    {
+      "bytes": 360,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Integrations/Banking/BankStatementImportResult.php",
+      "sha256": "1d683f0bf7016509bacfca5fbb7072ad11281982149bd1f9885d45f3198f6118"
+    },
+    {
+      "bytes": 2069,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Integrations/Banking/BankStatementImportService.php",
+      "sha256": "8a95bb9457f910649cf603473e24ba8d9a50b08e49deb89e994be479989e40aa"
+    },
+    {
+      "bytes": 985,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Integrations/Chatbot/InvoiceCreatedCardPresenter.php",
+      "sha256": "ab83492958225ad7c5df754f35d1ae4d070f7af871869cbd81481601e081c380"
+    },
+    {
+      "bytes": 727,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Integrations/Chatbot/PaymentConfirmedCardPresenter.php",
+      "sha256": "d332064e82d004d465c0b06480df1a911841e471e33de655bce352f411b3b2c9"
+    },
+    {
+      "bytes": 1490,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Integrations/Device/DevicePaymentNotificationAdapter.php",
+      "sha256": "883e56ea1e8b2f15749a17e8d5cb101693937bf6df4805d23a537a80311488e5"
+    },
+    {
+      "bytes": 4343,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Integrations/PayPal/PayPalSettlementWebhookHandler.php",
+      "sha256": "0d1fea2f3049ee64bd1bc00b45254cf94baae3ab50d81681914643af2372f032"
+    },
+    {
+      "bytes": 894,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Integrations/Pulse/ExecuteCollectionFollowupListener.php",
+      "sha256": "5d940c5e3c69cbe45fa8a1140b46b617df9e84b58c6f7538460c4b0e0dfca396"
+    },
+    {
+      "bytes": 253,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Integrations/Runtime/ExternalEventReceipt.php",
+      "sha256": "ae8343b5dcfdbf3858f010b0f459af7a1a5aef0df6c9748e5d6215f78416f5e4"
+    },
+    {
+      "bytes": 228,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Integrations/Runtime/ExternalEventReceiptStatus.php",
+      "sha256": "b53663bc3a2cf45fee6443489d6aaa97a953fb04582e78bdb6d8c00df4560851"
+    },
+    {
+      "bytes": 1907,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Integrations/Runtime/TitanMoneyOutboxRelay.php",
+      "sha256": "49353511d1afe9ceac63c272c82034269495caba525311192e72b41aacb7677d"
+    },
+    {
+      "bytes": 1816,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Integrations/WorkCore/CompletedJobMoneyFlowListener.php",
+      "sha256": "a63e80309f52fd9bc3e82916185dac6dd7958420696883709caf10bee688256d"
+    },
+    {
+      "bytes": 825,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Numbering/SequenceFormatter.php",
+      "sha256": "cecb49ec1b42730c1b5ba88aa80652d105404cecfda16abe412e033f7c806289"
+    },
+    {
+      "bytes": 772,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Numbering/SequenceKey.php",
+      "sha256": "192933526a1671ba6c7e85c19ed90c280aa68719713f496846a46900eb3bdaab"
+    },
+    {
+      "bytes": 32482,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Repositories/EloquentFinanceRepository.php",
+      "sha256": "87d4e4fc7895f5d0cc25667e47670587fd083b2de127d0560434840d6c3810ce"
+    },
+    {
+      "bytes": 6195,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Repositories/EloquentPaymentOrchestrationRepository.php",
+      "sha256": "01788b95ddd150cba64fd203dea384689ddf3e639ad98da58973a02f8580d536"
+    },
+    {
+      "bytes": 2485,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Settings/FinancialSettings.php",
+      "sha256": "4859a9991c2aa3abf5a46486e6608be3f897238c22834e06e9e48aa25b920e55"
+    },
+    {
+      "bytes": 188,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Settings/GstAccountingBasis.php",
+      "sha256": "d26b32d89fc61d22105a4fa106ee7e0276cfe21191bd1dfb707715987eea4f18"
+    },
+    {
+      "bytes": 1425,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Support/CanonicalJson.php",
+      "sha256": "e834a403360e356e325b82c843b6b60ba587cae15bbce3b8d3855708961f3aed"
+    },
+    {
+      "bytes": 1239,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Support/DependencyDiagnostics.php",
+      "sha256": "00da22258a84b1c359e2d6b26eca9695c6cbe8c9288061d61f8bb945c49aa148"
+    },
+    {
+      "bytes": 2142,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Support/MoneyDomainCatalogue.php",
+      "sha256": "7a59d53e7382ae87cefcdfc74cacf55447f7f9ab488cfd223b2b34d32e5b798b"
+    },
+    {
+      "bytes": 1611,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Support/TitanMoneyHealth.php",
+      "sha256": "0787881ff4401fbdc4cccaa541aca58c3c35040cd15eae246175c792023b1d65"
+    },
+    {
+      "bytes": 1597,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Tenancy/CompanyContext.php",
+      "sha256": "02145a1cb8e35b0d1addffba6e3fee41a01f56c23d31f6a6600c75e5fd523546"
+    },
+    {
+      "bytes": 207,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Tenancy/Exceptions/CompanyMembershipRequiredException.php",
+      "sha256": "8a1aad9274788f97eda19f158e7ae346896fba3d9d3f38c08b7685b156389439"
+    },
+    {
+      "bytes": 386,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Tenancy/Exceptions/MissingCompanyContextException.php",
+      "sha256": "30cdfdbfaf057b471d8d5cb4b34ffe064eb50fc25982bcb421ed784a576e94ac"
+    },
+    {
+      "bytes": 486,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Tenancy/FailClosedCompanyContextResolver.php",
+      "sha256": "f5697bf6de1959a7589e9bddc36ad013b987c020a3b609430df39486c31f3561"
+    },
+    {
+      "bytes": 1949,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/Tenancy/WorkCoreCompanyContextResolver.php",
+      "sha256": "f37b03be51c1958d67a8fa5387bf4e115a05f62ae22e3bedce3bace47d58d003"
+    },
+    {
+      "bytes": 39645,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/WorkCoreFinanceServiceProvider.php",
+      "sha256": "f14fafdea6ff5507da77f8a661d0491e326fa0d58e8a037a1f692780b139f740"
+    },
+    {
+      "bytes": 696,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/config/automation.php",
+      "sha256": "87750fc834d2058ad5288f3a7578ea346fdad2aec7b9e614d9be039402e0054f"
+    },
+    {
+      "bytes": 2085,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/config/permissions.php",
+      "sha256": "2966bf5ef32f42a34b04f27cd6312900ac73d70bd799fae92c938794a0ba5480"
+    },
+    {
+      "bytes": 6837,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/config/titan-money.php",
+      "sha256": "7233954e15ca7c5a736a0b667c3d0c8ccc0fbccf69f02d57e43112cef6174fd7"
+    },
+    {
+      "bytes": 69,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/resources/lang/en/messages.php",
+      "sha256": "7d7827afb564f7352a2e89caca9aea1efc794175646310ee33c0e2f5baa32013"
+    },
+    {
+      "bytes": 429,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/resources/schemas/budget-envelope.schema.json",
+      "sha256": "1a4e6ec371dee3f9a683d29d2362bb9ca2c181b5180ae3316140b8434c386013"
+    },
+    {
+      "bytes": 375,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/resources/schemas/collection-followup.schema.json",
+      "sha256": "a7442b6b65e0b897da4a28b038023eee7be94b76e72a689148f071b354bef6eb"
+    },
+    {
+      "bytes": 383,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/resources/schemas/company-context.schema.json",
+      "sha256": "82e85deafe9582d0762090254b6cb30bee0a80c749f1c00dc387ce28800ddd6d"
+    },
+    {
+      "bytes": 526,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/resources/schemas/einvoice-transmission.schema.json",
+      "sha256": "0174517280637bfd4eabcfb9eb2ab7f588d2a8d6f75e3d015eb426362ed68746"
+    },
+    {
+      "bytes": 439,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/resources/schemas/expense-claim.schema.json",
+      "sha256": "571804d3f780adafec2cb17873ade6ce19a7fd952c9453718f149c090ff46ea5"
+    },
+    {
+      "bytes": 454,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/resources/schemas/financial-document-snapshot.schema.json",
+      "sha256": "956a7c5f49a771c292935a2787175d036bca3cf59094550c6a1ab8e9453af4f6"
+    },
+    {
+      "bytes": 464,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/resources/schemas/ingest-payment-evidence.schema.json",
+      "sha256": "d4702f11a33373270cc153a2a0c09f106111f140b2e92dee1922fb65997984cb"
+    },
+    {
+      "bytes": 357,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/resources/schemas/money.schema.json",
+      "sha256": "4143a1d70103ea4b4e5aa494f89b4cfcfd06cea3bc65efc6d0b213df899ea1e3"
+    },
+    {
+      "bytes": 336,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/resources/schemas/payment-confirmed-card.schema.json",
+      "sha256": "ab29f823145b15859910fda26db303624893e08a9fd75387b04f8683e893922a"
+    },
+    {
+      "bytes": 322,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/resources/schemas/pos-sale.schema.json",
+      "sha256": "321452e4d160f9c19a186568b6a076efded357f11734cfe21e7ae7b661afab2f"
+    },
+    {
+      "bytes": 335,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/resources/schemas/purchase-order.schema.json",
+      "sha256": "6c35af741353563672130a379c8277cf4084bc77fbd33ec37ce656ece9cc68fb"
+    },
+    {
+      "bytes": 471,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/resources/schemas/workforce-loan.schema.json",
+      "sha256": "c4f1d4288ddb341418f00ef0f61fa559e89dcf46d234a730290f150857daa437"
+    },
+    {
+      "bytes": 78,
+      "path": "src/Domains/WorkCore/System/Modules/Finance/resources/views/index.blade.php",
+      "sha256": "907bd98bd507c147ceb706aa130e6ce7e94e90b27bd29e5dbecb3857ecc52a8c"
+    },
+    {
+      "bytes": 1486,
+      "path": "src/Domains/WorkCore/System/Modules/Inventory/AI/InventoryToolRegistry.php",
+      "sha256": "647dde0114eba4553c29e49c7b050068e5539414ca420094a197bee55dec0db9"
+    },
+    {
+      "bytes": 1144,
+      "path": "src/Domains/WorkCore/System/Modules/Inventory/Actions/ConsumeStockReservation.php",
+      "sha256": "a8bb2774d21eccc4c750eeb9a0ec9967876e32f5b7008314cb16b72c99b02d36"
+    },
+    {
+      "bytes": 1046,
+      "path": "src/Domains/WorkCore/System/Modules/Inventory/Actions/CreateInventoryItem.php",
+      "sha256": "b73117ad5db40b8869b302e859f6e19acd5e68749acc41885a3c15dcc563b845"
+    },
+    {
+      "bytes": 1070,
+      "path": "src/Domains/WorkCore/System/Modules/Inventory/Actions/CreateStockLocation.php",
+      "sha256": "63aaeb98239fadfdfd959714378933d73a5f8183eb860780b9633a8c8aedb1cb"
+    },
+    {
+      "bytes": 497,
+      "path": "src/Domains/WorkCore/System/Modules/Inventory/Actions/ListStockLocations.php",
+      "sha256": "fd8c530cab8866bb319007037ca207469bd165f03a2d23ed6939476d4fc42350"
+    },
+    {
+      "bytes": 1130,
+      "path": "src/Domains/WorkCore/System/Modules/Inventory/Actions/RecordStockMovement.php",
+      "sha256": "04408ed17a449719c5683264623ab4c0f142c3885b1745d333fb17fee113914a"
+    },
+    {
+      "bytes": 1108,
+      "path": "src/Domains/WorkCore/System/Modules/Inventory/Actions/ReleaseStockReservation.php",
+      "sha256": "3db0964aa47699f6e1d4f57d922f0e596991f35d697a26dfe361590942957d77"
+    },
+    {
+      "bytes": 1133,
+      "path": "src/Domains/WorkCore/System/Modules/Inventory/Actions/ReserveInventoryItem.php",
+      "sha256": "d1a251b3602c0a68f20a60fd9edc2eb1b90f7e736022901b9f3acc1dc7fe36c6"
+    },
+    {
+      "bytes": 593,
+      "path": "src/Domains/WorkCore/System/Modules/Inventory/Actions/SearchInventory.php",
+      "sha256": "5cf46842a058155cc6eae0b7af8134366ec31b624b82690dee679d57c16f00f4"
+    },
+    {
+      "bytes": 1059,
+      "path": "src/Domains/WorkCore/System/Modules/Inventory/Actions/SetInventoryReorderRule.php",
+      "sha256": "080a0118caefbc0ab66a3b389b15b156833ede7e8b929e122b41fc74db3c8c0e"
+    },
+    {
+      "bytes": 1106,
+      "path": "src/Domains/WorkCore/System/Modules/Inventory/Contracts/InventoryRepositoryContract.php",
+      "sha256": "c2a2324d18a7ea0fc8b399a371eb533df7d47ebe436b0bad31906ee646fa4ba3"
+    },
+    {
+      "bytes": 4256,
+      "path": "src/Domains/WorkCore/System/Modules/Inventory/Http/Controllers/InventoryController.php",
+      "sha256": "ea850d4ddd26c84c5919884c1c134b9119a877595fbb498615acfabd8b7837cd"
+    },
+    {
+      "bytes": 672,
+      "path": "src/Domains/WorkCore/System/Modules/Inventory/Http/Requests/ConsumeStockReservationRequest.php",
+      "sha256": "d4745fd996ee3aeacb789c0fbe8b9dc4bbdcd20a748a33f6cfeb7d86b360dbf5"
+    },
+    {
+      "bytes": 1130,
+      "path": "src/Domains/WorkCore/System/Modules/Inventory/Http/Requests/RecordStockMovementRequest.php",
+      "sha256": "4950cfda1e3118dd8d8046b55b925f609dc9a12e657e311a78c58b3684c4ddc9"
+    },
+    {
+      "bytes": 361,
+      "path": "src/Domains/WorkCore/System/Modules/Inventory/Http/Requests/ReleaseStockReservationRequest.php",
+      "sha256": "7cca35a6e62e64a2585c018b9f6553f3970a30104f5cfa8e216a9be7d2a1e1be"
+    },
+    {
+      "bytes": 849,
+      "path": "src/Domains/WorkCore/System/Modules/Inventory/Http/Requests/ReserveInventoryItemRequest.php",
+      "sha256": "a8b91482dbe5e01e969e76893b747603ec447a4407c00c643c6bdf7eb4fced19"
+    },
+    {
+      "bytes": 462,
+      "path": "src/Domains/WorkCore/System/Modules/Inventory/Http/Requests/SetReorderRuleRequest.php",
+      "sha256": "7b03bea530662e0ae4cff66c2da5e2db4fe9b532299fb41c0a7639ab35075079"
+    },
+    {
+      "bytes": 1254,
+      "path": "src/Domains/WorkCore/System/Modules/Inventory/Http/Requests/StoreInventoryItemRequest.php",
+      "sha256": "3639c2cbb0cc1e2cbbea4ceb2706b6d38de7023bdcb4b98fe352e7ab71f75389"
+    },
+    {
+      "bytes": 1087,
+      "path": "src/Domains/WorkCore/System/Modules/Inventory/Http/Requests/StoreStockLocationRequest.php",
+      "sha256": "1541a613756a10e7652badd8e702bb8c1cb79b2f3dbd5a021fda77a762a73485"
+    },
+    {
+      "bytes": 3376,
+      "path": "src/Domains/WorkCore/System/Modules/Inventory/Providers/WorkInventoryServiceProvider.php",
+      "sha256": "bddb72be77a0ff4362dd9fb01578874d59f147bbd23a717eb39a44d07d06ff06"
+    },
+    {
+      "bytes": 26301,
+      "path": "src/Domains/WorkCore/System/Modules/Inventory/Repositories/EloquentInventoryRepository.php",
+      "sha256": "fe7d737bc4fdac787f6f6a22c87c1b6463b2aa803bb1252560b538216cd4d87d"
+    },
+    {
+      "bytes": 1513,
+      "path": "src/Domains/WorkCore/System/Modules/Inventory/Services/InventoryQuantityPolicy.php",
+      "sha256": "5c2a8b198094838458ced84b781d3be6e120489d8cf55e685ad59758685c54a1"
+    },
+    {
+      "bytes": 1910,
+      "path": "src/Domains/WorkCore/System/Modules/Inventory/Services/StockMovementPolicy.php",
+      "sha256": "20f9246a8b8405ec4a46d9d1288299535e17f5ba75a483d93bd3135b7bcfe2a3"
+    },
+    {
+      "bytes": 1474,
+      "path": "src/Domains/WorkCore/System/Modules/Inventory/routes/api.php",
+      "sha256": "04abb21420ab542697acc6b3e24e6f77219930412cc4fa901ecba89ff295eb70"
+    },
+    {
+      "bytes": 371,
+      "path": "src/Domains/WorkCore/System/Modules/Payroll/AI/PayrollToolRegistry.php",
+      "sha256": "9cb6eb18be4b18ea3f5c7635092030be0c8880db805c0b0db6a2ed74787fda9c"
+    },
+    {
+      "bytes": 294,
+      "path": "src/Domains/WorkCore/System/Modules/Payroll/Contracts/PayrollRepositoryContract.php",
+      "sha256": "9f1aba3262a8fd574e6ac9fb1189f80b07a885acf8046ed1acb415d9a2ffa84e"
+    },
+    {
+      "bytes": 349,
+      "path": "src/Domains/WorkCore/System/Modules/Payroll/Domain/PayLine.php",
+      "sha256": "bf129cb3dca6233391b49549a137eba6266c8dcb6edf31cd6908e7d1dd37ef73"
+    },
+    {
+      "bytes": 3501,
+      "path": "src/Domains/WorkCore/System/Modules/Payroll/Domain/PayrollRun.php",
+      "sha256": "4c02ef2ae2958b42fd362887e8f578eb0d6b9454fab34135741f38409d1be0d0"
+    },
+    {
+      "bytes": 325,
+      "path": "src/Domains/WorkCore/System/Modules/Payroll/Domain/PayrollRunState.php",
+      "sha256": "1e910fe72a3d29b066dc4531cf4f3d2f9fa06e964b840098d6c9931d1fbe0299"
+    },
+    {
+      "bytes": 590,
+      "path": "src/Domains/WorkCore/System/Modules/Payroll/Providers/WorkPayrollServiceProvider.php",
+      "sha256": "4d20a5f13a27054c624f3476b0a2e62337b29f56826ea7168262b1be79f5d097"
+    },
+    {
+      "bytes": 369,
+      "path": "src/Domains/WorkCore/System/Modules/Supply/AI/SupplyToolRegistry.php",
+      "sha256": "4c05a755a6fc96a2d6cbafcfc0002fa751573ec2a59c5b0deb355de63f3fe749"
+    },
+    {
+      "bytes": 1281,
+      "path": "src/Domains/WorkCore/System/Modules/Supply/Actions/ApprovePurchaseOrder.php",
+      "sha256": "68071dadc3d25753173cbb17699634047df22d7585d242c506f1ac20c1650f0f"
+    },
+    {
+      "bytes": 1333,
+      "path": "src/Domains/WorkCore/System/Modules/Supply/Actions/CompleteStockCount.php",
+      "sha256": "47084bd886e5d006db350e6e7e5ac1718cc85c0b1d0c994081cf66a33d5dd402"
+    },
+    {
+      "bytes": 1043,
+      "path": "src/Domains/WorkCore/System/Modules/Supply/Actions/CreateInventoryCategory.php",
+      "sha256": "2daec8d3a10a2eb5ea40b2f8ac0fb0a72cd4e4dccc9a95a9354babef3a9e674e"
+    },
+    {
+      "bytes": 1062,
+      "path": "src/Domains/WorkCore/System/Modules/Supply/Actions/CreatePurchaseOrder.php",
+      "sha256": "f8ae9173a7d9a924baf40b500a52945d5cd6ba28555195d8b85157d601092413"
+    },
+    {
+      "bytes": 1059,
+      "path": "src/Domains/WorkCore/System/Modules/Supply/Actions/CreateStockAdjustment.php",
+      "sha256": "41158ca28db09b1f4d2937faa8339d039a783a16ee16c38467574396a95be332"
+    },
+    {
+      "bytes": 1050,
+      "path": "src/Domains/WorkCore/System/Modules/Supply/Actions/CreateStockCount.php",
+      "sha256": "52c5d63bd0057688542490cea79a9cd0e6922c1ef0bec38c13a239069baf0e1c"
+    },
+    {
+      "bytes": 1051,
+      "path": "src/Domains/WorkCore/System/Modules/Supply/Actions/CreateStockTransfer.php",
+      "sha256": "8aa219b6003a3b84686e1a3e22f3e2066788f6ec1515bc5b32c5d72e1d57470d"
+    },
+    {
+      "bytes": 1040,
+      "path": "src/Domains/WorkCore/System/Modules/Supply/Actions/CreateSupplier.php",
+      "sha256": "4f208df75932448470ebc6711f6c5421d0961b08055cb018779b81c75857befa"
+    },
+    {
+      "bytes": 1256,
+      "path": "src/Domains/WorkCore/System/Modules/Supply/Actions/DispatchStockTransfer.php",
+      "sha256": "b61b56b4f6fc7cac4a3c36ad39df8bd146bca19c0e4256f108919e45ded8129d"
+    },
+    {
+      "bytes": 1258,
+      "path": "src/Domains/WorkCore/System/Modules/Supply/Actions/PostStockAdjustment.php",
+      "sha256": "8337804c56775ec0efac67ce6667f96de24009b0ea27beba7cfdcd5073d7f30c"
+    },
+    {
+      "bytes": 1306,
+      "path": "src/Domains/WorkCore/System/Modules/Supply/Actions/RateSupplier.php",
+      "sha256": "4d0f8b7f3d902084c0ef2a8e4d9b8ca13bf508434ffaac9b9817c9f91082c35a"
+    },
+    {
+      "bytes": 1039,
+      "path": "src/Domains/WorkCore/System/Modules/Supply/Actions/ReceiveGoods.php",
+      "sha256": "09658e9852469467fd4828da2bfdddf4a9e2bab365be85251b575cf97cd518ce"
+    },
+    {
+      "bytes": 1252,
+      "path": "src/Domains/WorkCore/System/Modules/Supply/Actions/ReceiveStockTransfer.php",
+      "sha256": "1b8290707bfba4498776d395c339c437bc56aa5d4dae4306a80dca7fe04c57d3"
+    },
+    {
+      "bytes": 920,
+      "path": "src/Domains/WorkCore/System/Modules/Supply/Actions/SearchPurchaseOrders.php",
+      "sha256": "3738e1ceffd3b2d119588c82c41e6a73c0aca26e32436f933725f9588a2a9281"
+    },
+    {
+      "bytes": 910,
+      "path": "src/Domains/WorkCore/System/Modules/Supply/Actions/SearchSuppliers.php",
+      "sha256": "ffa6737c8c2f4539c7b95d34f518491ca0efd1a061f2c1b87a86345a55f19ee6"
+    },
+    {
+      "bytes": 1666,
+      "path": "src/Domains/WorkCore/System/Modules/Supply/Contracts/SupplyRepositoryContract.php",
+      "sha256": "8fbec971063df2cc705d42e59360b165233767b94e25774cfd9c9fcd55c9b369"
+    },
+    {
+      "bytes": 5459,
+      "path": "src/Domains/WorkCore/System/Modules/Supply/Http/Controllers/SupplyController.php",
+      "sha256": "278176d352b35b497af6fa940729e11c4489d3a2f4f2490ed9f2dab2429e6bdc"
+    },
+    {
+      "bytes": 576,
+      "path": "src/Domains/WorkCore/System/Modules/Supply/Http/Requests/CompleteStockCountRequest.php",
+      "sha256": "faeaabc8200729068b00dc3212961524e8752be5433539b58513d6bb767d9c4f"
+    },
+    {
+      "bytes": 536,
+      "path": "src/Domains/WorkCore/System/Modules/Supply/Http/Requests/RateSupplierRequest.php",
+      "sha256": "33387aa03f5b98c874964239df899a2148504ad2c92049b3312e972713bcb06e"
+    },
+    {
+      "bytes": 1512,
+      "path": "src/Domains/WorkCore/System/Modules/Supply/Http/Requests/ReceiveGoodsRequest.php",
+      "sha256": "dfbace7136ef14b9e04637ada657178bce22933fe1f4736eaaf1f147c09ab80e"
+    },
+    {
+      "bytes": 520,
+      "path": "src/Domains/WorkCore/System/Modules/Supply/Http/Requests/StoreInventoryCategoryRequest.php",
+      "sha256": "aa1abe8ec408a0838e7e27fcbdf2fe944bcd7a9bcc240aeeeb7b638702cd3a59"
+    },
+    {
+      "bytes": 1108,
+      "path": "src/Domains/WorkCore/System/Modules/Supply/Http/Requests/StorePurchaseOrderRequest.php",
+      "sha256": "8569e7c73ca44e109023cd8c5ef5594e5a40b6670b466ea6938addc259857f32"
+    },
+    {
+      "bytes": 907,
+      "path": "src/Domains/WorkCore/System/Modules/Supply/Http/Requests/StoreStockAdjustmentRequest.php",
+      "sha256": "6f1e86c5731fd3e2e272a74cf798ed0d5fe4126d17addf37a3a0e6288a13b0db"
+    },
+    {
+      "bytes": 528,
+      "path": "src/Domains/WorkCore/System/Modules/Supply/Http/Requests/StoreStockCountRequest.php",
+      "sha256": "13d2e0230ad281387d82ea1307c324e2092cb099c3622a6ec96a89c2aaa770d7"
+    },
+    {
+      "bytes": 785,
+      "path": "src/Domains/WorkCore/System/Modules/Supply/Http/Requests/StoreStockTransferRequest.php",
+      "sha256": "f8e9abe30e61f3ea74900934e67422efd5dd10835ece8ca2bc3b9f06b5f5a55a"
+    },
+    {
+      "bytes": 909,
+      "path": "src/Domains/WorkCore/System/Modules/Supply/Http/Requests/StoreSupplierRequest.php",
+      "sha256": "b66f0f8670c497ac84b13c4f20aa8015166e2ba5220e77ed9759658cf78c4068"
+    },
+    {
+      "bytes": 3309,
+      "path": "src/Domains/WorkCore/System/Modules/Supply/Providers/WorkSupplyServiceProvider.php",
+      "sha256": "2ac9b146c08b5125a343f3b6d6c48e02a45b7921dbc5a001cdade33e161d9bc1"
+    },
+    {
+      "bytes": 43415,
+      "path": "src/Domains/WorkCore/System/Modules/Supply/Repositories/EloquentSupplyRepository.php",
+      "sha256": "bd0641d62ae997f4e6cbb28a0820af5789a51779eb057a753a8bdee63277ac31"
+    },
+    {
+      "bytes": 2093,
+      "path": "src/Domains/WorkCore/System/Modules/Supply/routes/api.php",
+      "sha256": "653d8f57afb3311922a092df53332baaa9c0fb9f00cf9967f9d49e06dd3b4169"
+    },
+    {
+      "bytes": 707,
+      "path": "src/Domains/WorkCore/System/Modules/TitanVault/AI/TitanVaultToolRegistry.php",
+      "sha256": "b8a0d86e855132d5ce347f9cdeca3cc98069030f6824cd74164bbc8cd3bfd1ee"
+    },
+    {
+      "bytes": 790,
+      "path": "src/Domains/WorkCore/System/Modules/TitanVault/Providers/WorkTitanVaultServiceProvider.php",
+      "sha256": "ddfbca2882472dfcd3d3fda5b20ba766eebf937a102b49e37c7d8541c188ea09"
+    },
+    {
+      "bytes": 2574,
+      "path": "src/Domains/WorkCore/System/Modules/TitanVault/ReadModels/SearchVaultDocuments.php",
+      "sha256": "23c4fb372990f517b23fb07caffef3328cb6235ee3d0f037540fd674f64dd3f1"
+    },
+    {
+      "bytes": 1393,
+      "path": "src/Domains/WorkCore/System/Modules/TrustAccounting/Actions/AllocateTrustReceipt.php",
+      "sha256": "94f681c8df17a50dd42b8bea821c72c6a2b877ae8f9b13742c0a87c1661d3647"
+    },
+    {
+      "bytes": 1315,
+      "path": "src/Domains/WorkCore/System/Modules/TrustAccounting/Actions/ApproveTrustDisbursement.php",
+      "sha256": "bbe7c68a121170ffb228efb7b3126bbb3d4250127ddfc02e53a7b0183163f237"
+    },
+    {
+      "bytes": 1125,
+      "path": "src/Domains/WorkCore/System/Modules/TrustAccounting/Actions/CreateTrustAccount.php",
+      "sha256": "021bb884beb36191fe6f141c0d596b61ab078bdf2dd3283eb75865885a830261"
+    },
+    {
+      "bytes": 1116,
+      "path": "src/Domains/WorkCore/System/Modules/TrustAccounting/Actions/CreateTrustMatter.php",
+      "sha256": "c72387d515d12e489cc3c8a130a9f05b304e5a880e17b741d92e80f89f1b5c3b"
+    },
+    {
+      "bytes": 1121,
+      "path": "src/Domains/WorkCore/System/Modules/TrustAccounting/Actions/RecordTrustReceipt.php",
+      "sha256": "7c607c6a222b586defc902045eb68ad2f47ce683c88c33eae8acb49799f3a0ed"
+    },
+    {
+      "bytes": 1315,
+      "path": "src/Domains/WorkCore/System/Modules/TrustAccounting/Actions/ReleaseTrustDisbursement.php",
+      "sha256": "f3c9b7bb8cb7074c0270ca12bd8ada28cb861070d88f38556a3d51a2763b0532"
+    },
+    {
+      "bytes": 1144,
+      "path": "src/Domains/WorkCore/System/Modules/TrustAccounting/Actions/RequestTrustDisbursement.php",
+      "sha256": "3716526bd2bee39f0cbc0f6131e9a195c41d899f795aff8e9babcb9e685691a6"
+    },
+    {
+      "bytes": 1307,
+      "path": "src/Domains/WorkCore/System/Modules/TrustAccounting/Actions/ReverseTrustLedgerEntry.php",
+      "sha256": "738a7c2067b46593046132ea382323f137836e9154a1a5e56311dbddab5e3f60"
+    },
+    {
+      "bytes": 1126,
+      "path": "src/Domains/WorkCore/System/Modules/TrustAccounting/Contracts/TrustAccountingRepositoryContract.php",
+      "sha256": "6b99c1c9ea765eaca1150158bc610e00f2ab585f4e562c68d7fcd89263486707"
+    },
+    {
+      "bytes": 612,
+      "path": "src/Domains/WorkCore/System/Modules/TrustAccounting/Domain/TrustLedgerPolicy.php",
+      "sha256": "520e9c3295542c7a96e94f59b0c77f4870d2dae2b991b551709aa3e6c9c3f06a"
+    },
+    {
+      "bytes": 3134,
+      "path": "src/Domains/WorkCore/System/Modules/TrustAccounting/Providers/WorkTrustAccountingServiceProvider.php",
+      "sha256": "c916ff2d27a225e47fab8d0bd6bfbe13e09f07bfcd25135e0b44f858dfc963fb"
+    },
+    {
+      "bytes": 684,
+      "path": "src/Domains/WorkCore/System/Modules/TrustAccounting/ReadModels/GetTrustMatterLedger.php",
+      "sha256": "cfe3ceb0b09b3ee5d1f39aced24f42915102f6e12f0fb3bee00dd8c12e6ba039"
+    },
+    {
+      "bytes": 532,
+      "path": "src/Domains/WorkCore/System/Modules/TrustAccounting/ReadModels/GetTrustSummary.php",
+      "sha256": "620d06cbf25e2b096d75fbf3c0367ac4e2645fa1991fa5323a86224cd5bfce8f"
+    },
+    {
+      "bytes": 18910,
+      "path": "src/Domains/WorkCore/System/Modules/TrustAccounting/Repositories/EloquentTrustAccountingRepository.php",
+      "sha256": "2ec2bb6a80bda1d4b65f2574645cc2e76846ed72a62d0ecd633cfdc67b7d98aa"
+    }
+  ]
+}

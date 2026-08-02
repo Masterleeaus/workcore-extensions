@@ -1,0 +1,26 @@
+{
+  "architecture": "installable-domain-extension",
+  "dependencies": [
+    "workcore/shared-foundation"
+  ],
+  "destructive_uninstall": false,
+  "domain": "PropertyOperations",
+  "modules": [
+    "Premises",
+    "Assets",
+    "Documents"
+  ],
+  "package": "workcore/property-operations",
+  "provider": "App\\Domains\\WorkCore\\Providers\\PropertyOperationsServiceProvider",
+  "runtime_keys": [
+    "premises",
+    "assets",
+    "documents",
+    "vertical_operations"
+  ],
+  "status": "phase-one canonical namespace extraction",
+  "system_slices": [
+    "System/Verticals",
+    "Verticals"
+  ]
+}

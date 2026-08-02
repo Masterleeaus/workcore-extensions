@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Budget Envelope",
+  "type": "object",
+  "required": [
+    "company_id",
+    "allocated_minor",
+    "currency_code"
+  ],
+  "properties": {
+    "company_id": {
+      "type": "string"
+    },
+    "allocated_minor": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "currency_code": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

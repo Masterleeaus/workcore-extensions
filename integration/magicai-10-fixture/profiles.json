@@ -1,0 +1,51 @@
+{
+  "parent": {
+    "folders": ["WorkCore"],
+    "loaded_modules": [],
+    "workcore_enabled": true,
+    "parent_absent": false,
+    "migrate": true
+  },
+  "commercial": {
+    "folders": ["WorkCore", "WorkCoreCommercial"],
+    "loaded_modules": ["finance", "payroll", "inventory", "supply", "vault", "trust_accounting"],
+    "workcore_enabled": true,
+    "parent_absent": false,
+    "migrate": false
+  },
+  "business-operations": {
+    "folders": ["WorkCore", "WorkCoreBusinessNetwork", "WorkCoreWorkOperations"],
+    "loaded_modules": ["crm", "catalogue", "support", "knowledge", "reviews", "territories", "intelligence", "expansion", "wizards", "ai", "operations", "scheduling", "dispatch", "recurring", "forms", "repairs", "fleet"],
+    "workcore_enabled": true,
+    "parent_absent": false,
+    "migrate": false
+  },
+  "property-workforce": {
+    "folders": ["WorkCore", "WorkCoreWorkOperations", "WorkCorePropertyOperations", "WorkCoreWorkforceAssurance"],
+    "loaded_modules": ["operations", "scheduling", "dispatch", "recurring", "forms", "repairs", "fleet", "premises", "assets", "documents", "vertical_operations", "workforce", "people", "attendance_verification", "rosters", "attendance", "compliance", "assurance"],
+    "workcore_enabled": true,
+    "parent_absent": false,
+    "migrate": false
+  },
+  "full": {
+    "folders": ["WorkCore", "WorkCoreBusinessNetwork", "WorkCoreCommercial", "WorkCoreWorkOperations", "WorkCorePropertyOperations", "WorkCoreWorkforceAssurance"],
+    "loaded_modules": ["crm", "catalogue", "support", "knowledge", "reviews", "territories", "intelligence", "expansion", "wizards", "ai", "finance", "payroll", "inventory", "supply", "vault", "trust_accounting", "operations", "scheduling", "dispatch", "recurring", "forms", "repairs", "fleet", "premises", "assets", "documents", "vertical_operations", "workforce", "people", "attendance_verification", "rosters", "attendance", "compliance", "assurance"],
+    "workcore_enabled": true,
+    "parent_absent": false,
+    "migrate": true
+  },
+  "disabled": {
+    "folders": ["WorkCore", "WorkCoreBusinessNetwork", "WorkCoreCommercial", "WorkCoreWorkOperations", "WorkCorePropertyOperations", "WorkCoreWorkforceAssurance"],
+    "loaded_modules": [],
+    "workcore_enabled": false,
+    "parent_absent": false,
+    "migrate": false
+  },
+  "parent-absent-commercial": {
+    "folders": ["WorkCoreCommercial"],
+    "loaded_modules": [],
+    "workcore_enabled": true,
+    "parent_absent": true,
+    "migrate": false
+  }
+}

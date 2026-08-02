@@ -1,0 +1,10 @@
+{
+  "original_file_count": 7872,
+  "canonical_original_file_count": 1999,
+  "canonical_package_file_count": 2000,
+  "remainder_original_file_count": 5873,
+  "reconciliation": 7872,
+  "overlap_count": 0,
+  "lost_file_count": 0,
+  "source_archive": "WorkCore-Agent1-Foundation-Extraction-Pass1.zip"
+}

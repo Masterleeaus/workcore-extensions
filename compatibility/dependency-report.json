@@ -1,0 +1,355 @@
+{
+  "edges": [
+    {
+      "examples": [
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Registry\\WorkModuleRegistry",
+          "path": "src/Domains/WorkCore/Providers/BusinessNetworkServiceProvider.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Contracts\\PermissionResolverContract",
+          "path": "src/Domains/WorkCore/System/Intelligence/Domains/DomainActionAuthorizer.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Actions\\ActionDefinition",
+          "path": "src/Domains/WorkCore/System/Intelligence/Approvals/BoundConfirmationVerifier.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Actions\\ActionRequest",
+          "path": "src/Domains/WorkCore/System/Intelligence/Approvals/BoundConfirmationVerifier.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Actions\\Contracts\\ConfirmationVerifierContract",
+          "path": "src/Domains/WorkCore/System/Intelligence/Approvals/BoundConfirmationVerifier.php"
+        }
+      ],
+      "reference_count": 407,
+      "source": "workcore-business-network",
+      "target": "workcore-shared-foundation"
+    },
+    {
+      "examples": [
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Modules\\Operations\\Contracts\\WorkOrderRepositoryContract",
+          "path": "src/Domains/WorkCore/System/Modules/Support/Actions/ConvertSupportTicketToWorkOrder.php"
+        }
+      ],
+      "reference_count": 1,
+      "source": "workcore-business-network",
+      "target": "workcore-work-operations"
+    },
+    {
+      "examples": [
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Registry\\WorkModuleRegistry",
+          "path": "src/Domains/WorkCore/Providers/CommercialServiceProvider.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Outbox\\OutboxPublisherContract",
+          "path": "src/Domains/WorkCore/System/Modules/Finance/WorkCoreFinanceServiceProvider.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Actions\\Contracts\\BusinessActionHandlerContract",
+          "path": "src/Domains/WorkCore/System/Modules/TrustAccounting/Actions/ReverseTrustLedgerEntry.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\References\\TypedReference",
+          "path": "src/Domains/WorkCore/System/Modules/TrustAccounting/Actions/ReverseTrustLedgerEntry.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Actions\\Contracts\\BusinessActionHandlerContract",
+          "path": "src/Domains/WorkCore/System/Modules/TrustAccounting/Actions/ApproveTrustDisbursement.php"
+        }
+      ],
+      "reference_count": 119,
+      "source": "workcore-commercial",
+      "target": "workcore-shared-foundation"
+    },
+    {
+      "examples": [
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Registry\\WorkModuleRegistry",
+          "path": "src/Domains/WorkCore/Providers/PropertyOperationsServiceProvider.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Models\\BusinessLine",
+          "path": "src/Domains/WorkCore/System/Verticals/CompanyVerticalManager.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Models\\CompanyVertical",
+          "path": "src/Domains/WorkCore/System/Verticals/CompanyVerticalManager.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Models\\VerticalInstallation",
+          "path": "src/Domains/WorkCore/System/Verticals/CompanyVerticalManager.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Models\\CompanyFeature",
+          "path": "src/Domains/WorkCore/System/Verticals/CompanyVerticalProfileResolver.php"
+        }
+      ],
+      "reference_count": 186,
+      "source": "workcore-property-operations",
+      "target": "workcore-shared-foundation"
+    },
+    {
+      "examples": [
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Modules\\NDIS\\Application\\Services\\NDISActionSupport",
+          "path": "src/Domains/WorkCore/System/Verticals/Providers/WorkCoreVerticalOperationsServiceProvider.php"
+        }
+      ],
+      "reference_count": 1,
+      "source": "workcore-property-operations",
+      "target": "workcore-workforce-assurance"
+    },
+    {
+      "examples": [
+        {
+          "class": "App\\Domains\\WorkCore\\Providers\\BusinessNetworkServiceProvider",
+          "path": "src/Domains/WorkCore/WorkCoreServiceProvider.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\AI\\Security\\NullCredentialResolver",
+          "path": "src/Domains/WorkCore/Config/workcore_ai.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Modules\\CRM\\AI\\CRMToolRegistry",
+          "path": "src/Domains/WorkCore/Config/workcore_ai.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Modules\\Catalogue\\AI\\CatalogueToolRegistry",
+          "path": "src/Domains/WorkCore/Config/workcore_ai.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Modules\\Feedback\\AI\\FeedbackToolRegistry",
+          "path": "src/Domains/WorkCore/Config/workcore_ai.php"
+        }
+      ],
+      "reference_count": 31,
+      "source": "workcore-shared-foundation",
+      "target": "workcore-business-network"
+    },
+    {
+      "examples": [
+        {
+          "class": "App\\Domains\\WorkCore\\Providers\\CommercialServiceProvider",
+          "path": "src/Domains/WorkCore/WorkCoreServiceProvider.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Modules\\Finance\\AI\\FinanceToolRegistry",
+          "path": "src/Domains/WorkCore/Config/workcore_ai.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Modules\\Inventory\\AI\\InventoryToolRegistry",
+          "path": "src/Domains/WorkCore/Config/workcore_ai.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Modules\\Payroll\\AI\\PayrollToolRegistry",
+          "path": "src/Domains/WorkCore/Config/workcore_ai.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Modules\\Supply\\AI\\SupplyToolRegistry",
+          "path": "src/Domains/WorkCore/Config/workcore_ai.php"
+        }
+      ],
+      "reference_count": 12,
+      "source": "workcore-shared-foundation",
+      "target": "workcore-commercial"
+    },
+    {
+      "examples": [
+        {
+          "class": "App\\Domains\\WorkCore\\Providers\\PropertyOperationsServiceProvider",
+          "path": "src/Domains/WorkCore/WorkCoreServiceProvider.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Modules\\Assets\\AI\\AssetsToolRegistry",
+          "path": "src/Domains/WorkCore/Config/workcore_ai.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Modules\\Premises\\AI\\PremisesToolRegistry",
+          "path": "src/Domains/WorkCore/Config/workcore_ai.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Verticals\\Providers\\WorkCoreVerticalOperationsServiceProvider",
+          "path": "src/Domains/WorkCore/Config/workcore.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Modules\\Premises\\Providers\\WorkPremisesServiceProvider",
+          "path": "src/Domains/WorkCore/Config/workcore.php"
+        }
+      ],
+      "reference_count": 13,
+      "source": "workcore-shared-foundation",
+      "target": "workcore-property-operations"
+    },
+    {
+      "examples": [
+        {
+          "class": "App\\Domains\\WorkCore\\Providers\\WorkOperationsServiceProvider",
+          "path": "src/Domains/WorkCore/WorkCoreServiceProvider.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Modules\\Dispatch\\AI\\DispatchToolRegistry",
+          "path": "src/Domains/WorkCore/Config/workcore_ai.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Modules\\Fleet\\AI\\FleetToolRegistry",
+          "path": "src/Domains/WorkCore/Config/workcore_ai.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Modules\\Forms\\AI\\FormsToolRegistry",
+          "path": "src/Domains/WorkCore/Config/workcore_ai.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Modules\\Operations\\AI\\OperationsToolRegistry",
+          "path": "src/Domains/WorkCore/Config/workcore_ai.php"
+        }
+      ],
+      "reference_count": 16,
+      "source": "workcore-shared-foundation",
+      "target": "workcore-work-operations"
+    },
+    {
+      "examples": [
+        {
+          "class": "App\\Domains\\WorkCore\\Providers\\WorkforceAssuranceServiceProvider",
+          "path": "src/Domains/WorkCore/WorkCoreServiceProvider.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Modules\\Attendance\\AI\\AttendanceToolRegistry",
+          "path": "src/Domains/WorkCore/Config/workcore_ai.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Modules\\AttendanceVerification\\AI\\AttendanceVerificationToolRegistry",
+          "path": "src/Domains/WorkCore/Config/workcore_ai.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Modules\\Compliance\\AI\\ComplianceToolRegistry",
+          "path": "src/Domains/WorkCore/Config/workcore_ai.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Modules\\Credentials\\AI\\CredentialsToolRegistry",
+          "path": "src/Domains/WorkCore/Config/workcore_ai.php"
+        }
+      ],
+      "reference_count": 15,
+      "source": "workcore-shared-foundation",
+      "target": "workcore-workforce-assurance"
+    },
+    {
+      "examples": [
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Modules\\Assets\\Contracts\\AssetRepositoryContract",
+          "path": "src/Domains/WorkCore/System/Modules/Repairs/Repositories/EloquentRepairRepository.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Verticals\\Codebooks\\VerticalValidationRules",
+          "path": "src/Domains/WorkCore/System/Modules/Dispatch/Http/Requests/StoreDispatchAssignmentRequest.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Modules\\Assets\\Contracts\\AssetRepositoryContract",
+          "path": "src/Domains/WorkCore/System/Modules/Fleet/Repositories/EloquentFleetRepository.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Verticals\\TradeCompliance\\WorkOrderComplianceGate",
+          "path": "src/Domains/WorkCore/System/Modules/Operations/Actions/ChangeWorkOrderStatus.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Verticals\\CompanyVerticalProfileResolver",
+          "path": "src/Domains/WorkCore/System/Modules/Operations/Services/WorkOrderStatusPolicy.php"
+        }
+      ],
+      "reference_count": 10,
+      "source": "workcore-work-operations",
+      "target": "workcore-property-operations"
+    },
+    {
+      "examples": [
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Registry\\WorkModuleRegistry",
+          "path": "src/Domains/WorkCore/Providers/WorkOperationsServiceProvider.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Actions\\Contracts\\BusinessActionHandlerContract",
+          "path": "src/Domains/WorkCore/System/Modules/Forms/Actions/StartFormSubmission.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\References\\TypedReference",
+          "path": "src/Domains/WorkCore/System/Modules/Forms/Actions/StartFormSubmission.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Actions\\Contracts\\BusinessActionHandlerContract",
+          "path": "src/Domains/WorkCore/System/Modules/Forms/Actions/CreateFormTemplate.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\References\\TypedReference",
+          "path": "src/Domains/WorkCore/System/Modules/Forms/Actions/CreateFormTemplate.php"
+        }
+      ],
+      "reference_count": 149,
+      "source": "workcore-work-operations",
+      "target": "workcore-shared-foundation"
+    },
+    {
+      "examples": [
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Verticals\\Codebooks\\VerticalValidationRules",
+          "path": "src/Domains/WorkCore/System/Modules/Rosters/Http/Requests/StoreRosterShiftRequest.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Verticals\\Codebooks\\VerticalValidationRules",
+          "path": "src/Domains/WorkCore/System/Modules/Rosters/Http/Requests/StoreRosterRequest.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Verticals\\Codebooks\\VerticalValidationRules",
+          "path": "src/Domains/WorkCore/System/Modules/Workforce/Http/Requests/StoreWorkerRequest.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Modules\\Documents\\Services\\OperationalSubjectResolver",
+          "path": "src/Domains/WorkCore/System/Modules/Assurance/Repositories/EloquentAssuranceRepository.php"
+        }
+      ],
+      "reference_count": 4,
+      "source": "workcore-workforce-assurance",
+      "target": "workcore-property-operations"
+    },
+    {
+      "examples": [
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Registry\\WorkModuleRegistry",
+          "path": "src/Domains/WorkCore/Providers/WorkforceAssuranceServiceProvider.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Contracts\\Records\\ComplianceObligationAccessContract",
+          "path": "src/Domains/WorkCore/System/Modules/Compliance/Providers/WorkComplianceServiceProvider.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Contracts\\Records\\Adapters\\ComplianceObligationAccessAdapter",
+          "path": "src/Domains/WorkCore/System/Modules/Compliance/Providers/WorkComplianceServiceProvider.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\Actions\\Contracts\\BusinessActionHandlerContract",
+          "path": "src/Domains/WorkCore/System/Modules/Compliance/Actions/CreateComplianceObligation.php"
+        },
+        {
+          "class": "App\\Domains\\WorkCore\\System\\References\\TypedReference",
+          "path": "src/Domains/WorkCore/System/Modules/Compliance/Actions/CreateComplianceObligation.php"
+        }
+      ],
+      "reference_count": 118,
+      "source": "workcore-workforce-assurance",
+      "target": "workcore-shared-foundation"
+    }
+  ],
+  "packages": [
+    "workcore-business-network",
+    "workcore-commercial",
+    "workcore-property-operations",
+    "workcore-shared-foundation",
+    "workcore-work-operations",
+    "workcore-workforce-assurance"
+  ],
+  "shared_optional_path_includes": []
+}

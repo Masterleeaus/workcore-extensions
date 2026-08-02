@@ -1,0 +1,840 @@
+{
+  "file_count": 167,
+  "files": [
+    {
+      "bytes": 229,
+      "path": "README.md",
+      "sha256": "a8049ca1b960e16ce65af15f0fdcc531bb5a120f00d92dd1c4a7fee138ca0d76"
+    },
+    {
+      "bytes": 886,
+      "path": "composer.json",
+      "sha256": "a5e01ccca3efa10b31b35b60244604f4354ee8b47f51cf999c454566d8234818"
+    },
+    {
+      "bytes": 6721,
+      "path": "docs/original-composition-manifest.json",
+      "sha256": "33a6b43252be107889da8817ded8d26308f046c984aff688838ff36da19dd716"
+    },
+    {
+      "bytes": 658,
+      "path": "extension.json",
+      "sha256": "ed975c19a4d46a1b8b949907eb9566d931e5dba3e57bd9ea8732352c3f1cf6f6"
+    },
+    {
+      "bytes": 722,
+      "path": "src/Domains/WorkCore/Manifests/WorkforceAssurance.json",
+      "sha256": "7f4851a173585004e2e44231fa38ed987eda30a6a319bb8885911a021b5286e6"
+    },
+    {
+      "bytes": 716,
+      "path": "src/Domains/WorkCore/Providers/WorkforceAssuranceServiceProvider.php",
+      "sha256": "b0724c03719af1dcfd547dc300052cfbbb37068fb16396c1aa5b1ecc1f903789"
+    },
+    {
+      "bytes": 1151,
+      "path": "src/Domains/WorkCore/System/Modules/Assurance/Actions/CompleteInspection.php",
+      "sha256": "17f4b6d50e1c708f30e279f98b1958ddc76170518036fe12aa28a63aa529d9db"
+    },
+    {
+      "bytes": 1168,
+      "path": "src/Domains/WorkCore/System/Modules/Assurance/Actions/CreateCorrectiveAction.php",
+      "sha256": "369460f5e2e8e8283cfb29c13a65003dfaec81fe7e972d476a7969bb4d379d8b"
+    },
+    {
+      "bytes": 1083,
+      "path": "src/Domains/WorkCore/System/Modules/Assurance/Actions/CreateFinding.php",
+      "sha256": "33f5c10e8fa2bde41c022d44db425d43605bcc68da159da3ca734ce5b74a930f"
+    },
+    {
+      "bytes": 1109,
+      "path": "src/Domains/WorkCore/System/Modules/Assurance/Actions/CreateInspectionTemplate.php",
+      "sha256": "61ee0981e5164afe944afba142ea9fa57b6db21a305fa59f3538adc6111aa3e7"
+    },
+    {
+      "bytes": 464,
+      "path": "src/Domains/WorkCore/System/Modules/Assurance/Actions/GetAssuranceSummary.php",
+      "sha256": "e42e138019ad109444b8e6688d713fdf8265d7abe90b3d4fd0a148b0e8392db1"
+    },
+    {
+      "bytes": 1078,
+      "path": "src/Domains/WorkCore/System/Modules/Assurance/Actions/RecordIncident.php",
+      "sha256": "0abfbc748559857467931225377633744b5c444e2d7823e9bcc4af9ec45fa464"
+    },
+    {
+      "bytes": 1162,
+      "path": "src/Domains/WorkCore/System/Modules/Assurance/Actions/RecordInspectionResult.php",
+      "sha256": "94e29c34afb93afcbed4e6f9ae1c29b79159a49d6832f1aabd319e0919fec408"
+    },
+    {
+      "bytes": 1062,
+      "path": "src/Domains/WorkCore/System/Modules/Assurance/Actions/RecordRisk.php",
+      "sha256": "c11e872e2d862d712c0c07ba8e2493d1f87be0d1d75760e52f95332c9af37586"
+    },
+    {
+      "bytes": 486,
+      "path": "src/Domains/WorkCore/System/Modules/Assurance/Actions/SearchFindings.php",
+      "sha256": "bd8207aa4812ddec38e565ab26ae0ee215c58711eeab0bfba52f3faa75b1dee3"
+    },
+    {
+      "bytes": 488,
+      "path": "src/Domains/WorkCore/System/Modules/Assurance/Actions/SearchIncidents.php",
+      "sha256": "6a2618fc0c97a150801297d92e35ec91a36cdabb5777d8512016ae62b7ef447c"
+    },
+    {
+      "bytes": 492,
+      "path": "src/Domains/WorkCore/System/Modules/Assurance/Actions/SearchInspections.php",
+      "sha256": "787a5d05f087f3dde2953796f4f35170f31e7954f751c8e307d96432e20556e1"
+    },
+    {
+      "bytes": 480,
+      "path": "src/Domains/WorkCore/System/Modules/Assurance/Actions/SearchRisks.php",
+      "sha256": "7fc47529ce9e9be404c830f3003409861916137281d08b8e8d6756e05dd82686"
+    },
+    {
+      "bytes": 1083,
+      "path": "src/Domains/WorkCore/System/Modules/Assurance/Actions/StartInspection.php",
+      "sha256": "0f5fed7926631dc227c6c5f35aff63941132e4bd9fdd6795a608dd4a93070219"
+    },
+    {
+      "bytes": 1178,
+      "path": "src/Domains/WorkCore/System/Modules/Assurance/Actions/UpdateCorrectiveAction.php",
+      "sha256": "d60562b5fae208d13e424fee504a5b2279807780ffe002e1833b067f5983fbf8"
+    },
+    {
+      "bytes": 1604,
+      "path": "src/Domains/WorkCore/System/Modules/Assurance/Contracts/AssuranceRepositoryContract.php",
+      "sha256": "c6934247d7162cccc1264193e6993a73f51ac50b6848ea21b20828642cfef182"
+    },
+    {
+      "bytes": 3702,
+      "path": "src/Domains/WorkCore/System/Modules/Assurance/Providers/WorkAssuranceServiceProvider.php",
+      "sha256": "ba45d0d5830d3a4c30fd0d7c932cf337a4c6f050d88b26de48ab9bc1249b160f"
+    },
+    {
+      "bytes": 39541,
+      "path": "src/Domains/WorkCore/System/Modules/Assurance/Repositories/EloquentAssuranceRepository.php",
+      "sha256": "bd4e64e19efe7d59ebdf2a7897b107472d33e1638194fe775cde274d33a071e9"
+    },
+    {
+      "bytes": 1545,
+      "path": "src/Domains/WorkCore/System/Modules/Assurance/Services/InspectionScoringPolicy.php",
+      "sha256": "4e5c8b41b4ea5affc57a419cd418eedadf058f87d3daae6a63f5c9dc0dbe4909"
+    },
+    {
+      "bytes": 783,
+      "path": "src/Domains/WorkCore/System/Modules/Assurance/Services/RiskMatrix.php",
+      "sha256": "519d8d7871d4db6714d4a05faa68ccb3ac86228bedf8d954665bf6ef769aea17"
+    },
+    {
+      "bytes": 840,
+      "path": "src/Domains/WorkCore/System/Modules/Attendance/AI/AttendanceToolRegistry.php",
+      "sha256": "a8019a71b50adab870b715f18b77b07d740fd8ac77cf9ecadb6bd4d721fc105e"
+    },
+    {
+      "bytes": 1058,
+      "path": "src/Domains/WorkCore/System/Modules/Attendance/Actions/ChangeLeaveRequestStatus.php",
+      "sha256": "ad57ed6b6a9708a8310fd4e7ac3e8b1167c26d0d64042f78b8eba988ea6fc595"
+    },
+    {
+      "bytes": 975,
+      "path": "src/Domains/WorkCore/System/Modules/Attendance/Actions/ClockInAttendance.php",
+      "sha256": "1ab75576dccd5beaef3bfb33c959d9d7ed1f0cf06b8a33de2e1754cce86db752"
+    },
+    {
+      "bytes": 1037,
+      "path": "src/Domains/WorkCore/System/Modules/Attendance/Actions/ClockOutAttendance.php",
+      "sha256": "3313f662b63986a20eba2070cf1dab7f0df4a1f141627f69636df96eadcf9084"
+    },
+    {
+      "bytes": 985,
+      "path": "src/Domains/WorkCore/System/Modules/Attendance/Actions/CreateLeaveRequest.php",
+      "sha256": "3456df7a38306f1842a18da925fa1932babc545f98210e1412fff996bb349d19"
+    },
+    {
+      "bytes": 970,
+      "path": "src/Domains/WorkCore/System/Modules/Attendance/Actions/CreateLeaveType.php",
+      "sha256": "3c9b00dafa23a87b44ce1266d3757a13636648f4c5978e22ac1d768ed76a4f31"
+    },
+    {
+      "bytes": 1024,
+      "path": "src/Domains/WorkCore/System/Modules/Attendance/Actions/DecideTimesheet.php",
+      "sha256": "af710e20ee07dfb2a6c591945679b4877447e7600cedb569a13b2bba8533de1c"
+    },
+    {
+      "bytes": 1037,
+      "path": "src/Domains/WorkCore/System/Modules/Attendance/Actions/EndAttendanceBreak.php",
+      "sha256": "4439223501308f68d1c42c3b189b25375b9fef58da16c9c9d7d0ee8659ae9859"
+    },
+    {
+      "bytes": 561,
+      "path": "src/Domains/WorkCore/System/Modules/Attendance/Actions/SearchAttendance.php",
+      "sha256": "364a4817f34f9434aed26cb283ccf662a77371a0f98939b92b6e6afdcb2a72cd"
+    },
+    {
+      "bytes": 567,
+      "path": "src/Domains/WorkCore/System/Modules/Attendance/Actions/SearchLeaveRequests.php",
+      "sha256": "1ce2d4cf50c6e8b7f0025c189e2a1708a79096062db4a057dea85a7c5368b964"
+    },
+    {
+      "bytes": 1043,
+      "path": "src/Domains/WorkCore/System/Modules/Attendance/Actions/StartAttendanceBreak.php",
+      "sha256": "76f4e4a1e64ef682eee889a34be46806c4cdbed5b3243048ff15c410501a94e1"
+    },
+    {
+      "bytes": 969,
+      "path": "src/Domains/WorkCore/System/Modules/Attendance/Actions/SubmitTimesheet.php",
+      "sha256": "6d8814683782cf40088a90cf518b4873dd477f257a95a0cf61b9df1529d1a378"
+    },
+    {
+      "bytes": 1334,
+      "path": "src/Domains/WorkCore/System/Modules/Attendance/Contracts/AttendanceRepositoryContract.php",
+      "sha256": "98cd9c88ced7a9a5992cda02bf21e812967ec410725f921f7a1f65b666503e97"
+    },
+    {
+      "bytes": 4401,
+      "path": "src/Domains/WorkCore/System/Modules/Attendance/Http/Controllers/AttendanceController.php",
+      "sha256": "b2d4155fc94380e8810f30dbcc09fd35536e3ca46a3c19df53d4c8477cabb97e"
+    },
+    {
+      "bytes": 404,
+      "path": "src/Domains/WorkCore/System/Modules/Attendance/Http/Requests/ChangeLeaveRequestStatusRequest.php",
+      "sha256": "7b08a12e45de2fabc3bcd636ca0267f8faacfe50cc746193fcb72d6dad115b4d"
+    },
+    {
+      "bytes": 1161,
+      "path": "src/Domains/WorkCore/System/Modules/Attendance/Http/Requests/ClockInRequest.php",
+      "sha256": "b02dc37651b42ad06e24cac19d388a6ead81fafa70a6c0a6512588cf1896d5d6"
+    },
+    {
+      "bytes": 466,
+      "path": "src/Domains/WorkCore/System/Modules/Attendance/Http/Requests/ClockOutRequest.php",
+      "sha256": "d5a50ca69c2b346017cae2cb7c9e3f01a0d0b884ba194fa30e7c32f7ba190eac"
+    },
+    {
+      "bytes": 382,
+      "path": "src/Domains/WorkCore/System/Modules/Attendance/Http/Requests/DecideTimesheetRequest.php",
+      "sha256": "df063fba87470049a73fd74a5acc365f639171a3804c58a957a350d6483553af"
+    },
+    {
+      "bytes": 322,
+      "path": "src/Domains/WorkCore/System/Modules/Attendance/Http/Requests/EndBreakRequest.php",
+      "sha256": "0411d5930080c865a9951f269f9de06904055c9a373e77511dfdbb53908cae30"
+    },
+    {
+      "bytes": 455,
+      "path": "src/Domains/WorkCore/System/Modules/Attendance/Http/Requests/StartBreakRequest.php",
+      "sha256": "2c39f52dea4963ee48a3a1dc2a45a49cb0d8b78e34fb9cc33707266d9ee3e44c"
+    },
+    {
+      "bytes": 781,
+      "path": "src/Domains/WorkCore/System/Modules/Attendance/Http/Requests/StoreLeaveRequest.php",
+      "sha256": "a80910d543fa48dd72b65cd43a4cdb2e7eb74c69ea3d2eaab6f865c0dfb311cc"
+    },
+    {
+      "bytes": 620,
+      "path": "src/Domains/WorkCore/System/Modules/Attendance/Http/Requests/StoreLeaveTypeRequest.php",
+      "sha256": "a062a229ccddca4af0a4ec36bf89081d38a7f1976592d1f206b7ec8a3e9d5bd8"
+    },
+    {
+      "bytes": 461,
+      "path": "src/Domains/WorkCore/System/Modules/Attendance/Http/Requests/SubmitTimesheetRequest.php",
+      "sha256": "6c810ad9901c0db0a1a341cfe44f490d722bd49167360f569a05d7ae3365d7c3"
+    },
+    {
+      "bytes": 3826,
+      "path": "src/Domains/WorkCore/System/Modules/Attendance/Providers/WorkAttendanceServiceProvider.php",
+      "sha256": "aa286c0dcc0f225a3b349ed85e7a1f32ef279a81ca8b4e0d55afde2c8469f55a"
+    },
+    {
+      "bytes": 31312,
+      "path": "src/Domains/WorkCore/System/Modules/Attendance/Repositories/EloquentAttendanceRepository.php",
+      "sha256": "dbe2f75bfb666230a1f733683c59c6e7aa6cc76ea6d89d92125168ca898b97a3"
+    },
+    {
+      "bytes": 1213,
+      "path": "src/Domains/WorkCore/System/Modules/Attendance/Services/AttendanceClockPolicy.php",
+      "sha256": "6096d446467d5eee669c078143f42d9c691a7605feb060a78bae1f5cbc8c458c"
+    },
+    {
+      "bytes": 1311,
+      "path": "src/Domains/WorkCore/System/Modules/Attendance/Services/LeaveRequestPolicy.php",
+      "sha256": "b3e2183f9155f97f6275216f75c7d97c4ce814ca6db69716e182968c8dd840fc"
+    },
+    {
+      "bytes": 839,
+      "path": "src/Domains/WorkCore/System/Modules/Attendance/Services/TimesheetStatusPolicy.php",
+      "sha256": "4c6aeaca5e973614173c8afc600c41ab73c1f8104bef4e812a157d7f7abeeb06"
+    },
+    {
+      "bytes": 1636,
+      "path": "src/Domains/WorkCore/System/Modules/Attendance/routes/api.php",
+      "sha256": "3443399815ed4cafd0b08b8d337e9e6ee2363f9049af89238212f16d7ca9f46e"
+    },
+    {
+      "bytes": 401,
+      "path": "src/Domains/WorkCore/System/Modules/AttendanceVerification/AI/AttendanceVerificationToolRegistry.php",
+      "sha256": "90af3b77846c962259dfda2c0166826cd5c40397e484d5d4b9a89d6c1387d6cf"
+    },
+    {
+      "bytes": 324,
+      "path": "src/Domains/WorkCore/System/Modules/AttendanceVerification/Contracts/AttendanceVerificationRepositoryContract.php",
+      "sha256": "37c9e1553257fdc1e9a3b0e93b280de059384a2c3c02b7ea243c691ce7723c62"
+    },
+    {
+      "bytes": 453,
+      "path": "src/Domains/WorkCore/System/Modules/AttendanceVerification/Domain/AttendanceEvidence.php",
+      "sha256": "36e9c8536103879e3bef35ff6c99ad88d80750a0dd607b7bfb6c39561fc396c2"
+    },
+    {
+      "bytes": 1803,
+      "path": "src/Domains/WorkCore/System/Modules/AttendanceVerification/Domain/AttendanceVerificationAttempt.php",
+      "sha256": "57580826456b919219c8175bcca2b020212450c966f1274f42eec7d1fbaf73e8"
+    },
+    {
+      "bytes": 1482,
+      "path": "src/Domains/WorkCore/System/Modules/AttendanceVerification/Domain/AttendanceVerificationPolicy.php",
+      "sha256": "ae3a22b455703e5ec425941ef6ec739d03d41c635f8bab0473c097fd2ff61aca"
+    },
+    {
+      "bytes": 1826,
+      "path": "src/Domains/WorkCore/System/Modules/AttendanceVerification/Domain/OfflineAttendanceBatch.php",
+      "sha256": "ba99476ef1187f5e0e8b8bb9a8e880eb3634179ec3a8f634e12108eb07368253"
+    },
+    {
+      "bytes": 268,
+      "path": "src/Domains/WorkCore/System/Modules/AttendanceVerification/Domain/OfflineAttendanceBatchState.php",
+      "sha256": "c9aa2c4c5e3cfbaec24458455c06aeb9ed14990ffbb98d2f52edea0aedb4e7f1"
+    },
+    {
+      "bytes": 279,
+      "path": "src/Domains/WorkCore/System/Modules/AttendanceVerification/Domain/VerificationAttemptState.php",
+      "sha256": "0ee7aacf56bc80e20b3013b85a0a6a2d5f192dc873692c09a8bf77f41559672c"
+    },
+    {
+      "bytes": 364,
+      "path": "src/Domains/WorkCore/System/Modules/AttendanceVerification/Domain/VerificationMethod.php",
+      "sha256": "67a914832f98af525d9abd3a2e5c673659e3721f62d5072473564228279e65d0"
+    },
+    {
+      "bytes": 630,
+      "path": "src/Domains/WorkCore/System/Modules/AttendanceVerification/Providers/WorkAttendanceVerificationServiceProvider.php",
+      "sha256": "0f5d81e0a6d3a75f62c45ee326cf0ef3964454a7f4ace803d9a5f55f4f4e8213"
+    },
+    {
+      "bytes": 641,
+      "path": "src/Domains/WorkCore/System/Modules/Compliance/AI/ComplianceToolRegistry.php",
+      "sha256": "f3cf8257cc4e30439a17ab511faacd6b9125dbd47acd7326c2560883dbc9e212"
+    },
+    {
+      "bytes": 1035,
+      "path": "src/Domains/WorkCore/System/Modules/Compliance/Actions/ChangeComplianceObligationStatus.php",
+      "sha256": "3256c0eec9ff69ab5dd5037842ec90856e7efe0ee639f5d90268a2d929c64804"
+    },
+    {
+      "bytes": 990,
+      "path": "src/Domains/WorkCore/System/Modules/Compliance/Actions/ChangeHazardStatus.php",
+      "sha256": "87ff2d64f2a8747814aff4d2733d44e992bde7a8c84ed8c6ae5766926c916261"
+    },
+    {
+      "bytes": 1013,
+      "path": "src/Domains/WorkCore/System/Modules/Compliance/Actions/ChangeSafetyIncidentStatus.php",
+      "sha256": "4eae8dfbfe76ac9b9ad54e44b14765a3f83e13f83fe7e92e9254a90f0f84438f"
+    },
+    {
+      "bytes": 1056,
+      "path": "src/Domains/WorkCore/System/Modules/Compliance/Actions/ConvertCorrectiveActionToWorkOrder.php",
+      "sha256": "c3e6d5ed2958c19e5ce19ab3e36581ab4fc80dc344a8baba9e50de85c2d609ff"
+    },
+    {
+      "bytes": 966,
+      "path": "src/Domains/WorkCore/System/Modules/Compliance/Actions/CreateComplianceObligation.php",
+      "sha256": "cffa8c7d4630543b1ef897108e9029df38975cdfac9b07b378ff7ed8849071fd"
+    },
+    {
+      "bytes": 970,
+      "path": "src/Domains/WorkCore/System/Modules/Compliance/Actions/CreateComplianceRequirement.php",
+      "sha256": "e0f4618286fd3e308775929d9e7da2fe746ccd123bb47fedabb0c72d0118b2c9"
+    },
+    {
+      "bytes": 971,
+      "path": "src/Domains/WorkCore/System/Modules/Compliance/Actions/CreateCorrectiveAction.php",
+      "sha256": "476d16a6125209e88083fb0f13fcb3d98964ca900e7b12dfb1f13b710dce96e5"
+    },
+    {
+      "bytes": 971,
+      "path": "src/Domains/WorkCore/System/Modules/Compliance/Actions/RecordComplianceCertificate.php",
+      "sha256": "82f2d18be522c942ca477c3d24511896b565897be92fa34e435b6481caf7b1b5"
+    },
+    {
+      "bytes": 926,
+      "path": "src/Domains/WorkCore/System/Modules/Compliance/Actions/RecordHazard.php",
+      "sha256": "35a7345c7bd192a625b3787569c06f12266c836bd4b2473489badf79188e6c43"
+    },
+    {
+      "bytes": 947,
+      "path": "src/Domains/WorkCore/System/Modules/Compliance/Actions/RecordSafetyIncident.php",
+      "sha256": "3ef1cf03be546ecb5b6c7a1aac40cfcc418c450c29c7fd8d929550752f48342c"
+    },
+    {
+      "bytes": 446,
+      "path": "src/Domains/WorkCore/System/Modules/Compliance/Actions/SearchCompliance.php",
+      "sha256": "c51bfc47717bc2c4ea22c72621f9dee2b032f1022c0877b77ec7901137287837"
+    },
+    {
+      "bytes": 300,
+      "path": "src/Domains/WorkCore/System/Modules/Compliance/Contracts/ComplianceRepositoryContract.php",
+      "sha256": "ed3d6b7f9bd7a482929e624fdce7124804863e932bbf13a29f5b749f0fca9024"
+    },
+    {
+      "bytes": 4133,
+      "path": "src/Domains/WorkCore/System/Modules/Compliance/Http/Controllers/ComplianceController.php",
+      "sha256": "6f4cbb1507a7296066433135e273f94aea6ffd5f1448a5f109ead7b067ff9810"
+    },
+    {
+      "bytes": 455,
+      "path": "src/Domains/WorkCore/System/Modules/Compliance/Http/Requests/ComplianceStatusRequest.php",
+      "sha256": "22e7b4aa885a5b898d5eedc84bc887833fe77319a8ec68394f7fe3a8f0a282a8"
+    },
+    {
+      "bytes": 714,
+      "path": "src/Domains/WorkCore/System/Modules/Compliance/Http/Requests/CorrectiveActionRequest.php",
+      "sha256": "5919f93d162d7c74e723c5c8cef590ed709a3ac34ef08b31d56ca1f7da77a789"
+    },
+    {
+      "bytes": 409,
+      "path": "src/Domains/WorkCore/System/Modules/Compliance/Http/Requests/CorrectiveWorkOrderRequest.php",
+      "sha256": "57d99188e86d0b0e8b1f1d4629619af20e518ba4269f94509e86c48e6c55002f"
+    },
+    {
+      "bytes": 647,
+      "path": "src/Domains/WorkCore/System/Modules/Compliance/Http/Requests/RecordCertificateRequest.php",
+      "sha256": "e00f735b1c19bb0044fe198cded1a8f5a98210e67f3c79901e13cd56030650a0"
+    },
+    {
+      "bytes": 776,
+      "path": "src/Domains/WorkCore/System/Modules/Compliance/Http/Requests/RecordHazardRequest.php",
+      "sha256": "51330d625a5a933933f6e916e3160227274892d6778c354c94e7d4d82c22ccd6"
+    },
+    {
+      "bytes": 783,
+      "path": "src/Domains/WorkCore/System/Modules/Compliance/Http/Requests/RecordIncidentRequest.php",
+      "sha256": "8a9db1881f55c63a6321c8cec09a5d82984cceea5f990f76ddf76fa43e815c0e"
+    },
+    {
+      "bytes": 480,
+      "path": "src/Domains/WorkCore/System/Modules/Compliance/Http/Requests/SafetyStatusRequest.php",
+      "sha256": "993915f8dfbb2667ec55620c8ea40e51413fba053d03a4dac07339740ddf750c"
+    },
+    {
+      "bytes": 731,
+      "path": "src/Domains/WorkCore/System/Modules/Compliance/Http/Requests/StoreComplianceObligationRequest.php",
+      "sha256": "852aa6cf477fa69f6c833d59facbf38ad0daff9ae34cc885a7753d833bb733fe"
+    },
+    {
+      "bytes": 759,
+      "path": "src/Domains/WorkCore/System/Modules/Compliance/Http/Requests/StoreComplianceRequirementRequest.php",
+      "sha256": "ddf2b1973e70555462efa63ed0b636624e91f6dcc7b314fc037b02b99cb048d1"
+    },
+    {
+      "bytes": 3787,
+      "path": "src/Domains/WorkCore/System/Modules/Compliance/Providers/WorkComplianceServiceProvider.php",
+      "sha256": "6bc3e86f238c784e4341395674adddb5184c6b1b844ab016ee554af0e74fc48a"
+    },
+    {
+      "bytes": 22551,
+      "path": "src/Domains/WorkCore/System/Modules/Compliance/Repositories/EloquentComplianceRepository.php",
+      "sha256": "bb1be0c9d10c3cd5f692ba4e5cd2b8b62f46f11153aec49a46cddd425b986897"
+    },
+    {
+      "bytes": 1746,
+      "path": "src/Domains/WorkCore/System/Modules/Compliance/Services/ComplianceStatusPolicy.php",
+      "sha256": "deb4aab30028c444e38abee70b69da02129e75496aab90e077475fc39bf1decf"
+    },
+    {
+      "bytes": 1015,
+      "path": "src/Domains/WorkCore/System/Modules/Compliance/Services/SafetySeverityPolicy.php",
+      "sha256": "51dd4fe0b83797cebf9c3138ce8006046baec3124febf53a82a1955ae2560a11"
+    },
+    {
+      "bytes": 1745,
+      "path": "src/Domains/WorkCore/System/Modules/Compliance/routes/api.php",
+      "sha256": "6b8492035323a529c4b3f6359cd8b0508ead93aed1ca258fbb67235ad40f0086"
+    },
+    {
+      "bytes": 379,
+      "path": "src/Domains/WorkCore/System/Modules/Credentials/AI/CredentialsToolRegistry.php",
+      "sha256": "0193e886db3c884349f71f93af29bc2a947381fe0f4bedb62913161502bd6423"
+    },
+    {
+      "bytes": 4190,
+      "path": "src/Domains/WorkCore/System/Modules/NDIS/Application/Actions/AddNDISCaseNote.php",
+      "sha256": "e1bfbca5d779867b78a7039605e16ebe607bd1b7fb278c27db7a4eb79017878a"
+    },
+    {
+      "bytes": 3289,
+      "path": "src/Domains/WorkCore/System/Modules/NDIS/Application/Actions/LinkNDISParticipantIncident.php",
+      "sha256": "2e05a37ae5eb1f5e031e43c2bcf21f056cdbd978882e08c28bc885279f287112"
+    },
+    {
+      "bytes": 3483,
+      "path": "src/Domains/WorkCore/System/Modules/NDIS/Application/Actions/MatchNDISWorker.php",
+      "sha256": "90a647cde487cae42df42fbd3eb41c20b6b17a6d9f768a31cb25081af5eff4cc"
+    },
+    {
+      "bytes": 6279,
+      "path": "src/Domains/WorkCore/System/Modules/NDIS/Application/Actions/PrepareNDISClaimLine.php",
+      "sha256": "cf6233c4eae4cea6d12d9117cfaaf1f32f9423a541c580ef04c8750f6c52d9cc"
+    },
+    {
+      "bytes": 10730,
+      "path": "src/Domains/WorkCore/System/Modules/NDIS/Application/Actions/RecordNDISSupportDelivery.php",
+      "sha256": "96b495b694128b48685305750f98cc48c75262a0ba5e76daa6135361a6fb1431"
+    },
+    {
+      "bytes": 3364,
+      "path": "src/Domains/WorkCore/System/Modules/NDIS/Application/Actions/UpsertNDISGoal.php",
+      "sha256": "bffd8635f85a130e08a567d40aba0c0377b1ef903c29b3ee9c779ebbf082fe1c"
+    },
+    {
+      "bytes": 6919,
+      "path": "src/Domains/WorkCore/System/Modules/NDIS/Application/Actions/UpsertNDISParticipant.php",
+      "sha256": "adc923fc3316cb09c02b91235c0d01475d1ee4a814acbed7e390dbc0fb74d525"
+    },
+    {
+      "bytes": 4428,
+      "path": "src/Domains/WorkCore/System/Modules/NDIS/Application/Actions/UpsertNDISParticipantContact.php",
+      "sha256": "5addfbb2ca10f2057bbf99e3c2577fb9b0951531cda7a10459b8f045aed6058e"
+    },
+    {
+      "bytes": 9848,
+      "path": "src/Domains/WorkCore/System/Modules/NDIS/Application/Actions/UpsertNDISPlan.php",
+      "sha256": "fc258f7d588a9ca531e63d568bfaf5182cc6919ce3c9998bf288a9b8574c4822"
+    },
+    {
+      "bytes": 12624,
+      "path": "src/Domains/WorkCore/System/Modules/NDIS/Application/Actions/UpsertNDISServiceAgreement.php",
+      "sha256": "5b26bb28c1f5269208b27f75aee1e6a6531982fb651fe31d568bbdaab9e0e127"
+    },
+    {
+      "bytes": 3869,
+      "path": "src/Domains/WorkCore/System/Modules/NDIS/Application/ReadModels/GetNDISBudgetPosition.php",
+      "sha256": "932f494f12b30b080a93f3ee8389f096dbed9525a7ac2124a0343ab61c636fca"
+    },
+    {
+      "bytes": 6353,
+      "path": "src/Domains/WorkCore/System/Modules/NDIS/Application/ReadModels/GetNDISParticipantProfile.php",
+      "sha256": "610987ee941790b08d982993a542f480a95d70342e1a6d9d85e9df089309d29a"
+    },
+    {
+      "bytes": 1902,
+      "path": "src/Domains/WorkCore/System/Modules/NDIS/Application/ReadModels/ListNDISClaimQueue.php",
+      "sha256": "aa726b263a7cf4672d33aded0163ec1f8092d6715ba3e113805be42c862ab133"
+    },
+    {
+      "bytes": 4636,
+      "path": "src/Domains/WorkCore/System/Modules/NDIS/Application/Services/NDISActionSupport.php",
+      "sha256": "19f0bfce8682927de63e906dfb12d10bf1b44a37a665027b06469b252172a31c"
+    },
+    {
+      "bytes": 812,
+      "path": "src/Domains/WorkCore/System/Modules/NDIS/Domain/ClaimLineState.php",
+      "sha256": "a13fce9deca00c073846bd3ca7cfa3dfbb762c927eb319f8859ae8fc6b093c38"
+    },
+    {
+      "bytes": 787,
+      "path": "src/Domains/WorkCore/System/Modules/NDIS/Domain/ParticipantStatus.php",
+      "sha256": "33d7566afdefd8c41000fbd4d17ab8c947e0d92d919b51d4e49489a9c849e816"
+    },
+    {
+      "bytes": 673,
+      "path": "src/Domains/WorkCore/System/Modules/NDIS/Domain/PlanState.php",
+      "sha256": "f5ecf4190fec7e99ed7038ecd05431382773b3c9f8fa5998992df6c4345db384"
+    },
+    {
+      "bytes": 785,
+      "path": "src/Domains/WorkCore/System/Modules/NDIS/Domain/RecordVisibility.php",
+      "sha256": "eeb3dbe8627914a6f6ca2e4d697aa189197e1e3d91d13df1cb800d9d93b07f9b"
+    },
+    {
+      "bytes": 862,
+      "path": "src/Domains/WorkCore/System/Modules/NDIS/Domain/ServiceAgreementState.php",
+      "sha256": "d34656587f9a15267ea27296a5e088cbcb918a91410c01272829da97bc0e210f"
+    },
+    {
+      "bytes": 1782,
+      "path": "src/Domains/WorkCore/System/Modules/NDIS/Domain/ServiceDeliveryCalculator.php",
+      "sha256": "75209e5d8197399f27f6f1e37fd5cc0dee725498ad9f469ec04e4f03fd69a81c"
+    },
+    {
+      "bytes": 369,
+      "path": "src/Domains/WorkCore/System/Modules/People/AI/PeopleToolRegistry.php",
+      "sha256": "746ee9bc023cd768967ba3d42dbf093da17c4db82e1ba85d3eefd27a2c7cc89c"
+    },
+    {
+      "bytes": 292,
+      "path": "src/Domains/WorkCore/System/Modules/People/Contracts/PeopleRepositoryContract.php",
+      "sha256": "662bf59257307eb076bdac51b48ff6eab6ba28479194779b6d45bf4e2f8300d0"
+    },
+    {
+      "bytes": 2346,
+      "path": "src/Domains/WorkCore/System/Modules/People/Domain/Compliance/ComplianceDocument.php",
+      "sha256": "27d9bc7375abe11672a5361cb1d7c89d2e408567fd3d069b5db976d833fe14fd"
+    },
+    {
+      "bytes": 331,
+      "path": "src/Domains/WorkCore/System/Modules/People/Domain/Compliance/ComplianceDocumentState.php",
+      "sha256": "f6125bbe8a14c17955bb9e0194c671fa3c8f2ee166730c63a75eb241a1084a2f"
+    },
+    {
+      "bytes": 3339,
+      "path": "src/Domains/WorkCore/System/Modules/People/Domain/Employment/EmploymentLifecycle.php",
+      "sha256": "0229eae80f053ae011d637899365552747b9ff7647086663e55422a171aba3f0"
+    },
+    {
+      "bytes": 370,
+      "path": "src/Domains/WorkCore/System/Modules/People/Domain/Employment/EmploymentState.php",
+      "sha256": "f859b47ccb08351d2bba199edc661ebdca3ad52525b9227c70cac1aa5512268f"
+    },
+    {
+      "bytes": 2128,
+      "path": "src/Domains/WorkCore/System/Modules/People/Domain/Onboarding/OnboardingPlan.php",
+      "sha256": "8cfab3cad57f3ed65b09e5ba43172d82a4309c5420913b9a39cc5769e2c59b0d"
+    },
+    {
+      "bytes": 261,
+      "path": "src/Domains/WorkCore/System/Modules/People/Domain/Onboarding/OnboardingState.php",
+      "sha256": "354789254aebfb814de8b15a6f59b9fcff7ecd1d12cc3a346fa6a9f23091d433"
+    },
+    {
+      "bytes": 760,
+      "path": "src/Domains/WorkCore/System/Modules/People/Domain/Onboarding/OnboardingTask.php",
+      "sha256": "9664f296877f5a7d47d408b36b88ce15d3a3ea8a2732884d51d0db648d9798a7"
+    },
+    {
+      "bytes": 2293,
+      "path": "src/Domains/WorkCore/System/Modules/People/Domain/Performance/PerformanceObjective.php",
+      "sha256": "fc2fbf21f3bfed636224fc814e73bf6d3c3b7bdfa579e8e7f6c5d82a26787463"
+    },
+    {
+      "bytes": 301,
+      "path": "src/Domains/WorkCore/System/Modules/People/Domain/Performance/PerformanceObjectiveState.php",
+      "sha256": "dc69e7692f4950433d0fd80f0296315349aec37e97d0fddfbc2a957bc4fe0aa5"
+    },
+    {
+      "bytes": 3281,
+      "path": "src/Domains/WorkCore/System/Modules/People/Domain/Recruitment/JobApplication.php",
+      "sha256": "22942b1586a15d8dbb7711d289b03ccb2fd000536c81f09c692dfa01dd47350f"
+    },
+    {
+      "bytes": 390,
+      "path": "src/Domains/WorkCore/System/Modules/People/Domain/Recruitment/JobApplicationState.php",
+      "sha256": "61b6c226d44099d986e0c93a2f8f7bdf7702851ac0753c771620dd30226525e7"
+    },
+    {
+      "bytes": 621,
+      "path": "src/Domains/WorkCore/System/Modules/People/Providers/WorkPeopleServiceProvider.php",
+      "sha256": "956f52c289adaca88757b364360efbaa2c514afb9912cd4f342561407e49087d"
+    },
+    {
+      "bytes": 1943,
+      "path": "src/Domains/WorkCore/System/Modules/Rosters/AI/RostersToolRegistry.php",
+      "sha256": "cad30bc735be740d2a5fd3a05678ba5b22ffc5afc6807e1eb0514fcc19765bf8"
+    },
+    {
+      "bytes": 1041,
+      "path": "src/Domains/WorkCore/System/Modules/Rosters/Actions/AssignRosterShift.php",
+      "sha256": "260391a299aafb5a30a0fadf00c34e3497c8c5b8b6c923b3a96011a0341b21bb"
+    },
+    {
+      "bytes": 1007,
+      "path": "src/Domains/WorkCore/System/Modules/Rosters/Actions/CreateAvailabilityRule.php",
+      "sha256": "818f437425ca04b203b2598757d7ee5dd9c3eb98d514ebb00ba32be6f17057bf"
+    },
+    {
+      "bytes": 952,
+      "path": "src/Domains/WorkCore/System/Modules/Rosters/Actions/CreateRoster.php",
+      "sha256": "d389b140fa534a809aef06d2f1533b8ad8cf9ffbf9df6081ec754e194135d710"
+    },
+    {
+      "bytes": 967,
+      "path": "src/Domains/WorkCore/System/Modules/Rosters/Actions/CreateRosterShift.php",
+      "sha256": "fa1b5bd5964e179583105224e8457f13707b7d8598bc90d1c0d85a380461a378"
+    },
+    {
+      "bytes": 1038,
+      "path": "src/Domains/WorkCore/System/Modules/Rosters/Actions/PublishRoster.php",
+      "sha256": "ec80897fa4442445275b7495559162339a9ec8f631d9bf6f0a0b0847615b408a"
+    },
+    {
+      "bytes": 673,
+      "path": "src/Domains/WorkCore/System/Modules/Rosters/Actions/SearchAvailability.php",
+      "sha256": "35b8d2bc580b888013c01daf597bd8fc2a33348b9737f695475b8f55dd4049d3"
+    },
+    {
+      "bytes": 765,
+      "path": "src/Domains/WorkCore/System/Modules/Rosters/Actions/SearchRosters.php",
+      "sha256": "99fa6aabb4f85a944a58629f48069975dc1b04386e91f7be29261889c6618c04"
+    },
+    {
+      "bytes": 1197,
+      "path": "src/Domains/WorkCore/System/Modules/Rosters/Contracts/RosterRepositoryContract.php",
+      "sha256": "9a59c7c344fd4faf9338930c939f1e52e2a954bf5450e3130bfedad4f62b8e9f"
+    },
+    {
+      "bytes": 4430,
+      "path": "src/Domains/WorkCore/System/Modules/Rosters/Http/Controllers/RosterController.php",
+      "sha256": "5f67696fd848b1f2be608ed9c1f15c8c12121cc3ed7f9b5cdda9f8544a544337"
+    },
+    {
+      "bytes": 495,
+      "path": "src/Domains/WorkCore/System/Modules/Rosters/Http/Controllers/RosterUiController.php",
+      "sha256": "a3bd824d8acfae009df030f4501abea8bd308db313bb9e5ba2b200b5d712a252"
+    },
+    {
+      "bytes": 761,
+      "path": "src/Domains/WorkCore/System/Modules/Rosters/Http/Requests/AssignRosterShiftRequest.php",
+      "sha256": "111caff6dec0636d88eb695ad303cdb49cccab7977ed04737ac58c993be9e40b"
+    },
+    {
+      "bytes": 527,
+      "path": "src/Domains/WorkCore/System/Modules/Rosters/Http/Requests/PublishRosterRequest.php",
+      "sha256": "eb7ac3ed1b084b615315a727c7dfc16d4032e6500b5d6172ac896ac340c2659a"
+    },
+    {
+      "bytes": 1098,
+      "path": "src/Domains/WorkCore/System/Modules/Rosters/Http/Requests/StoreAvailabilityRuleRequest.php",
+      "sha256": "48f2cd058b3b3dfa1f0d4c4da24b946d4c30f248a2eef9094c6c9faee01bce8f"
+    },
+    {
+      "bytes": 1149,
+      "path": "src/Domains/WorkCore/System/Modules/Rosters/Http/Requests/StoreRosterRequest.php",
+      "sha256": "71a99bb2970672348182974b2f209f4be7f9d04256272ab72eb062e0bdbe047a"
+    },
+    {
+      "bytes": 1867,
+      "path": "src/Domains/WorkCore/System/Modules/Rosters/Http/Requests/StoreRosterShiftRequest.php",
+      "sha256": "8a80dd18bbff4e1ca7e13ee0e4568850fb36e8eb251c711077b3d1330e0c6b48"
+    },
+    {
+      "bytes": 3319,
+      "path": "src/Domains/WorkCore/System/Modules/Rosters/Providers/WorkRostersServiceProvider.php",
+      "sha256": "894b630da9ca59b49f7e8edc5b38f7ec27483ebbd9863ed3689b4efe7b22a7eb"
+    },
+    {
+      "bytes": 32383,
+      "path": "src/Domains/WorkCore/System/Modules/Rosters/Repositories/EloquentRosterRepository.php",
+      "sha256": "5983b483e87ac91e826e5e1c00fe66bd887ea117e6bc40b923527d3180b71fd7"
+    },
+    {
+      "bytes": 1979,
+      "path": "src/Domains/WorkCore/System/Modules/Rosters/Services/AvailabilityRulePolicy.php",
+      "sha256": "df9b9da6a91f903d5c21986440a05e057b046a9772c9a149b82378aa72bc3a87"
+    },
+    {
+      "bytes": 976,
+      "path": "src/Domains/WorkCore/System/Modules/Rosters/Services/RosterStatusPolicy.php",
+      "sha256": "bb5c9138e447ce3a286a2af258bf6adeff2369d9da84823978c580a00ab9415d"
+    },
+    {
+      "bytes": 1261,
+      "path": "src/Domains/WorkCore/System/Modules/Rosters/Services/RosterWindowPolicy.php",
+      "sha256": "15916e720ea003d3b3158eb98f7ef9a26f1dbe07a0d333febd8ad0bab0a7e2f6"
+    },
+    {
+      "bytes": 1197,
+      "path": "src/Domains/WorkCore/System/Modules/Rosters/routes/api.php",
+      "sha256": "120ea617798fcfaddeb2a68cbd24756d2d683915f04b0fa99c7af77320f2b957"
+    },
+    {
+      "bytes": 497,
+      "path": "src/Domains/WorkCore/System/Modules/Rosters/routes/web.php",
+      "sha256": "bc637d6429a6ad2a824b241521ba4a212058c2c9003677e3943d79a533ef4d2b"
+    },
+    {
+      "bytes": 1539,
+      "path": "src/Domains/WorkCore/System/Modules/Workforce/AI/WorkforceToolRegistry.php",
+      "sha256": "4dbbe232b7ef4f1a87f5fda84dd2a823d014546f0e3d7652f24582c51f00d21c"
+    },
+    {
+      "bytes": 1024,
+      "path": "src/Domains/WorkCore/System/Modules/Workforce/Actions/AddWorkerCertification.php",
+      "sha256": "b3a8789ffe256237c28e371d6530cc7dae6c5e8fd741552e4c8ba276ada48bab"
+    },
+    {
+      "bytes": 1001,
+      "path": "src/Domains/WorkCore/System/Modules/Workforce/Actions/AssignWorkerSkill.php",
+      "sha256": "779937d10e109475e1fa57a12775b7a73e064ec1d37b3f2563e45b416bff3f23"
+    },
+    {
+      "bytes": 933,
+      "path": "src/Domains/WorkCore/System/Modules/Workforce/Actions/CreateSkill.php",
+      "sha256": "51f2c8e5739c46b411c0981f5f305e2f8982bdcd8de78a93b31983b6bcb2741b"
+    },
+    {
+      "bytes": 938,
+      "path": "src/Domains/WorkCore/System/Modules/Workforce/Actions/CreateWorker.php",
+      "sha256": "0b09d7d6542667ef70b1d8e76a380744d9a0838948e4eed4b5aacdae03a3c6d9"
+    },
+    {
+      "bytes": 603,
+      "path": "src/Domains/WorkCore/System/Modules/Workforce/Actions/SearchWorkers.php",
+      "sha256": "449ab7330bc9dbe1bcc7968e6376716f37081f1deddeff71bfa81c5ed5d63e12"
+    },
+    {
+      "bytes": 727,
+      "path": "src/Domains/WorkCore/System/Modules/Workforce/Contracts/WorkerRepositoryContract.php",
+      "sha256": "73d8379ef1a6f633cf23450e722b126967914a13e954c7657bdb1639d03808fc"
+    },
+    {
+      "bytes": 2440,
+      "path": "src/Domains/WorkCore/System/Modules/Workforce/Http/Controllers/WorkerController.php",
+      "sha256": "006e2dfe360f29ab98678254de500fc8c39babd96bad94fb7116a4403ab62be7"
+    },
+    {
+      "bytes": 557,
+      "path": "src/Domains/WorkCore/System/Modules/Workforce/Http/Requests/AssignWorkerSkillRequest.php",
+      "sha256": "4ddf779afefa5799ae7a840ad46970d47bd93b4a1158becc1d55455198ccf824"
+    },
+    {
+      "bytes": 735,
+      "path": "src/Domains/WorkCore/System/Modules/Workforce/Http/Requests/StoreCertificationRequest.php",
+      "sha256": "3ba0c31b11bb0767df718c6ac533f8946c00cf69c87983c4a1734fc5179cd358"
+    },
+    {
+      "bytes": 543,
+      "path": "src/Domains/WorkCore/System/Modules/Workforce/Http/Requests/StoreSkillRequest.php",
+      "sha256": "e4748ebfe17661d3b319c7ed6b7fa0c21edab0e70b6cd85e5f2c258cff00beaa"
+    },
+    {
+      "bytes": 1407,
+      "path": "src/Domains/WorkCore/System/Modules/Workforce/Http/Requests/StoreWorkerRequest.php",
+      "sha256": "0ee48db7edf621be9fc84d8585cd23ba9d89fac09497e60e3f3f6404373452f8"
+    },
+    {
+      "bytes": 2192,
+      "path": "src/Domains/WorkCore/System/Modules/Workforce/Providers/WorkWorkforceServiceProvider.php",
+      "sha256": "308ea2cfda05ee88c3957ac48bb3e6c4d82e3f9d763dc434207cc8dc1b5e63a6"
+    },
+    {
+      "bytes": 7344,
+      "path": "src/Domains/WorkCore/System/Modules/Workforce/Repositories/EloquentWorkerRepository.php",
+      "sha256": "729da335fe06adb1c88ca69da9144ca228c39c036808f853fb3808441fb8701c"
+    },
+    {
+      "bytes": 607,
+      "path": "src/Domains/WorkCore/System/Modules/Workforce/Services/CertificationStatusPolicy.php",
+      "sha256": "e519970df93b64838579f8bb558b052023d4c9800823f796fc98863bfc9081ed"
+    },
+    {
+      "bytes": 1390,
+      "path": "src/Domains/WorkCore/System/Modules/Workforce/Services/WorkerQualificationMatcher.php",
+      "sha256": "ccb09e8ba7e6ec2a9429c6b887be2c9d9800b87ceb7b48a9d1571968168fb677"
+    },
+    {
+      "bytes": 822,
+      "path": "src/Domains/WorkCore/System/Modules/Workforce/routes/api.php",
+      "sha256": "76db3922277524feb5b181d7f1740f9b2ea507a3d9bea287807deecdd72f8343"
+    }
+  ]
+}

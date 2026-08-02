@@ -1,0 +1,21 @@
+<?php
+
+namespace App\Domains\WorkCore\System\Modules\Premises\Entities;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use App\Domains\WorkCore\System\Modules\Premises\Entities\Concerns\BelongsToCompany;
+
+class PremiseApplicationEvent extends Model
+{
+    use BelongsToCompany;
+    protected $table = 'pm_premise_application_events';
+    protected $guarded = ['id'];
+    protected $casts = ['payload' => 'array', 'occurred_at' => 'datetime'];
+    protected static function booted(): void
+    {
+        static::updating(fn () => throw new \LogicException('Application event history is immutable.'));
+        static::deleting(fn () => throw new \LogicException('Application event history cannot be deleted.'));
+    }
+    public function application(): BelongsTo { return $this->belongsTo(PremiseApplication::class, 'application_id'); }
+}
