@@ -15,6 +15,15 @@ WorkCore has been extracted from the consolidated MagicAI application into **fiv
 
 Every domain extension requires `workcore/shared-foundation` at the same package version.
 
+## Repository contents
+
+- [`tools/build_extensions.py`](tools/build_extensions.py) deterministically rebuilds all six packages and release manifests from a consolidated WorkCore source tree.
+- [`tests/test_build_extensions.py`](tests/test_build_extensions.py) protects the extraction boundaries, provider patches, manifests and deterministic releases.
+- [`tools/validate_repository.py`](tools/validate_repository.py) verifies the committed package set, ownership rules, dependencies and every package checksum.
+- [`integration/host-overlay`](integration/host-overlay) preserves MagicAI host-integration assets separately from installable WorkCore package ownership.
+- [`site`](site) contains the MiniUp catalogue source; generated download ZIPs are intentionally excluded from Git history.
+- [`docs/superpowers`](docs/superpowers) contains the approved design and implementation plan used for this extraction.
+
 ## Non-negotiable architecture rules
 
 - Every source file and internal module has exactly one package owner.
@@ -25,6 +34,16 @@ Every domain extension requires `workcore/shared-foundation` at the same package
 - Cross-extension writes must use governed actions, contracts or domain events rather than direct foreign-table writes.
 
 The complete file-level ownership and transformation record is in [`ownership-manifest.json`](ownership-manifest.json). Transfer integrity is recorded in [`IMPORT-PROVENANCE.md`](IMPORT-PROVENANCE.md).
+
+## Build from the consolidated source
+
+```bash
+python tools/build_extensions.py \
+  --source /absolute/path/to/consolidated-source \
+  --output /absolute/path/to/build-output
+```
+
+The source directory must contain `app/Domains/WorkCore`. The builder rejects unknown module assignments and emits deterministic package ZIPs plus a complete ownership manifest.
 
 ## Validate the repository
 
