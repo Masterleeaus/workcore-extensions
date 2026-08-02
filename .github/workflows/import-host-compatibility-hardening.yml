@@ -69,21 +69,25 @@ jobs:
           test -f /tmp/workcore-host-hardening/workcore-host-hardening/tools/generate_host_profile.py
           test -f /tmp/workcore-host-hardening/workcore-host-hardening/.github/workflows/host-compatibility.yml
           cp -a /tmp/workcore-host-hardening/workcore-host-hardening/. ./
-          rm -f .github/workflows/import-host-compatibility-hardening.yml
 
       - name: Verify imported hardening
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+          PYTHONPYCACHEPREFIX: /tmp/workcore-pycache
         run: |
-          python -m unittest tests/test_repository_integrity.py tests/test_host_compatibility.py -v
-          python tools/validate_repository.py --repo .
-          python tools/analyze_package_dependencies.py --packages-root packages --output /tmp/dependency-report.json
+          python -B -m unittest tests/test_repository_integrity.py tests/test_host_compatibility.py -v
+          python -B tools/validate_repository.py --repo .
+          python -B tools/analyze_package_dependencies.py --packages-root packages --output /tmp/dependency-report.json
           python -m py_compile tools/build_extensions.py tools/generate_host_profile.py tools/analyze_package_dependencies.py tests/test_build_extensions.py tests/test_host_compatibility.py
           find packages -type f -name '*.php' -print0 | xargs -0 -n1 -P4 php -l > /tmp/php-lint.log
           test "$(grep -c '^No syntax errors detected in ' /tmp/php-lint.log)" -eq 2061
 
-      - name: Commit hardening changes
+      - name: Commit non-workflow hardening changes
         run: |
+          rm -f .github/workflows/host-compatibility.yml
+          find . -type d -name __pycache__ -prune -exec rm -rf {} +
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -A
+          git add compatibility docs/superpowers/plans integration/host-overlay/bootstrap/providers.php ownership-manifest.json packages tests tools
           git commit -m 'test: harden MagicAI host package compatibility'
           git push origin HEAD:feature/five-domain-extension-split
