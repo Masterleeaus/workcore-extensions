@@ -1,0 +1,119 @@
+{
+  "key": "real_estate_sales",
+  "label": "Real Estate Sales",
+  "version": "1.0.0",
+  "type": "vertical",
+  "extends": [
+    "premises_services_core"
+  ],
+  "capabilities": [
+    "workcore.territories",
+    "workcore.money.sales"
+  ],
+  "features": {
+    "real_estate.listings": true,
+    "real_estate.appraisals": true,
+    "real_estate.open_homes": true,
+    "real_estate.buyers": true,
+    "real_estate.vendor_campaigns": true
+  },
+  "terminology": {
+    "entity.customer.singular": "Vendor or buyer",
+    "entity.customer.plural": "Vendors and buyers",
+    "entity.premises.singular": "Listing",
+    "entity.premises.plural": "Listings",
+    "entity.work_order.singular": "Sales activity",
+    "entity.work_order.plural": "Sales activities",
+    "entity.worker.singular": "Agent",
+    "entity.worker.plural": "Agents"
+  },
+  "metadata": {
+    "managed_premises_profile": "residential_rental",
+    "rebased_for_workcore": "0.42.0-unified"
+  },
+  "setup": {
+    "default_business_lines": [
+      {
+        "key": "residential_sales",
+        "name": "Residential Sales"
+      }
+    ],
+    "questions": [
+      {
+        "key": "real_estate.market_segments",
+        "section": "vertical_details",
+        "prompt": "Which sales and leasing market segments should be configured?",
+        "type": "multiselect",
+        "required": true,
+        "options": [
+          "residential_sales",
+          "commercial_sales",
+          "residential_leasing",
+          "commercial_leasing",
+          "project_marketing"
+        ]
+      },
+      {
+        "key": "real_estate.lead_stages",
+        "section": "operations",
+        "prompt": "Should AI create a recommended prospecting and listing pipeline?",
+        "type": "boolean",
+        "required": true,
+        "default": true
+      },
+      {
+        "key": "real_estate.compliance_documents",
+        "section": "compliance",
+        "prompt": "Should jurisdiction-specific authority and disclosure document placeholders be prepared?",
+        "type": "boolean",
+        "required": true,
+        "default": true
+      }
+    ],
+    "documents": [
+      "service_agreement",
+      "privacy_notice",
+      "property_owner_report"
+    ]
+  },
+  "codebooks": {
+    "roster.type": {
+      "include": [
+        "leasing",
+        "open_home",
+        "office"
+      ],
+      "default": "open_home"
+    },
+    "roster.shift_type": {
+      "include": [
+        "leasing",
+        "open_home",
+        "office"
+      ],
+      "default": "open_home"
+    },
+    "worker.type": {
+      "include": [
+        "agent",
+        "property_manager"
+      ],
+      "default": "agent"
+    },
+    "appointment.type": {
+      "include": [
+        "viewing",
+        "meeting",
+        "inspection"
+      ],
+      "default": "viewing"
+    },
+    "dispatch.assignment_type": {
+      "include": [
+        "viewing",
+        "inspection"
+      ],
+      "default": "viewing"
+    }
+  }
+}

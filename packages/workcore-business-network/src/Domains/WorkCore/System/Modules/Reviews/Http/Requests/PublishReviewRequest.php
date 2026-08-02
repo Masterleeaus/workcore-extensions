@@ -1,0 +1,1 @@
+<?php declare(strict_types=1); namespace App\Domains\WorkCore\System\Modules\Reviews\Http\Requests; use Illuminate\Foundation\Http\FormRequest; final class PublishReviewRequest extends FormRequest { public function rules(): array{return ['status'=>'required|in:private,published,withdrawn','reason'=>'nullable|string|max:2000'];}}

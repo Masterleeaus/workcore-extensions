@@ -1,0 +1,150 @@
+{
+  "key": "hotel_management",
+  "label": "Hotel and Motel Management",
+  "version": "1.0.0",
+  "type": "vertical",
+  "extends": [
+    "accommodation_core"
+  ],
+  "capabilities": [
+    "workcore.payroll",
+    "workcore.money.sales",
+    "workcore.money.procurement"
+  ],
+  "features": {
+    "hotel.front_desk": true,
+    "hotel.room_inventory": true,
+    "hotel.rates": true,
+    "hotel.folios": true,
+    "hotel.housekeeping_board": true,
+    "hotel.night_audit": true
+  },
+  "terminology": {
+    "entity.customer.singular": "Guest",
+    "entity.customer.plural": "Guests",
+    "entity.premises.singular": "Hotel",
+    "entity.premises.plural": "Hotels",
+    "entity.work_order.singular": "Operational task",
+    "entity.work_order.plural": "Operational tasks",
+    "entity.worker.singular": "Staff member",
+    "entity.worker.plural": "Staff"
+  },
+  "metadata": {
+    "managed_premises_profile": "custom",
+    "rebased_for_workcore": "0.42.0-unified"
+  },
+  "setup": {
+    "default_business_lines": [
+      {
+        "key": "front_office",
+        "name": "Front Office"
+      },
+      {
+        "key": "housekeeping",
+        "name": "Housekeeping"
+      },
+      {
+        "key": "hotel_maintenance",
+        "name": "Hotel Maintenance"
+      }
+    ],
+    "questions": [
+      {
+        "key": "hotel.property_type",
+        "section": "vertical_details",
+        "prompt": "What type of accommodation property is being configured?",
+        "type": "select",
+        "required": true,
+        "options": [
+          "hotel",
+          "motel",
+          "serviced_apartments",
+          "hostel",
+          "resort"
+        ]
+      },
+      {
+        "key": "hotel.room_count",
+        "section": "vertical_details",
+        "prompt": "How many rooms or units should be prepared?",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "key": "hotel.departments",
+        "section": "vertical_details",
+        "prompt": "Which hotel departments should be created?",
+        "type": "multiselect",
+        "required": true,
+        "options": [
+          "front_office",
+          "housekeeping",
+          "maintenance",
+          "food_beverage",
+          "security",
+          "sales",
+          "finance"
+        ]
+      }
+    ],
+    "documents": [
+      "guest_welcome_guide",
+      "cleaning_checklist",
+      "maintenance_report",
+      "emergency_procedure",
+      "staff_induction"
+    ]
+  },
+  "codebooks": {
+    "roster.type": {
+      "include": [
+        "front_desk",
+        "housekeeping",
+        "room_turnover",
+        "guest_services",
+        "night_audit",
+        "maintenance",
+        "security"
+      ],
+      "default": "front_desk"
+    },
+    "roster.shift_type": {
+      "include": [
+        "front_desk",
+        "housekeeping",
+        "room_turnover",
+        "guest_services",
+        "night_audit",
+        "maintenance",
+        "security"
+      ],
+      "default": "front_desk"
+    },
+    "worker.type": {
+      "include": [
+        "front_desk",
+        "housekeeper",
+        "concierge",
+        "maintenance",
+        "accommodation_worker"
+      ],
+      "default": "front_desk"
+    },
+    "appointment.type": {
+      "include": [
+        "room_turnover",
+        "guest_service",
+        "maintenance"
+      ],
+      "default": "room_turnover"
+    },
+    "dispatch.assignment_type": {
+      "include": [
+        "room_turnover",
+        "maintenance",
+        "delivery"
+      ],
+      "default": "room_turnover"
+    }
+  }
+}

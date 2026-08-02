@@ -1,0 +1,3 @@
+<?php
+
+declare(strict_types=1); use App\Domains\WorkCore\System\Modules\Catalogue\Http\Controllers\ServiceCatalogueController; use Illuminate\Support\Facades\Route; Route::prefix((string)config('workcore.catalogue.route_prefix'))->middleware((array)config('workcore.catalogue.middleware'))->name('api.workcore.v1.')->group(function():void{Route::get('services',[ServiceCatalogueController::class,'index'])->name('services.index');Route::post('service-categories',[ServiceCatalogueController::class,'storeCategory'])->name('service-categories.store');Route::post('services',[ServiceCatalogueController::class,'storeService'])->name('services.store');Route::post('job-templates',[ServiceCatalogueController::class,'storeTemplate'])->name('job-templates.store');});

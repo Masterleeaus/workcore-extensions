@@ -1,0 +1,114 @@
+{
+  "key": "accommodation_core",
+  "label": "Accommodation Operations Core",
+  "version": "1.1.0",
+  "type": "foundation",
+  "extends": [
+    "premises_services_core"
+  ],
+  "capabilities": [
+    "workcore.accommodation",
+    "workcore.dispatch",
+    "workcore.rosters",
+    "workcore.inventory",
+    "workcore.attendance",
+    "workcore.reviews",
+    "workcore.attendance.verification",
+    "workcore.recurring",
+    "workcore.territories",
+    "workcore.payroll"
+  ],
+  "features": {
+    "accommodation.units": true,
+    "accommodation.occupancy": true,
+    "housekeeping.enabled": true,
+    "maintenance.reactive": true,
+    "maintenance.preventive": true,
+    "accommodation.reservations": true,
+    "accommodation.stays": true,
+    "accommodation.housekeeping": true,
+    "accommodation.rates": true,
+    "accommodation.charges": true,
+    "accommodation.channel_references": true,
+    "accommodation.availability_board": true
+  },
+  "terminology": {
+    "entity.customer.singular": "Account",
+    "entity.customer.plural": "Accounts",
+    "entity.premises.singular": "Property",
+    "entity.premises.plural": "Properties",
+    "entity.worker.singular": "Team member",
+    "entity.worker.plural": "Team members",
+    "entity.accommodation_reservation.singular": "Reservation",
+    "entity.accommodation_reservation.plural": "Reservations",
+    "entity.accommodation_stay.singular": "Stay",
+    "entity.accommodation_stay.plural": "Stays",
+    "entity.accommodation_space.singular": "Room or space",
+    "entity.accommodation_space.plural": "Rooms and spaces"
+  },
+  "metadata": {
+    "rebased_for_workcore": "0.42.0-unified",
+    "accommodation_operations_pass": "4"
+  },
+  "codebooks": {
+    "roster.type": {
+      "include": [
+        "operations",
+        "maintenance",
+        "housekeeping",
+        "front_desk",
+        "room_turnover",
+        "guest_services",
+        "night_audit"
+      ],
+      "default": "operations"
+    },
+    "roster.shift_type": {
+      "include": [
+        "operations",
+        "maintenance",
+        "housekeeping",
+        "front_desk",
+        "room_turnover",
+        "guest_services",
+        "night_audit"
+      ],
+      "default": "operations"
+    },
+    "worker.type": {
+      "include": [
+        "employee",
+        "contractor",
+        "maintenance",
+        "housekeeper",
+        "front_desk",
+        "concierge",
+        "accommodation_worker"
+      ],
+      "default": "employee"
+    },
+    "appointment.type": {
+      "include": [
+        "room_turnover",
+        "guest_service",
+        "maintenance",
+        "inspection",
+        "meeting",
+        "move_in",
+        "move_out",
+        "other"
+      ],
+      "default": "room_turnover"
+    },
+    "dispatch.assignment_type": {
+      "include": [
+        "room_turnover",
+        "maintenance",
+        "inspection",
+        "delivery",
+        "other"
+      ],
+      "default": "room_turnover"
+    }
+  }
+}

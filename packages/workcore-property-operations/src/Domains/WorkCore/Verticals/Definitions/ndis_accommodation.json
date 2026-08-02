@@ -1,0 +1,147 @@
+{
+  "key": "ndis_accommodation",
+  "label": "NDIS Accommodation Management",
+  "version": "1.1.0",
+  "type": "vertical",
+  "extends": [
+    "accommodation_core",
+    "regulated_care_core"
+  ],
+  "capabilities": [
+    "workcore.people.compliance",
+    "workcore.attendance.verification",
+    "workcore.compliance",
+    "workcore.recurring",
+    "workcore.payroll",
+    "workcore.ndis"
+  ],
+  "features": {
+    "ndis.participants": true,
+    "ndis.service_agreements": true,
+    "ndis.incident_management": true,
+    "ndis.sda": true,
+    "ndis.sil": true,
+    "ndis.sta": true,
+    "ndis.support_coordination_links": true,
+    "ndis.plans": true,
+    "ndis.budgets": true,
+    "ndis.goals": true,
+    "ndis.support_delivery": true,
+    "ndis.protected_case_notes": true,
+    "ndis.incident_links": true,
+    "ndis.worker_matching": true,
+    "ndis.claim_preparation": true
+  },
+  "terminology": {
+    "entity.customer.singular": "Participant",
+    "entity.customer.plural": "Participants",
+    "entity.premises.singular": "Participant home",
+    "entity.premises.plural": "Participant homes",
+    "entity.work_order.singular": "Support or property task",
+    "entity.work_order.plural": "Support or property tasks"
+  },
+  "metadata": {
+    "managed_premises_profile": "community_housing",
+    "rebased_for_workcore": "0.42.0-unified",
+    "ndis_operations_pass": "0.45.0"
+  },
+  "setup": {
+    "default_business_lines": [
+      {
+        "key": "ndis_accommodation_operations",
+        "name": "NDIS Accommodation Operations"
+      }
+    ],
+    "questions": [
+      {
+        "key": "ndis_accommodation.models",
+        "section": "vertical_details",
+        "prompt": "Which NDIS accommodation models should be configured?",
+        "type": "multiselect",
+        "required": true,
+        "options": [
+          "sda",
+          "sil",
+          "sta",
+          "mta",
+          "ilo",
+          "mixed"
+        ]
+      },
+      {
+        "key": "ndis.registration_status",
+        "section": "compliance",
+        "prompt": "What is the provider registration status?",
+        "type": "select",
+        "required": true,
+        "options": [
+          "registered",
+          "unregistered",
+          "registration_in_progress"
+        ]
+      },
+      {
+        "key": "ndis.worker_screening_required",
+        "section": "compliance",
+        "prompt": "Should worker-screening and qualification checks be mandatory?",
+        "type": "boolean",
+        "required": true,
+        "default": true
+      }
+    ],
+    "documents": [
+      "participant_service_agreement",
+      "resident_handbook",
+      "incident_report",
+      "emergency_procedure",
+      "staff_induction"
+    ]
+  },
+  "codebooks": {
+    "roster.type": {
+      "include": [
+        "participant_support",
+        "community_support",
+        "housekeeping",
+        "maintenance",
+        "on_call"
+      ],
+      "default": "participant_support"
+    },
+    "roster.shift_type": {
+      "include": [
+        "participant_support",
+        "community_support",
+        "housekeeping",
+        "maintenance",
+        "on_call"
+      ],
+      "default": "participant_support"
+    },
+    "worker.type": {
+      "include": [
+        "support_worker",
+        "accommodation_worker",
+        "housekeeper",
+        "maintenance"
+      ],
+      "default": "support_worker"
+    },
+    "appointment.type": {
+      "include": [
+        "participant_support",
+        "meeting",
+        "maintenance"
+      ],
+      "default": "participant_support"
+    },
+    "dispatch.assignment_type": {
+      "include": [
+        "participant_support",
+        "maintenance",
+        "emergency"
+      ],
+      "default": "participant_support"
+    }
+  }
+}

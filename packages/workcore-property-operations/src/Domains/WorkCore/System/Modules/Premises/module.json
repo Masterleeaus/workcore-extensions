@@ -1,0 +1,45 @@
+{
+    "name": "ManagedPremises",
+    "alias": "managedpremises",
+    "description": "Embedded WorkCore premises, property, occupancy, access, compliance, service-delivery and portal operations.",
+    "keywords": [
+        "premises", "property", "rooming-house", "real-estate", "storage", "facility",
+        "occupancy", "agreements", "access", "compliance", "service-delivery", "portals"
+    ],
+    "priority": 0,
+    "providers": [
+        "App\\Extensions\\WorkCore\\System\\Modules\\Premises\\Providers\\WorkPremisesServiceProvider"
+    ],
+    "files": [],
+    "version": "0.42.0",
+    "active": 1,
+    "order": 0,
+    "aliases": {},
+    "requires": ["workcore.core", "workcore.tenancy", "workcore.authorization"],
+    "mode": "embedded_workcore_module",
+    "inspection_owner": "quality_control",
+    "manifests": {
+        "permissions": "manifests/permissions.php",
+        "settings": "manifests/settings.php",
+        "menus": "manifests/menus.php",
+        "seeders": "manifests/seeders.php",
+        "api": "manifests/api.php",
+        "lifecycle": "manifests/lifecycle.php",
+        "signals": "manifests/signals.php",
+        "ai": "manifests/ai.php"
+    },
+    "permissions": ["view_premises", "add_premise", "edit_premise", "delete_premise"],
+    "roles_permissions": {
+        "admin": ["view_premises", "add_premise", "edit_premise", "delete_premise"],
+        "manager": ["view_premises", "add_premise", "edit_premise"]
+    },
+    "menus": [
+        {
+            "panel": "user",
+            "label": "Managed Premises",
+            "route": "managedpremises.dashboard",
+            "sort_order": 35
+        }
+    ],
+    "sidebar_menu": true
+}

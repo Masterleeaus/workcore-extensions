@@ -1,0 +1,75 @@
+{
+  "key": "licensed_trades_core",
+  "label": "Licensed Trades Core",
+  "version": "1.0.0",
+  "type": "foundation",
+  "extends": [
+    "field_services_core"
+  ],
+  "capabilities": [
+    "workcore.people.compliance",
+    "workcore.attendance.verification",
+    "workcore.compliance",
+    "workcore.recurring",
+    "workcore.territories",
+    "workcore.money.procurement"
+  ],
+  "features": {
+    "trades.licence_tracking": true,
+    "trades.certificate_register": true,
+    "trades.compliance_forms": true,
+    "trades.emergency_dispatch": true
+  },
+  "terminology": {},
+  "metadata": {
+    "rebased_for_workcore": "0.42.0-unified"
+  },
+  "codebooks": {
+    "roster.type": {
+      "include": [
+        "maintenance",
+        "emergency",
+        "on_call"
+      ],
+      "default": "maintenance"
+    },
+    "roster.shift_type": {
+      "include": [
+        "maintenance",
+        "emergency",
+        "on_call"
+      ],
+      "default": "maintenance"
+    },
+    "worker.type": {
+      "include": [
+        "employee",
+        "contractor",
+        "apprentice"
+      ],
+      "default": "contractor"
+    },
+    "appointment.type": {
+      "include": [
+        "job",
+        "inspection",
+        "maintenance",
+        "plumbing",
+        "electrical",
+        "other"
+      ],
+      "default": "job"
+    },
+    "dispatch.assignment_type": {
+      "include": [
+        "job",
+        "contractor_callout",
+        "emergency",
+        "plumbing",
+        "electrical",
+        "other"
+      ],
+      "default": "job"
+    }
+  }
+}

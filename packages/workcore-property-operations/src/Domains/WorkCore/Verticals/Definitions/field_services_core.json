@@ -1,0 +1,87 @@
+{
+  "key": "field_services_core",
+  "label": "Field Services Core",
+  "version": "1.0.0",
+  "type": "foundation",
+  "extends": [
+    "premises_services_core"
+  ],
+  "capabilities": [
+    "workcore.dispatch",
+    "workcore.rosters",
+    "workcore.inventory",
+    "workcore.attendance",
+    "workcore.reviews",
+    "workcore.attendance.verification",
+    "workcore.recurring",
+    "workcore.payroll",
+    "workcore.money.expense_claims",
+    "workcore.money.procurement",
+    "workcore.trade_compliance"
+  ],
+  "features": {
+    "dispatch.enabled": true,
+    "rosters.enabled": true,
+    "inventory.materials": true,
+    "attendance.enabled": true,
+    "mobile.field_mode": true,
+    "field_compliance.enabled": true
+  },
+  "terminology": {},
+  "metadata": {
+    "rebased_for_workcore": "0.42.0-unified"
+  },
+  "codebooks": {
+    "roster.type": {
+      "include": [
+        "operations",
+        "maintenance",
+        "contractor",
+        "on_call",
+        "emergency"
+      ],
+      "default": "operations"
+    },
+    "roster.shift_type": {
+      "include": [
+        "operations",
+        "maintenance",
+        "contractor",
+        "on_call",
+        "emergency"
+      ],
+      "default": "operations"
+    },
+    "worker.type": {
+      "include": [
+        "employee",
+        "contractor",
+        "casual",
+        "maintenance",
+        "inspector"
+      ],
+      "default": "employee"
+    },
+    "appointment.type": {
+      "include": [
+        "job",
+        "inspection",
+        "maintenance",
+        "other"
+      ],
+      "default": "job"
+    },
+    "dispatch.assignment_type": {
+      "include": [
+        "job",
+        "maintenance",
+        "inspection",
+        "contractor_callout",
+        "delivery",
+        "emergency",
+        "other"
+      ],
+      "default": "job"
+    }
+  }
+}

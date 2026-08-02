@@ -1,0 +1,18 @@
+{
+  "package": "WorkCore",
+  "architecture": "five-domain-composition",
+  "manifests": [
+    "Manifests/BusinessNetwork.json",
+    "Manifests/Commercial.json",
+    "Manifests/WorkOperations.json",
+    "Manifests/PropertyOperations.json",
+    "Manifests/WorkforceAssurance.json"
+  ],
+  "shared_vertical_kernel": "App\\Domains\\WorkCore\\System\\Verticals",
+  "provider": "App\\Domains\\WorkCore\\WorkCoreServiceProvider",
+  "notes": [
+    "Root provider remains sole host registration point.",
+    "Five-domain providers are not invented until classes are moved and tested.",
+    "Generated scaffolds are excluded from runtime registration."
+  ]
+}

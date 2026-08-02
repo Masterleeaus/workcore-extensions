@@ -1,0 +1,95 @@
+{
+  "key": "regulated_care_core",
+  "label": "Regulated Care Core",
+  "version": "1.1.0",
+  "type": "foundation",
+  "extends": [
+    "premises_services_core"
+  ],
+  "capabilities": [
+    "workcore.dispatch",
+    "workcore.rosters",
+    "workcore.attendance",
+    "workcore.reviews",
+    "workcore.people",
+    "workcore.people.compliance",
+    "workcore.attendance.verification",
+    "workcore.compliance",
+    "workcore.recurring",
+    "workcore.payroll",
+    "workcore.ndis"
+  ],
+  "features": {
+    "compliance.worker_screening": true,
+    "compliance.incidents": true,
+    "compliance.document_evidence": true,
+    "care.service_agreements": true,
+    "privacy.sensitive_records": true,
+    "ndis.participants": true,
+    "ndis.plans": true,
+    "ndis.budgets": true,
+    "ndis.goals": true,
+    "ndis.service_agreements": true,
+    "ndis.support_delivery": true,
+    "ndis.protected_case_notes": true,
+    "ndis.incident_links": true,
+    "ndis.worker_matching": true,
+    "ndis.claim_preparation": true
+  },
+  "terminology": {
+    "entity.customer.singular": "Participant",
+    "entity.customer.plural": "Participants",
+    "entity.worker.singular": "Support worker",
+    "entity.worker.plural": "Support workers"
+  },
+  "metadata": {
+    "rebased_for_workcore": "0.42.0-unified",
+    "ndis_operations_pass": "0.45.0"
+  },
+  "codebooks": {
+    "roster.type": {
+      "include": [
+        "participant_support",
+        "community_support",
+        "compliance",
+        "on_call"
+      ],
+      "default": "participant_support"
+    },
+    "roster.shift_type": {
+      "include": [
+        "participant_support",
+        "community_support",
+        "compliance",
+        "on_call"
+      ],
+      "default": "participant_support"
+    },
+    "worker.type": {
+      "include": [
+        "employee",
+        "contractor",
+        "casual",
+        "volunteer",
+        "support_worker"
+      ],
+      "default": "support_worker"
+    },
+    "appointment.type": {
+      "include": [
+        "participant_support",
+        "meeting",
+        "other"
+      ],
+      "default": "participant_support"
+    },
+    "dispatch.assignment_type": {
+      "include": [
+        "participant_support",
+        "emergency",
+        "other"
+      ],
+      "default": "participant_support"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "canonical_namespace_preserved": true,
+  "destructive_uninstall": false,
+  "modules": [
+    "Operations",
+    "Scheduling",
+    "Dispatch",
+    "RecurringServices",
+    "Forms",
+    "Repairs",
+    "Fleet",
+    "QRCode"
+  ],
+  "name": "WorkCore Work Operations",
+  "requires": [
+    "workcore/shared-foundation"
+  ],
+  "runtime_keys": [
+    "operations",
+    "scheduling",
+    "dispatch",
+    "recurring",
+    "forms",
+    "repairs",
+    "fleet"
+  ],
+  "slug": "work-operations",
+  "system_slices": []
+}

@@ -1,0 +1,31 @@
+{
+  "architecture": "installable-domain-extension",
+  "dependencies": [
+    "workcore/shared-foundation"
+  ],
+  "destructive_uninstall": false,
+  "domain": "WorkOperations",
+  "modules": [
+    "Operations",
+    "Scheduling",
+    "Dispatch",
+    "RecurringServices",
+    "Forms",
+    "Repairs",
+    "Fleet",
+    "QRCode"
+  ],
+  "package": "workcore/work-operations",
+  "provider": "App\\Domains\\WorkCore\\Providers\\WorkOperationsServiceProvider",
+  "runtime_keys": [
+    "operations",
+    "scheduling",
+    "dispatch",
+    "recurring",
+    "forms",
+    "repairs",
+    "fleet"
+  ],
+  "status": "phase-one canonical namespace extraction",
+  "system_slices": []
+}

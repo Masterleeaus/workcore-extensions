@@ -1,0 +1,27 @@
+<?php
+
+return [
+    ['label' => 'Premises', 'route' => 'managedpremises.properties.index'],
+    ['label' => 'Portfolios', 'route' => 'managedpremises.portfolios.index'],
+    ['label' => 'Ownership & Authorities', 'route' => 'managedpremises.properties.index'],
+    ['label' => 'Mobile Workflows', 'route' => 'managedpremises.mobile.workflows.index'],
+    ['label' => 'Vacancies & Portals', 'route' => 'managedpremises.properties.index'],
+    ['label' => 'Units', 'route' => 'managedpremises.rooms.index'],
+    ['label' => 'Parties & Occupancy', 'route' => 'managedpremises.properties.index'],
+    ['label' => 'Legacy Contacts', 'route' => 'managedpremises.properties.index'],
+    ['label' => 'Hazards', 'route' => 'managedpremises.hazards.index'],
+    ['label' => 'Keys / Access', 'route' => 'managedpremises.keys.index'],
+    ['label' => 'Access Register', 'route' => 'managedpremises.properties.index'],
+    ['label' => 'Physical Access Cards', 'route' => 'managedpremises.properties.index'],
+    ['label' => 'Work Permits', 'route' => 'managedpremises.properties.index'],
+    ['label' => 'Condition Records', 'route' => 'managedpremises.properties.index'],
+    ['label' => 'Incidents', 'route' => 'managedpremises.properties.index'],
+    ['label' => 'Compliance Register', 'route' => 'managedpremises.properties.index'],
+    ['label' => 'Compliance Rule Packs', 'route' => 'managedpremises.compliance.rule-packs.index'],
+    ['label' => 'Documents', 'route' => 'managedpremises.documents.index'],
+    ['label' => 'Service Windows', 'route' => 'managedpremises.properties.index'],
+    ['label' => 'Service Plans', 'route' => 'managedpremises.properties.index'],
+    ['label' => 'Visits', 'route' => 'managedpremises.properties.index'],
+    ['label' => 'Meter Readings', 'route' => 'managedpremises.properties.index'],
+    ['label' => 'Approvals', 'route' => 'managedpremises.properties.index'],
+];

@@ -1,0 +1,109 @@
+{
+  "key": "electrical",
+  "label": "Electrical Contracting",
+  "version": "1.0.0",
+  "type": "vertical",
+  "extends": [
+    "licensed_trades_core"
+  ],
+  "capabilities": [],
+  "features": {
+    "electrical.certificates": true,
+    "electrical.test_results": true,
+    "electrical.emergency_callouts": true,
+    "electrical.asset_register": true
+  },
+  "terminology": {
+    "entity.work_order.singular": "Electrical job",
+    "entity.work_order.plural": "Electrical jobs",
+    "entity.worker.singular": "Electrician",
+    "entity.worker.plural": "Electricians"
+  },
+  "metadata": {
+    "rebased_for_workcore": "0.42.0-unified"
+  },
+  "setup": {
+    "default_business_lines": [
+      {
+        "key": "electrical_services",
+        "name": "Electrical Services"
+      },
+      {
+        "key": "emergency_electrical",
+        "name": "Emergency Electrical"
+      }
+    ],
+    "questions": [
+      {
+        "key": "electrical.service_types",
+        "section": "vertical_details",
+        "prompt": "Which electrical services should be configured?",
+        "type": "multiselect",
+        "required": true,
+        "options": [
+          "residential",
+          "commercial",
+          "maintenance",
+          "switchboards",
+          "lighting",
+          "test_and_tag",
+          "solar_support",
+          "emergency"
+        ]
+      },
+      {
+        "key": "electrical.licence_details",
+        "section": "compliance",
+        "prompt": "Which electrical licences and responsible persons must be tracked?",
+        "type": "list",
+        "required": true
+      },
+      {
+        "key": "electrical.test_certificates",
+        "section": "compliance",
+        "prompt": "Should test results and certificates be mandatory for applicable work?",
+        "type": "boolean",
+        "required": true,
+        "default": true
+      }
+    ],
+    "documents": [
+      "trade_compliance_certificate",
+      "risk_assessment",
+      "maintenance_report",
+      "emergency_procedure"
+    ]
+  },
+  "codebooks": {
+    "roster.type": {
+      "include": [
+        "electrical"
+      ],
+      "default": "electrical"
+    },
+    "roster.shift_type": {
+      "include": [
+        "electrical"
+      ],
+      "default": "electrical"
+    },
+    "worker.type": {
+      "include": [
+        "electrician"
+      ],
+      "default": "electrician"
+    },
+    "appointment.type": {
+      "include": [
+        "electrical"
+      ],
+      "default": "electrical"
+    },
+    "dispatch.assignment_type": {
+      "include": [
+        "electrical"
+      ],
+      "default": "electrical"
+    }
+  }
+}

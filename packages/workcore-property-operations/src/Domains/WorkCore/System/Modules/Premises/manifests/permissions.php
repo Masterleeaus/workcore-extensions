@@ -1,0 +1,243 @@
+<?php
+
+return [
+    'premises' => [
+        'managedpremises.view',
+        'managedpremises.create',
+        'managedpremises.update',
+        'managedpremises.delete',
+    ],
+    'portfolios' => [
+        'managedpremises.portfolios.view',
+        'managedpremises.portfolios.manage',
+    ],
+    'ownership' => [
+        'managedpremises.ownership.view',
+        'managedpremises.ownership.manage',
+    ],
+    'management_authorities' => [
+        'managedpremises.management_authorities.view',
+        'managedpremises.management_authorities.manage',
+        'managedpremises.management_authorities.approve',
+    ],
+    'approval_requests' => [
+        'managedpremises.approval_requests.view',
+        'managedpremises.approval_requests.create',
+        'managedpremises.approval_requests.decide',
+        'managedpremises.approval_requests.implement',
+    ],
+    'operations' => [
+        'managedpremises.operations.view',
+        'managedpremises.operations.workflows.create',
+        'managedpremises.operations.workflows.update',
+    ],
+
+    'portal' => [
+        'managedpremises.portal.view',
+        'managedpremises.portal.manage',
+        'managedpremises.portal.revoke',
+    ],
+    'vacancies' => [
+        'managedpremises.vacancies.view',
+        'managedpremises.vacancies.create',
+        'managedpremises.vacancies.update',
+        'managedpremises.vacancies.approve',
+        'managedpremises.vacancies.publish',
+    ],
+    'applications' => [
+        'managedpremises.applications.view',
+        'managedpremises.applications.update',
+        'managedpremises.applications.convert',
+    ],
+    'communications' => [
+        'managedpremises.communications.view',
+        'managedpremises.communications.send',
+        'managedpremises.communications.internal_notes',
+    ],
+    'notices' => [
+        'managedpremises.notices.view',
+        'managedpremises.notices.create',
+        'managedpremises.notices.approve',
+        'managedpremises.notices.issue',
+    ],
+    'requests' => [
+        'managedpremises.requests.view',
+        'managedpremises.requests.update',
+        'managedpremises.requests.workcore_link',
+    ],
+    'mobile' => [
+        'managedpremises.mobile.workflows.view',
+        'managedpremises.mobile.workflows.update',
+    ],
+    'generative_panels' => [
+        'managedpremises.generative_panels.view',
+    ],
+    'spaces' => [
+        'managedpremises.spaces.view',
+        'managedpremises.spaces.create',
+        'managedpremises.spaces.update',
+        'managedpremises.spaces.delete',
+    ],
+    'parties' => [
+        'managedpremises.parties.view',
+        'managedpremises.parties.create',
+        'managedpremises.parties.update',
+        'managedpremises.parties.delete',
+    ],
+    'occupancies' => [
+        'managedpremises.occupancies.view',
+        'managedpremises.occupancies.create',
+        'managedpremises.occupancies.update',
+        'managedpremises.occupancies.transfer',
+    ],
+    'agreements' => [
+        'managedpremises.agreements.view',
+        'managedpremises.agreements.create',
+        'managedpremises.agreements.update',
+        'managedpremises.agreements.renew',
+        'managedpremises.agreements.finance_links.manage',
+    ],
+    'access_register' => [
+        'managedpremises.access.view',
+        'managedpremises.access.create',
+        'managedpremises.access.update',
+        'managedpremises.access.issue',
+        'managedpremises.access.authorise',
+    ],
+    'access_cards' => [
+        'managedpremises.access_cards.view',
+        'managedpremises.access_cards.create',
+        'managedpremises.access_cards.update',
+        'managedpremises.access_cards.approve',
+        'managedpremises.access_cards.issue',
+        'managedpremises.access_cards.return',
+    ],
+    'work_permits' => [
+        'managedpremises.work_permits.view',
+        'managedpremises.work_permits.create',
+        'managedpremises.work_permits.update',
+        'managedpremises.work_permits.approve_manager',
+        'managedpremises.work_permits.approve_site',
+        'managedpremises.work_permits.validate',
+        'managedpremises.work_permits.workcore_link',
+    ],
+    'conditions' => [
+        'managedpremises.conditions.view',
+        'managedpremises.conditions.create',
+        'managedpremises.conditions.update',
+        'managedpremises.conditions.approve',
+    ],
+    'incidents' => [
+        'managedpremises.incidents.view',
+        'managedpremises.incidents.create',
+        'managedpremises.incidents.update',
+        'managedpremises.incidents.link_work',
+        'managedpremises.incidents.sensitive.view',
+        'managedpremises.incidents.restricted.view',
+    ],
+    'compliance' => [
+        'managedpremises.compliance.view',
+        'managedpremises.compliance.create',
+        'managedpremises.compliance.update',
+        'managedpremises.compliance.occurrences.complete',
+        'managedpremises.compliance.occurrences.waive',
+        'managedpremises.compliance.evidence.manage',
+        'managedpremises.compliance.evidence.verify',
+        'managedpremises.compliance.rule_packs.view',
+        'managedpremises.compliance.rule_packs.manage',
+        'managedpremises.compliance.rule_packs.verify',
+        'managedpremises.compliance.rule_packs.apply',
+    ],
+    'units' => [
+        'managedpremises.units.view',
+        'managedpremises.units.create',
+        'managedpremises.units.delete',
+    ],
+    'contacts' => [
+        'managedpremises.contacts.view',
+        'managedpremises.contacts.create',
+        'managedpremises.contacts.delete',
+    ],
+    'jobs' => [
+        'managedpremises.jobs.view',
+        'managedpremises.jobs.create',
+        'managedpremises.jobs.delete',
+    ],
+    'keys' => [
+        'managedpremises.keys.view',
+        'managedpremises.keys.create',
+        'managedpremises.keys.delete',
+    ],
+    'photos' => [
+        'managedpremises.photos.view',
+        'managedpremises.photos.create',
+        'managedpremises.photos.delete',
+    ],
+    'checklists' => [
+        'managedpremises.checklists.view',
+        'managedpremises.checklists.create',
+        'managedpremises.checklists.delete',
+    ],
+    'tags' => [
+        'managedpremises.tags.view',
+        'managedpremises.tags.create',
+        'managedpremises.tags.delete',
+    ],
+    'rooms' => [
+        'managedpremises.rooms.view',
+        'managedpremises.rooms.create',
+        'managedpremises.rooms.delete',
+    ],
+    'hazards' => [
+        'managedpremises.hazards.view',
+        'managedpremises.hazards.create',
+        'managedpremises.hazards.delete',
+    ],
+    'service_windows' => [
+        'managedpremises.servicewindows.view',
+        'managedpremises.servicewindows.create',
+        'managedpremises.servicewindows.delete',
+    ],
+    'assets' => [
+        'managedpremises.assets.view',
+        'managedpremises.assets.create',
+        'managedpremises.assets.delete',
+    ],
+    'calendar' => [
+        'managedpremises.calendar.view',
+    ],
+    'service' => [
+        'managedpremises.plans.view',
+        'managedpremises.service_plans.view',
+        'managedpremises.service_plans.manage',
+        'managedpremises.visits.view',
+        'managedpremises.visits.manage',
+    ],
+    'documents' => [
+        'managedpremises.documents.view',
+        'managedpremises.documents.create',
+        'managedpremises.documents.delete',
+        'managedpremises.documents.manage',
+    ],
+    'meters' => [
+        'managedpremises.meters.view',
+        'managedpremises.meters.manage',
+    ],
+    'approvals' => [
+        'managedpremises.approvals.view',
+        'managedpremises.approvals.create',
+        'managedpremises.approvals.update',
+        'managedpremises.approvals.manage',
+    ],
+    'settings' => [
+        'managedpremises.settings',
+        'managedpremises.ai',
+    ],
+    'deprecated_compatibility' => [
+        'managedpremises.inspections.view',
+        'managedpremises.inspections.create',
+        'managedpremises.inspections.update',
+        'managedpremises.inspections.delete',
+        'managedpremises.inspections.manage',
+    ],
+];

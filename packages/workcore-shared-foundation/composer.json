@@ -1,0 +1,21 @@
+{
+  "autoload": {
+    "classmap": [
+      "src/"
+    ]
+  },
+  "description": "WorkCore Shared Foundation",
+  "extra": {
+    "workcore": {
+      "destructive_uninstall": false,
+      "package_type": "shared-foundation",
+      "phase": "canonical-namespace-extraction"
+    }
+  },
+  "license": "proprietary",
+  "name": "workcore/shared-foundation",
+  "require": {
+    "php": "^8.2"
+  },
+  "type": "library"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Money",
+  "type": "object",
+  "required": [
+    "amount_minor",
+    "currency_code"
+  ],
+  "properties": {
+    "amount_minor": {
+      "type": "integer"
+    },
+    "currency_code": {
+      "type": "string",
+      "pattern": "^[A-Z]{3}$"
+    }
+  },
+  "additionalProperties": false
+}

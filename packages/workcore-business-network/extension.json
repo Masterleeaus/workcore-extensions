@@ -1,0 +1,37 @@
+{
+  "canonical_namespace_preserved": true,
+  "destructive_uninstall": false,
+  "modules": [
+    "CRM",
+    "Catalogue",
+    "Support",
+    "Knowledge",
+    "KnowledgeBase",
+    "Reviews",
+    "Territories",
+    "Feedback",
+    "Wizards"
+  ],
+  "name": "WorkCore Business Network",
+  "requires": [
+    "workcore/shared-foundation"
+  ],
+  "runtime_keys": [
+    "crm",
+    "catalogue",
+    "support",
+    "knowledge",
+    "reviews",
+    "territories",
+    "intelligence",
+    "expansion",
+    "wizards",
+    "ai"
+  ],
+  "slug": "business-network",
+  "system_slices": [
+    "System/Intelligence",
+    "System/Expansion",
+    "System/AI"
+  ]
+}

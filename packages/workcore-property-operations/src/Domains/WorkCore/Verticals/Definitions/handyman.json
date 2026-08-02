@@ -1,0 +1,97 @@
+{
+  "key": "handyman",
+  "label": "Handyman and Property Maintenance",
+  "version": "1.0.0",
+  "type": "vertical",
+  "extends": [
+    "field_services_core"
+  ],
+  "capabilities": [],
+  "features": {
+    "handyman.reactive_repairs": true,
+    "handyman.scope_photos": true,
+    "handyman.materials": true,
+    "handyman.trade_referrals": true
+  },
+  "terminology": {
+    "entity.work_order.singular": "Maintenance job",
+    "entity.work_order.plural": "Maintenance jobs",
+    "entity.worker.singular": "Technician",
+    "entity.worker.plural": "Technicians"
+  },
+  "metadata": {
+    "rebased_for_workcore": "0.42.0-unified"
+  },
+  "setup": {
+    "default_business_lines": [
+      {
+        "key": "property_maintenance",
+        "name": "Property Maintenance"
+      }
+    ],
+    "questions": [
+      {
+        "key": "handyman.service_types",
+        "section": "vertical_details",
+        "prompt": "Which handyman and maintenance categories should be configured?",
+        "type": "multiselect",
+        "required": true,
+        "options": [
+          "minor_repairs",
+          "assembly",
+          "fixtures",
+          "painting_touchups",
+          "doors_and_locks",
+          "plaster_repairs",
+          "property_make_ready",
+          "preventive_maintenance"
+        ]
+      },
+      {
+        "key": "handyman.licensed_work_boundary",
+        "section": "compliance",
+        "prompt": "Should the system block or escalate work that requires a licensed trade?",
+        "type": "boolean",
+        "required": true,
+        "default": true
+      }
+    ],
+    "documents": [
+      "maintenance_report",
+      "risk_assessment",
+      "job_checklist"
+    ]
+  },
+  "codebooks": {
+    "roster.type": {
+      "include": [
+        "handyman"
+      ],
+      "default": "handyman"
+    },
+    "roster.shift_type": {
+      "include": [
+        "handyman"
+      ],
+      "default": "handyman"
+    },
+    "worker.type": {
+      "include": [
+        "handyman"
+      ],
+      "default": "handyman"
+    },
+    "appointment.type": {
+      "include": [
+        "handyman"
+      ],
+      "default": "handyman"
+    },
+    "dispatch.assignment_type": {
+      "include": [
+        "handyman"
+      ],
+      "default": "handyman"
+    }
+  }
+}

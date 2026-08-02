@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "POS Sale",
+  "type": "object",
+  "required": [
+    "lines",
+    "payments"
+  ],
+  "properties": {
+    "lines": {
+      "type": "array",
+      "minItems": 1
+    },
+    "payments": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": true
+}

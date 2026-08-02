@@ -1,0 +1,645 @@
+{
+  "file_count": 128,
+  "files": [
+    {
+      "bytes": 225,
+      "path": "README.md",
+      "sha256": "5590ca3ee959e7cae9c19948f5950a85b7df41ff2579202e24598557f8ac384d"
+    },
+    {
+      "bytes": 451,
+      "path": "composer.json",
+      "sha256": "b9b228172c7be9165e4982567b704c8115763c10cfb88233f617c4a3dae3f237"
+    },
+    {
+      "bytes": 4237,
+      "path": "docs/original-composition-manifest.json",
+      "sha256": "a0e1b3202feb1b251b0c05442558a69d6639f5e151cae2cc998d9b81c72eae4f"
+    },
+    {
+      "bytes": 507,
+      "path": "extension.json",
+      "sha256": "6e5604693b17265ef3216e7e3b3b3cec74e4be48c77db8f9089b89912e7003c8"
+    },
+    {
+      "bytes": 662,
+      "path": "src/Domains/WorkCore/Manifests/WorkOperations.json",
+      "sha256": "d50b704d1161f119cc9757ba7542999f780758e5bb74ca91c83bf9e172deabc0"
+    },
+    {
+      "bytes": 692,
+      "path": "src/Domains/WorkCore/Providers/WorkOperationsServiceProvider.php",
+      "sha256": "2d209d29f0dbdea9cda35be4f8d7783c44cd594b2bf8dc3555515d9e0d6b7665"
+    },
+    {
+      "bytes": 2827,
+      "path": "src/Domains/WorkCore/System/Modules/Dispatch/AI/DispatchToolRegistry.php",
+      "sha256": "57c1e97c6daa592999dc8e9afdbe037a5083329fb0ccce3661f6f07f31475599"
+    },
+    {
+      "bytes": 1585,
+      "path": "src/Domains/WorkCore/System/Modules/Dispatch/Actions/ChangeDispatchStatus.php",
+      "sha256": "026caa2372ca729dfa1c6243aafb07a8db2dcc4e340345195ce28d3d6af5f20d"
+    },
+    {
+      "bytes": 1055,
+      "path": "src/Domains/WorkCore/System/Modules/Dispatch/Actions/CreateDispatchAssignment.php",
+      "sha256": "a2ad8b22aceff7ba60d21caeaebd1658f012b102e1bb8ac85191dfd374f8623f"
+    },
+    {
+      "bytes": 1170,
+      "path": "src/Domains/WorkCore/System/Modules/Dispatch/Actions/ReassignDispatchAssignment.php",
+      "sha256": "108cf3447d459b221ef2cc1f41e8f76d5013434fc466bb97fe696a2504c1a505"
+    },
+    {
+      "bytes": 1647,
+      "path": "src/Domains/WorkCore/System/Modules/Dispatch/Actions/SearchDispatchBoard.php",
+      "sha256": "714ed4f84247453f0ef41929f948f37f500cd47652d99ea5109403e71ac6d3b1"
+    },
+    {
+      "bytes": 1240,
+      "path": "src/Domains/WorkCore/System/Modules/Dispatch/Contracts/DispatchRepositoryContract.php",
+      "sha256": "e34ae52c24adf9d57afda476b5b95db54d2979169984d1d24ad8cbb03c6e2a4e"
+    },
+    {
+      "bytes": 3348,
+      "path": "src/Domains/WorkCore/System/Modules/Dispatch/Http/Controllers/DispatchController.php",
+      "sha256": "fea60404336723898c97698237abee2abc910b16375b0ccfe1b0e21937f75dac"
+    },
+    {
+      "bytes": 863,
+      "path": "src/Domains/WorkCore/System/Modules/Dispatch/Http/Requests/ChangeDispatchStatusRequest.php",
+      "sha256": "3322c061c6de92554baeccac41afda25b72057526c5f329585e742f63394f1d9"
+    },
+    {
+      "bytes": 761,
+      "path": "src/Domains/WorkCore/System/Modules/Dispatch/Http/Requests/ReassignDispatchAssignmentRequest.php",
+      "sha256": "497a5926e5233407b26bca2c90fdb5e6d6f0b2adc43622a91b52d7073ff7af9c"
+    },
+    {
+      "bytes": 1858,
+      "path": "src/Domains/WorkCore/System/Modules/Dispatch/Http/Requests/StoreDispatchAssignmentRequest.php",
+      "sha256": "78f11a2780ad57daf29284e289b1a53053eb2936160942280a3e200729137e20"
+    },
+    {
+      "bytes": 2252,
+      "path": "src/Domains/WorkCore/System/Modules/Dispatch/Providers/WorkDispatchServiceProvider.php",
+      "sha256": "af4805b67c0b552b0666cc34ebabb30dd396a1b93d7285927774079cac413d41"
+    },
+    {
+      "bytes": 23121,
+      "path": "src/Domains/WorkCore/System/Modules/Dispatch/Repositories/EloquentDispatchRepository.php",
+      "sha256": "122eb093f175fcf4025deb614999435738c11b349406cfddc8e6533fb597ecba"
+    },
+    {
+      "bytes": 1511,
+      "path": "src/Domains/WorkCore/System/Modules/Dispatch/Services/DispatchStatusPolicy.php",
+      "sha256": "6c31c7ff0bccba6298d75893372d8713c03d176bf191637ece5b8ee354f396c2"
+    },
+    {
+      "bytes": 1147,
+      "path": "src/Domains/WorkCore/System/Modules/Dispatch/Services/DispatchWindowPolicy.php",
+      "sha256": "30ff57a334ed9960cbb1a40b0b7a48b16b69ea2cb6d70f668e66a9d3eaef0331"
+    },
+    {
+      "bytes": 832,
+      "path": "src/Domains/WorkCore/System/Modules/Dispatch/routes/api.php",
+      "sha256": "194953bd87144884d5e119338e006d1709faa38b91c81646da2a12d1ecd826cf"
+    },
+    {
+      "bytes": 367,
+      "path": "src/Domains/WorkCore/System/Modules/Fleet/AI/FleetToolRegistry.php",
+      "sha256": "302f59aa9382d656f49f9e4d86720f5b93de195680bc1682a49b8c03bbb0cfa1"
+    },
+    {
+      "bytes": 1151,
+      "path": "src/Domains/WorkCore/System/Modules/Fleet/Actions/AssignFleetVehicle.php",
+      "sha256": "1baee6a0102045c00870c576098cb8b36af8438c7588acbe826e0c5ef0e16314"
+    },
+    {
+      "bytes": 950,
+      "path": "src/Domains/WorkCore/System/Modules/Fleet/Actions/CreateFleetVehicle.php",
+      "sha256": "75f2b954e4a70ea1af3ce65dec7ac0220540873760e5704bfcaddff8be93c60e"
+    },
+    {
+      "bytes": 1155,
+      "path": "src/Domains/WorkCore/System/Modules/Fleet/Actions/RecordFleetMileage.php",
+      "sha256": "e7be70da487364c02eed34d9af9f024dd82663ff1e99b321f5958f969c143a21"
+    },
+    {
+      "bytes": 1167,
+      "path": "src/Domains/WorkCore/System/Modules/Fleet/Actions/ReturnFleetVehicle.php",
+      "sha256": "7a0c1295f2985c8b4a8c98ba90d15c0e4a1a882075848ebd56382e0da81d69b2"
+    },
+    {
+      "bytes": 900,
+      "path": "src/Domains/WorkCore/System/Modules/Fleet/Actions/SearchFleetVehicles.php",
+      "sha256": "791e52c3ed4f4445967dff81993953e3509fe1eaabcfe59f4133a6a6591cd594"
+    },
+    {
+      "bytes": 686,
+      "path": "src/Domains/WorkCore/System/Modules/Fleet/Contracts/FleetRepositoryContract.php",
+      "sha256": "84b767b863db136321f7881df5c8df268c2368abd18ccf2eeb90172030d4dc43"
+    },
+    {
+      "bytes": 2560,
+      "path": "src/Domains/WorkCore/System/Modules/Fleet/Http/Controllers/FleetController.php",
+      "sha256": "1cd85804aa891622f72bd7c03507b4b2eb0fb58dd13ee4b154391c8444f78359"
+    },
+    {
+      "bytes": 668,
+      "path": "src/Domains/WorkCore/System/Modules/Fleet/Http/Requests/AssignFleetVehicleRequest.php",
+      "sha256": "378e8554e0c86758447ac02bc27ce0d77cc9c48989dd08e0e47033589b7df8ff"
+    },
+    {
+      "bytes": 779,
+      "path": "src/Domains/WorkCore/System/Modules/Fleet/Http/Requests/RecordFleetMileageRequest.php",
+      "sha256": "49c580e94c35fc91f9064e30db5fe7a49851a081cebec942a8012fa535d4e12e"
+    },
+    {
+      "bytes": 378,
+      "path": "src/Domains/WorkCore/System/Modules/Fleet/Http/Requests/ReturnFleetVehicleRequest.php",
+      "sha256": "3562cc0f9fca6a026729e26e80f9053a76b169ab3d782dd8f76dace6d456cd4c"
+    },
+    {
+      "bytes": 1138,
+      "path": "src/Domains/WorkCore/System/Modules/Fleet/Http/Requests/StoreFleetVehicleRequest.php",
+      "sha256": "14a853ea4481621bd96644a30a98254c5a3cada8595cb7c6035afed3abaede7b"
+    },
+    {
+      "bytes": 1838,
+      "path": "src/Domains/WorkCore/System/Modules/Fleet/Providers/WorkFleetServiceProvider.php",
+      "sha256": "1b99547b5e42c23cfd145ca6098c0f0fe6c006711b63e1795f2508b7ba6a1a76"
+    },
+    {
+      "bytes": 22131,
+      "path": "src/Domains/WorkCore/System/Modules/Fleet/Repositories/EloquentFleetRepository.php",
+      "sha256": "daef3adc09882ffa282f10d3e9fc6b2649cb018adbd0e0a18c45ee85b6bb8167"
+    },
+    {
+      "bytes": 891,
+      "path": "src/Domains/WorkCore/System/Modules/Fleet/routes/api.php",
+      "sha256": "4a0f9faab9dc622a9ceedca97317f1f63288c06f049e894e76154a0fa97609d4"
+    },
+    {
+      "bytes": 798,
+      "path": "src/Domains/WorkCore/System/Modules/Forms/AI/FormsToolRegistry.php",
+      "sha256": "10fbedef4948b9c335fa2628b731a01aa47a5b614a73436ccec74debd6b50b41"
+    },
+    {
+      "bytes": 1120,
+      "path": "src/Domains/WorkCore/System/Modules/Forms/Actions/ConvertFormFailureToWorkOrder.php",
+      "sha256": "675edae4443c5b6e33eb1bbc0cf7d3a6251cd3cc6775d3ca94362a3c963fb0e8"
+    },
+    {
+      "bytes": 968,
+      "path": "src/Domains/WorkCore/System/Modules/Forms/Actions/CreateFormTemplate.php",
+      "sha256": "4cabb35f5f17974cc18fda1253c2c2baf4323b88c1c2f416bb846fca2ba17850"
+    },
+    {
+      "bytes": 1000,
+      "path": "src/Domains/WorkCore/System/Modules/Forms/Actions/PublishFormTemplate.php",
+      "sha256": "2cececd055626178c9b23cbb243c5c9cea112616ba18d7f1f4d14c6e160c40c4"
+    },
+    {
+      "bytes": 1024,
+      "path": "src/Domains/WorkCore/System/Modules/Forms/Actions/SaveFormResponse.php",
+      "sha256": "6663a67dc59c07031ab271da3c65134520f2d30f30c001a261692f4b15f7977c"
+    },
+    {
+      "bytes": 545,
+      "path": "src/Domains/WorkCore/System/Modules/Forms/Actions/SearchFormSubmissions.php",
+      "sha256": "c2c8aaa530317d48b1aeb14ec871fdff536661dea93087467a8490e8a983ec0a"
+    },
+    {
+      "bytes": 541,
+      "path": "src/Domains/WorkCore/System/Modules/Forms/Actions/SearchFormTemplates.php",
+      "sha256": "fe6a5d79bfa9a10dac12b97ce47b720c28a0bbc0054ab6bbfe012382eca65e28"
+    },
+    {
+      "bytes": 974,
+      "path": "src/Domains/WorkCore/System/Modules/Forms/Actions/StartFormSubmission.php",
+      "sha256": "73be841b2157191d082c6951c3fd42323fbac547c2b34adc84a08abc2817471a"
+    },
+    {
+      "bytes": 1029,
+      "path": "src/Domains/WorkCore/System/Modules/Forms/Actions/SubmitFormSubmission.php",
+      "sha256": "7a2df91d02be0ee966a2bc0f2b55a781428b00d586e6361dbe24ad6a40a7bdcc"
+    },
+    {
+      "bytes": 1048,
+      "path": "src/Domains/WorkCore/System/Modules/Forms/Contracts/FormRepositoryContract.php",
+      "sha256": "bd32adaaffab779ebb83ead7209e4b8caadfd8a4b873d2b6c7c9712f15d980b8"
+    },
+    {
+      "bytes": 3590,
+      "path": "src/Domains/WorkCore/System/Modules/Forms/Http/Controllers/FormsController.php",
+      "sha256": "97a7e9817810bb0d58c1b31269ea523323ea38ed31f84708d7cf60dd5be588ef"
+    },
+    {
+      "bytes": 401,
+      "path": "src/Domains/WorkCore/System/Modules/Forms/Http/Requests/ConvertFormFailureRequest.php",
+      "sha256": "70c3764082c50f6bd21fcb4cbb4884e4fbe8efae65ee62d11aa7d9464db2bcaa"
+    },
+    {
+      "bytes": 897,
+      "path": "src/Domains/WorkCore/System/Modules/Forms/Http/Requests/SaveFormResponseRequest.php",
+      "sha256": "dec03f9aa1443eed14cf5546b00abc8853f3da392c7c59265db9c4edb5e2aaf1"
+    },
+    {
+      "bytes": 640,
+      "path": "src/Domains/WorkCore/System/Modules/Forms/Http/Requests/StartFormSubmissionRequest.php",
+      "sha256": "9950574a1caf62c51b606c4a6f7b0e54f55eda83f68b013e381f516e9989e39f"
+    },
+    {
+      "bytes": 2228,
+      "path": "src/Domains/WorkCore/System/Modules/Forms/Http/Requests/StoreFormTemplateRequest.php",
+      "sha256": "58892690d8a4bb8041fb7791062e1239cef474ba4ca0719f410cb56aad56aefc"
+    },
+    {
+      "bytes": 427,
+      "path": "src/Domains/WorkCore/System/Modules/Forms/Http/Requests/SubmitFormSubmissionRequest.php",
+      "sha256": "a09d7983d75de5fa780008f1cec1279dc0deb19b9a08a00b0db9c42639400fc6"
+    },
+    {
+      "bytes": 3170,
+      "path": "src/Domains/WorkCore/System/Modules/Forms/Providers/WorkFormsServiceProvider.php",
+      "sha256": "c1156571a66a58683153748e82ca6c1be64897a50d00111d59bf24c94e53a6a1"
+    },
+    {
+      "bytes": 26913,
+      "path": "src/Domains/WorkCore/System/Modules/Forms/Repositories/EloquentFormRepository.php",
+      "sha256": "d569e6772cfb6cadcdb13c3de1dcb2e973067f14d145bf6d79572c594034d978"
+    },
+    {
+      "bytes": 1652,
+      "path": "src/Domains/WorkCore/System/Modules/Forms/Services/FormFieldPolicy.php",
+      "sha256": "78292f1f24c60229812f99ea0620cb9abf84b52900a94492fa26facdc5d1274a"
+    },
+    {
+      "bytes": 1113,
+      "path": "src/Domains/WorkCore/System/Modules/Forms/Services/FormSubmissionPolicy.php",
+      "sha256": "11ac2b8f067f2bca389f68339c30636fe9484cbc5d235b9c17f8c7305f3862fa"
+    },
+    {
+      "bytes": 1283,
+      "path": "src/Domains/WorkCore/System/Modules/Forms/routes/api.php",
+      "sha256": "3a15b8097922cc063016a8c4bff0a49f93c2834fb75c184e64541f4b7ac1d095"
+    },
+    {
+      "bytes": 377,
+      "path": "src/Domains/WorkCore/System/Modules/Operations/AI/OperationsToolRegistry.php",
+      "sha256": "20b3d56d072adf3a420aef4e163ec762429f0e3737339a849c64a688bb2bef65"
+    },
+    {
+      "bytes": 1423,
+      "path": "src/Domains/WorkCore/System/Modules/Operations/Actions/AddTimeEntry.php",
+      "sha256": "d1f158f03f3fc2fa1ffcd85ca28a2b3c72d4bb2c88899ea1fe224ba32d8242df"
+    },
+    {
+      "bytes": 1983,
+      "path": "src/Domains/WorkCore/System/Modules/Operations/Actions/ChangeWorkOrderStatus.php",
+      "sha256": "610d1faa836afc641657ac523d7e8ca54cd95499d9e837180f277e3b36dd065d"
+    },
+    {
+      "bytes": 1127,
+      "path": "src/Domains/WorkCore/System/Modules/Operations/Actions/CreateWorkOrder.php",
+      "sha256": "bc633cc01a610a968d83ee68888301d2836332cc6cf3fec42aa5f1ec4c12c074"
+    },
+    {
+      "bytes": 1613,
+      "path": "src/Domains/WorkCore/System/Modules/Operations/Actions/SearchWorkOrders.php",
+      "sha256": "8dd1dd6c5d542a46d62001aa95da54ae6418b7b0d6eb9b4f65d8af087b3be75e"
+    },
+    {
+      "bytes": 1303,
+      "path": "src/Domains/WorkCore/System/Modules/Operations/Actions/UpdateWorkOrderTaskStatus.php",
+      "sha256": "b0b72778230ef66120fd71437fd9ca6eaa08fdc7be7b68fa90c121828d7e8a32"
+    },
+    {
+      "bytes": 1243,
+      "path": "src/Domains/WorkCore/System/Modules/Operations/Contracts/WorkOrderRepositoryContract.php",
+      "sha256": "3fbdf01b6bb5cfff3225cf4291245971a0fd0974dd17f98e0f7c889e20a64a16"
+    },
+    {
+      "bytes": 4405,
+      "path": "src/Domains/WorkCore/System/Modules/Operations/Http/Controllers/WorkOrderController.php",
+      "sha256": "37f88c42bee2dcf8fe1e3fd2b5d44cc0a0c794bdd196984a705830769baa5ac4"
+    },
+    {
+      "bytes": 695,
+      "path": "src/Domains/WorkCore/System/Modules/Operations/Http/Requests/ChangeWorkOrderStatusRequest.php",
+      "sha256": "719e7ba50b5f71b6605df26f4a0503e6c56cf228a55e4351d41b2a541c6ded56"
+    },
+    {
+      "bytes": 848,
+      "path": "src/Domains/WorkCore/System/Modules/Operations/Http/Requests/StoreTimeEntryRequest.php",
+      "sha256": "a956045745a4f76669ef3951e8cb41ecdd1712fd98fffe22cc7d8c655e614386"
+    },
+    {
+      "bytes": 1863,
+      "path": "src/Domains/WorkCore/System/Modules/Operations/Http/Requests/StoreWorkOrderRequest.php",
+      "sha256": "0652f7cc31a5ea9589d8a1b576d6dca4770e4504670c0f59db7e52e98dd03e9e"
+    },
+    {
+      "bytes": 426,
+      "path": "src/Domains/WorkCore/System/Modules/Operations/Http/Requests/UpdateWorkOrderTaskStatusRequest.php",
+      "sha256": "ce86aece5b62fa180ac5f7e7563b35d6ebb1ef84322af50fb7d491a224cd3d50"
+    },
+    {
+      "bytes": 3695,
+      "path": "src/Domains/WorkCore/System/Modules/Operations/Providers/WorkOperationsServiceProvider.php",
+      "sha256": "0e68d6c3a8b1b1bcc46e08eb564d4a80cbc5acf9d82ccc258f24211912069e0b"
+    },
+    {
+      "bytes": 21965,
+      "path": "src/Domains/WorkCore/System/Modules/Operations/Repositories/EloquentWorkOrderRepository.php",
+      "sha256": "06d74c3098af1ae9060d80239fa96005aa02caa0df7ee3a8b75f731d9ac64044"
+    },
+    {
+      "bytes": 2631,
+      "path": "src/Domains/WorkCore/System/Modules/Operations/Services/WorkOrderStatusPolicy.php",
+      "sha256": "33db79e8c9079689d2e4448b42343a81a8cfb5580b3328fde15b74b19194a9c4"
+    },
+    {
+      "bytes": 835,
+      "path": "src/Domains/WorkCore/System/Modules/Operations/Services/WorkOrderTaskStatusPolicy.php",
+      "sha256": "ed8b3148a6a48471bc6fedcd23545d7d4a581991824d1167fe551c5f38df65af"
+    },
+    {
+      "bytes": 5687,
+      "path": "src/Domains/WorkCore/System/Modules/Operations/Services/WorkOrderTemplateExpander.php",
+      "sha256": "8211c1a8468d86a57b6bf7da73871dad60a4da60f8843e929dafafe33b35ac97"
+    },
+    {
+      "bytes": 983,
+      "path": "src/Domains/WorkCore/System/Modules/Operations/routes/api.php",
+      "sha256": "bc812bbddd2cca2927003c74d6a703823dc977d9ae7568dcb63bce34dca472b9"
+    },
+    {
+      "bytes": 369,
+      "path": "src/Domains/WorkCore/System/Modules/QRCode/AI/QRCodeToolRegistry.php",
+      "sha256": "f2bf798f5c098670fc1bd7d5c75450bd7656aa24f9f8aa4236566a46e9d80ddd"
+    },
+    {
+      "bytes": 391,
+      "path": "src/Domains/WorkCore/System/Modules/RecurringServices/AI/RecurringServicesToolRegistry.php",
+      "sha256": "49c512bddec9b99bf5d854980b03c9ec0700e2ccf6f6f248928be594111d4bcd"
+    },
+    {
+      "bytes": 1049,
+      "path": "src/Domains/WorkCore/System/Modules/RecurringServices/Actions/ChangeServiceAgreementStatus.php",
+      "sha256": "0b3f880f15a7d7aa6d089344643ad631a2819c787717693ac2024445e645388f"
+    },
+    {
+      "bytes": 981,
+      "path": "src/Domains/WorkCore/System/Modules/RecurringServices/Actions/CreateServiceAgreement.php",
+      "sha256": "9c38e3bc2fe891ad3ae73fe83fb60bcdab7076f0971f1b7541e110cff1b0423c"
+    },
+    {
+      "bytes": 1034,
+      "path": "src/Domains/WorkCore/System/Modules/RecurringServices/Actions/GenerateRecurringOccurrences.php",
+      "sha256": "7e1b1a89ab143d900719a28a790cad41d822c6d0c17142d1b8f5766535280801"
+    },
+    {
+      "bytes": 1028,
+      "path": "src/Domains/WorkCore/System/Modules/RecurringServices/Actions/RenewServiceAgreement.php",
+      "sha256": "937b0d9051a6c3956fa0d87e47beb7c20703e13fa42008f9efdbac94f7b0e1f0"
+    },
+    {
+      "bytes": 1051,
+      "path": "src/Domains/WorkCore/System/Modules/RecurringServices/Actions/RescheduleRecurringOccurrence.php",
+      "sha256": "6c3afef342bb6dc30579958e72d4fa2642e00d14c33b6827ec7947babbc09adc"
+    },
+    {
+      "bytes": 479,
+      "path": "src/Domains/WorkCore/System/Modules/RecurringServices/Actions/SearchServiceAgreements.php",
+      "sha256": "72b5bc03edd29b506f08d273c0e6b9cb0a202f00b478f48010671b6cabfccce7"
+    },
+    {
+      "bytes": 1035,
+      "path": "src/Domains/WorkCore/System/Modules/RecurringServices/Actions/SkipRecurringOccurrence.php",
+      "sha256": "6dfe4000118ccaca6dfb0cf3425d74fc3381b589669c9df287f7694c2be73196"
+    },
+    {
+      "bytes": 947,
+      "path": "src/Domains/WorkCore/System/Modules/RecurringServices/Contracts/RecurringServiceRepositoryContract.php",
+      "sha256": "20ea5cc70266caf6b91ca378f2f1c32452eb311896f02b53973deb0dbe187352"
+    },
+    {
+      "bytes": 314,
+      "path": "src/Domains/WorkCore/System/Modules/RecurringServices/Contracts/RecurringServicesRepositoryContract.php",
+      "sha256": "db38fc0a4556c730f8c5f6a7b2f048c20e285860f1567a34c799f7cbfcb4c108"
+    },
+    {
+      "bytes": 3282,
+      "path": "src/Domains/WorkCore/System/Modules/RecurringServices/Http/Controllers/RecurringServiceController.php",
+      "sha256": "d65eaaa06311c12ce7dc3633d13b3165b6048fc7b5c95d0804919a6d0956cbc1"
+    },
+    {
+      "bytes": 435,
+      "path": "src/Domains/WorkCore/System/Modules/RecurringServices/Http/Requests/GenerateRecurringServicesRequest.php",
+      "sha256": "cc659f836439d1df1e80feaf531023099ee2615c5f43490e1ef8aefff5ea4bb1"
+    },
+    {
+      "bytes": 328,
+      "path": "src/Domains/WorkCore/System/Modules/RecurringServices/Http/Requests/RenewServiceAgreementRequest.php",
+      "sha256": "89890fd10d68f4c5a6a4b7eefa5bca85c501e58e7c498647c48eefcb90e6f9c0"
+    },
+    {
+      "bytes": 409,
+      "path": "src/Domains/WorkCore/System/Modules/RecurringServices/Http/Requests/RescheduleRecurringOccurrenceRequest.php",
+      "sha256": "42567c2ae58457c700d2bfdf785d6dad8c6a1718777f7a577f42edf65e23ba27"
+    },
+    {
+      "bytes": 370,
+      "path": "src/Domains/WorkCore/System/Modules/RecurringServices/Http/Requests/ServiceAgreementStatusRequest.php",
+      "sha256": "2723f30d749f6b3c26ba800a93d037cf5670ac552acbaad70bfb6e94fb698f9a"
+    },
+    {
+      "bytes": 343,
+      "path": "src/Domains/WorkCore/System/Modules/RecurringServices/Http/Requests/SkipRecurringOccurrenceRequest.php",
+      "sha256": "4e37116dde0d04b5e76a31585bbdcfbef89d19079945372bda129d7baed290d9"
+    },
+    {
+      "bytes": 2002,
+      "path": "src/Domains/WorkCore/System/Modules/RecurringServices/Http/Requests/StoreServiceAgreementRequest.php",
+      "sha256": "57f1d597cea75aab7590cb2c3e91ffb7aa5c161c3c625a9bae407cbeb77deadd"
+    },
+    {
+      "bytes": 2700,
+      "path": "src/Domains/WorkCore/System/Modules/RecurringServices/Providers/WorkRecurringServicesServiceProvider.php",
+      "sha256": "03f9aa2282245d66d515565e8ab770b4875c4a8e092728227f779205111c1e53"
+    },
+    {
+      "bytes": 29610,
+      "path": "src/Domains/WorkCore/System/Modules/RecurringServices/Repositories/EloquentRecurringServiceRepository.php",
+      "sha256": "b5db0a091a95f3b1dfdf9ca1b9630e04c20e34018535c129eea121313d4cb790"
+    },
+    {
+      "bytes": 3554,
+      "path": "src/Domains/WorkCore/System/Modules/RecurringServices/Services/RecurrenceCalculator.php",
+      "sha256": "eb2cd7f7f94c43d42e578aeecebef8be258dc72dd74a37b96327b1536b453198"
+    },
+    {
+      "bytes": 1839,
+      "path": "src/Domains/WorkCore/System/Modules/RecurringServices/Services/ServiceAgreementStatusPolicy.php",
+      "sha256": "b7d539bc28e808fb596370e587f287262d123d87dbbc64eca9c25240d31307b6"
+    },
+    {
+      "bytes": 1413,
+      "path": "src/Domains/WorkCore/System/Modules/RecurringServices/routes/api.php",
+      "sha256": "cd28bde4a508ce60b58c72ab3bf7d8342526caba9c9930e549d54ff017f2396e"
+    },
+    {
+      "bytes": 371,
+      "path": "src/Domains/WorkCore/System/Modules/Repairs/AI/RepairsToolRegistry.php",
+      "sha256": "eb85e2786f0bade8c45f96c42e18c33fe5ad823e3c80252e5a64e409e18fb23d"
+    },
+    {
+      "bytes": 1154,
+      "path": "src/Domains/WorkCore/System/Modules/Repairs/Actions/CompleteRepairOrder.php",
+      "sha256": "b29d720dcee793a74f2ebd226271a895e6fc737b71c2ed90b07988f2c8565347"
+    },
+    {
+      "bytes": 946,
+      "path": "src/Domains/WorkCore/System/Modules/Repairs/Actions/CreateRepairTemplate.php",
+      "sha256": "80dfa82b6b60d7035505f12b7fe627c4c6f46fdc59bb644183dae6b3a9c0122b"
+    },
+    {
+      "bytes": 948,
+      "path": "src/Domains/WorkCore/System/Modules/Repairs/Actions/ReportRepairOrder.php",
+      "sha256": "70961a4390059a69dfd630c81e8d93745e88ab2156e058e896ca20eb0e1fe6bd"
+    },
+    {
+      "bytes": 907,
+      "path": "src/Domains/WorkCore/System/Modules/Repairs/Actions/SearchRepairOrders.php",
+      "sha256": "f17ba10caed7dee55b244fee25bc4c40f2113cec2f73b6363952411bbb55571e"
+    },
+    {
+      "bytes": 1146,
+      "path": "src/Domains/WorkCore/System/Modules/Repairs/Actions/StartRepairOrder.php",
+      "sha256": "92955b06fca20300f586e5bebc2fe45cf9842bac77b76cf69a832eff2fe2f52c"
+    },
+    {
+      "bytes": 635,
+      "path": "src/Domains/WorkCore/System/Modules/Repairs/Contracts/RepairRepositoryContract.php",
+      "sha256": "f681527d197d3fba281aaff7642db2f5e3a5cc1a0845194e95f094c7f168053d"
+    },
+    {
+      "bytes": 2522,
+      "path": "src/Domains/WorkCore/System/Modules/Repairs/Http/Controllers/RepairController.php",
+      "sha256": "45b958a5ac306467b13346ec75f08d32c32213b29737cc93903135814392dbdf"
+    },
+    {
+      "bytes": 633,
+      "path": "src/Domains/WorkCore/System/Modules/Repairs/Http/Requests/CompleteRepairOrderRequest.php",
+      "sha256": "966ae1987a0e30a3e47bcf8bbb374a0a6fc4214a66703249fd0ed2e4aa329e1b"
+    },
+    {
+      "bytes": 972,
+      "path": "src/Domains/WorkCore/System/Modules/Repairs/Http/Requests/ReportRepairOrderRequest.php",
+      "sha256": "b78ed485310782bf65d180490a9772ecc2e770ee69c8742626424cba6189a99c"
+    },
+    {
+      "bytes": 443,
+      "path": "src/Domains/WorkCore/System/Modules/Repairs/Http/Requests/StartRepairOrderRequest.php",
+      "sha256": "de42860c61208b75b61a5ddcc089d589c24cee378add83e41e28a9d14733f24b"
+    },
+    {
+      "bytes": 542,
+      "path": "src/Domains/WorkCore/System/Modules/Repairs/Http/Requests/StoreRepairTemplateRequest.php",
+      "sha256": "ad29fe0a0b3c2c80e97835de282311bc28dcfbd9f2c6b7d60a455100e9d10f71"
+    },
+    {
+      "bytes": 1937,
+      "path": "src/Domains/WorkCore/System/Modules/Repairs/Providers/WorkRepairsServiceProvider.php",
+      "sha256": "0d0686c166997f94cb85225a2890f74d9a99b120204488b4b651039a9db614e5"
+    },
+    {
+      "bytes": 16126,
+      "path": "src/Domains/WorkCore/System/Modules/Repairs/Repositories/EloquentRepairRepository.php",
+      "sha256": "5866b6446713ff54ad0fe8e6a0db682d3195ae1a78946b1446e6baef7382b558"
+    },
+    {
+      "bytes": 819,
+      "path": "src/Domains/WorkCore/System/Modules/Repairs/routes/api.php",
+      "sha256": "a98dcc84a9bf569c18cdb16705e7ff4033dd55ee0bde5591cecedf3cb6362973"
+    },
+    {
+      "bytes": 377,
+      "path": "src/Domains/WorkCore/System/Modules/Scheduling/AI/SchedulingToolRegistry.php",
+      "sha256": "ed96b2ed21bc5d8cd8f1a4f92b92fbd5714706921b8334dcde78d845b49c1f3e"
+    },
+    {
+      "bytes": 1509,
+      "path": "src/Domains/WorkCore/System/Modules/Scheduling/Actions/ChangeAppointmentStatus.php",
+      "sha256": "fdf5ea79cad0cf68444adea6a6194f70f737b8a2eeed47b3e276aabdd46c77aa"
+    },
+    {
+      "bytes": 1136,
+      "path": "src/Domains/WorkCore/System/Modules/Scheduling/Actions/CreateAppointment.php",
+      "sha256": "9bcc7763499f92aa8d862ba4f548b87db4f3a67a34faa8425d7d544156a913f2"
+    },
+    {
+      "bytes": 1609,
+      "path": "src/Domains/WorkCore/System/Modules/Scheduling/Actions/RescheduleAppointment.php",
+      "sha256": "787e316d47c556dade0ce68bf96477d828920f5f3481983d40586afe59b0eac6"
+    },
+    {
+      "bytes": 1810,
+      "path": "src/Domains/WorkCore/System/Modules/Scheduling/Actions/SearchAppointments.php",
+      "sha256": "1e52b0ec18708b63434f564d6abb2115ecfb65ab5c1421f37169e6704cca0f07"
+    },
+    {
+      "bytes": 1239,
+      "path": "src/Domains/WorkCore/System/Modules/Scheduling/Contracts/AppointmentRepositoryContract.php",
+      "sha256": "354e9b8e80b92b2b91daeb8bdb3f1c8054767a7fc3b37da93816385e23e71485"
+    },
+    {
+      "bytes": 4097,
+      "path": "src/Domains/WorkCore/System/Modules/Scheduling/Http/Controllers/AppointmentController.php",
+      "sha256": "1c126e8cc1434d898d1fe32b41cc702b49396d821c2d589e06873ce8c62024f2"
+    },
+    {
+      "bytes": 539,
+      "path": "src/Domains/WorkCore/System/Modules/Scheduling/Http/Requests/ChangeAppointmentStatusRequest.php",
+      "sha256": "45899e9a56ebe7ccfcb826830e8de90ba6fdde2b4567008beb39bedb9eb5a888"
+    },
+    {
+      "bytes": 1032,
+      "path": "src/Domains/WorkCore/System/Modules/Scheduling/Http/Requests/RescheduleAppointmentRequest.php",
+      "sha256": "62c113b50d635dc3f14fd1aacb293634f1469bfee849a7dfe9451d5fc3cd3744"
+    },
+    {
+      "bytes": 2722,
+      "path": "src/Domains/WorkCore/System/Modules/Scheduling/Http/Requests/StoreAppointmentRequest.php",
+      "sha256": "a406b76b9697a53778680f39661c1ca2ca86c5fd0afbd8ca8cc09b9c6d93aa4c"
+    },
+    {
+      "bytes": 3048,
+      "path": "src/Domains/WorkCore/System/Modules/Scheduling/Providers/WorkSchedulingServiceProvider.php",
+      "sha256": "8685584bd837df936c9ecdc16da06a5c4c5843c98dec7ee0bdc20a796b84bc44"
+    },
+    {
+      "bytes": 28966,
+      "path": "src/Domains/WorkCore/System/Modules/Scheduling/Repositories/EloquentAppointmentRepository.php",
+      "sha256": "a66998e44b3a70e84da491e3364a18d0fca37aa0219121a426a591a03aac7db6"
+    },
+    {
+      "bytes": 1461,
+      "path": "src/Domains/WorkCore/System/Modules/Scheduling/Services/AppointmentSchedulePolicy.php",
+      "sha256": "e89760ba97c9f6ad1df7ca848e2296db24ae11184e59b3e9bc2e5563ac01942f"
+    },
+    {
+      "bytes": 1361,
+      "path": "src/Domains/WorkCore/System/Modules/Scheduling/Services/AppointmentStatusPolicy.php",
+      "sha256": "f8ed9efce8b14243b60e304358886f0d68e9c73380b1909869c195b1dcdac130"
+    },
+    {
+      "bytes": 855,
+      "path": "src/Domains/WorkCore/System/Modules/Scheduling/routes/api.php",
+      "sha256": "7e28cc8355f5230392a230d602a941d0b4c74a39aa3b8ed47e5c7c55a540b44f"
+    }
+  ]
+}

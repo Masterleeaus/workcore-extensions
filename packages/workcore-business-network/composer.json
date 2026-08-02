@@ -1,0 +1,22 @@
+{
+  "autoload": {
+    "classmap": [
+      "src/"
+    ]
+  },
+  "description": "WorkCore Business Network",
+  "extra": {
+    "workcore": {
+      "destructive_uninstall": false,
+      "package_type": "domain-extension",
+      "phase": "canonical-namespace-extraction"
+    }
+  },
+  "license": "proprietary",
+  "name": "workcore/business-network",
+  "require": {
+    "php": "^8.2",
+    "workcore/shared-foundation": "self.version"
+  },
+  "type": "library"
+}

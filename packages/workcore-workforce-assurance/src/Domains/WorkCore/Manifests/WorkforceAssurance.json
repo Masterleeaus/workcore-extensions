@@ -1,0 +1,32 @@
+{
+  "architecture": "installable-domain-extension",
+  "dependencies": [
+    "workcore/shared-foundation"
+  ],
+  "destructive_uninstall": false,
+  "domain": "WorkforceAssurance",
+  "modules": [
+    "Workforce",
+    "People",
+    "AttendanceVerification",
+    "Rosters",
+    "Attendance",
+    "Compliance",
+    "Assurance",
+    "Credentials",
+    "NDIS"
+  ],
+  "package": "workcore/workforce-assurance",
+  "provider": "App\\Domains\\WorkCore\\Providers\\WorkforceAssuranceServiceProvider",
+  "runtime_keys": [
+    "workforce",
+    "people",
+    "attendance_verification",
+    "rosters",
+    "attendance",
+    "compliance",
+    "assurance"
+  ],
+  "status": "phase-one canonical namespace extraction",
+  "system_slices": []
+}

@@ -1,0 +1,67 @@
+[
+  {
+    "section": "Excluded from onboarding",
+    "key": "admin.maintenance",
+    "question": "Maintenance mode, affected systems, duration, and maintenance messaging.",
+    "response_type": "admin_form",
+    "priority": "ADMIN",
+    "handling": "admin_only",
+    "target_owner": "Host operations",
+    "source": "BusinessSettings maintenance settings",
+    "branch_condition": "",
+    "approval_gate": "critical",
+    "notes": "Operational admin wizard, never first-run onboarding."
+  },
+  {
+    "section": "Excluded from onboarding",
+    "key": "admin.database_backup",
+    "question": "Database backup binary path and restore operations.",
+    "response_type": "admin_form",
+    "priority": "REJECT",
+    "handling": "exclude",
+    "target_owner": "Host infrastructure",
+    "source": "Donor database backup screen",
+    "branch_condition": "",
+    "approval_gate": "critical",
+    "notes": "Unsafe donor implementation; do not transplant."
+  },
+  {
+    "section": "Excluded from onboarding",
+    "key": "admin.cron",
+    "question": "Cron schedule, PHP binary path, and automated mail timing.",
+    "response_type": "admin_form",
+    "priority": "REJECT",
+    "handling": "exclude",
+    "target_owner": "Host infrastructure",
+    "source": "Donor cron editor",
+    "branch_condition": "",
+    "approval_gate": "critical",
+    "notes": "Unsafe donor implementation; use managed scheduler."
+  },
+  {
+    "section": "Excluded from onboarding",
+    "key": "platform.commission",
+    "question": "Platform provider commission/subscription model.",
+    "response_type": "platform_setting",
+    "priority": "PLATFORM",
+    "handling": "exclude_company_onboarding",
+    "target_owner": "MagicAI/Titan platform billing",
+    "source": "provider_commission, provider_subscription, default_commission",
+    "branch_condition": "",
+    "approval_gate": "critical",
+    "notes": "Host/platform authority, not a customer WorkCore setting."
+  },
+  {
+    "section": "Excluded from onboarding",
+    "key": "platform.app_versions",
+    "question": "Global customer/provider/serviceman app minimum versions.",
+    "response_type": "platform_setting",
+    "priority": "PLATFORM",
+    "handling": "exclude_company_onboarding",
+    "target_owner": "Host app distribution",
+    "source": "Donor app settings",
+    "branch_condition": "",
+    "approval_gate": "critical",
+    "notes": "Only expose in a branded-app administration wizard."
+  }
+]

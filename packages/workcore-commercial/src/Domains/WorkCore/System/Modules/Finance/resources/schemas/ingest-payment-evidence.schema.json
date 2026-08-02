@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Ingest Payment Evidence",
+  "type": "object",
+  "required": [
+    "source_type",
+    "amount_minor",
+    "currency_code"
+  ],
+  "properties": {
+    "source_type": {
+      "type": "string"
+    },
+    "amount_minor": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "currency_code": {
+      "type": "string",
+      "pattern": "^[A-Z]{3}$"
+    }
+  },
+  "additionalProperties": true
+}

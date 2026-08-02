@@ -1,0 +1,1 @@
+<?php declare(strict_types=1); namespace App\Domains\WorkCore\System\Modules\RecurringServices\Http\Requests; use Illuminate\Foundation\Http\FormRequest; final class RenewServiceAgreementRequest extends FormRequest { public function rules(): array{return ['new_ends_on'=>'required|date','reason'=>'nullable|string|max:10000'];}}

@@ -1,0 +1,2451 @@
+[
+  {
+    "key": "company-launch-onboarding",
+    "version": 2,
+    "title": "Launch your business in WorkCore",
+    "description": "AI-assisted end-to-end setup that launches only the relevant specialist wizards",
+    "category": "onboarding",
+    "status": "published",
+    "modes": [
+      "guided",
+      "conversation",
+      "hybrid"
+    ],
+    "authority_model": "risk_based",
+    "wizard_sequence": [
+      "business-profile-setup",
+      "service-catalogue-setup",
+      "territory-setup",
+      "availability-booking-setup",
+      "workforce-setup",
+      "payments-finance-setup",
+      "customer-experience-setup",
+      "portal-security-setup",
+      "communications-setup",
+      "ai-manager-setup",
+      "integrations-setup",
+      "brand-public-presence-setup",
+      "compliance-setup",
+      "activation-readiness"
+    ],
+    "sections": [
+      {
+        "key": "setup-path",
+        "title": "Your setup path",
+        "approval_mode": "none",
+        "questions": [
+          {
+            "key": "onboarding.setup_mode",
+            "question": "Would you like Titan to guide the setup conversationally, use forms, or combine both?",
+            "response_type": "select",
+            "required": true,
+            "risk": "low",
+            "handling": "ask",
+            "options": [
+              "conversation",
+              "guided",
+              "hybrid"
+            ],
+            "target_owner": "Wizard runtime"
+          },
+          {
+            "key": "onboarding.experience_level",
+            "question": "How much setup detail would you like to review yourself?",
+            "response_type": "select",
+            "required": true,
+            "risk": "low",
+            "handling": "ask",
+            "options": [
+              "essential",
+              "standard",
+              "advanced"
+            ],
+            "target_owner": "Wizard runtime"
+          },
+          {
+            "key": "onboarding.import_existing",
+            "question": "Do you have existing business data or documents Titan should use to prefill setup?",
+            "response_type": "multi_source_import",
+            "required": false,
+            "risk": "medium",
+            "handling": "offer",
+            "target_owner": "Wizard runtime/Imports"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "business-profile-setup",
+    "version": 2,
+    "title": "Business profile",
+    "description": "Identity, operating model and company defaults",
+    "category": "business",
+    "status": "published",
+    "modes": [
+      "guided",
+      "conversation",
+      "hybrid"
+    ],
+    "authority_model": "risk_based",
+    "sections": [
+      {
+        "key": "1-business-identity",
+        "title": "Business identity",
+        "approval_mode": "section",
+        "questions": [
+          {
+            "key": "company.name",
+            "question": "What name should customers and staff see for your business?",
+            "response_type": "text",
+            "priority": "P0",
+            "handling": "ask",
+            "target_owner": "Company",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "BusinessSettingsModule business_name; WorkCore CreateCompanyRequest name",
+            "notes": ""
+          },
+          {
+            "key": "company.legal_name",
+            "question": "Is your legal entity name different from your trading name?",
+            "response_type": "text",
+            "priority": "P1",
+            "handling": "ask_if_relevant",
+            "target_owner": "Company settings",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": false,
+            "source": "WorkCore gap identified during mapping",
+            "notes": "",
+            "when": {
+              "field": "company.legal_entity_required",
+              "operator": "truthy"
+            }
+          },
+          {
+            "key": "company.slug",
+            "question": "What short workspace address would you like?",
+            "response_type": "slug",
+            "priority": "P0",
+            "handling": "suggest_then_confirm",
+            "target_owner": "Company",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "WorkCore CreateCompanyRequest slug",
+            "notes": ""
+          },
+          {
+            "key": "company.country_code",
+            "question": "Which country is the business primarily registered and operating in?",
+            "response_type": "country",
+            "priority": "P0",
+            "handling": "infer_then_confirm",
+            "target_owner": "Company",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "BusinessSettingsModule country_code; WorkCore country_code",
+            "notes": ""
+          },
+          {
+            "key": "company.abn",
+            "question": "What is the business ABN?",
+            "response_type": "text",
+            "priority": "P0-AU",
+            "handling": "ask",
+            "target_owner": "Company",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "WorkCore CreateCompanyRequest abn",
+            "notes": "",
+            "when": {
+              "field": "company.country_code",
+              "operator": "equals",
+              "value": "AU"
+            }
+          },
+          {
+            "key": "company.gst_registered",
+            "question": "Is the business registered for GST?",
+            "response_type": "boolean",
+            "priority": "P0-AU",
+            "handling": "ask",
+            "target_owner": "Company",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "WorkCore CreateCompanyRequest gst_registered",
+            "notes": "",
+            "when": {
+              "field": "company.country_code",
+              "operator": "equals",
+              "value": "AU"
+            }
+          },
+          {
+            "key": "company.business_email",
+            "question": "What email should WorkCore use for customer-facing business correspondence?",
+            "response_type": "email",
+            "priority": "P0",
+            "handling": "ask",
+            "target_owner": "Company settings",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "BusinessSettingsModule business_email",
+            "notes": ""
+          },
+          {
+            "key": "company.business_phone",
+            "question": "What is the main business phone number?",
+            "response_type": "phone",
+            "priority": "P0",
+            "handling": "ask",
+            "target_owner": "Company settings",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "BusinessSettingsModule business_phone",
+            "notes": ""
+          },
+          {
+            "key": "company.address",
+            "question": "What is the primary business or correspondence address?",
+            "response_type": "address",
+            "priority": "P0",
+            "handling": "ask_or_lookup",
+            "target_owner": "Company/Premises",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "BusinessSettingsModule business_address, latitude, longitude",
+            "notes": ""
+          },
+          {
+            "key": "company.location",
+            "question": "Is this address also a service location, office, depot, or correspondence-only address?",
+            "response_type": "multi_select",
+            "priority": "P0",
+            "handling": "ask",
+            "target_owner": "Premises",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "Provider company_address and service_location donor settings",
+            "notes": ""
+          },
+          {
+            "key": "company.logo",
+            "question": "Would you like to upload your business logo now?",
+            "response_type": "file",
+            "priority": "P1",
+            "handling": "offer",
+            "target_owner": "Company branding",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": false,
+            "source": "BusinessSettingsModule business_logo",
+            "notes": ""
+          },
+          {
+            "key": "company.favicon",
+            "question": "Would you like to upload a small app or browser icon?",
+            "response_type": "file",
+            "priority": "P2",
+            "handling": "defer_by_default",
+            "target_owner": "Host branding",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": false,
+            "source": "BusinessSettingsModule business_favicon",
+            "notes": "",
+            "when": {
+              "any": [
+                {
+                  "field": "customer.portal_enabled",
+                  "operator": "truthy"
+                },
+                {
+                  "field": "features.branded_native_app",
+                  "operator": "truthy"
+                }
+              ]
+            }
+          },
+          {
+            "key": "company.timezone",
+            "question": "Which timezone should schedules, bookings, invoices, and notifications use?",
+            "response_type": "timezone",
+            "priority": "P0",
+            "handling": "infer_then_confirm",
+            "target_owner": "Company",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "BusinessSettingsModule time_zone; WorkCore timezone",
+            "notes": ""
+          },
+          {
+            "key": "company.currency_code",
+            "question": "Which currency should prices and invoices use?",
+            "response_type": "currency",
+            "priority": "P0",
+            "handling": "infer_then_confirm",
+            "target_owner": "Company/Finance",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "BusinessSettingsModule currency_code; WorkCore currency_code",
+            "notes": ""
+          },
+          {
+            "key": "company.currency_display",
+            "question": "Where should the currency symbol appear, and how many decimal places should be shown?",
+            "response_type": "compound",
+            "priority": "P1",
+            "handling": "infer_then_confirm",
+            "target_owner": "Company UI settings",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": false,
+            "source": "BusinessSettingsModule currency_symbol_position, currency_decimal_point",
+            "notes": ""
+          },
+          {
+            "key": "company.locale",
+            "question": "Which language and date/time format should the workspace use?",
+            "response_type": "compound",
+            "priority": "P0",
+            "handling": "infer_then_confirm",
+            "target_owner": "Company context",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "BusinessSettingsModule language setup, time_format; WorkCore default_locale",
+            "notes": ""
+          }
+        ]
+      },
+      {
+        "key": "2-business-model",
+        "title": "Business model",
+        "approval_mode": "section",
+        "questions": [
+          {
+            "key": "business.verticals",
+            "question": "What kind of business are you setting up? Select every area that applies.",
+            "response_type": "multi_select",
+            "priority": "P0",
+            "handling": "ask",
+            "target_owner": "Capability/vertical registry",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "WorkCore capability verticals; donor category/service structure",
+            "notes": "Examples: cleaning, maintenance, property management, rooming houses, inspections, landscaping, trades."
+          },
+          {
+            "key": "business.operating_model",
+            "question": "Do you deliver services with employees, contractors, external providers, or a mixture?",
+            "response_type": "multi_select",
+            "priority": "P0",
+            "handling": "ask",
+            "target_owner": "Workforce/People",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "OwnerManagement provider model and StaffManagement",
+            "notes": ""
+          },
+          {
+            "key": "business.customer_types",
+            "question": "Who do you mainly serve?",
+            "response_type": "multi_select",
+            "priority": "P0",
+            "handling": "ask",
+            "target_owner": "CRM",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "Donor customer/provider model plus WorkCore CRM",
+            "notes": "Households, businesses, property managers, landlords, tenants/residents, facilities teams, government, strata."
+          },
+          {
+            "key": "business.service_locations",
+            "question": "Where can work be delivered?",
+            "response_type": "multi_select",
+            "priority": "P0",
+            "handling": "ask",
+            "target_owner": "Catalogue/Territories/Premises",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "service_at_provider_place and provider service_location",
+            "notes": "Customer premises, company location, remote, mobile/field, third-party site."
+          },
+          {
+            "key": "business.team_size",
+            "question": "How many people currently perform or coordinate work?",
+            "response_type": "integer",
+            "priority": "P0",
+            "handling": "ask",
+            "target_owner": "Workforce/People",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "StaffManagement and OwnerManagement onboarding",
+            "notes": ""
+          },
+          {
+            "key": "business.branches",
+            "question": "Do you operate from more than one branch, depot, office, or managed region?",
+            "response_type": "boolean",
+            "priority": "P0",
+            "handling": "ask",
+            "target_owner": "Territories/Premises",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "ZoneManagement plus WorkCore regions/districts/branches",
+            "notes": ""
+          },
+          {
+            "key": "business.after_hours",
+            "question": "Do you offer after-hours, emergency, or on-call services?",
+            "response_type": "multi_select",
+            "priority": "P1",
+            "handling": "ask_if_relevant",
+            "target_owner": "Rosters/Scheduling",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": false,
+            "source": "WorkCore roster types; donor availability settings",
+            "notes": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "availability-booking-setup",
+    "version": 2,
+    "title": "Availability and booking",
+    "description": "Operating hours, notice, booking methods and evidence rules",
+    "category": "operations",
+    "status": "published",
+    "modes": [
+      "guided",
+      "conversation",
+      "hybrid"
+    ],
+    "authority_model": "risk_based",
+    "sections": [
+      {
+        "key": "3-availability",
+        "title": "Availability",
+        "approval_mode": "section",
+        "questions": [
+          {
+            "key": "availability.business_hours",
+            "question": "What are your normal operating hours for each day of the week?",
+            "response_type": "weekly_schedule",
+            "priority": "P0",
+            "handling": "ask",
+            "target_owner": "Rosters",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "Provider time_schedule and weekends; WorkCore availability rules",
+            "notes": ""
+          },
+          {
+            "key": "availability.closed_days",
+            "question": "Which days are normally closed?",
+            "response_type": "weekday_multi_select",
+            "priority": "P0",
+            "handling": "ask",
+            "target_owner": "Rosters",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "Provider weekends setting",
+            "notes": ""
+          },
+          {
+            "key": "availability.holidays",
+            "question": "Should public holidays follow normal hours, reduced hours, or remain closed?",
+            "response_type": "choice",
+            "priority": "P1",
+            "handling": "ask",
+            "target_owner": "Rosters/Scheduling",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": false,
+            "source": "WorkCore gap identified from donor schedule limitations",
+            "notes": ""
+          },
+          {
+            "key": "availability.booking_lead_time",
+            "question": "How much notice do you normally require before a customer can book?",
+            "response_type": "duration",
+            "priority": "P0",
+            "handling": "ask",
+            "target_owner": "Scheduling",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "advanced_booking_restriction_value/type",
+            "notes": ""
+          },
+          {
+            "key": "availability.booking_horizon",
+            "question": "How far into the future may customers book?",
+            "response_type": "duration",
+            "priority": "P1",
+            "handling": "ask",
+            "target_owner": "Scheduling",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": false,
+            "source": "Donor advanced booking concept; WorkCore scheduling policy",
+            "notes": ""
+          },
+          {
+            "key": "availability.travel_buffer",
+            "question": "Should WorkCore reserve travel or preparation time between jobs?",
+            "response_type": "duration_or_rule",
+            "priority": "P1",
+            "handling": "ask",
+            "target_owner": "Scheduling/Dispatch",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": false,
+            "source": "WorkCore gap identified from availability integration",
+            "notes": ""
+          }
+        ]
+      },
+      {
+        "key": "6-booking-rules",
+        "title": "Booking rules",
+        "approval_mode": "section",
+        "questions": [
+          {
+            "key": "booking.modes",
+            "question": "Which booking modes should be available?",
+            "response_type": "multi_select",
+            "priority": "P0",
+            "handling": "ask",
+            "target_owner": "Scheduling/Recurring",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "Donor instant, schedule, repeat booking settings",
+            "notes": ""
+          },
+          {
+            "key": "booking.direct_assignment",
+            "question": "May customers choose a specific worker or provider, or should WorkCore assign the best match?",
+            "response_type": "choice",
+            "priority": "P1",
+            "handling": "ask",
+            "target_owner": "Dispatch",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": false,
+            "source": "direct_provider_booking",
+            "notes": ""
+          },
+          {
+            "key": "booking.minimum_value",
+            "question": "Is there a minimum booking value?",
+            "response_type": "money",
+            "priority": "P1",
+            "handling": "ask",
+            "target_owner": "Catalogue/Finance",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": false,
+            "source": "min_booking_amount",
+            "notes": ""
+          },
+          {
+            "key": "booking.maximum_value",
+            "question": "Should online self-booking stop above a certain value and require a quote or approval?",
+            "response_type": "money_or_none",
+            "priority": "P1",
+            "handling": "ask",
+            "target_owner": "Catalogue/Finance/Approvals",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": false,
+            "source": "max_booking_amount",
+            "notes": ""
+          },
+          {
+            "key": "booking.additional_charge",
+            "question": "Do you apply a standard booking, call-out, travel, or administration charge?",
+            "response_type": "compound",
+            "priority": "P1",
+            "handling": "ask",
+            "target_owner": "Catalogue/Finance",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": false,
+            "source": "booking_additional_charge, label and fee",
+            "notes": ""
+          },
+          {
+            "key": "booking.completion_otp",
+            "question": "Should the customer confirm completion with a one-time code?",
+            "response_type": "boolean",
+            "priority": "P1",
+            "handling": "ask",
+            "target_owner": "Operations/Attendance verification",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": false,
+            "source": "booking_otp",
+            "notes": ""
+          },
+          {
+            "key": "booking.photo_evidence",
+            "question": "Is photo evidence required before a job can be completed?",
+            "response_type": "choice",
+            "priority": "P0",
+            "handling": "ask",
+            "target_owner": "Forms/Operations/Compliance",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "service_complete_photo_evidence",
+            "notes": "Allow per-service or per-job override rather than one global switch."
+          },
+          {
+            "key": "booking.bidding",
+            "question": "Do you use bidding or quote competition between providers?",
+            "response_type": "boolean",
+            "priority": "P2",
+            "handling": "ask_if_marketplace",
+            "target_owner": "Operations/Procurement",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": false,
+            "source": "bidding_status and bidding_post_validity",
+            "notes": "",
+            "when": {
+              "field": "business.external_provider_marketplace",
+              "operator": "truthy"
+            }
+          },
+          {
+            "key": "booking.bid_visibility",
+            "question": "Can providers see competing bid amounts?",
+            "response_type": "boolean",
+            "priority": "P2",
+            "handling": "ask_if_relevant",
+            "target_owner": "Operations/Procurement",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": false,
+            "source": "bid_offers_visibility_for_providers",
+            "notes": "",
+            "when": {
+              "field": "booking.bidding",
+              "operator": "truthy"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "territory-setup",
+    "version": 2,
+    "title": "Service territories",
+    "description": "Postcodes, suburbs, radii, polygons and branch ownership",
+    "category": "territories",
+    "status": "published",
+    "modes": [
+      "guided",
+      "conversation",
+      "hybrid"
+    ],
+    "authority_model": "risk_based",
+    "sections": [
+      {
+        "key": "4-service-areas",
+        "title": "Service areas",
+        "approval_mode": "section",
+        "questions": [
+          {
+            "key": "territory.method",
+            "question": "How would you like to define where you work?",
+            "response_type": "choice",
+            "priority": "P0",
+            "handling": "ask",
+            "target_owner": "Territories",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "ZoneManagement coordinates; WorkCore territory_type",
+            "notes": "Postcodes, suburbs, radius, map polygon, or a mixture."
+          },
+          {
+            "key": "territory.postcodes",
+            "question": "Which postcodes do you service?",
+            "response_type": "repeatable_text",
+            "priority": "P0-conditional",
+            "handling": "ask",
+            "target_owner": "Territories",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "WorkCore postcode_patterns",
+            "notes": "",
+            "when": {
+              "field": "territory.method",
+              "operator": "includes",
+              "value": "postcode"
+            }
+          },
+          {
+            "key": "territory.suburbs",
+            "question": "Which suburbs or localities do you service?",
+            "response_type": "repeatable_text",
+            "priority": "P0-conditional",
+            "handling": "ask",
+            "target_owner": "Territories",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "WorkCore suburbs",
+            "notes": "",
+            "when": {
+              "field": "territory.method",
+              "operator": "includes",
+              "value": "suburb"
+            }
+          },
+          {
+            "key": "territory.radius",
+            "question": "What location should the radius start from, and how many kilometres should it cover?",
+            "response_type": "map_radius",
+            "priority": "P0-conditional",
+            "handling": "ask",
+            "target_owner": "Territories",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "WorkCore centre_latitude, centre_longitude, radius_km",
+            "notes": "",
+            "when": {
+              "field": "territory.method",
+              "operator": "includes",
+              "value": "radius"
+            }
+          },
+          {
+            "key": "territory.polygon",
+            "question": "Draw or describe the service boundary on the map.",
+            "response_type": "map_polygon",
+            "priority": "P0-conditional",
+            "handling": "guided_ui",
+            "target_owner": "Territories",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "ZoneManagement coordinates; WorkCore polygon_geojson",
+            "notes": "",
+            "when": {
+              "field": "territory.method",
+              "operator": "includes",
+              "value": "polygon"
+            }
+          },
+          {
+            "key": "territory.priority",
+            "question": "If service areas overlap, which area should take priority?",
+            "response_type": "ordered_list",
+            "priority": "P1",
+            "handling": "ask_if_overlap",
+            "target_owner": "Territories",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": false,
+            "source": "WorkCore territory priority",
+            "notes": "",
+            "when": {
+              "field": "territory.overlap_detected",
+              "operator": "truthy"
+            }
+          },
+          {
+            "key": "territory.branch_assignment",
+            "question": "Which branch or team owns each service area?",
+            "response_type": "mapping",
+            "priority": "P1",
+            "handling": "ask_if_relevant",
+            "target_owner": "Territories",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": false,
+            "source": "WorkCore branch and territory assignment",
+            "notes": "",
+            "when": {
+              "field": "business.multiple_branches",
+              "operator": "truthy"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "service-catalogue-setup",
+    "version": 2,
+    "title": "Services and pricing",
+    "description": "Services, variants, inclusions, pricing, FAQs and tags",
+    "category": "catalogue",
+    "status": "published",
+    "modes": [
+      "guided",
+      "conversation",
+      "hybrid"
+    ],
+    "authority_model": "risk_based",
+    "sections": [
+      {
+        "key": "5-services",
+        "title": "Services",
+        "approval_mode": "section",
+        "questions": [
+          {
+            "key": "catalogue.category",
+            "question": "What broad service categories do you offer?",
+            "response_type": "repeatable_text",
+            "priority": "P0",
+            "handling": "ai_suggest_then_confirm",
+            "target_owner": "Catalogue",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "CategoryManagement category names and hierarchy; WorkCore categories",
+            "notes": ""
+          },
+          {
+            "key": "catalogue.service_name",
+            "question": "What is the first service you want customers or staff to book?",
+            "response_type": "text",
+            "priority": "P0",
+            "handling": "ask",
+            "target_owner": "Catalogue",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "ServiceManagement service name; WorkCore service name",
+            "notes": ""
+          },
+          {
+            "key": "catalogue.service_description",
+            "question": "Briefly describe what is included and excluded.",
+            "response_type": "long_text",
+            "priority": "P0",
+            "handling": "ai_draft_then_confirm",
+            "target_owner": "Catalogue",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "ServiceManagement short_description and description",
+            "notes": ""
+          },
+          {
+            "key": "catalogue.service_duration",
+            "question": "How long does this service normally take?",
+            "response_type": "duration",
+            "priority": "P0",
+            "handling": "ask",
+            "target_owner": "Catalogue/Scheduling",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "WorkCore default_duration_minutes",
+            "notes": ""
+          },
+          {
+            "key": "catalogue.pricing_model",
+            "question": "How is this service priced?",
+            "response_type": "choice",
+            "priority": "P0",
+            "handling": "ask",
+            "target_owner": "Catalogue",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "WorkCore fixed/hourly/unit/quote pricing models",
+            "notes": ""
+          },
+          {
+            "key": "catalogue.base_price",
+            "question": "What is the standard starting price or rate?",
+            "response_type": "money",
+            "priority": "P0-conditional",
+            "handling": "ask",
+            "target_owner": "Catalogue/Finance",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "ServiceManagement variant_price/tax; WorkCore base_price",
+            "notes": "",
+            "when": {
+              "field": "service.pricing_model",
+              "operator": "not_equals",
+              "value": "quote"
+            }
+          },
+          {
+            "key": "catalogue.tax_code",
+            "question": "Is tax included, added separately, exempt, or determined later?",
+            "response_type": "choice",
+            "priority": "P0",
+            "handling": "infer_then_confirm",
+            "target_owner": "Catalogue/Finance",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "ServiceManagement tax; WorkCore tax_code; company GST setting",
+            "notes": ""
+          },
+          {
+            "key": "catalogue.variants",
+            "question": "Does this service have sizes, packages, levels, or options with different time or price?",
+            "response_type": "repeatable_collection",
+            "priority": "P1",
+            "handling": "ask",
+            "target_owner": "Catalogue",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": false,
+            "source": "ServiceManagement variation; WorkCore service variants",
+            "notes": ""
+          },
+          {
+            "key": "catalogue.area_pricing",
+            "question": "Do prices change by service area, travel distance, branch, or location type?",
+            "response_type": "repeatable_collection",
+            "priority": "P1",
+            "handling": "ask_if_relevant",
+            "target_owner": "Catalogue/Territories",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": false,
+            "source": "WorkCore service area prices",
+            "notes": ""
+          },
+          {
+            "key": "catalogue.tags",
+            "question": "Which search terms or tags should help staff and customers find this service?",
+            "response_type": "tags",
+            "priority": "P2",
+            "handling": "ai_suggest_then_confirm",
+            "target_owner": "Catalogue",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": false,
+            "source": "ServiceManagement tags; WorkCore tags",
+            "notes": ""
+          },
+          {
+            "key": "catalogue.faqs",
+            "question": "What questions do customers commonly ask about this service?",
+            "response_type": "repeatable_qa",
+            "priority": "P2",
+            "handling": "ai_draft_then_confirm",
+            "target_owner": "Catalogue/Knowledge",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": false,
+            "source": "ServiceManagement FAQ; WorkCore service FAQs",
+            "notes": ""
+          },
+          {
+            "key": "catalogue.job_template",
+            "question": "What tasks should normally be completed for this service?",
+            "response_type": "checklist_builder",
+            "priority": "P1",
+            "handling": "ai_draft_then_confirm",
+            "target_owner": "Catalogue/Forms/Operations",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": false,
+            "source": "WorkCore job template and tasks",
+            "notes": ""
+          },
+          {
+            "key": "catalogue.images",
+            "question": "Would you like to add service images now?",
+            "response_type": "file_collection",
+            "priority": "P2",
+            "handling": "offer",
+            "target_owner": "Catalogue media",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": false,
+            "source": "ServiceManagement cover_image and thumbnail",
+            "notes": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "payments-finance-setup",
+    "version": 2,
+    "title": "Payments and finance",
+    "description": "Payment methods, deposits, invoice terms and secure connections",
+    "category": "finance",
+    "status": "published",
+    "modes": [
+      "guided",
+      "conversation",
+      "hybrid"
+    ],
+    "authority_model": "risk_based",
+    "sections": [
+      {
+        "key": "7-payments",
+        "title": "Payments",
+        "approval_mode": "section",
+        "questions": [
+          {
+            "key": "payments.methods",
+            "question": "Which payment methods will you accept at launch?",
+            "response_type": "multi_select",
+            "priority": "P0",
+            "handling": "ask",
+            "target_owner": "Finance/Host payment registry",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": true,
+            "source": "cash_after_service, digital_payment, offline_payment",
+            "notes": ""
+          },
+          {
+            "key": "payments.partial",
+            "question": "May customers combine wallet/balance with another payment method?",
+            "response_type": "boolean",
+            "priority": "P1",
+            "handling": "ask_if_relevant",
+            "target_owner": "Finance",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": false,
+            "source": "partial_payment",
+            "notes": ""
+          },
+          {
+            "key": "payments.partial_methods",
+            "question": "Which methods may complete the unpaid portion?",
+            "response_type": "multi_select",
+            "priority": "P1",
+            "handling": "ask_if_relevant",
+            "target_owner": "Finance",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": false,
+            "source": "partial_payment_combinator",
+            "notes": "",
+            "when": {
+              "field": "payments.partial",
+              "operator": "truthy"
+            }
+          },
+          {
+            "key": "payments.invoice_terms",
+            "question": "When is payment due: immediately, on completion, or a set number of days after invoice?",
+            "response_type": "choice_or_days",
+            "priority": "P0",
+            "handling": "ask",
+            "target_owner": "Finance",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": true,
+            "source": "WorkCore gap; donor only payment-channel switches",
+            "notes": ""
+          },
+          {
+            "key": "payments.deposit",
+            "question": "Do any services require a deposit, pre-authorisation, or upfront payment?",
+            "response_type": "rule_builder",
+            "priority": "P1",
+            "handling": "ask",
+            "target_owner": "Finance/Catalogue",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": false,
+            "source": "WorkCore gap identified during donor mapping",
+            "notes": ""
+          },
+          {
+            "key": "payments.bank_details",
+            "question": "Would you like to configure bank-transfer or payout details now?",
+            "response_type": "secure_form",
+            "priority": "P1",
+            "handling": "secure_task",
+            "target_owner": "Finance/Vault",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": false,
+            "source": "OwnerManagement bank_name, branch_name, acc_no, holder, routing number",
+            "notes": "Never collect full banking credentials through free-form AI chat."
+          },
+          {
+            "key": "payments.gateway_connection",
+            "question": "Connect a card or digital-payment provider now?",
+            "response_type": "connection_task",
+            "priority": "P1",
+            "handling": "secure_task",
+            "target_owner": "Host payment registry/Vault",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": false,
+            "source": "BusinessSettings payment gateway screens",
+            "notes": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "workforce-setup",
+    "version": 2,
+    "title": "Workforce setup",
+    "description": "Workers, contractors, roles, skills, rates, compliance and access",
+    "category": "workforce",
+    "status": "published",
+    "modes": [
+      "guided",
+      "conversation",
+      "hybrid"
+    ],
+    "authority_model": "risk_based",
+    "sections": [
+      {
+        "key": "8-workforce",
+        "title": "Workforce",
+        "approval_mode": "section",
+        "questions": [
+          {
+            "key": "workforce.owner_role",
+            "question": "What role do you perform in the business?",
+            "response_type": "choice",
+            "priority": "P0",
+            "handling": "ask",
+            "target_owner": "People/Workforce",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "Owner/contact-person concepts",
+            "notes": ""
+          },
+          {
+            "key": "workforce.add_now",
+            "question": "Would you like to add workers or contractors now, import them, or do this later?",
+            "response_type": "choice",
+            "priority": "P0",
+            "handling": "ask",
+            "target_owner": "Workforce",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "StaffManagement serviceman create",
+            "notes": ""
+          },
+          {
+            "key": "worker.profile",
+            "question": "For each worker, what are their name, worker type, job title, phone, email, and timezone?",
+            "response_type": "repeatable_collection",
+            "priority": "P1",
+            "handling": "ask_if_add_now",
+            "target_owner": "Workforce",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": false,
+            "source": "StaffManagement fields; WorkCore StoreWorkerRequest",
+            "notes": "",
+            "when": {
+              "field": "workforce.add_now",
+              "operator": "not_equals",
+              "value": "later"
+            }
+          },
+          {
+            "key": "worker.rates",
+            "question": "Should WorkCore track this worker’s internal hourly cost and customer charge rate?",
+            "response_type": "money_pair",
+            "priority": "P1",
+            "handling": "ask_if_relevant",
+            "target_owner": "Workforce/Finance",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": false,
+            "source": "WorkCore hourly_cost and hourly_charge_rate",
+            "notes": ""
+          },
+          {
+            "key": "worker.skills",
+            "question": "Which services, skills, equipment, or property types can each worker handle?",
+            "response_type": "skill_matrix",
+            "priority": "P1",
+            "handling": "ask_if_add_now",
+            "target_owner": "Workforce/Catalogue",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": false,
+            "source": "WorkCore skills and service areas",
+            "notes": "",
+            "when": {
+              "field": "workforce.add_now",
+              "operator": "not_equals",
+              "value": "later"
+            }
+          },
+          {
+            "key": "worker.certifications",
+            "question": "Do any workers need licences, checks, or certifications before assignment?",
+            "response_type": "repeatable_credentials",
+            "priority": "P1",
+            "handling": "ask_if_relevant",
+            "target_owner": "Workforce/Compliance/Vault",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": false,
+            "source": "Donor identity fields; WorkCore certifications",
+            "notes": ""
+          },
+          {
+            "key": "worker.availability",
+            "question": "What recurring days and times is each worker normally available?",
+            "response_type": "weekly_schedule",
+            "priority": "P1",
+            "handling": "ask_if_add_now",
+            "target_owner": "Rosters",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": false,
+            "source": "Donor provider schedule; WorkCore availability rules",
+            "notes": "",
+            "when": {
+              "field": "workforce.add_now",
+              "operator": "not_equals",
+              "value": "later"
+            }
+          },
+          {
+            "key": "worker.permissions",
+            "question": "May workers edit or cancel assigned bookings?",
+            "response_type": "policy",
+            "priority": "P1",
+            "handling": "ask",
+            "target_owner": "Authorization/Operations",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": false,
+            "source": "serviceman_can_edit_booking and cancel_booking",
+            "notes": ""
+          },
+          {
+            "key": "provider.policies",
+            "question": "May external providers self-register, edit/cancel bookings, reply to reviews, or delete their own account?",
+            "response_type": "policy_group",
+            "priority": "P2",
+            "handling": "ask_if_marketplace",
+            "target_owner": "Authorization/CRM/Operations",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": false,
+            "source": "provider policy settings",
+            "notes": "",
+            "when": {
+              "field": "business.external_providers",
+              "operator": "truthy"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "customer-experience-setup",
+    "version": 2,
+    "title": "Customer experience",
+    "description": "Guest requests, portals, privacy, reviews and retention features",
+    "category": "crm",
+    "status": "published",
+    "modes": [
+      "guided",
+      "conversation",
+      "hybrid"
+    ],
+    "authority_model": "risk_based",
+    "sections": [
+      {
+        "key": "9-customer-experience",
+        "title": "Customer experience",
+        "approval_mode": "section",
+        "questions": [
+          {
+            "key": "customer.guest_checkout",
+            "question": "May customers request or book work without creating an account?",
+            "response_type": "boolean",
+            "priority": "P0",
+            "handling": "ask",
+            "target_owner": "CRM/Portal",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "guest_checkout",
+            "notes": ""
+          },
+          {
+            "key": "customer.create_account",
+            "question": "When a guest provides enough information, should WorkCore offer to create an account?",
+            "response_type": "boolean",
+            "priority": "P1",
+            "handling": "ask_if_relevant",
+            "target_owner": "CRM/Portal",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": false,
+            "source": "create_user_account_from_guest_info",
+            "notes": "",
+            "when": {
+              "field": "customer.guest_checkout",
+              "operator": "truthy"
+            }
+          },
+          {
+            "key": "customer.phone_privacy",
+            "question": "Should customer and worker phone numbers be hidden or proxied during chat and calls?",
+            "response_type": "choice",
+            "priority": "P0",
+            "handling": "ask",
+            "target_owner": "CRM/Communications/Privacy",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": true,
+            "source": "phone_number_visibility_for_chatting",
+            "notes": ""
+          },
+          {
+            "key": "customer.wallet",
+            "question": "Do you want customers to hold account credit, refunds, or prepaid balances?",
+            "response_type": "boolean",
+            "priority": "P2",
+            "handling": "defer_by_default",
+            "target_owner": "Finance",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": false,
+            "source": "customer_wallet and add_to_fund_wallet",
+            "notes": ""
+          },
+          {
+            "key": "customer.loyalty",
+            "question": "Do you want a loyalty-points program?",
+            "response_type": "boolean",
+            "priority": "P2",
+            "handling": "defer_by_default",
+            "target_owner": "CRM/Finance",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": false,
+            "source": "customer_loyalty_point and conversion rules",
+            "notes": ""
+          },
+          {
+            "key": "customer.referrals",
+            "question": "Do you want customer referral rewards or new-customer referral discounts?",
+            "response_type": "rule_builder",
+            "priority": "P2",
+            "handling": "defer_by_default",
+            "target_owner": "CRM/Marketing/Finance",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": false,
+            "source": "referral settings",
+            "notes": ""
+          },
+          {
+            "key": "customer.reviews",
+            "question": "Should workers/providers be allowed to reply to customer reviews?",
+            "response_type": "boolean",
+            "priority": "P1",
+            "handling": "ask",
+            "target_owner": "Reviews/Authorization",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": false,
+            "source": "provider_can_reply_review",
+            "notes": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "portal-security-setup",
+    "version": 2,
+    "title": "Portal and security",
+    "description": "Identity methods, verification, lockouts and bot protection",
+    "category": "security",
+    "status": "published",
+    "modes": [
+      "guided",
+      "conversation",
+      "hybrid"
+    ],
+    "authority_model": "risk_based",
+    "sections": [
+      {
+        "key": "10-access-and-security",
+        "title": "Access and security",
+        "approval_mode": "section",
+        "questions": [
+          {
+            "key": "login.methods",
+            "question": "How should customers sign in?",
+            "response_type": "multi_select",
+            "priority": "P1",
+            "handling": "ask_if_portal",
+            "target_owner": "Host identity",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": false,
+            "source": "manual_login, otp_login, social_media_login",
+            "notes": "",
+            "when": {
+              "field": "customer.portal_enabled",
+              "operator": "truthy"
+            }
+          },
+          {
+            "key": "login.social_providers",
+            "question": "Which social sign-in providers should be available?",
+            "response_type": "multi_select",
+            "priority": "P2",
+            "handling": "ask_if_relevant",
+            "target_owner": "Host identity",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": false,
+            "source": "Google, Facebook, Apple login settings",
+            "notes": "",
+            "when": {
+              "field": "security.login_methods",
+              "operator": "includes",
+              "value": "social"
+            }
+          },
+          {
+            "key": "login.verification",
+            "question": "Should new accounts verify email, phone, both, or neither?",
+            "response_type": "choice",
+            "priority": "P1",
+            "handling": "ask_if_portal",
+            "target_owner": "Host identity",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": false,
+            "source": "email_verification and phone_verification",
+            "notes": "",
+            "when": {
+              "field": "customer.portal_enabled",
+              "operator": "truthy"
+            }
+          },
+          {
+            "key": "login.otp_policy",
+            "question": "How many incorrect OTP attempts are allowed, how long before resend, and how long should temporary blocking last?",
+            "response_type": "compound_numeric",
+            "priority": "P2",
+            "handling": "use_secure_default_then_confirm",
+            "target_owner": "Host identity/security",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": false,
+            "source": "maximum_otp_hit, otp_resend_time, temporary_otp_block_time",
+            "notes": "",
+            "when": {
+              "any": [
+                {
+                  "field": "security.login_methods",
+                  "operator": "includes",
+                  "value": "otp"
+                },
+                {
+                  "field": "security.phone_verification",
+                  "operator": "truthy"
+                }
+              ]
+            }
+          },
+          {
+            "key": "login.password_lockout",
+            "question": "How many failed password attempts are allowed, and how long should login be blocked?",
+            "response_type": "compound_numeric",
+            "priority": "P2",
+            "handling": "use_secure_default_then_confirm",
+            "target_owner": "Host identity/security",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": false,
+            "source": "maximum_login_hit and temporary_login_block_time",
+            "notes": "",
+            "when": {
+              "field": "security.login_methods",
+              "operator": "includes",
+              "value": "password"
+            }
+          },
+          {
+            "key": "security.captcha",
+            "question": "Should public registration and login forms use bot protection?",
+            "response_type": "boolean",
+            "priority": "P2",
+            "handling": "recommend_then_confirm",
+            "target_owner": "Host security",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": false,
+            "source": "reCAPTCHA settings",
+            "notes": "",
+            "when": {
+              "field": "customer.portal_enabled",
+              "operator": "truthy"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "communications-setup",
+    "version": 2,
+    "title": "Communications",
+    "description": "Notification recipients, channels, quiet hours and message tone",
+    "category": "notifications",
+    "status": "published",
+    "modes": [
+      "guided",
+      "conversation",
+      "hybrid"
+    ],
+    "authority_model": "risk_based",
+    "sections": [
+      {
+        "key": "11-communications",
+        "title": "Communications",
+        "approval_mode": "section",
+        "questions": [
+          {
+            "key": "notification.booking_alerts",
+            "question": "Who should be alerted when a new booking or request arrives?",
+            "response_type": "role_channel_matrix",
+            "priority": "P0",
+            "handling": "ask",
+            "target_owner": "Notifications",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "booking_notification and notification channel setup",
+            "notes": ""
+          },
+          {
+            "key": "notification.channels",
+            "question": "Which channels may WorkCore use for customers, workers, managers, and providers?",
+            "response_type": "role_channel_matrix",
+            "priority": "P1",
+            "handling": "ask",
+            "target_owner": "Notifications",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": false,
+            "source": "email, SMS and push channel settings",
+            "notes": ""
+          },
+          {
+            "key": "notification.quiet_hours",
+            "question": "Are there times when non-urgent notifications should be held?",
+            "response_type": "weekly_schedule",
+            "priority": "P1",
+            "handling": "ask",
+            "target_owner": "Notifications",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": false,
+            "source": "WorkCore gap identified during donor mapping",
+            "notes": ""
+          },
+          {
+            "key": "notification.templates",
+            "question": "Should Titan draft customer and workforce message templates from your preferred tone?",
+            "response_type": "choice",
+            "priority": "P1",
+            "handling": "ai_draft_then_confirm",
+            "target_owner": "Notifications/AI",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": false,
+            "source": "Donor notification messages",
+            "notes": ""
+          },
+          {
+            "key": "email.connect",
+            "question": "Connect an outbound email service now?",
+            "response_type": "connection_task",
+            "priority": "P1",
+            "handling": "secure_task",
+            "target_owner": "Host integrations/Vault",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": false,
+            "source": "mailer_name, host, driver, port, username, email, encryption, password",
+            "notes": ""
+          },
+          {
+            "key": "sms.connect",
+            "question": "Connect an SMS provider now?",
+            "response_type": "connection_task",
+            "priority": "P1",
+            "handling": "secure_task",
+            "target_owner": "Host integrations/Vault",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": false,
+            "source": "SMS gateway config",
+            "notes": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "ai-manager-setup",
+    "version": 2,
+    "title": "Titan Zero AI manager",
+    "description": "AI authority, models, memory, knowledge, tools and approvals",
+    "category": "ai",
+    "status": "published",
+    "modes": [
+      "guided",
+      "conversation",
+      "hybrid"
+    ],
+    "authority_model": "risk_based",
+    "sections": [
+      {
+        "key": "12-ai-assistance",
+        "title": "AI assistance",
+        "approval_mode": "section",
+        "questions": [
+          {
+            "key": "ai.enable",
+            "question": "Would you like Titan Zero to assist with setup and daily operations?",
+            "response_type": "boolean",
+            "priority": "P0",
+            "handling": "ask",
+            "target_owner": "AI orchestration",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "Donor AI status setting plus wizard design",
+            "notes": ""
+          },
+          {
+            "key": "ai.authority",
+            "question": "Use risk-based authority: may Titan save drafts and perform low-risk setup automatically, while requesting approval for live, financial, external, permission, and destructive actions?",
+            "response_type": "policy_acknowledgement",
+            "priority": "P0",
+            "handling": "default_confirm",
+            "target_owner": "Wizard authority policy",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": true,
+            "source": "User selected model B",
+            "notes": ""
+          },
+          {
+            "key": "ai.setup_style",
+            "question": "Would you prefer Titan to ask one question at a time, show grouped forms, or switch between both?",
+            "response_type": "choice",
+            "priority": "P0",
+            "handling": "ask",
+            "target_owner": "Wizard runtime",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "Hybrid conversational/form wizard design",
+            "notes": ""
+          },
+          {
+            "key": "ai.knowledge_sources",
+            "question": "Which existing documents, website pages, service lists, or policies may Titan use to prepare drafts?",
+            "response_type": "multi_source_picker",
+            "priority": "P1",
+            "handling": "ask",
+            "target_owner": "KnowledgeBase/AI",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": false,
+            "source": "Wizard knowledge concepts",
+            "notes": ""
+          },
+          {
+            "key": "ai.api_connection",
+            "question": "Will you use Titan-provided AI or connect your own model provider?",
+            "response_type": "choice",
+            "priority": "P1",
+            "handling": "ask",
+            "target_owner": "Host AI registry/Vault",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": false,
+            "source": "Donor OpenAI API key and organisation fields",
+            "notes": ""
+          },
+          {
+            "key": "ai.credentials",
+            "question": "Connect your AI provider credentials.",
+            "response_type": "secret_connection",
+            "priority": "P1-conditional",
+            "handling": "secure_task",
+            "target_owner": "Host AI registry/Vault",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": false,
+            "source": "Donor api_key and organization_id",
+            "notes": "Credentials must never be spoken back or stored as wizard answers.",
+            "when": {
+              "field": "ai.provider_mode",
+              "operator": "equals",
+              "value": "byo"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "integrations-setup",
+    "version": 2,
+    "title": "Connections and integrations",
+    "description": "Maps, storage, payments, notifications and app connections",
+    "category": "integrations",
+    "status": "published",
+    "modes": [
+      "guided",
+      "conversation",
+      "hybrid"
+    ],
+    "authority_model": "risk_based",
+    "sections": [
+      {
+        "key": "13-optional-integrations",
+        "title": "Optional integrations",
+        "approval_mode": "section",
+        "questions": [
+          {
+            "key": "maps.connect",
+            "question": "Do you need address lookup, route planning, maps, or polygon drawing?",
+            "response_type": "boolean",
+            "priority": "P1",
+            "handling": "infer_from_features",
+            "target_owner": "Host map registry",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": false,
+            "source": "map server/client API key settings",
+            "notes": ""
+          },
+          {
+            "key": "maps.credentials",
+            "question": "Connect the selected map provider.",
+            "response_type": "secret_connection",
+            "priority": "P1-conditional",
+            "handling": "secure_task",
+            "target_owner": "Host map registry/Vault",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": false,
+            "source": "map_api_key_server and map_api_key_client",
+            "notes": "",
+            "when": {
+              "all": [
+                {
+                  "field": "integrations.maps_needed",
+                  "operator": "truthy"
+                },
+                {
+                  "field": "integrations.host_maps",
+                  "operator": "falsy"
+                }
+              ]
+            }
+          },
+          {
+            "key": "storage.mode",
+            "question": "Should files remain in platform-managed storage, company cloud storage, or device-first storage?",
+            "response_type": "choice",
+            "priority": "P1",
+            "handling": "ask",
+            "target_owner": "Titan Vault/Host storage",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": false,
+            "source": "storage_connection_type and S3 settings",
+            "notes": ""
+          },
+          {
+            "key": "storage.credentials",
+            "question": "Connect the selected storage provider.",
+            "response_type": "secret_connection",
+            "priority": "P1-conditional",
+            "handling": "secure_task",
+            "target_owner": "Titan Vault/Host storage",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": false,
+            "source": "S3 key, secret, region, bucket, URL, endpoint",
+            "notes": "",
+            "when": {
+              "field": "integrations.storage_mode",
+              "operator": "equals",
+              "value": "company_cloud"
+            }
+          },
+          {
+            "key": "push.connect",
+            "question": "Do you want mobile push notifications?",
+            "response_type": "boolean",
+            "priority": "P2",
+            "handling": "ask_if_app",
+            "target_owner": "Host notifications",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": false,
+            "source": "Firebase configuration",
+            "notes": "",
+            "when": {
+              "field": "features.mobile_app",
+              "operator": "truthy"
+            }
+          },
+          {
+            "key": "app.release_settings",
+            "question": "Configure app download links and minimum supported Android/iOS versions?",
+            "response_type": "compound",
+            "priority": "P2",
+            "handling": "admin_only",
+            "target_owner": "Host app settings",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": false,
+            "source": "app settings views",
+            "notes": "",
+            "when": {
+              "field": "features.branded_native_app",
+              "operator": "truthy"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "brand-public-presence-setup",
+    "version": 2,
+    "title": "Brand and public presence",
+    "description": "Brand assets, website, legal links, social profiles and SEO",
+    "category": "brand",
+    "status": "published",
+    "modes": [
+      "guided",
+      "conversation",
+      "hybrid"
+    ],
+    "authority_model": "risk_based",
+    "sections": [
+      {
+        "key": "14-brand-and-public-presence",
+        "title": "Brand and public presence",
+        "approval_mode": "section",
+        "questions": [
+          {
+            "key": "brand.social_links",
+            "question": "Which social profiles should appear on customer-facing pages?",
+            "response_type": "repeatable_url",
+            "priority": "P2",
+            "handling": "defer_by_default",
+            "target_owner": "Host branding/Marketing",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": false,
+            "source": "social-media settings",
+            "notes": ""
+          },
+          {
+            "key": "brand.footer",
+            "question": "Would you like Titan to draft footer and cookie text for review?",
+            "response_type": "long_text_pair",
+            "priority": "P2",
+            "handling": "ai_draft_then_confirm",
+            "target_owner": "Host branding/Legal",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": false,
+            "source": "footer_text and cookies_text",
+            "notes": "Cookie/legal wording requires jurisdiction-appropriate review."
+          },
+          {
+            "key": "brand.public_site",
+            "question": "Do you want a public website or landing page configured now?",
+            "response_type": "boolean",
+            "priority": "P2",
+            "handling": "defer_by_default",
+            "target_owner": "Marketing extension",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": false,
+            "source": "Donor landing-page settings",
+            "notes": ""
+          },
+          {
+            "key": "brand.seo",
+            "question": "Would you like Titan to draft page titles, descriptions, social previews, and structured metadata?",
+            "response_type": "choice",
+            "priority": "P2",
+            "handling": "ai_draft_then_confirm",
+            "target_owner": "Marketing/SEO",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": false,
+            "source": "Donor SEO settings",
+            "notes": "",
+            "when": {
+              "field": "features.public_website",
+              "operator": "truthy"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "compliance-setup",
+    "version": 2,
+    "title": "Compliance and evidence",
+    "description": "Licences, insurance, worker checks, forms and retention",
+    "category": "compliance",
+    "status": "published",
+    "modes": [
+      "guided",
+      "conversation",
+      "hybrid"
+    ],
+    "authority_model": "risk_based",
+    "sections": [
+      {
+        "key": "15-compliance",
+        "title": "Compliance",
+        "approval_mode": "section",
+        "questions": [
+          {
+            "key": "compliance.company_credentials",
+            "question": "Which licences, registrations, insurance policies, checks, or memberships must the business maintain?",
+            "response_type": "repeatable_credentials",
+            "priority": "P1",
+            "handling": "ask",
+            "target_owner": "Compliance/Titan Vault",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": false,
+            "source": "Donor identity type/number/images; WorkCore compliance modules",
+            "notes": ""
+          },
+          {
+            "key": "compliance.worker_requirements",
+            "question": "Which credentials are mandatory before a worker can be assigned specific work?",
+            "response_type": "rule_builder",
+            "priority": "P1",
+            "handling": "ask",
+            "target_owner": "Compliance/Workforce",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": false,
+            "source": "Donor worker identification; WorkCore certification rules",
+            "notes": ""
+          },
+          {
+            "key": "compliance.evidence",
+            "question": "Which services require photos, signatures, checklists, certificates, readings, or customer sign-off?",
+            "response_type": "service_rule_matrix",
+            "priority": "P0",
+            "handling": "ask",
+            "target_owner": "Forms/Compliance/Operations",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": true,
+            "source": "Donor photo evidence plus WorkCore forms/compliance",
+            "notes": ""
+          },
+          {
+            "key": "privacy.retention",
+            "question": "How long should operational evidence, recordings, and AI-assisted wizard data be retained?",
+            "response_type": "retention_policy",
+            "priority": "P1",
+            "handling": "recommend_then_confirm",
+            "target_owner": "Compliance/Titan Vault/AI",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": false,
+            "source": "Wizard memory/recording concepts; donor lacks robust retention",
+            "notes": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "activation-readiness",
+    "version": 2,
+    "title": "Activation readiness",
+    "description": "Review, approvals, readiness checks and go-live",
+    "category": "activation",
+    "status": "published",
+    "modes": [
+      "guided",
+      "conversation",
+      "hybrid"
+    ],
+    "authority_model": "risk_based",
+    "sections": [
+      {
+        "key": "16-activation",
+        "title": "Activation",
+        "approval_mode": "section",
+        "questions": [
+          {
+            "key": "review.assumptions",
+            "question": "Review the information Titan inferred or drafted. Which assumptions need correction?",
+            "response_type": "review_diff",
+            "priority": "P0",
+            "handling": "required_review",
+            "target_owner": "Wizard runtime",
+            "risk": "medium",
+            "approval_gate": "section",
+            "required": true,
+            "source": "Risk-based authority model B",
+            "notes": ""
+          },
+          {
+            "key": "review.actions",
+            "question": "Approve the grouped actions that will create draft company settings, services, territories, workforce records, and policies.",
+            "response_type": "approval_bundle",
+            "priority": "P0",
+            "handling": "required_review",
+            "target_owner": "Business actions",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": true,
+            "source": "Risk-based authority model B",
+            "notes": ""
+          },
+          {
+            "key": "activation.go_live",
+            "question": "Activate the approved configuration now, keep it as a draft, or schedule activation?",
+            "response_type": "choice",
+            "priority": "P0",
+            "handling": "ask",
+            "target_owner": "Company lifecycle",
+            "risk": "high",
+            "approval_gate": "high",
+            "required": true,
+            "source": "WorkCore company lifecycle and wizard approval model",
+            "notes": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "ai-agent-setup",
+    "version": 2,
+    "title": "Specialist AI agent",
+    "description": "Create a governed specialist agent using WorkCore tools and risk controls",
+    "category": "ai",
+    "status": "published",
+    "modes": [
+      "guided",
+      "conversation",
+      "hybrid"
+    ],
+    "authority_model": "risk_based",
+    "sections": [
+      {
+        "key": "agent-design",
+        "title": "Agent design and authority",
+        "approval_mode": "section",
+        "questions": [
+          {
+            "key": "agent.name",
+            "question": "What should this specialist AI agent be called?",
+            "response_type": "text",
+            "required": true,
+            "risk": "low",
+            "handling": "ask",
+            "approval_gate": "section",
+            "target_owner": "AI Agent/WorkCore tools"
+          },
+          {
+            "key": "agent.purpose",
+            "question": "What outcome is this agent responsible for?",
+            "response_type": "textarea",
+            "required": true,
+            "risk": "medium",
+            "handling": "ask",
+            "approval_gate": "section",
+            "target_owner": "AI Agent/WorkCore tools"
+          },
+          {
+            "key": "agent.template",
+            "question": "Which approved agent template should it start from?",
+            "response_type": "registry_select",
+            "required": true,
+            "risk": "medium",
+            "handling": "ask",
+            "approval_gate": "section",
+            "target_owner": "AI Agent/WorkCore tools"
+          },
+          {
+            "key": "agent.triggers",
+            "question": "What may start the agent: manual, schedule, event, webhook, or another agent?",
+            "response_type": "multi_select",
+            "required": true,
+            "risk": "high",
+            "handling": "ask",
+            "approval_gate": "high",
+            "target_owner": "AI Agent/WorkCore tools"
+          },
+          {
+            "key": "agent.tools",
+            "question": "Which WorkCore tools may the agent use?",
+            "response_type": "capability_select",
+            "required": true,
+            "risk": "high",
+            "handling": "ask",
+            "approval_gate": "high",
+            "target_owner": "AI Agent/WorkCore tools"
+          },
+          {
+            "key": "agent.channels",
+            "question": "Which communication channels may it use?",
+            "response_type": "multi_select",
+            "required": false,
+            "risk": "high",
+            "handling": "ask",
+            "approval_gate": "high",
+            "target_owner": "AI Agent/WorkCore tools"
+          },
+          {
+            "key": "agent.workflow",
+            "question": "Describe the workflow steps and decision points.",
+            "response_type": "workflow_builder",
+            "required": true,
+            "risk": "high",
+            "handling": "ask",
+            "approval_gate": "high",
+            "target_owner": "AI Agent/WorkCore tools"
+          },
+          {
+            "key": "agent.max_iterations",
+            "question": "What maximum number of autonomous iterations is allowed?",
+            "response_type": "integer",
+            "required": true,
+            "risk": "medium",
+            "handling": "ask",
+            "approval_gate": "section",
+            "target_owner": "AI Agent/WorkCore tools"
+          },
+          {
+            "key": "agent.timeout_seconds",
+            "question": "How long may one run continue before stopping?",
+            "response_type": "duration",
+            "required": true,
+            "risk": "medium",
+            "handling": "ask",
+            "approval_gate": "section",
+            "target_owner": "AI Agent/WorkCore tools"
+          },
+          {
+            "key": "agent.approval_threshold",
+            "question": "At what risk or confidence threshold must a person approve?",
+            "response_type": "risk_threshold",
+            "required": true,
+            "risk": "high",
+            "handling": "ask",
+            "approval_gate": "high",
+            "target_owner": "AI Agent/WorkCore tools"
+          },
+          {
+            "key": "agent.error_handling",
+            "question": "Should failures retry, pause for review, or escalate?",
+            "response_type": "select",
+            "required": true,
+            "risk": "medium",
+            "handling": "ask",
+            "approval_gate": "section",
+            "target_owner": "AI Agent/WorkCore tools"
+          },
+          {
+            "key": "agent.data_scope",
+            "question": "Which company records may this agent read or change?",
+            "response_type": "record_scope",
+            "required": true,
+            "risk": "high",
+            "handling": "ask",
+            "approval_gate": "high",
+            "target_owner": "AI Agent/WorkCore tools"
+          },
+          {
+            "key": "agent.memory",
+            "question": "What may the agent remember and for how long?",
+            "response_type": "memory_policy",
+            "required": true,
+            "risk": "high",
+            "handling": "ask",
+            "approval_gate": "high",
+            "target_owner": "AI Agent/WorkCore tools"
+          },
+          {
+            "key": "agent.success_checks",
+            "question": "How will WorkCore verify the agent completed the task correctly?",
+            "response_type": "checklist",
+            "required": true,
+            "risk": "medium",
+            "handling": "ask",
+            "approval_gate": "section",
+            "target_owner": "AI Agent/WorkCore tools"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "voice-agent-setup",
+    "version": 2,
+    "title": "Voice agent",
+    "description": "Configure a phone agent with consent, escalation, retention and capacity safeguards",
+    "category": "ai",
+    "status": "published",
+    "modes": [
+      "guided",
+      "conversation",
+      "hybrid"
+    ],
+    "authority_model": "risk_based",
+    "sections": [
+      {
+        "key": "voice-agent",
+        "title": "Voice, telephony and safeguards",
+        "approval_mode": "section",
+        "questions": [
+          {
+            "key": "voice.name",
+            "question": "What should the voice agent be called?",
+            "response_type": "text",
+            "required": true,
+            "risk": "low",
+            "handling": "ask",
+            "approval_gate": "section",
+            "target_owner": "Phone Agent/Host connection registry"
+          },
+          {
+            "key": "voice.purpose",
+            "question": "What calls should it handle?",
+            "response_type": "textarea",
+            "required": true,
+            "risk": "medium",
+            "handling": "ask",
+            "approval_gate": "section",
+            "target_owner": "Phone Agent/Host connection registry"
+          },
+          {
+            "key": "voice.provider_connection",
+            "question": "Which secure phone-provider connection should it use?",
+            "response_type": "secure_connection",
+            "required": true,
+            "risk": "high",
+            "handling": "secure_task",
+            "approval_gate": "high",
+            "target_owner": "Phone Agent/Host connection registry"
+          },
+          {
+            "key": "voice.phone_number",
+            "question": "Which verified phone number should be assigned?",
+            "response_type": "phone_registry_select",
+            "required": true,
+            "risk": "high",
+            "handling": "ask",
+            "approval_gate": "high",
+            "target_owner": "Phone Agent/Host connection registry"
+          },
+          {
+            "key": "voice.voice_id",
+            "question": "Which approved voice should it use?",
+            "response_type": "voice_select",
+            "required": true,
+            "risk": "medium",
+            "handling": "ask",
+            "approval_gate": "section",
+            "target_owner": "Phone Agent/Host connection registry"
+          },
+          {
+            "key": "voice.language",
+            "question": "Which language and locale should it speak?",
+            "response_type": "locale",
+            "required": true,
+            "risk": "low",
+            "handling": "ask",
+            "approval_gate": "section",
+            "target_owner": "Phone Agent/Host connection registry"
+          },
+          {
+            "key": "voice.speed",
+            "question": "How quickly should it speak?",
+            "response_type": "number",
+            "required": true,
+            "risk": "low",
+            "handling": "ask",
+            "approval_gate": "section",
+            "target_owner": "Phone Agent/Host connection registry"
+          },
+          {
+            "key": "voice.welcome_message",
+            "question": "What should callers hear first?",
+            "response_type": "textarea",
+            "required": true,
+            "risk": "medium",
+            "handling": "ask",
+            "approval_gate": "section",
+            "target_owner": "Phone Agent/Host connection registry"
+          },
+          {
+            "key": "voice.ivr_options",
+            "question": "Should callers be offered keypad or spoken menu choices?",
+            "response_type": "collection",
+            "required": false,
+            "risk": "medium",
+            "handling": "ask",
+            "approval_gate": "section",
+            "target_owner": "Phone Agent/Host connection registry"
+          },
+          {
+            "key": "voice.transfer_rules",
+            "question": "When must the call transfer to a person?",
+            "response_type": "rules",
+            "required": true,
+            "risk": "high",
+            "handling": "ask",
+            "approval_gate": "high",
+            "target_owner": "Phone Agent/Host connection registry"
+          },
+          {
+            "key": "voice.fallback_number",
+            "question": "Which verified number receives escalated calls?",
+            "response_type": "phone",
+            "required": false,
+            "risk": "high",
+            "handling": "ask",
+            "approval_gate": "high",
+            "target_owner": "Phone Agent/Host connection registry"
+          },
+          {
+            "key": "voice.recording_enabled",
+            "question": "Should calls be recorded?",
+            "response_type": "boolean",
+            "required": true,
+            "risk": "high",
+            "handling": "ask",
+            "approval_gate": "high",
+            "target_owner": "Phone Agent/Host connection registry"
+          },
+          {
+            "key": "voice.consent_message",
+            "question": "What recording and privacy notice must be played?",
+            "response_type": "textarea",
+            "required": false,
+            "risk": "high",
+            "handling": "ask",
+            "approval_gate": "high",
+            "target_owner": "Phone Agent/Host connection registry"
+          },
+          {
+            "key": "voice.retention_days",
+            "question": "How long may recordings and transcripts be retained?",
+            "response_type": "integer",
+            "required": false,
+            "risk": "high",
+            "handling": "ask",
+            "approval_gate": "high",
+            "target_owner": "Phone Agent/Host connection registry"
+          },
+          {
+            "key": "voice.max_call_duration",
+            "question": "What is the maximum call duration?",
+            "response_type": "duration",
+            "required": true,
+            "risk": "medium",
+            "handling": "ask",
+            "approval_gate": "section",
+            "target_owner": "Phone Agent/Host connection registry"
+          },
+          {
+            "key": "voice.max_concurrent_calls",
+            "question": "How many simultaneous calls are allowed?",
+            "response_type": "integer",
+            "required": true,
+            "risk": "medium",
+            "handling": "ask",
+            "approval_gate": "section",
+            "target_owner": "Phone Agent/Host connection registry"
+          },
+          {
+            "key": "voice.quiet_hours",
+            "question": "When must outbound calls be blocked?",
+            "response_type": "schedule",
+            "required": true,
+            "risk": "high",
+            "handling": "ask",
+            "approval_gate": "high",
+            "target_owner": "Phone Agent/Host connection registry"
+          },
+          {
+            "key": "voice.test_call",
+            "question": "Run a test call before activation?",
+            "response_type": "test_connection",
+            "required": true,
+            "risk": "high",
+            "handling": "ask",
+            "approval_gate": "high",
+            "target_owner": "Phone Agent/Host connection registry"
+          }
+        ]
+      }
+    ]
+  }
+]

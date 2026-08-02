@@ -1,0 +1,1 @@
+<?php declare(strict_types=1); namespace App\Domains\WorkCore\System\Modules\RecurringServices\Http\Requests; use Illuminate\Foundation\Http\FormRequest; final class SkipRecurringOccurrenceRequest extends FormRequest { public function rules(): array{return ['reason'=>'required|string|max:10000','cancel_linked_records'=>'nullable|boolean'];}}

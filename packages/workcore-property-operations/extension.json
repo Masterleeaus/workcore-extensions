@@ -1,0 +1,24 @@
+{
+  "canonical_namespace_preserved": true,
+  "destructive_uninstall": false,
+  "modules": [
+    "Premises",
+    "Assets",
+    "Documents"
+  ],
+  "name": "WorkCore Property Operations",
+  "requires": [
+    "workcore/shared-foundation"
+  ],
+  "runtime_keys": [
+    "premises",
+    "assets",
+    "documents",
+    "vertical_operations"
+  ],
+  "slug": "property-operations",
+  "system_slices": [
+    "System/Verticals",
+    "Verticals"
+  ]
+}

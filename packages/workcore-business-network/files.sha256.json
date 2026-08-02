@@ -1,0 +1,2245 @@
+{
+  "file_count": 448,
+  "files": [
+    {
+      "bytes": 226,
+      "path": "README.md",
+      "sha256": "d03002ed3379437b390d9342cf56493e3990c829ee86941f73fb339c2d84f4cd"
+    },
+    {
+      "bytes": 453,
+      "path": "composer.json",
+      "sha256": "53c4356c7f28ecd7080c6cfa5b6e97fb5b187a2419b9ebb17a5bffde0eda2650"
+    },
+    {
+      "bytes": 4822,
+      "path": "docs/original-composition-manifest.json",
+      "sha256": "8c267ddaf79ac08831dbbe731c9cbeafe4af9b3e907a6b8a75e1b6b056db9bbb"
+    },
+    {
+      "bytes": 639,
+      "path": "extension.json",
+      "sha256": "704d636d059021f1f21f6cd3740d9641971ec3b0260bf06b2c5361cbce88c9f8"
+    },
+    {
+      "bytes": 795,
+      "path": "src/Domains/WorkCore/Manifests/BusinessNetwork.json",
+      "sha256": "f770b38c54765819aba271c64b4f155704e47199d7e947cf06f441f688cc76f1"
+    },
+    {
+      "bytes": 751,
+      "path": "src/Domains/WorkCore/Providers/BusinessNetworkServiceProvider.php",
+      "sha256": "789ef7ef023e523f4751715f76c3c1b8f9876eab6d78b5b40115a5fd5269989f"
+    },
+    {
+      "bytes": 638,
+      "path": "src/Domains/WorkCore/System/AI/Contracts/AiRunRecorderContract.php",
+      "sha256": "2c4c945a82fd6d427663c1c8e50470524b14a62a00f7f7063bf03e6ab2966d01"
+    },
+    {
+      "bytes": 355,
+      "path": "src/Domains/WorkCore/System/AI/Contracts/AiToolExecutorContract.php",
+      "sha256": "6d82c658621fa545d7fc5b68b3184d9e1d2aa155016e293afafc0ef4c91cebcc"
+    },
+    {
+      "bytes": 630,
+      "path": "src/Domains/WorkCore/System/AI/Contracts/AiToolRunRecorderContract.php",
+      "sha256": "a995525bcf492ab19717adfc39a5c1b83fb2b06c81aa29dcf504f3e334bb4489"
+    },
+    {
+      "bytes": 200,
+      "path": "src/Domains/WorkCore/System/AI/Contracts/CredentialResolverContract.php",
+      "sha256": "93dda0614fe8233b96c2f681e07aa0da1978e5d7d3da01dabf1b6bae53298321"
+    },
+    {
+      "bytes": 259,
+      "path": "src/Domains/WorkCore/System/AI/Contracts/ModelGatewayContract.php",
+      "sha256": "408d6db80c37c785b944a6d8c1faed950ea91bce0df9483dfc5a81e0b496ac2b"
+    },
+    {
+      "bytes": 349,
+      "path": "src/Domains/WorkCore/System/AI/Contracts/ModelProfileResolverContract.php",
+      "sha256": "ad0d9c4b24f74d30561a9616f744a9596f6cc2c6a18112debe8d4fab18bbdd58"
+    },
+    {
+      "bytes": 437,
+      "path": "src/Domains/WorkCore/System/AI/Contracts/ModelProviderContract.php",
+      "sha256": "a95364551f6654e25f1ac2317231aa2e7c593f0125adfe744adcbbd73842ba60"
+    },
+    {
+      "bytes": 661,
+      "path": "src/Domains/WorkCore/System/AI/Contracts/ToolCatalogueContract.php",
+      "sha256": "974f7a5bab5acab8b99b0ad1441c1626177af0281dc8096e3227db2e4b7c4bd6"
+    },
+    {
+      "bytes": 865,
+      "path": "src/Domains/WorkCore/System/AI/DTO/AiToolExecutionContext.php",
+      "sha256": "8703798104e95de272412adc59754d71f8b4589833ada2a8ef6a97c95052a267"
+    },
+    {
+      "bytes": 934,
+      "path": "src/Domains/WorkCore/System/AI/DTO/AiToolResult.php",
+      "sha256": "c07f4ee4cf9eff4fb823743413ff12548f6672f4558b8f12989ab1e11f617e8b"
+    },
+    {
+      "bytes": 2141,
+      "path": "src/Domains/WorkCore/System/AI/DTO/ModelMessage.php",
+      "sha256": "a80686775f09a9241f073bb5b9626aa2b33087e875d3989ea83162d4d0963334"
+    },
+    {
+      "bytes": 2939,
+      "path": "src/Domains/WorkCore/System/AI/DTO/ModelRequest.php",
+      "sha256": "691a241730a2605647cb0684e5bc9a842d46a057ac97a70ba7cd2df065006dd2"
+    },
+    {
+      "bytes": 1141,
+      "path": "src/Domains/WorkCore/System/AI/DTO/ModelResponse.php",
+      "sha256": "93780b35075c700fd23e464ec4b6e4e1d2089b9837c7f3eede7a1bede21aee16"
+    },
+    {
+      "bytes": 737,
+      "path": "src/Domains/WorkCore/System/AI/DTO/ResolvedModelProfile.php",
+      "sha256": "2e1ba7933bef9755c22d1d8bdd380762941245c9ddad10e6596fcac5be01d224"
+    },
+    {
+      "bytes": 844,
+      "path": "src/Domains/WorkCore/System/AI/DTO/TokenUsage.php",
+      "sha256": "dd9f2bb6aacc4d431fa752be5a17ee9b5917d3d5f51a75d6eca035262f07ef69"
+    },
+    {
+      "bytes": 175,
+      "path": "src/Domains/WorkCore/System/AI/Exceptions/AiConfigurationException.php",
+      "sha256": "1ddbc952cc1f3cafcc32f125f02c46449bffad12e5e083851e0c5f90c41737f4"
+    },
+    {
+      "bytes": 313,
+      "path": "src/Domains/WorkCore/System/AI/Exceptions/AiPolicyException.php",
+      "sha256": "5c207b6bf63deff30cd77e3a82a5e874ae34f5acda9e659e2af968566a5ced48"
+    },
+    {
+      "bytes": 485,
+      "path": "src/Domains/WorkCore/System/AI/Exceptions/AiProviderException.php",
+      "sha256": "0bcb5ed63e7337fbae036c0a478a16c0a77eaeb65ad9f8290230f043dc6efa27"
+    },
+    {
+      "bytes": 406,
+      "path": "src/Domains/WorkCore/System/AI/Exceptions/AiToolException.php",
+      "sha256": "eee5a3a585950ea507984c71bab1fee206e08496848ad5c0e7aed7752afc6905"
+    },
+    {
+      "bytes": 971,
+      "path": "src/Domains/WorkCore/System/AI/Http/Controllers/NativeAiApprovalController.php",
+      "sha256": "f8d19e38dcc97b58e6fa43f4addbc71852962885b7f5e202684d30a63637b948"
+    },
+    {
+      "bytes": 4790,
+      "path": "src/Domains/WorkCore/System/AI/Http/Controllers/NativeAiConversationController.php",
+      "sha256": "466c187d7f19a53965937964fa4f34dfff7b231a700e89d330052828b450800a"
+    },
+    {
+      "bytes": 2250,
+      "path": "src/Domains/WorkCore/System/AI/Http/Controllers/NativeAiMemoryController.php",
+      "sha256": "75289e351ffcd297c245ba6bfcef5b772db049559f019019a0b400a82bcb3d19"
+    },
+    {
+      "bytes": 439,
+      "path": "src/Domains/WorkCore/System/AI/Models/AiAgent.php",
+      "sha256": "e5587099512e50aec626a70a712e4bebabc7bdf74b58daef8f5ad8145eef01bf"
+    },
+    {
+      "bytes": 563,
+      "path": "src/Domains/WorkCore/System/AI/Models/AiAgentVersion.php",
+      "sha256": "8dd8262b8fff5919506eb649c7fb2030800d9bb01f59d5162e058bef4a665eb8"
+    },
+    {
+      "bytes": 465,
+      "path": "src/Domains/WorkCore/System/AI/Models/AiApprovalRequest.php",
+      "sha256": "cc3c2244ed16a68453887827430257e7d391b1d4fda2583c498a00c02ccb7370"
+    },
+    {
+      "bytes": 471,
+      "path": "src/Domains/WorkCore/System/AI/Models/AiConversation.php",
+      "sha256": "48efb578bf66d8c839350c8938f9a48df54d84be127d6266dc122998561421ce"
+    },
+    {
+      "bytes": 551,
+      "path": "src/Domains/WorkCore/System/AI/Models/AiMemory.php",
+      "sha256": "dda9a4aaf4a62653be2101495e477120da75cf1ec19bb6d4a3392c1dad2b74ca"
+    },
+    {
+      "bytes": 439,
+      "path": "src/Domains/WorkCore/System/AI/Models/AiMessage.php",
+      "sha256": "5fd71260d8777fd583b18e40f5f43636e5bcd8b15c8c38170456b376dde0b188"
+    },
+    {
+      "bytes": 550,
+      "path": "src/Domains/WorkCore/System/AI/Models/AiOrchestrationRun.php",
+      "sha256": "249ee52fb197e8603d1d05f1a2ed4cec5847c164ee274df4a4d3c6dfa42e1a26"
+    },
+    {
+      "bytes": 548,
+      "path": "src/Domains/WorkCore/System/AI/Models/AiOrchestrationStep.php",
+      "sha256": "f5ebbf40db66dd99eb8ee48d45548d349a2af8d4e072098be4bd8b14216d11bd"
+    },
+    {
+      "bytes": 524,
+      "path": "src/Domains/WorkCore/System/AI/Models/AiPolicyVersion.php",
+      "sha256": "9f118f298a38dee7291d2ef60efc7541d5397796bb02ce43326d8644aa55e74b"
+    },
+    {
+      "bytes": 722,
+      "path": "src/Domains/WorkCore/System/AI/Models/AiRun.php",
+      "sha256": "1d0d7bb54d302d560e993d9f7880dccdd45b2690bab62703b0421ec3fb9910d6"
+    },
+    {
+      "bytes": 562,
+      "path": "src/Domains/WorkCore/System/AI/Models/AiToolRun.php",
+      "sha256": "716e49bc93ffe51c48f3a85d357ca1d532e1ae829c08d4950ad1ca572295e7cd"
+    },
+    {
+      "bytes": 587,
+      "path": "src/Domains/WorkCore/System/AI/Models/AiUsageLedger.php",
+      "sha256": "c6a5e28c900d73d8c2565fe9e57298a6dd9be9d0eae7682576a2afcf3ed8cad8"
+    },
+    {
+      "bytes": 738,
+      "path": "src/Domains/WorkCore/System/AI/Models/ModelProfile.php",
+      "sha256": "510fecb68cf78e7e77e3c20adf4bd840353470089c9cd66481cb886740b36110"
+    },
+    {
+      "bytes": 571,
+      "path": "src/Domains/WorkCore/System/AI/Models/ProviderProfile.php",
+      "sha256": "cfb14851e35f70cd26dd59667ce8176934d8dece66fcffa646383e473566a8db"
+    },
+    {
+      "bytes": 20115,
+      "path": "src/Domains/WorkCore/System/AI/Orchestration/AgentOrchestrator.php",
+      "sha256": "004aa586c586d8a49d2a204284857a44037d66eee2ec92dc7debc869529bc01d"
+    },
+    {
+      "bytes": 1272,
+      "path": "src/Domains/WorkCore/System/AI/Orchestration/ApprovalService.php",
+      "sha256": "7c1baf7c50196121ca1bd725d1c6fe0721ca63ad4e273af16b055c445cee8422"
+    },
+    {
+      "bytes": 2349,
+      "path": "src/Domains/WorkCore/System/AI/Orchestration/ContextWindowBuilder.php",
+      "sha256": "0597b896e3e63ccdf3e5bfd73760da3cefdc94212d7466d2ae3d54e22279b8dd"
+    },
+    {
+      "bytes": 310,
+      "path": "src/Domains/WorkCore/System/AI/Orchestration/Contracts/AgentProfileResolverContract.php",
+      "sha256": "0a663b3c0be3d3e624fcc55a12af4a2a3f37275747a81b33c49e227b93f3026d"
+    },
+    {
+      "bytes": 745,
+      "path": "src/Domains/WorkCore/System/AI/Orchestration/Contracts/ApprovalStoreContract.php",
+      "sha256": "90da932b32201f6c148395ac7e5effceff315a052de644515c1c280af6307dca"
+    },
+    {
+      "bytes": 1136,
+      "path": "src/Domains/WorkCore/System/AI/Orchestration/Contracts/ConversationStoreContract.php",
+      "sha256": "83c937fb779613bee94e08644e27715180ffb8939db579b64539a024e8808b15"
+    },
+    {
+      "bytes": 833,
+      "path": "src/Domains/WorkCore/System/AI/Orchestration/Contracts/MemoryStoreContract.php",
+      "sha256": "f514910bc540e28c89267bfdb8613e5d7663a70983c14ea8a6dda857921cf90e"
+    },
+    {
+      "bytes": 989,
+      "path": "src/Domains/WorkCore/System/AI/Orchestration/Contracts/OrchestrationRunStoreContract.php",
+      "sha256": "09fd50a0017e3730e523a2aea0228c83e2b1663043aed3e904dfb8c85b6eaa66"
+    },
+    {
+      "bytes": 990,
+      "path": "src/Domains/WorkCore/System/AI/Orchestration/DTO/AgentTurnRequest.php",
+      "sha256": "3fa70cc25f9387978379db4ce36ee38580f4955bfa43e32d53a44498fde45d20"
+    },
+    {
+      "bytes": 1401,
+      "path": "src/Domains/WorkCore/System/AI/Orchestration/DTO/AgentTurnResult.php",
+      "sha256": "2ce2417a98f25cf0d01f6d97fa22440227d94ca402595bd168138af374b93956"
+    },
+    {
+      "bytes": 427,
+      "path": "src/Domains/WorkCore/System/AI/Orchestration/DTO/ApprovalDecision.php",
+      "sha256": "5e9c0e4856196f67dcd5339270e96ea2363d1b5e09b08cd48459194f62bb2df7"
+    },
+    {
+      "bytes": 2167,
+      "path": "src/Domains/WorkCore/System/AI/Orchestration/DTO/ApprovalRecord.php",
+      "sha256": "fc02ca20049be6bd2a39d40dfc6653e63fd76e86fd22aa2e6cc0bdc363cea70b"
+    },
+    {
+      "bytes": 1389,
+      "path": "src/Domains/WorkCore/System/AI/Orchestration/DTO/ConversationMessage.php",
+      "sha256": "b63477097cca543f8b46c5b0b86e832f2339fd1d02503baccee2e621f5dec6da"
+    },
+    {
+      "bytes": 424,
+      "path": "src/Domains/WorkCore/System/AI/Orchestration/DTO/ConversationRecord.php",
+      "sha256": "b3915730b1a3fb9cfc5d8a1ca97b495dc0931c4fd5b8ea4ba39ab7aa95a6907f"
+    },
+    {
+      "bytes": 1357,
+      "path": "src/Domains/WorkCore/System/AI/Orchestration/DTO/MemoryItem.php",
+      "sha256": "17bdfadb6756e9368ea279a12e85fbaa15c6ef3ca054adfbb3f119dea3111b0c"
+    },
+    {
+      "bytes": 1174,
+      "path": "src/Domains/WorkCore/System/AI/Orchestration/DTO/OrchestrationRunRecord.php",
+      "sha256": "6ffd37f4ee408285b465d819da706ecc5a480847adb3710606cf4a4fad5d1481"
+    },
+    {
+      "bytes": 1293,
+      "path": "src/Domains/WorkCore/System/AI/Orchestration/DTO/ResolvedAgentProfile.php",
+      "sha256": "2a4fac414c7eda403a5ed97c12229ce45fad01003b107ce8441d5cc47a1293a8"
+    },
+    {
+      "bytes": 547,
+      "path": "src/Domains/WorkCore/System/AI/Orchestration/DTO/ToolCall.php",
+      "sha256": "001098c9e6bfdffa549cff1f25dbad3d187c670de7722169ee005ff8baf916b6"
+    },
+    {
+      "bytes": 4278,
+      "path": "src/Domains/WorkCore/System/AI/Orchestration/DatabaseAgentProfileResolver.php",
+      "sha256": "915c68720244eb8bc1666aa712aaf853d2b60f99d0d8481e630d019c63efd6aa"
+    },
+    {
+      "bytes": 398,
+      "path": "src/Domains/WorkCore/System/AI/Orchestration/Exceptions/AiOrchestrationException.php",
+      "sha256": "4c35149246864b28924f7d62b6d0552b45fcf1f082d2755662cde10171cde284"
+    },
+    {
+      "bytes": 2898,
+      "path": "src/Domains/WorkCore/System/AI/Orchestration/MemoryService.php",
+      "sha256": "bccba51576ef0daac5ac4189d0dd26baf116383a4daf4a67a1109f49c926903e"
+    },
+    {
+      "bytes": 891,
+      "path": "src/Domains/WorkCore/System/AI/Orchestration/OrchestrationStateMachine.php",
+      "sha256": "99b76e99de548388fe4fa0f4af61e623021febca87f834939959e9af5afe1106"
+    },
+    {
+      "bytes": 7400,
+      "path": "src/Domains/WorkCore/System/AI/Orchestration/Persistence/DatabaseApprovalStore.php",
+      "sha256": "3f07dd35aa15b51587ca1bebdd5a850ee1d17a1bcdc38632717e9d41d985beb1"
+    },
+    {
+      "bytes": 7251,
+      "path": "src/Domains/WorkCore/System/AI/Orchestration/Persistence/DatabaseConversationStore.php",
+      "sha256": "cfb4aefe5ced5350f51ddff06d6dfa6aa96181022262ae7dee2a83a60c6f9127"
+    },
+    {
+      "bytes": 5199,
+      "path": "src/Domains/WorkCore/System/AI/Orchestration/Persistence/DatabaseMemoryStore.php",
+      "sha256": "9830385675ce8b38c8158978842f913bb202e26e6eb4b2753c54fe06938fed00"
+    },
+    {
+      "bytes": 9620,
+      "path": "src/Domains/WorkCore/System/AI/Orchestration/Persistence/DatabaseOrchestrationRunStore.php",
+      "sha256": "59640f374ba0943203a9b40dc57643f4cb79b369cea62514fc1657b4cbaf6d90"
+    },
+    {
+      "bytes": 1049,
+      "path": "src/Domains/WorkCore/System/AI/Orchestration/ToolApprovalPolicy.php",
+      "sha256": "43ee55ebe8adbcce8d77637e89e151c4c36c928b1ea4e36b4f191c53412ba3bb"
+    },
+    {
+      "bytes": 1683,
+      "path": "src/Domains/WorkCore/System/AI/Orchestration/ToolCallNormalizer.php",
+      "sha256": "2593cd3ab70278f11afb41776938067a95c986f05f2b3e909ef09d8c09df7053"
+    },
+    {
+      "bytes": 5943,
+      "path": "src/Domains/WorkCore/System/AI/Persistence/DatabaseAiRunRecorder.php",
+      "sha256": "943291e7aea6a0dbbd3d07ebb304b18960ca8a2c76e08a23f1e257291d113cdd"
+    },
+    {
+      "bytes": 2765,
+      "path": "src/Domains/WorkCore/System/AI/Persistence/DatabaseAiToolRunRecorder.php",
+      "sha256": "6c8443334a65455bf5cb279048971ebc2865042b3cdb8cee379067f1e14fdb0b"
+    },
+    {
+      "bytes": 4828,
+      "path": "src/Domains/WorkCore/System/AI/Persistence/DatabaseModelProfileResolver.php",
+      "sha256": "bd12aacb57ca71c3cfc3cf513c594938873e64ce9c11751e56f4c7fe3954260d"
+    },
+    {
+      "bytes": 1293,
+      "path": "src/Domains/WorkCore/System/AI/Policies/AiBudgetGuard.php",
+      "sha256": "f921978272a2e3deb5a58624d34c57026b869740028ad78c537120e60948e450"
+    },
+    {
+      "bytes": 789,
+      "path": "src/Domains/WorkCore/System/AI/Policies/AiRateLimiter.php",
+      "sha256": "1627ad2d564440cd09a0479a26e6220ba4771e85281cb3ddb6b3204c8d06894b"
+    },
+    {
+      "bytes": 1576,
+      "path": "src/Domains/WorkCore/System/AI/Policies/ProviderCircuitBreaker.php",
+      "sha256": "17e5e8526bcf2a27b0c9d6ced02144384cc3c1c07de4cbd48ac305fd91b1291f"
+    },
+    {
+      "bytes": 1576,
+      "path": "src/Domains/WorkCore/System/AI/Providers/ModelProviderFactory.php",
+      "sha256": "d50b47cbb7ebe54fcc5517a1e8b46ada769abe88746232c4df9758fdfa725eed"
+    },
+    {
+      "bytes": 2689,
+      "path": "src/Domains/WorkCore/System/AI/Providers/NativeModelGateway.php",
+      "sha256": "7c7caaf9e108c5154ac8c5f309849cbfd11ab19f88badbd67333aa8eb4287e60"
+    },
+    {
+      "bytes": 920,
+      "path": "src/Domains/WorkCore/System/AI/Providers/NullModelProvider.php",
+      "sha256": "0fe83111d3e1b02ff3b8dbb611adc704abf7faf773b39277ab33ce33170c5384"
+    },
+    {
+      "bytes": 5204,
+      "path": "src/Domains/WorkCore/System/AI/Providers/OpenAICompatibleProvider.php",
+      "sha256": "89932346068520bb50fa3b711689bcdb0faa9bcb1fe786cc49ea22af6dc933de"
+    },
+    {
+      "bytes": 2808,
+      "path": "src/Domains/WorkCore/System/AI/Providers/ProviderFailoverChain.php",
+      "sha256": "28f1c8e33333fcc8657ab2db6296dfbe1306ae7e5922d86bf8a94dafa053f4fc"
+    },
+    {
+      "bytes": 7875,
+      "path": "src/Domains/WorkCore/System/AI/Providers/WorkCoreAIServiceProvider.php",
+      "sha256": "a5367b14ec91df81f53ff5738de273f3c9c84b29657b5442876745008868d734"
+    },
+    {
+      "bytes": 2723,
+      "path": "src/Domains/WorkCore/System/AI/Security/NativeAiAccessGate.php",
+      "sha256": "bea08d99f7cfb5cb34f7af70f9f56b1c363a717cba93d56e099aa3b68b40228e"
+    },
+    {
+      "bytes": 432,
+      "path": "src/Domains/WorkCore/System/AI/Security/NullCredentialResolver.php",
+      "sha256": "6ce66e3cab195d3ea1f016596e51bb96b6d446a785c01aaf006227d7c94897b3"
+    },
+    {
+      "bytes": 1133,
+      "path": "src/Domains/WorkCore/System/AI/Security/SensitiveDataRedactor.php",
+      "sha256": "9a49317b9b37dda477bf776d51cb4489742ee166f893b34a541d186c6dc8db1c"
+    },
+    {
+      "bytes": 3361,
+      "path": "src/Domains/WorkCore/System/AI/Tools/AiToolDefinition.php",
+      "sha256": "afccfb91ba156278cadf3371fb525d2d1d5f476e8a1fbf8ac59b574cc07b10c3"
+    },
+    {
+      "bytes": 1177,
+      "path": "src/Domains/WorkCore/System/AI/Tools/AiToolRegistry.php",
+      "sha256": "176a638c0d7ed46d627cbe983586d523fdb6409b4946dce36fe17acb8f75eb9b"
+    },
+    {
+      "bytes": 1829,
+      "path": "src/Domains/WorkCore/System/AI/Tools/AiToolRouter.php",
+      "sha256": "334c0b2f6a2459c5db965613374ecf3ce66daf323952ac76c694c62c8fd080c9"
+    },
+    {
+      "bytes": 209,
+      "path": "src/Domains/WorkCore/System/AI/Tools/DomainToolRegistryContract.php",
+      "sha256": "895b504b5345cf817f77a1069c7e04968539db37555ca9710d4ffde3bae0175f"
+    },
+    {
+      "bytes": 4233,
+      "path": "src/Domains/WorkCore/System/AI/Tools/JsonSchemaValidator.php",
+      "sha256": "de25c11052878143b364a567b55f6c3044d0ddca1e80253f1120bfacb3dd23f1"
+    },
+    {
+      "bytes": 4437,
+      "path": "src/Domains/WorkCore/System/AI/Tools/NativeToolCatalogue.php",
+      "sha256": "69cc5affa0612fcaab750ad5866cdb87c651804d55761339ca2ef130dcf5fe82"
+    },
+    {
+      "bytes": 3259,
+      "path": "src/Domains/WorkCore/System/AI/Tools/ToolDefinitionFactory.php",
+      "sha256": "6a8742e260dc0a8588f291065a8f8b9006abdd256bce613500085111e27d9f2b"
+    },
+    {
+      "bytes": 2357,
+      "path": "src/Domains/WorkCore/System/AI/Tools/WorkCoreActionToolExecutor.php",
+      "sha256": "c67fa8466d647b9dc2f0b32cacb1b2adbcfb31050080025a9e9d4b8220c65ca4"
+    },
+    {
+      "bytes": 4717,
+      "path": "src/Domains/WorkCore/System/AI/Tools/WorkCoreReadToolExecutor.php",
+      "sha256": "f1a910ebfa3f9c3dcb114ee95e92df8bea345e68e71a37aecd2908c2d275b628"
+    },
+    {
+      "bytes": 1410,
+      "path": "src/Domains/WorkCore/System/AI/routes/api.php",
+      "sha256": "1de1dbeb3a93af4e417c992d3a31736b69b0ad8937ef3e9c2e37d2c45ebf4237"
+    },
+    {
+      "bytes": 2825,
+      "path": "src/Domains/WorkCore/System/Expansion/Actions/ActivateAdaptiveDomain.php",
+      "sha256": "39344912659f6a124015f44dfb99b73cfa3ed20f7a08f6924108c1c8fa9ed768"
+    },
+    {
+      "bytes": 3829,
+      "path": "src/Domains/WorkCore/System/Expansion/Actions/ActivateAdaptiveFeature.php",
+      "sha256": "d9fa0380d17367a9371284b0d246418e77247b21ba54e38285875f663a438a41"
+    },
+    {
+      "bytes": 1667,
+      "path": "src/Domains/WorkCore/System/Expansion/Actions/ApproveExpansion.php",
+      "sha256": "58375b989539ca48944bd0a033a1a05ad2bdc4866fa990dff2e28bcd33b50b3e"
+    },
+    {
+      "bytes": 3261,
+      "path": "src/Domains/WorkCore/System/Expansion/Actions/CreateAdaptiveRecord.php",
+      "sha256": "755b51c8d327ab599433f55ccaaf58f8f2078ccc5fe09176e190c0305a498c63"
+    },
+    {
+      "bytes": 1586,
+      "path": "src/Domains/WorkCore/System/Expansion/Actions/DisableAdaptiveFeature.php",
+      "sha256": "f666ffab8ea6ff9d61106db4e898e607bfaf9a23fea0ce8c729bdd39059c5eb1"
+    },
+    {
+      "bytes": 4680,
+      "path": "src/Domains/WorkCore/System/Expansion/Actions/EnsureCapability.php",
+      "sha256": "bb185f8cfbdc536bac2d7fd700315aa4ddf016dbefa88d98ba1ecf8bb341bb1b"
+    },
+    {
+      "bytes": 1741,
+      "path": "src/Domains/WorkCore/System/Expansion/Actions/ProcessAdaptiveFeatureEvent.php",
+      "sha256": "7ad36c3c37eba7925ddb27776ddc8809712adefab66371bf8cdfb13f77a20546"
+    },
+    {
+      "bytes": 2009,
+      "path": "src/Domains/WorkCore/System/Expansion/Actions/RollbackAdaptiveDomain.php",
+      "sha256": "27977c871021a8d7cdd6241738f5595a485f514738ac663e84b1715db46f051f"
+    },
+    {
+      "bytes": 4064,
+      "path": "src/Domains/WorkCore/System/Expansion/Actions/UpdateAdaptiveRecord.php",
+      "sha256": "fd6347b00bdbd32227f70fe7b02bb616f839b2f06492be6b8655b8f0de49e793"
+    },
+    {
+      "bytes": 2503,
+      "path": "src/Domains/WorkCore/System/Expansion/Contracts/AdaptiveFeatureRepositoryContract.php",
+      "sha256": "15dfe7aaea03d5a65c0153d3cb655395c7a0d06a1e5645df8ec6befa521117f6"
+    },
+    {
+      "bytes": 260,
+      "path": "src/Domains/WorkCore/System/Expansion/Contracts/AdaptiveReferenceValidatorContract.php",
+      "sha256": "6db3f001ff754f871d8a8392964a2dd66785cda3dae5e2dcf92ab8670ce3e21a"
+    },
+    {
+      "bytes": 270,
+      "path": "src/Domains/WorkCore/System/Expansion/Contracts/ExpansionModelGatewayContract.php",
+      "sha256": "e1614501fed9311ec6aae32588af051c101be54b92e59849f45fe8173bbc3083"
+    },
+    {
+      "bytes": 605,
+      "path": "src/Domains/WorkCore/System/Expansion/Contracts/ExpansionPlannerContract.php",
+      "sha256": "57314c0c255c223c5d313aab57520f248058aa7ff02475cb0985dc8f38b3fbbc"
+    },
+    {
+      "bytes": 2899,
+      "path": "src/Domains/WorkCore/System/Expansion/Contracts/ExpansionRepositoryContract.php",
+      "sha256": "a604147e92f508d6207c59f8cde08bc8b4efae3fc5f2b112ab21fbd3b602a3d2"
+    },
+    {
+      "bytes": 225,
+      "path": "src/Domains/WorkCore/System/Expansion/Contracts/RecordSchemaInspectorContract.php",
+      "sha256": "b9c51f021bc8e8105d17c4a129006df2722bdd86174f03def0e2aa419ccfe377"
+    },
+    {
+      "bytes": 1530,
+      "path": "src/Domains/WorkCore/System/Expansion/Data/CapabilityInventory.php",
+      "sha256": "ba7cc1507f6807a7ac161bd6cc9a0b3fb236c3720b6ccb9bd5634252fcb32351"
+    },
+    {
+      "bytes": 1216,
+      "path": "src/Domains/WorkCore/System/Expansion/Data/ExpansionAssessment.php",
+      "sha256": "c03b86a91e330ea62cb8a28de9046ff34abad9101376c49c057166a9f6d4e5fc"
+    },
+    {
+      "bytes": 344,
+      "path": "src/Domains/WorkCore/System/Expansion/Gateways/NullExpansionModelGateway.php",
+      "sha256": "6958aa0c1745335e2c23d300228de2bbff5f6aaad3c275b3c4566702e7a40b23"
+    },
+    {
+      "bytes": 1861,
+      "path": "src/Domains/WorkCore/System/Expansion/Infrastructure/DatabaseAdaptiveReferenceValidator.php",
+      "sha256": "a376ee9c8c7fd224fdf48e5a48ccd78c1bb3f10cdd31adb5212df9085b91fb6c"
+    },
+    {
+      "bytes": 910,
+      "path": "src/Domains/WorkCore/System/Expansion/Infrastructure/LaravelRecordSchemaInspector.php",
+      "sha256": "022edb4addb426552992ce11a5b16cfb73ba9a6379f8383bda287760f6a2aaca"
+    },
+    {
+      "bytes": 12858,
+      "path": "src/Domains/WorkCore/System/Expansion/Planners/HybridExpansionPlanner.php",
+      "sha256": "05bdba6c39cf705181d9ef2582f1882be83cdc8f50d264c51f6f0a72e8a79192"
+    },
+    {
+      "bytes": 20410,
+      "path": "src/Domains/WorkCore/System/Expansion/Planners/RuleBasedExpansionPlanner.php",
+      "sha256": "a28a59300db16e3fedd94c1a5bff50e87ee4b1a4ebf77bb9f3a0b6c7eb250ac5"
+    },
+    {
+      "bytes": 24664,
+      "path": "src/Domains/WorkCore/System/Expansion/Providers/WorkExpansionServiceProvider.php",
+      "sha256": "8ea273837a931caa53cffd4793b3fb34c557cc933bd17d2f1d9d8fe3678036f9"
+    },
+    {
+      "bytes": 1303,
+      "path": "src/Domains/WorkCore/System/Expansion/ReadModels/AssessCapabilityRequirement.php",
+      "sha256": "447bd1e65650d84001632d68fce55aadd3a1957aa0371a0d9fe19e844a181128"
+    },
+    {
+      "bytes": 1077,
+      "path": "src/Domains/WorkCore/System/Expansion/ReadModels/InspectAdaptiveFeature.php",
+      "sha256": "e3d106309c6c9f4fc3d632bd01f65ec18ef0d7b28833a3f1ac44e15b73cbb404"
+    },
+    {
+      "bytes": 1088,
+      "path": "src/Domains/WorkCore/System/Expansion/ReadModels/InspectAdaptiveRecord.php",
+      "sha256": "23edf7ecb44e1150821f4d069e92742d60454722fbf4bc2aa7fe0135294bcd4b"
+    },
+    {
+      "bytes": 1265,
+      "path": "src/Domains/WorkCore/System/Expansion/ReadModels/InspectExpansionRequest.php",
+      "sha256": "2d78b2db07a7dd3635e4b6d35013cc28759ec5ef6a0bfa1ead2b22bb3ae139d8"
+    },
+    {
+      "bytes": 1199,
+      "path": "src/Domains/WorkCore/System/Expansion/ReadModels/ListAdaptiveDomainVersions.php",
+      "sha256": "43bccdb2226d318a1b5b47de7ce022e877799df899e05c114181f3e0dc660a6f"
+    },
+    {
+      "bytes": 978,
+      "path": "src/Domains/WorkCore/System/Expansion/ReadModels/ListAdaptiveDomains.php",
+      "sha256": "c25e0249b43f9bda9f2b383ce5a9b1984f0d34b45c042bc9e903d7a83ae68a68"
+    },
+    {
+      "bytes": 1232,
+      "path": "src/Domains/WorkCore/System/Expansion/ReadModels/ListAdaptiveFeatureRuns.php",
+      "sha256": "ec011348f5b00e69eeb3ae64e99ac11e8cfe939b610a979f3aba4faa15ed783c"
+    },
+    {
+      "bytes": 1063,
+      "path": "src/Domains/WorkCore/System/Expansion/ReadModels/ListAdaptiveFeatures.php",
+      "sha256": "8a1faaafbe55f9125f4bf68e8e9e2015f6d291b8d80638b0c399b5991dc1aabf"
+    },
+    {
+      "bytes": 1043,
+      "path": "src/Domains/WorkCore/System/Expansion/ReadModels/ListExpansionRequests.php",
+      "sha256": "358fb027bbfac2ee6dc1b7ab04f087eff591ab1a6d2277f6a5425b02c23ff3c8"
+    },
+    {
+      "bytes": 1268,
+      "path": "src/Domains/WorkCore/System/Expansion/ReadModels/SearchAdaptiveRecords.php",
+      "sha256": "89ac21f5eaffb8ca560b9030ad7c5ee7813a77d2ef9b73811db5605687bc4673"
+    },
+    {
+      "bytes": 1507,
+      "path": "src/Domains/WorkCore/System/Expansion/ReadModels/SimulateAdaptiveFeature.php",
+      "sha256": "68fb2c44cf8995111670f8a91c051cb7387dbe593f66cb36f2c11148d2cc07ae"
+    },
+    {
+      "bytes": 14171,
+      "path": "src/Domains/WorkCore/System/Expansion/Repositories/DatabaseAdaptiveFeatureRepository.php",
+      "sha256": "90790380b4191a9bb688bc7c5618fae9cf3ccb9b5bfa5b9b8b940024fb45a2b5"
+    },
+    {
+      "bytes": 23343,
+      "path": "src/Domains/WorkCore/System/Expansion/Repositories/DatabaseExpansionRepository.php",
+      "sha256": "567d04dd38176c6935a38cd80ef89db1e6733d4d117afe233516b0662f58fe5b"
+    },
+    {
+      "bytes": 3781,
+      "path": "src/Domains/WorkCore/System/Expansion/Services/AdaptiveBlueprintCompatibilityValidator.php",
+      "sha256": "36880b4242084d05e110e73358ddef28d107dcbbfcf9e8c9cb50bd271fb18eb2"
+    },
+    {
+      "bytes": 3555,
+      "path": "src/Domains/WorkCore/System/Expansion/Services/AdaptiveBlueprintRollbackMerger.php",
+      "sha256": "bcfc43fd877e856881d2f3524855be5df2efae7ba6d8d6c9ebca8fd161bdc8e6"
+    },
+    {
+      "bytes": 2613,
+      "path": "src/Domains/WorkCore/System/Expansion/Services/AdaptiveConditionEvaluator.php",
+      "sha256": "527cd2f0feda436796d8207aa749f7a914e51dad135cf11c658bfb1379aecd91"
+    },
+    {
+      "bytes": 9057,
+      "path": "src/Domains/WorkCore/System/Expansion/Services/AdaptiveDomainBlueprintValidator.php",
+      "sha256": "9f5557f48e53f59bac985bd40562645d59a40184b18cb5c2af5f35ed4d6ebede"
+    },
+    {
+      "bytes": 16722,
+      "path": "src/Domains/WorkCore/System/Expansion/Services/AdaptiveFeatureBlueprintValidator.php",
+      "sha256": "a2fe0613fd9222f633e23391a6f516a0ad50309423c6affe0dbdaf8d6c3d899d"
+    },
+    {
+      "bytes": 2732,
+      "path": "src/Domains/WorkCore/System/Expansion/Services/AdaptiveFeatureDomainCompatibilityValidator.php",
+      "sha256": "11c53aef4a9878aa7fe50caaeeda0cc62f15a56d1bc933bcedd5fbe475cca615"
+    },
+    {
+      "bytes": 9902,
+      "path": "src/Domains/WorkCore/System/Expansion/Services/AdaptiveFeatureEventProcessor.php",
+      "sha256": "193303350f52cfa1285bbc35e7edf94f785961aceebe970bddd5c3369d544782"
+    },
+    {
+      "bytes": 1935,
+      "path": "src/Domains/WorkCore/System/Expansion/Services/AdaptiveFeatureLoopGuard.php",
+      "sha256": "900bbbd9e9bd2eadcb559bd651b5e34851434aad3d6ba7f9a209abf71701b89f"
+    },
+    {
+      "bytes": 3264,
+      "path": "src/Domains/WorkCore/System/Expansion/Services/AdaptiveFeatureSimulator.php",
+      "sha256": "234cedb81d11d9d911598276b2af48a09d5a7921f7a2abeb34f2fb4f065f06d4"
+    },
+    {
+      "bytes": 1372,
+      "path": "src/Domains/WorkCore/System/Expansion/Services/AdaptiveFeatureValueResolver.php",
+      "sha256": "d8f208ac2f74063ad82a2e8482ac715a673bdc8f23827f7892662154176eb6a9"
+    },
+    {
+      "bytes": 8167,
+      "path": "src/Domains/WorkCore/System/Expansion/Services/AdaptiveRecordValidator.php",
+      "sha256": "672c90766eba210ac8a1115e4a4a29c0b10a536420e74a8a0e100c176a68a7e3"
+    },
+    {
+      "bytes": 1480,
+      "path": "src/Domains/WorkCore/System/Expansion/Services/AdaptiveStatusTransitionValidator.php",
+      "sha256": "366e717a054f7dcb15bce82ff3dddf1b18d3de93d4db1cb01acbf7be34118360"
+    },
+    {
+      "bytes": 12008,
+      "path": "src/Domains/WorkCore/System/Expansion/Services/CapabilityGapAnalyzer.php",
+      "sha256": "9f1c00d5e09ae5ab395b26aeaa37ea875ffe5e2e269d49cfcfd9c9d12885a8cb"
+    },
+    {
+      "bytes": 2793,
+      "path": "src/Domains/WorkCore/System/Expansion/Services/CapabilityInventoryBuilder.php",
+      "sha256": "12c4ba2afa333f61cd1818a06b03f8fc11b7c79eadc53bcc7c7b23b89302368a"
+    },
+    {
+      "bytes": 1601,
+      "path": "src/Domains/WorkCore/System/Expansion/Services/ConfiguredRecordSchemaScanner.php",
+      "sha256": "311b3236f342bd0f58858964868fdcb25ac419fbea05d3d394e770bcaeec60ba"
+    },
+    {
+      "bytes": 3340,
+      "path": "src/Domains/WorkCore/System/Expansion/Services/RequirementNormalizer.php",
+      "sha256": "80d85cf4c3f170d3ae8b124259b038569e0fa729cdb67a7d171ee5f3141af049"
+    },
+    {
+      "bytes": 6196,
+      "path": "src/Domains/WorkCore/System/Intelligence/Actions/CaptureDomainIntelligenceSnapshot.php",
+      "sha256": "9d52a65204d130bc12b05c4b6d9af9e79cc5dc3b486ec63f39295267a777ddc4"
+    },
+    {
+      "bytes": 3428,
+      "path": "src/Domains/WorkCore/System/Intelligence/Actions/IndexKnowledgeDocument.php",
+      "sha256": "e27041a2e227932ab004f42bdb2b66741bed52180f50877adadd52ad10e9be0d"
+    },
+    {
+      "bytes": 2309,
+      "path": "src/Domains/WorkCore/System/Intelligence/Actions/ProposeIntelligenceRecommendation.php",
+      "sha256": "673b853f24d56dee84e49e9e9e8ca1a514b2cee9d829beaae91e9426b90cb711"
+    },
+    {
+      "bytes": 1133,
+      "path": "src/Domains/WorkCore/System/Intelligence/Actions/PurgeExpiredKnowledge.php",
+      "sha256": "0a0598af6dc7bbf47b231ff27b423c649cd90c73d9dcbd716df75138f85af29a"
+    },
+    {
+      "bytes": 2084,
+      "path": "src/Domains/WorkCore/System/Intelligence/Actions/RecordIntelligenceObservation.php",
+      "sha256": "2b91eb85a92e33a28f96acbd2dee0e7dc38cc09cbe2ada617b9fd25d95bd4db0"
+    },
+    {
+      "bytes": 1359,
+      "path": "src/Domains/WorkCore/System/Intelligence/Actions/RemoveKnowledgeDocument.php",
+      "sha256": "98a79440f336264045bab365a39200be70705bb59cc76ab14002e7c84de8578b"
+    },
+    {
+      "bytes": 1852,
+      "path": "src/Domains/WorkCore/System/Intelligence/Approvals/BoundConfirmationVerifier.php",
+      "sha256": "2b87b02e68774d328f325b17be4d90757a069d27faf08f4126272262c1e32919"
+    },
+    {
+      "bytes": 766,
+      "path": "src/Domains/WorkCore/System/Intelligence/Approvals/ConfirmationGrantService.php",
+      "sha256": "828d82d7f6b6700c8ad0c460496382908e2a8a969dadab99c92fe5d89caf0dbd"
+    },
+    {
+      "bytes": 3737,
+      "path": "src/Domains/WorkCore/System/Intelligence/Approvals/ConfirmationGrantSigner.php",
+      "sha256": "8b2d8d8d44dd1228a64ab1d61a70f6641d81d7e54b5b19b771d81d1cac6437a1"
+    },
+    {
+      "bytes": 360,
+      "path": "src/Domains/WorkCore/System/Intelligence/Approvals/ConfirmationNonceStoreContract.php",
+      "sha256": "136297a87008c777c579c8fa7d6952ca9c45a0c1273508f26ca674fddabd2836"
+    },
+    {
+      "bytes": 1507,
+      "path": "src/Domains/WorkCore/System/Intelligence/Approvals/DatabaseConfirmationNonceStore.php",
+      "sha256": "de7004cba8c9b26a661d411ed033e9449300d153116d256be3d0526e5d74e0c6"
+    },
+    {
+      "bytes": 182,
+      "path": "src/Domains/WorkCore/System/Intelligence/Budgets/BudgetExceededException.php",
+      "sha256": "b88754dca34eca4263d51642cada5a68ae6f6b2ca94b98492f52f0dd57ae8a62"
+    },
+    {
+      "bytes": 594,
+      "path": "src/Domains/WorkCore/System/Intelligence/Budgets/IntelligenceBudget.php",
+      "sha256": "ede64d3fffc2a65d6cadd951c34f69797b21e26989575830b827a257d2b4f57c"
+    },
+    {
+      "bytes": 2213,
+      "path": "src/Domains/WorkCore/System/Intelligence/Budgets/IntelligenceBudgetLedger.php",
+      "sha256": "6959715512ddf8820b36a781297ce6019e3cbe3701913f4fe5823393ca6012d1"
+    },
+    {
+      "bytes": 539,
+      "path": "src/Domains/WorkCore/System/Intelligence/Context/IntelligenceContext.php",
+      "sha256": "d3acbd3d3ef11ad9ed4ff74af7f93727db683f598173a8995b70ed514d11c496"
+    },
+    {
+      "bytes": 2378,
+      "path": "src/Domains/WorkCore/System/Intelligence/Domains/AbstractDomainIntelligenceAdapter.php",
+      "sha256": "a09c2c9c91b06027c9d767ae560787bfcb1c2eca20813d5a2628d705446fb109"
+    },
+    {
+      "bytes": 4006,
+      "path": "src/Domains/WorkCore/System/Intelligence/Domains/Adapters/ComplianceQualityIntelligenceAdapter.php",
+      "sha256": "cffe57b2ac31f5b50cedb915443181df40b3a2fe250a0f5880ddb7306535ab44"
+    },
+    {
+      "bytes": 3144,
+      "path": "src/Domains/WorkCore/System/Intelligence/Domains/Adapters/CrmIntelligenceAdapter.php",
+      "sha256": "8cd84c677d670232f8541e0efee919c0c44d102566d8502c92dfc7b8ccf67277"
+    },
+    {
+      "bytes": 4301,
+      "path": "src/Domains/WorkCore/System/Intelligence/Domains/Adapters/FinanceIntelligenceAdapter.php",
+      "sha256": "4f39c0ee5bdc3b4345846f3b7a39cf85da35f80ed885280ba712a94140551b8c"
+    },
+    {
+      "bytes": 3540,
+      "path": "src/Domains/WorkCore/System/Intelligence/Domains/Adapters/OperationsIntelligenceAdapter.php",
+      "sha256": "576c71eeac85c1d9334381dc325a0d534a43d7ed64fbdc2d90568e27c8046178"
+    },
+    {
+      "bytes": 3582,
+      "path": "src/Domains/WorkCore/System/Intelligence/Domains/Adapters/PremisesAssetsIntelligenceAdapter.php",
+      "sha256": "0f474deb41637106183bc7aec45fbadd0638221d046e3673bff614bf1cc8b77c"
+    },
+    {
+      "bytes": 3702,
+      "path": "src/Domains/WorkCore/System/Intelligence/Domains/Adapters/SupplyIntelligenceAdapter.php",
+      "sha256": "f3d99f9c40de93546152ef12abacfa6a9560ad0a3806342ef354c392131ee99a"
+    },
+    {
+      "bytes": 3615,
+      "path": "src/Domains/WorkCore/System/Intelligence/Domains/Adapters/WorkforceIntelligenceAdapter.php",
+      "sha256": "5c21d4deae43966a053be7dbfd8b7aa1dd7f20fe5486d748aa6cadd41d129269"
+    },
+    {
+      "bytes": 747,
+      "path": "src/Domains/WorkCore/System/Intelligence/Domains/ArrayDomainMetricProvider.php",
+      "sha256": "701909d17b9c53603b768c44ad2a7b67188eb0d6669c4aa4cf18621dad962b5e"
+    },
+    {
+      "bytes": 732,
+      "path": "src/Domains/WorkCore/System/Intelligence/Domains/Contracts/DomainIntelligenceAdapterContract.php",
+      "sha256": "244ad4f6830a2016c2c1eaa8d67212c5c2fd339602c6e8759ee1f9bc86ce7e97"
+    },
+    {
+      "bytes": 413,
+      "path": "src/Domains/WorkCore/System/Intelligence/Domains/Contracts/DomainMetricProviderContract.php",
+      "sha256": "574727632596c5a98eea6e92ee36281fe10498f0f4add73978e8b7ce28e4dea3"
+    },
+    {
+      "bytes": 5008,
+      "path": "src/Domains/WorkCore/System/Intelligence/Domains/DatabaseDomainMetricProvider.php",
+      "sha256": "c1db73e23b72468e5a1ac8beed9cc143e06d52f587296c91d517b5765c17c28d"
+    },
+    {
+      "bytes": 1246,
+      "path": "src/Domains/WorkCore/System/Intelligence/Domains/DomainActionAuthorizer.php",
+      "sha256": "b5d6994b6f6cbb285e0df8f5d7ad69036ebcaeec7434abd1d4ee9f9f2498b354"
+    },
+    {
+      "bytes": 1490,
+      "path": "src/Domains/WorkCore/System/Intelligence/Domains/DomainActionDescriptor.php",
+      "sha256": "31de8a3ec6619259d5d723961e685750fc55f96baca2cb45fe298b2f37a42756"
+    },
+    {
+      "bytes": 2049,
+      "path": "src/Domains/WorkCore/System/Intelligence/Domains/DomainIntelligenceContext.php",
+      "sha256": "ff94683cc47966e04572239b58618256c41d78e412730f6fe5d36b379706909d"
+    },
+    {
+      "bytes": 1109,
+      "path": "src/Domains/WorkCore/System/Intelligence/Domains/DomainIntelligenceContextService.php",
+      "sha256": "9a6d7ba11729df8b60a80e0da97178d867b41cb4058e222486bdf4e374fbd966"
+    },
+    {
+      "bytes": 1219,
+      "path": "src/Domains/WorkCore/System/Intelligence/Domains/DomainIntelligenceRegistry.php",
+      "sha256": "7a7a80f78164a295bb254eb7980638657dce0fc6f202802e8611d38135a87585"
+    },
+    {
+      "bytes": 981,
+      "path": "src/Domains/WorkCore/System/Intelligence/Domains/DomainIntelligenceRequest.php",
+      "sha256": "e1aae3af29f3e20374c432a594d3886f68f68171aba60ce88d016e9754f93a6d"
+    },
+    {
+      "bytes": 3532,
+      "path": "src/Domains/WorkCore/System/Intelligence/Domains/DomainMetricDefinition.php",
+      "sha256": "c4593db00fe5b0b47b32915663cf5f8bf021892ec2801f9827dcf30380cc20f5"
+    },
+    {
+      "bytes": 1936,
+      "path": "src/Domains/WorkCore/System/Intelligence/Domains/DomainSignal.php",
+      "sha256": "9eda3a62ec1c535305ddb6ce418448f70e0d910d76782955a55897136b6162a6"
+    },
+    {
+      "bytes": 3847,
+      "path": "src/Domains/WorkCore/System/Intelligence/Evidence/DatabaseEvidenceStore.php",
+      "sha256": "0734def8cd6d5b3e4b057f5623d1042bd307fe00cf19fd41ee1ed96ed13f4d58"
+    },
+    {
+      "bytes": 3729,
+      "path": "src/Domains/WorkCore/System/Intelligence/Evidence/EvidenceChain.php",
+      "sha256": "3c3244c73e3c20eac776cfe0abdbcf046e06825328cf34e7a7a35cdd59f08499"
+    },
+    {
+      "bytes": 1347,
+      "path": "src/Domains/WorkCore/System/Intelligence/Evidence/EvidenceEnvelope.php",
+      "sha256": "caa95da1f1a7d91048b70caeba2dcc78d1a19bcdbc0ff420ab76ac9e24358603"
+    },
+    {
+      "bytes": 556,
+      "path": "src/Domains/WorkCore/System/Intelligence/Evidence/EvidenceStoreContract.php",
+      "sha256": "ebbf3e353e247bf3883044e24f9bf6467af3f86efe1d3df7669b9bcf149eebd9"
+    },
+    {
+      "bytes": 605,
+      "path": "src/Domains/WorkCore/System/Intelligence/Execution/FailureClassification.php",
+      "sha256": "f969954a8e1f937f94b36404651d9d31b8579d16c85c97b7461374fc71b9082c"
+    },
+    {
+      "bytes": 1901,
+      "path": "src/Domains/WorkCore/System/Intelligence/Execution/IntelligenceFailureClassifier.php",
+      "sha256": "1266dfead283c003b9c083bb9e9f82e0e091022ca79c89fdbccd755e5808ceda"
+    },
+    {
+      "bytes": 835,
+      "path": "src/Domains/WorkCore/System/Intelligence/Execution/IntelligenceTaskResult.php",
+      "sha256": "77b74f8320999c2d40020395c3f114c0e4cee6f5292bee7b9ab093c614f70adc"
+    },
+    {
+      "bytes": 647,
+      "path": "src/Domains/WorkCore/System/Intelligence/Execution/TenantScopedIntelligenceJob.php",
+      "sha256": "729fa7e3d738174ed5d3322b1bdd3ac5166a8cbc278fda9a1d548b64a888f683"
+    },
+    {
+      "bytes": 1749,
+      "path": "src/Domains/WorkCore/System/Intelligence/Knowledge/CharacterChunker.php",
+      "sha256": "c3dfbf4414b04a5ff0230a4935a8509a21e05f86f77af3533ec23bc5945ff243"
+    },
+    {
+      "bytes": 16614,
+      "path": "src/Domains/WorkCore/System/Intelligence/Knowledge/DatabaseKnowledgeIndex.php",
+      "sha256": "77ccba29268bf1f705f6de9ca8dc16914d54ac50a54269d2741aa382a9929f5f"
+    },
+    {
+      "bytes": 2111,
+      "path": "src/Domains/WorkCore/System/Intelligence/Knowledge/Jobs/IndexKnowledgeDocumentJob.php",
+      "sha256": "e93aeb99b0d01b4d1caa7098dd87e2e7c58d7634eb627598beedf959e2aca83d"
+    },
+    {
+      "bytes": 1731,
+      "path": "src/Domains/WorkCore/System/Intelligence/Knowledge/KnowledgeAccessScope.php",
+      "sha256": "bdf967011d9b1a6d3bf2670e74e090913e75543509182e4841db1bc52fd90db1"
+    },
+    {
+      "bytes": 389,
+      "path": "src/Domains/WorkCore/System/Intelligence/Knowledge/KnowledgeChunk.php",
+      "sha256": "a6228cece67fde68158698b41c78f53690f7ba817a099545444e92ba516bdb72"
+    },
+    {
+      "bytes": 1395,
+      "path": "src/Domains/WorkCore/System/Intelligence/Knowledge/KnowledgeCitation.php",
+      "sha256": "8a933c0936ee59e7893b35ca1629efa0605980894576e419e9860184fe700288"
+    },
+    {
+      "bytes": 2487,
+      "path": "src/Domains/WorkCore/System/Intelligence/Knowledge/KnowledgeContextBuilder.php",
+      "sha256": "e2a652200a468abe7f592c279eb0d46f86753b491699f59934a1b55d90048cbb"
+    },
+    {
+      "bytes": 666,
+      "path": "src/Domains/WorkCore/System/Intelligence/Knowledge/KnowledgeContextWindow.php",
+      "sha256": "50e55eca81ffb88be0a97f911ae5bb9daae4fd1278e4014a109f1e2e2746dbf4"
+    },
+    {
+      "bytes": 2555,
+      "path": "src/Domains/WorkCore/System/Intelligence/Knowledge/KnowledgeDocument.php",
+      "sha256": "5b76870f514fa9b1fe2d3ba5526a89287783a9ca163ef70c9dfb7ac494656351"
+    },
+    {
+      "bytes": 878,
+      "path": "src/Domains/WorkCore/System/Intelligence/Knowledge/KnowledgeFreshnessPolicy.php",
+      "sha256": "f8bca04564fb6bec5ebdc2a8337e550a1ec15fb8e662a9a1470aa5b87d0836a2"
+    },
+    {
+      "bytes": 384,
+      "path": "src/Domains/WorkCore/System/Intelligence/Knowledge/KnowledgeIndexContract.php",
+      "sha256": "adee01f66b91d6f56609f753b34e33e19500ebf92b5b2daaa31e17568fd2f265"
+    },
+    {
+      "bytes": 335,
+      "path": "src/Domains/WorkCore/System/Intelligence/Knowledge/KnowledgeIndexStatusContract.php",
+      "sha256": "8c1b8516b1467cfb96c8fccb5c33b268cc94a0d0d15657c082052ae0ce9b6bea"
+    },
+    {
+      "bytes": 1251,
+      "path": "src/Domains/WorkCore/System/Intelligence/Knowledge/KnowledgeIngestionService.php",
+      "sha256": "ff21ecea3a2aac6463b07dcb7e78ec9c03aa46ef87c7ec7d2e1ba2eeacaa1340"
+    },
+    {
+      "bytes": 1429,
+      "path": "src/Domains/WorkCore/System/Intelligence/Knowledge/KnowledgeQuery.php",
+      "sha256": "d9ed679ad7b5665f603c64f01e05e0e40bc9e17907d52e7abf30feb6cbb89669"
+    },
+    {
+      "bytes": 1919,
+      "path": "src/Domains/WorkCore/System/Intelligence/Knowledge/KnowledgeRetrievalEvaluator.php",
+      "sha256": "8dcf63819caf2ff0b4155c6f636afb559e0bdab1834ef8552d3e2a52772eabd5"
+    },
+    {
+      "bytes": 909,
+      "path": "src/Domains/WorkCore/System/Intelligence/Knowledge/KnowledgeRetrievalResult.php",
+      "sha256": "cd1e9aebc22fe0017ea8de8d111cc2b8f0ae931bd062132266ed7755853d1c10"
+    },
+    {
+      "bytes": 837,
+      "path": "src/Domains/WorkCore/System/Intelligence/Knowledge/KnowledgeSourceDescriptor.php",
+      "sha256": "1646f4f0de077c155ce8a487ad0a730cdefd79dff2b618c1726569d90283ac87"
+    },
+    {
+      "bytes": 1531,
+      "path": "src/Domains/WorkCore/System/Intelligence/Knowledge/LexicalRelevanceScorer.php",
+      "sha256": "a7e526062f3ba3df1a31e7263e52f36364cd99f30ab0a9c2d97b0c9f45928c22"
+    },
+    {
+      "bytes": 837,
+      "path": "src/Domains/WorkCore/System/Intelligence/Knowledge/NullKnowledgeIndex.php",
+      "sha256": "3739eec2a1dc39b3c8dc82b7943640706a2d1175e12484277336c0c877e716c8"
+    },
+    {
+      "bytes": 1427,
+      "path": "src/Domains/WorkCore/System/Intelligence/Knowledge/ReciprocalRankFusion.php",
+      "sha256": "786d8eb7fc1f2846e7f647a9e4c1175825341331fe0ddb50461d749749744cc8"
+    },
+    {
+      "bytes": 1204,
+      "path": "src/Domains/WorkCore/System/Intelligence/Knowledge/Retention/KnowledgeRetentionPolicy.php",
+      "sha256": "388a01be043b4d43298e85ae47a9a81520c448893330b145d275a593fddf0b3a"
+    },
+    {
+      "bytes": 1098,
+      "path": "src/Domains/WorkCore/System/Intelligence/Knowledge/VectorValidator.php",
+      "sha256": "5e4728d33fe104e996516540e6354537f303d7de518202f48c0ededaf853c80a"
+    },
+    {
+      "bytes": 674,
+      "path": "src/Domains/WorkCore/System/Intelligence/Learning/CapabilityDecision.php",
+      "sha256": "0edda507c312621abaa173386b528ded0c57fdd4922ec79f046d306071c262fb"
+    },
+    {
+      "bytes": 2981,
+      "path": "src/Domains/WorkCore/System/Intelligence/Learning/CapabilityMatchRanker.php",
+      "sha256": "f9cb4ccccaac0081d61e257546e36925804abe44e04fccb0508b5b4b819c7ee7"
+    },
+    {
+      "bytes": 1718,
+      "path": "src/Domains/WorkCore/System/Intelligence/Observations/DatabaseObservationRepository.php",
+      "sha256": "fbdcf1ad95c9206e5915b6f5ff201e4922d84fb54af54c48947f8240c05a2379"
+    },
+    {
+      "bytes": 1380,
+      "path": "src/Domains/WorkCore/System/Intelligence/Observations/IntelligenceObservation.php",
+      "sha256": "63a626256b659d79ac8ae78e2dcd27291ce43995ac32fe51e4e31dfe4de42fed"
+    },
+    {
+      "bytes": 423,
+      "path": "src/Domains/WorkCore/System/Intelligence/Observations/ObservationRepositoryContract.php",
+      "sha256": "e0e8ed5603bab60b8f590d0ca44e94d2fbe6e61083ecba76d93d3adc63019f53"
+    },
+    {
+      "bytes": 2379,
+      "path": "src/Domains/WorkCore/System/Intelligence/Proposals/BalancedJsonExtractor.php",
+      "sha256": "3b21c215aea600ebef7dfff50ccb3a974a2a975b9fa4b59bd224e44f0e83ca01"
+    },
+    {
+      "bytes": 822,
+      "path": "src/Domains/WorkCore/System/Intelligence/Proposals/ProposalEnvelope.php",
+      "sha256": "bc48423af395b66ee50efb72c4d79dda9e427e8ab55fef9556f06f41c47b60a6"
+    },
+    {
+      "bytes": 3249,
+      "path": "src/Domains/WorkCore/System/Intelligence/Proposals/ProposalIntake.php",
+      "sha256": "813a6873bda859e584ff374b8e703e2defe72b9587981b2f4b66ddbc6c54bce7"
+    },
+    {
+      "bytes": 5332,
+      "path": "src/Domains/WorkCore/System/Intelligence/Proposals/StrictSchemaValidator.php",
+      "sha256": "2d612ef3442a0bc01bbe22e4ff7b8ffd21596ca71647902ae7acd046f947e983"
+    },
+    {
+      "bytes": 28245,
+      "path": "src/Domains/WorkCore/System/Intelligence/Providers/WorkCoreIntelligenceServiceProvider.php",
+      "sha256": "9ab5f35034b9fa561b2651dfba99acb7b869844c11206032641eaf78b22be2f6"
+    },
+    {
+      "bytes": 1764,
+      "path": "src/Domains/WorkCore/System/Intelligence/ReadModels/GetDomainIntelligenceContext.php",
+      "sha256": "56bb0674caae8aff0a69fe758bf53b3515258f78aede297ab3e0963b37448a33"
+    },
+    {
+      "bytes": 2647,
+      "path": "src/Domains/WorkCore/System/Intelligence/ReadModels/GetDomainIntelligencePortfolio.php",
+      "sha256": "3e34122311182066e3f9cd46e474ae7633c81af94d0dc48596b57cf0877a53f5"
+    },
+    {
+      "bytes": 1938,
+      "path": "src/Domains/WorkCore/System/Intelligence/ReadModels/GetIntelligenceStatus.php",
+      "sha256": "a6e867961d1a6f598875401fdd6fd0f8d0952a27b38b1d81ff943efadaf41639"
+    },
+    {
+      "bytes": 986,
+      "path": "src/Domains/WorkCore/System/Intelligence/ReadModels/GetKnowledgeDocumentStatus.php",
+      "sha256": "1522e045b514a987427db07555d489282caab0afdb851a5ee7f76c36b5904c01"
+    },
+    {
+      "bytes": 1810,
+      "path": "src/Domains/WorkCore/System/Intelligence/ReadModels/ListDomainIntelligenceAdapters.php",
+      "sha256": "1a082cd4590f15adc1c9c11a3130d7ef42f07d592e14e9190bf1dc6dd22fcb1c"
+    },
+    {
+      "bytes": 1022,
+      "path": "src/Domains/WorkCore/System/Intelligence/ReadModels/ListIntelligenceObservations.php",
+      "sha256": "86331a7b92bc2f27489f45b542ee3c33c5b5a4f3785598abbdd90551b1334aed"
+    },
+    {
+      "bytes": 1040,
+      "path": "src/Domains/WorkCore/System/Intelligence/ReadModels/ListIntelligenceRecommendations.php",
+      "sha256": "7a285a8789497da69cb99347e30921ed4dbf35f2c5808348bc826a8fa80afae0"
+    },
+    {
+      "bytes": 1214,
+      "path": "src/Domains/WorkCore/System/Intelligence/ReadModels/ScanIntelligenceInput.php",
+      "sha256": "060793e1a52835d08046c0af5ba70cbd88d97de5c19862ed48bba2a88cc0efd3"
+    },
+    {
+      "bytes": 2649,
+      "path": "src/Domains/WorkCore/System/Intelligence/ReadModels/SearchKnowledge.php",
+      "sha256": "f53f3783a11ff426a4c4cbcbafec4a6f405af69578834909c1ade881f50f2dc9"
+    },
+    {
+      "bytes": 1766,
+      "path": "src/Domains/WorkCore/System/Intelligence/Recommendations/DatabaseRecommendationRepository.php",
+      "sha256": "e9266d388262312e6cbe0474a772b27d72f1a89f49761afff37af9d80204fb43"
+    },
+    {
+      "bytes": 1615,
+      "path": "src/Domains/WorkCore/System/Intelligence/Recommendations/IntelligenceRecommendation.php",
+      "sha256": "6c3352bab917cbe74879b932f4f2ed5829b1217cd5170b1ae61e96b676d95ac6"
+    },
+    {
+      "bytes": 438,
+      "path": "src/Domains/WorkCore/System/Intelligence/Recommendations/RecommendationRepositoryContract.php",
+      "sha256": "b8692a6d20f80ad1274883a9376b928e6c85c629d8ff7d2856b9a604bd865d3a"
+    },
+    {
+      "bytes": 4051,
+      "path": "src/Domains/WorkCore/System/Intelligence/Safety/AustralianIdentifierDetector.php",
+      "sha256": "84ba37b0b1473aeb40daff227f735bad34502019b62fc6153dd66e84f841a937"
+    },
+    {
+      "bytes": 3200,
+      "path": "src/Domains/WorkCore/System/Intelligence/Safety/ContentSafetyScanner.php",
+      "sha256": "cb0260c6866ed8b181027a62ce5ad196b47432b5fcbb75fb8d9965611aa447f0"
+    },
+    {
+      "bytes": 731,
+      "path": "src/Domains/WorkCore/System/Intelligence/Safety/SafetyFinding.php",
+      "sha256": "34d776b9e36cb2ff4683d3c6300f17f507ac3dd7123d785f0b63311c0fbdd806"
+    },
+    {
+      "bytes": 736,
+      "path": "src/Domains/WorkCore/System/Intelligence/Safety/SafetyScanResult.php",
+      "sha256": "ddfd19e41e18d6b7788f6774f5b095fb866e394783282bcf1ee1c1e53a673339"
+    },
+    {
+      "bytes": 3096,
+      "path": "src/Domains/WorkCore/System/Intelligence/Safety/SecretScanner.php",
+      "sha256": "64557477a581d73e8fd0238daabb870c904a11abca342dacbbc1423f63e63c36"
+    },
+    {
+      "bytes": 1439,
+      "path": "src/Domains/WorkCore/System/Intelligence/Telemetry/IntelligenceTraceCollector.php",
+      "sha256": "dde75b8c3a722748daba5fc1d8b377969cc408c720253ce34bb13e5bf3a15bd6"
+    },
+    {
+      "bytes": 423,
+      "path": "src/Domains/WorkCore/System/Intelligence/Telemetry/IntelligenceTraceEvent.php",
+      "sha256": "f36bd02b574d90e0a01a2286bd30a3fdd0bf8d5950afc822da24d72e91ca26c2"
+    },
+    {
+      "bytes": 4590,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/AI/CRMToolRegistry.php",
+      "sha256": "1d7e9798a90e262762813d349d28e513d0ea3f7330d404f0efabc6e417b80ca0"
+    },
+    {
+      "bytes": 891,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Actions/ConvertLeadToCustomer.php",
+      "sha256": "02a988742db397faf2d349adec1d99895def288602c1e8ac958caadff889c38f"
+    },
+    {
+      "bytes": 1006,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Actions/CreateContact.php",
+      "sha256": "0aaa4909b5ac33f81a72ffa48ffeead277d9691ffeabb13e21866d2195feb428"
+    },
+    {
+      "bytes": 1189,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Actions/CreateCrmActivity.php",
+      "sha256": "0b3e7f50a293c143207ecf78065b89a3da811149a292d6492ad6675dfcea6963"
+    },
+    {
+      "bytes": 1518,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Actions/CreateCustomer.php",
+      "sha256": "ecf468786424aef4e69560a1b002c3fb229a49763a9a59b23b0fce7b4d775913"
+    },
+    {
+      "bytes": 1482,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Actions/CreateLead.php",
+      "sha256": "bd11b154cf4cc645bdbf9a232299a38595e25e7ea13f597d096608e12052853a"
+    },
+    {
+      "bytes": 1190,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Actions/CreateOpportunity.php",
+      "sha256": "47e50016fc43409f7a023997dc3487aec054504a6c6cd2efa7b32b2d2aaeddef"
+    },
+    {
+      "bytes": 1203,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Actions/CreateSalesPipeline.php",
+      "sha256": "1b9a4b3f15bba0c9354739d6d789505d16678be4a6e79701edf543f63b585e72"
+    },
+    {
+      "bytes": 998,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Actions/GetCrmForecast.php",
+      "sha256": "bfbd542f97573392b7bb69c28afdd2647bdd1cac585f8de42e6016a5b999dd4d"
+    },
+    {
+      "bytes": 1051,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Actions/ListCrmActivities.php",
+      "sha256": "60208e9cfd3796ee642906c8f3b98f1f31a73fde487f627937a4abf4b36bde0c"
+    },
+    {
+      "bytes": 803,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Actions/ListSalesPipelines.php",
+      "sha256": "f0e217acc93334b8942af2210a3b7670e6ac7778c8f5ee57dc14f2f64d30c4f8"
+    },
+    {
+      "bytes": 1281,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Actions/MarkOpportunityLost.php",
+      "sha256": "31c40fa0ae915b0659e5d5ea7a68cac39da951f1ae8d8e4371fd29d3b4c15cb8"
+    },
+    {
+      "bytes": 1139,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Actions/MarkOpportunityWon.php",
+      "sha256": "56d73fb28c54fb4f347f420396d43127baf6d73b713327e9ba02576beaf8d17a"
+    },
+    {
+      "bytes": 1297,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Actions/MoveOpportunity.php",
+      "sha256": "afda63420bb1cc3f49420f316cfc79810cbf211fbc1365a83394adc2a2335e9c"
+    },
+    {
+      "bytes": 1135,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Actions/SearchCustomers.php",
+      "sha256": "d889ced60d72671b3dffe1f89850d95b4857acfb1a1223dddbd98f1c24d158e9"
+    },
+    {
+      "bytes": 1119,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Actions/SearchLeads.php",
+      "sha256": "7dadb58fa1dee79bf5739f836b1aa96bc392d5355ae8d2bd99cecc3bee96f051"
+    },
+    {
+      "bytes": 1128,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Actions/SearchOpportunities.php",
+      "sha256": "1f9bca623fe03a3af028704e312101ac867890f9c140bc5bf24c73276e576ac0"
+    },
+    {
+      "bytes": 961,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Actions/SetPrimaryContact.php",
+      "sha256": "cbaadbf2ba40f802ce9326a2b787ff343358764b3887138654bd5cc2083bba53"
+    },
+    {
+      "bytes": 940,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Actions/UpdateLead.php",
+      "sha256": "99050cfe4b58aa63f368bc763872d12f285035e69174e7d5aba0169cffa32434"
+    },
+    {
+      "bytes": 1239,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Actions/UpdateOpportunity.php",
+      "sha256": "8f7ac592f91ae16daa568b40bf6fd734a97d6d1161fba76365723360f9fe5cb7"
+    },
+    {
+      "bytes": 999,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Actions/ViewSalesPipelineBoard.php",
+      "sha256": "a59ad5a265d8ab05cc9ce89292b0a6abfb55af873264cc59c62c0655b8ec5f88"
+    },
+    {
+      "bytes": 462,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Contracts/ContactRepositoryContract.php",
+      "sha256": "640a8772c47459f7956b5cf91d1cf54f0624f7a88a4c0a8829ce49247623553a"
+    },
+    {
+      "bytes": 613,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Contracts/CrmActivityRepositoryContract.php",
+      "sha256": "2516d4ab6720b6266ce0e26f782bd479cac10427f1ff5f67c299b3aeb1b25e2a"
+    },
+    {
+      "bytes": 815,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Contracts/CustomerRepositoryContract.php",
+      "sha256": "559efea99cd0bbe197c485d5937cb8edd4a25ba5fc00952feb5751558fec50d1"
+    },
+    {
+      "bytes": 803,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Contracts/LeadRepositoryContract.php",
+      "sha256": "806c22f78365d0b40d1152c3220fcaa3f10076be85e80e1a85cf2b010d40c231"
+    },
+    {
+      "bytes": 1635,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Contracts/OpportunityRepositoryContract.php",
+      "sha256": "05d35ea7938eeee94c82bf476ae838519d8a5692db138db74565a739df783ea0"
+    },
+    {
+      "bytes": 788,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Contracts/SalesPipelineRepositoryContract.php",
+      "sha256": "140166f4c63128c63a7eabfb181d9f9f51798882cc502a8126448ed3c1f86e2f"
+    },
+    {
+      "bytes": 957,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Data/ContactData.php",
+      "sha256": "cf2e0e3ba77a7d190a6f08876afb02d2b20717764565a4548cf5652ac8a0cb76"
+    },
+    {
+      "bytes": 1319,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Data/CrmActivityData.php",
+      "sha256": "87db1907976000fd5e5ccc589d96f290431a523f0cb556c1cfa1423409403156"
+    },
+    {
+      "bytes": 767,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Data/CustomerData.php",
+      "sha256": "1727b01cf5cdd87d3f189a7a2ba8b0a047f20e44694d4f1a93a192adc66a5f6f"
+    },
+    {
+      "bytes": 981,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Data/LeadData.php",
+      "sha256": "13ab451f53aae9e4d0e15ae1d2d7861d6614f873bb1c12dc03100dfef435f992"
+    },
+    {
+      "bytes": 1885,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Data/OpportunityData.php",
+      "sha256": "c3e3f3a00101b561c4aada749c62eea34dc4fea30ef53b031eaa5b980f1914b3"
+    },
+    {
+      "bytes": 875,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Data/SalesPipelineData.php",
+      "sha256": "4112c874ef0831d1441aa9aec487dc53c8a2c319a46601bc5f411a6c389a322f"
+    },
+    {
+      "bytes": 2096,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Http/Controllers/ContactController.php",
+      "sha256": "39c06bc19cefde29dbb57689cd880e0cc7cb962cda9f800e15316679b7317efa"
+    },
+    {
+      "bytes": 2017,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Http/Controllers/CrmActivityController.php",
+      "sha256": "c3e32571d2c9434d2f029f0710d66c06b7535fb96fabf925febed3e4c5a6aba0"
+    },
+    {
+      "bytes": 1956,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Http/Controllers/CustomerController.php",
+      "sha256": "318dcc2d32986eedb523e980de4aed6a30d618d5ae2c9639e450264a2f5c1581"
+    },
+    {
+      "bytes": 2519,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Http/Controllers/LeadController.php",
+      "sha256": "570ff7aed576f688e1f002401e795dc6b5ceb78e484566ae8d260870ee588f53"
+    },
+    {
+      "bytes": 3614,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Http/Controllers/OpportunityController.php",
+      "sha256": "275d84e5c9c034057a0b65b7d594d1d6e1f033888293f999dacfe59b8a14b9d1"
+    },
+    {
+      "bytes": 2492,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Http/Controllers/SalesPipelineController.php",
+      "sha256": "3fd47d9af5454c6640f6af9d0f769c1e7986d211b6e850dc622716a55256e1b6"
+    },
+    {
+      "bytes": 358,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Http/Requests/MarkOpportunityLostRequest.php",
+      "sha256": "014f5bee775e07795901d3c5cfe0351f931f37c5a88863c7c649e128ef110312"
+    },
+    {
+      "bytes": 411,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Http/Requests/MoveOpportunityRequest.php",
+      "sha256": "4f67f76a4c537d70ed3d7510bbaa27780227a9d9c291385296e31dabbeb70a42"
+    },
+    {
+      "bytes": 603,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Http/Requests/StoreContactRequest.php",
+      "sha256": "00226b23ffd832ef4c08651ff2e1cd106b9b2d9ab1420d86881568b01e5c1b07"
+    },
+    {
+      "bytes": 898,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Http/Requests/StoreCrmActivityRequest.php",
+      "sha256": "d84d0ac63e5cdc7eab3f9f2e05f105b44e29c7f1d03898dd9c392b9fd3e57266"
+    },
+    {
+      "bytes": 621,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Http/Requests/StoreCustomerRequest.php",
+      "sha256": "00feab18f6e380574337b661e4aeaad38516ce3f24cdcb8c3c8422f08d4278ab"
+    },
+    {
+      "bytes": 718,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Http/Requests/StoreLeadRequest.php",
+      "sha256": "3515bab526c7e44e186e18724fd7774e4b88cabb79687a944b999898790e7f7b"
+    },
+    {
+      "bytes": 1186,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Http/Requests/StoreOpportunityRequest.php",
+      "sha256": "4eb65dc7dcb81a95604b591b45aff33d30b9ce2ea4161e6fcfbc848262161332"
+    },
+    {
+      "bytes": 1074,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Http/Requests/StoreSalesPipelineRequest.php",
+      "sha256": "05236a9a011cad5e131051874394e533c1d9ddfb285aab23f4d0441b35b03691"
+    },
+    {
+      "bytes": 821,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Http/Requests/UpdateLeadRequest.php",
+      "sha256": "619e753479cd1904fde7f8ac00f71fd79b84f01639ceb9eeb5972b48e4778e58"
+    },
+    {
+      "bytes": 1153,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Http/Requests/UpdateOpportunityRequest.php",
+      "sha256": "d150389143e74f9531d061465cb2854a9f3379d36d6f6fa55d26ca4dfc214766"
+    },
+    {
+      "bytes": 8807,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Providers/WorkCRMServiceProvider.php",
+      "sha256": "242724e01bd643740fcae9eea7cda5b66582e19ce893f50f0ca6e0e9e2529f5f"
+    },
+    {
+      "bytes": 3771,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Repositories/EloquentContactRepository.php",
+      "sha256": "bef168b769d09745fa943fffc2744e3fac80276ca4964a3ce016b0947bfd1afe"
+    },
+    {
+      "bytes": 2930,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Repositories/EloquentCrmActivityRepository.php",
+      "sha256": "745f5ecfd5d3c43be5e822512e700a3cfc21078d9ed8535f3c038e8acbe5c7db"
+    },
+    {
+      "bytes": 4115,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Repositories/EloquentCustomerRepository.php",
+      "sha256": "a26ca858e9817ec1cc681acc3416931fe996f72c4d628fa10a2d4c380ab2e05e"
+    },
+    {
+      "bytes": 4843,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Repositories/EloquentLeadRepository.php",
+      "sha256": "5fce69454819e783a1587dcf35a1145faffc4300172d3ee6b4b5c197545961f0"
+    },
+    {
+      "bytes": 25002,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Repositories/EloquentOpportunityRepository.php",
+      "sha256": "b6fa4312abc6e50d8463ccf1f8603d5a1847d2ea4df23261e5572a2cd43ae5d3"
+    },
+    {
+      "bytes": 11245,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Repositories/EloquentSalesPipelineRepository.php",
+      "sha256": "e623b51cccb77d44884967e4991162cdc2cb490bd38f716e931459404c7e61a6"
+    },
+    {
+      "bytes": 2696,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Services/CrmActivityRecorder.php",
+      "sha256": "bbe4868c049afb85feea94a29a5644cd88bc880cb69b6b80e89ae4359da7581a"
+    },
+    {
+      "bytes": 1346,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Services/CrmDuplicateDetector.php",
+      "sha256": "cfaba1ef36ae27ac62c897a2a052e455c9d716e01f18e5aba53936ffd958c1f6"
+    },
+    {
+      "bytes": 1119,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Services/CrmSubjectReferenceValidator.php",
+      "sha256": "dff747abfc85be5f9382d4ab1959ad3bde12dc6f5161c78c80a2a87efcaa0240"
+    },
+    {
+      "bytes": 3755,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Services/DefaultSalesPipelineProvisioner.php",
+      "sha256": "81841f277ec89e5deeaaf32144f0a8b85d828a1e720dc2cea1148c0b02e6cb2d"
+    },
+    {
+      "bytes": 7393,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Services/LeadLifecycleService.php",
+      "sha256": "73edd6e7420daea4ea73df67e56121d6e15915b4c3350aee7401f913502a5c14"
+    },
+    {
+      "bytes": 485,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/Support/CrmNormalizer.php",
+      "sha256": "a1169a903331639c0d0390b613fa63295a1cdc2594165da1a4c9e9083d4002b6"
+    },
+    {
+      "bytes": 3113,
+      "path": "src/Domains/WorkCore/System/Modules/CRM/routes/api.php",
+      "sha256": "6bea5ee38f43cb3c9ce83b8130fb195383f2b9f793a5ee8749a62586c2d479a0"
+    },
+    {
+      "bytes": 1059,
+      "path": "src/Domains/WorkCore/System/Modules/Catalogue/AI/CatalogueToolRegistry.php",
+      "sha256": "549e8046891760d9e4362e21bef3d21f5239945b2ee326d6cb08caa187409e51"
+    },
+    {
+      "bytes": 354,
+      "path": "src/Domains/WorkCore/System/Modules/Catalogue/Actions/CreateCatalogue.php",
+      "sha256": "2ee52cbf5c8ad8c4fcf360b620fe753ef9a8f54aa43e372fdf459003c81e75e2"
+    },
+    {
+      "bytes": 948,
+      "path": "src/Domains/WorkCore/System/Modules/Catalogue/Actions/CreateJobTemplate.php",
+      "sha256": "f3cda0ec853deeabc0de0e098570fe70cd842afb00332e78ad7c40e82506f869"
+    },
+    {
+      "bytes": 925,
+      "path": "src/Domains/WorkCore/System/Modules/Catalogue/Actions/CreateService.php",
+      "sha256": "2955fbc5c20848824640fb54535224818566ed9dc31f073ba4751ffdbb1a2fd0"
+    },
+    {
+      "bytes": 961,
+      "path": "src/Domains/WorkCore/System/Modules/Catalogue/Actions/CreateServiceCategory.php",
+      "sha256": "28962735b6bf443f5e7ad12b7b5582fa8f91583e867a560f8970f22166750888"
+    },
+    {
+      "bytes": 1037,
+      "path": "src/Domains/WorkCore/System/Modules/Catalogue/Actions/CreateServiceFaq.php",
+      "sha256": "cace8c6f6b319f15d18054faba2ec722f37bec2c4b3bc79dfa930ac83a519978"
+    },
+    {
+      "bytes": 1053,
+      "path": "src/Domains/WorkCore/System/Modules/Catalogue/Actions/CreateServiceVariant.php",
+      "sha256": "2e36e85b22eb712394daf028445ce7f1d6aeec665d764ab5b9afed839cf17f6e"
+    },
+    {
+      "bytes": 1063,
+      "path": "src/Domains/WorkCore/System/Modules/Catalogue/Actions/DeleteServiceFaq.php",
+      "sha256": "b283a0146738585ac7600ce9711e11d1d774d1e2b487c1508dce8901f67cb2aa"
+    },
+    {
+      "bytes": 1083,
+      "path": "src/Domains/WorkCore/System/Modules/Catalogue/Actions/DeleteServiceVariant.php",
+      "sha256": "41535294d639646d47eb00c59bb223eefbe67b8b9cb87227786ed5621792757c"
+    },
+    {
+      "bytes": 1209,
+      "path": "src/Domains/WorkCore/System/Modules/Catalogue/Actions/ListServiceFaqs.php",
+      "sha256": "b5d3f4d4360021ad82f2ebdc44afd1f5baed55592312353b0a0c14317c025f7b"
+    },
+    {
+      "bytes": 1217,
+      "path": "src/Domains/WorkCore/System/Modules/Catalogue/Actions/ListServiceVariants.php",
+      "sha256": "8c73121db75b559a535ad4d51f12dc843ff08683cb8e4f4f8cafff9cfded4dc8"
+    },
+    {
+      "bytes": 484,
+      "path": "src/Domains/WorkCore/System/Modules/Catalogue/Actions/SearchServices.php",
+      "sha256": "782ccbd680bbd6d59dc3eff6973f3d97a178275d6d0a85be5a9595ff88a993cf"
+    },
+    {
+      "bytes": 1082,
+      "path": "src/Domains/WorkCore/System/Modules/Catalogue/Actions/UpdateServiceFaq.php",
+      "sha256": "8b2847fc1d99c92dc490b22e1ea66ebdfa086fd86a6b167845906f64ea5d7e7f"
+    },
+    {
+      "bytes": 1102,
+      "path": "src/Domains/WorkCore/System/Modules/Catalogue/Actions/UpdateServiceVariant.php",
+      "sha256": "191ddcb9a355c5db1a5e1ee7fe5a1010a453e6dcdcc3ce0ef8d86f5832dbe982"
+    },
+    {
+      "bytes": 1431,
+      "path": "src/Domains/WorkCore/System/Modules/Catalogue/Contracts/ServiceCatalogueRepositoryContract.php",
+      "sha256": "a2871bf362211e14e4621131ddab12810c0129b237adc6575442f9eb3605186a"
+    },
+    {
+      "bytes": 5499,
+      "path": "src/Domains/WorkCore/System/Modules/Catalogue/Http/Controllers/ServiceCatalogueController.php",
+      "sha256": "44088c9a993bec2ffe46530aeed4dbfc715d281b91d8e82929ae9317c9ee8f6a"
+    },
+    {
+      "bytes": 1094,
+      "path": "src/Domains/WorkCore/System/Modules/Catalogue/Http/Requests/StoreJobTemplateRequest.php",
+      "sha256": "3e0d185c3a66713de27530bbfd18964c4510ebe97c5eccb84e4602cb6c4a5b25"
+    },
+    {
+      "bytes": 606,
+      "path": "src/Domains/WorkCore/System/Modules/Catalogue/Http/Requests/StoreServiceCategoryRequest.php",
+      "sha256": "c43f6fd51bef9fd4611e61c2e9140d49a613b3fdc27eba4c8b12eca3dafa0408"
+    },
+    {
+      "bytes": 610,
+      "path": "src/Domains/WorkCore/System/Modules/Catalogue/Http/Requests/StoreServiceFaqRequest.php",
+      "sha256": "1349ecdec5edf193086454e79fc63fbce29b8c06bc4c4299dc51dea213af15c6"
+    },
+    {
+      "bytes": 937,
+      "path": "src/Domains/WorkCore/System/Modules/Catalogue/Http/Requests/StoreServiceRequest.php",
+      "sha256": "73ef38d6c7bb3171f6f5dd47c3d25d7c5daa1b74379f611979df28148ced7a1d"
+    },
+    {
+      "bytes": 967,
+      "path": "src/Domains/WorkCore/System/Modules/Catalogue/Http/Requests/StoreServiceVariantRequest.php",
+      "sha256": "4d7b6a2560bf92f4f9149de7985127ead52fa5cbd4bf3e77cb02c3eaf1e13875"
+    },
+    {
+      "bytes": 663,
+      "path": "src/Domains/WorkCore/System/Modules/Catalogue/Http/Requests/UpdateServiceFaqRequest.php",
+      "sha256": "e5bcefb6108a63ebf08c861d55658ea04a5de12163b80aaece984ba7762310a3"
+    },
+    {
+      "bytes": 1072,
+      "path": "src/Domains/WorkCore/System/Modules/Catalogue/Http/Requests/UpdateServiceVariantRequest.php",
+      "sha256": "88f9894f78ca847ef88fcd4da90823938da76ea2563d73f0a1e901794553e066"
+    },
+    {
+      "bytes": 2402,
+      "path": "src/Domains/WorkCore/System/Modules/Catalogue/Providers/WorkCatalogueServiceProvider.php",
+      "sha256": "a48f94523f4ee2242647e15b2883a35b8f5a83dc725f691d2f627c39ca2e5e85"
+    },
+    {
+      "bytes": 18319,
+      "path": "src/Domains/WorkCore/System/Modules/Catalogue/Repositories/EloquentServiceCatalogueRepository.php",
+      "sha256": "c0fd142c989a422364705c220ad70c06c4051a3e02de288efef8fa3eedf72de8"
+    },
+    {
+      "bytes": 763,
+      "path": "src/Domains/WorkCore/System/Modules/Catalogue/routes/api.php",
+      "sha256": "4f54b9635084ddcb4ffce5ddf90bf26df5cf39f7096616f541758176617601c0"
+    },
+    {
+      "bytes": 373,
+      "path": "src/Domains/WorkCore/System/Modules/Feedback/AI/FeedbackToolRegistry.php",
+      "sha256": "0172c9af25e357f0a99525ee6698b788a13b450f0c949448b93f89e049895ce1"
+    },
+    {
+      "bytes": 2078,
+      "path": "src/Domains/WorkCore/System/Modules/Knowledge/AI/KnowledgeToolRegistry.php",
+      "sha256": "dbd1cde71b68b4a204eb0ef9a57cc78d92a1ea32acaffdb96e4879715e154ba9"
+    },
+    {
+      "bytes": 1104,
+      "path": "src/Domains/WorkCore/System/Modules/KnowledgeBase/Actions/ChangeKnowledgeArticleStatus.php",
+      "sha256": "33a13afd119b26eb8afb3f3f8a905ba60f05bf43c2484c10c9f1339952a480df"
+    },
+    {
+      "bytes": 997,
+      "path": "src/Domains/WorkCore/System/Modules/KnowledgeBase/Actions/CreateKnowledgeArticle.php",
+      "sha256": "f854d95e98586ad04fa479feb98e0b5a46c8452bbd6d2a3102f13929a0958dea"
+    },
+    {
+      "bytes": 1172,
+      "path": "src/Domains/WorkCore/System/Modules/KnowledgeBase/Actions/CreateKnowledgeArticleFromSupportTicket.php",
+      "sha256": "7eb9971641bbeab91c825c6ba36a222402ddce9b501cb9b615cd4230ece392f1"
+    },
+    {
+      "bytes": 1002,
+      "path": "src/Domains/WorkCore/System/Modules/KnowledgeBase/Actions/CreateKnowledgeCategory.php",
+      "sha256": "7b5aaefa0e3fd43ec920bbe348a1528de47cdf19dade66685042bb7f97470de5"
+    },
+    {
+      "bytes": 1060,
+      "path": "src/Domains/WorkCore/System/Modules/KnowledgeBase/Actions/RecordKnowledgeFeedback.php",
+      "sha256": "6c7e7bf5ace00cfcbba4394b55c03902e6dba19e609df8e9dda007adc9c17e33"
+    },
+    {
+      "bytes": 594,
+      "path": "src/Domains/WorkCore/System/Modules/KnowledgeBase/Actions/SearchKnowledgeArticles.php",
+      "sha256": "e5c6edda22e6ebade278408f886b6d2d02dcc4b1ee10f4ff31d8bd67bf021777"
+    },
+    {
+      "bytes": 1054,
+      "path": "src/Domains/WorkCore/System/Modules/KnowledgeBase/Actions/UpdateKnowledgeArticle.php",
+      "sha256": "8b0b4609c8f1db00aa5b7e129d8da08f7731384a77c6a693f5cf55311d9c108a"
+    },
+    {
+      "bytes": 1014,
+      "path": "src/Domains/WorkCore/System/Modules/KnowledgeBase/Contracts/KnowledgeBaseRepositoryContract.php",
+      "sha256": "68c995515d95c3f282f9e1ce7c3d2d92606b6528cafdb4133bc1759d311598a3"
+    },
+    {
+      "bytes": 3460,
+      "path": "src/Domains/WorkCore/System/Modules/KnowledgeBase/Http/Controllers/KnowledgeBaseController.php",
+      "sha256": "b4cd54bb444acc9dbcdd9d7734c24a7d9b1318bbf8fb53b5a83c6bfaa166b9de"
+    },
+    {
+      "bytes": 432,
+      "path": "src/Domains/WorkCore/System/Modules/KnowledgeBase/Http/Requests/ChangeKnowledgeArticleStatusRequest.php",
+      "sha256": "6a67a27806ca297ea31e27c91a26da049ede2d4018de0560739910d965133588"
+    },
+    {
+      "bytes": 972,
+      "path": "src/Domains/WorkCore/System/Modules/KnowledgeBase/Http/Requests/CreateArticleFromSupportTicketRequest.php",
+      "sha256": "4ed0386e154be480873a8ac77ac4c99016c4bee0ef3e70ab65b01f33bb3630bb"
+    },
+    {
+      "bytes": 1399,
+      "path": "src/Domains/WorkCore/System/Modules/KnowledgeBase/Http/Requests/StoreKnowledgeArticleRequest.php",
+      "sha256": "5dfa0d6b172219c84d2a9bd75ab0aca1a4dd776297e8fe6aba0a53b8132cba35"
+    },
+    {
+      "bytes": 648,
+      "path": "src/Domains/WorkCore/System/Modules/KnowledgeBase/Http/Requests/StoreKnowledgeCategoryRequest.php",
+      "sha256": "17dcc964396fe8f350f22a7258cf00a824a1525b3761f20fed422bb5e9fdc3d2"
+    },
+    {
+      "bytes": 439,
+      "path": "src/Domains/WorkCore/System/Modules/KnowledgeBase/Http/Requests/StoreKnowledgeFeedbackRequest.php",
+      "sha256": "ad3e209032837879b5ca8a202110c7857698dda5dd3bfaf401b111fd0028c95d"
+    },
+    {
+      "bytes": 1170,
+      "path": "src/Domains/WorkCore/System/Modules/KnowledgeBase/Http/Requests/UpdateKnowledgeArticleRequest.php",
+      "sha256": "9f12226e6e5682e47362a6fb878b47960de3853856c339d166042b68282c7ce3"
+    },
+    {
+      "bytes": 2965,
+      "path": "src/Domains/WorkCore/System/Modules/KnowledgeBase/Providers/WorkKnowledgeBaseServiceProvider.php",
+      "sha256": "68963570de9730c872e0c55d86c4b82c10560b66c650ac35013de17521df14e1"
+    },
+    {
+      "bytes": 18093,
+      "path": "src/Domains/WorkCore/System/Modules/KnowledgeBase/Repositories/EloquentKnowledgeBaseRepository.php",
+      "sha256": "571c045e6ca622ebc030f4bcf8b13bc2492a70f3a738e6b8bc7a62cd831df23b"
+    },
+    {
+      "bytes": 1098,
+      "path": "src/Domains/WorkCore/System/Modules/KnowledgeBase/Services/ArticleStatusPolicy.php",
+      "sha256": "d77af4d19cdcc77db1389020842963e8f6d1ea021019d04e964b8a25807d9be4"
+    },
+    {
+      "bytes": 782,
+      "path": "src/Domains/WorkCore/System/Modules/KnowledgeBase/Services/ArticleVisibilityPolicy.php",
+      "sha256": "c78cea5f3edb1bc70f11127eaf09a566af6942958b4272a5232a68c09e6a4ddf"
+    },
+    {
+      "bytes": 1251,
+      "path": "src/Domains/WorkCore/System/Modules/KnowledgeBase/routes/api.php",
+      "sha256": "dc84b3e6a26e8b4ca6a326cbdbda6ae6cb1132021a894618ecdb738eaebccb2b"
+    },
+    {
+      "bytes": 371,
+      "path": "src/Domains/WorkCore/System/Modules/Reviews/AI/ReviewsToolRegistry.php",
+      "sha256": "954b45613a527fc8b03d33102ca7cb8ed26a7cf9ccd71f1539a289b979c7dc16"
+    },
+    {
+      "bytes": 928,
+      "path": "src/Domains/WorkCore/System/Modules/Reviews/Actions/CreateReviewRequest.php",
+      "sha256": "cf125ce68b27e14eba813ba80967f6da58dec9c63e2d6c1a74dea9bdf3b147a8"
+    },
+    {
+      "bytes": 924,
+      "path": "src/Domains/WorkCore/System/Modules/Reviews/Actions/CreateServiceRecovery.php",
+      "sha256": "2dd93aec74aa65191201b4136c3941339185b5e6c730458f7dff21b2ec4c4130"
+    },
+    {
+      "bytes": 903,
+      "path": "src/Domains/WorkCore/System/Modules/Reviews/Actions/PublishReview.php",
+      "sha256": "825fb603523ac8ecfcf472f258f1a3b2d213e74e6f9ba9d86584b2d7286cc875"
+    },
+    {
+      "bytes": 905,
+      "path": "src/Domains/WorkCore/System/Modules/Reviews/Actions/RecordReview.php",
+      "sha256": "47a7ecb3dcdfbb548200e91fc7ce0e9df156b4ce45b2298715ede4e238e20109"
+    },
+    {
+      "bytes": 880,
+      "path": "src/Domains/WorkCore/System/Modules/Reviews/Actions/RequestRebooking.php",
+      "sha256": "b3f4b4970f839794c45f045293385742a0b8d328f118ae98d8f6e118a5b90a26"
+    },
+    {
+      "bytes": 428,
+      "path": "src/Domains/WorkCore/System/Modules/Reviews/Actions/SearchReviews.php",
+      "sha256": "4d18e0040b9e2352ab8fb65ab06d5a610aaf7eddf2b81c707f5a26a90540d78a"
+    },
+    {
+      "bytes": 746,
+      "path": "src/Domains/WorkCore/System/Modules/Reviews/Contracts/ReviewRepositoryContract.php",
+      "sha256": "4f8ca72cc10f044d91fe3710c71be86edcd8366ada67aec75f0c4dadadc423dc"
+    },
+    {
+      "bytes": 2014,
+      "path": "src/Domains/WorkCore/System/Modules/Reviews/Http/Controllers/ReviewController.php",
+      "sha256": "a25d0033f7a986b53bc4c50b5d30ba0fbde9884cc79a6ce01524faeb0daa2a91"
+    },
+    {
+      "bytes": 331,
+      "path": "src/Domains/WorkCore/System/Modules/Reviews/Http/Requests/PublishReviewRequest.php",
+      "sha256": "4f47293e82f86c082ab9deceee64652834b4d808db45863ff1b092ad94eeb8c2"
+    },
+    {
+      "bytes": 616,
+      "path": "src/Domains/WorkCore/System/Modules/Reviews/Http/Requests/RebookingRequest.php",
+      "sha256": "cf47b0591476b4f91a6fb2bfe5eba220bf7a426dcd93b5cd20a450f036944de0"
+    },
+    {
+      "bytes": 678,
+      "path": "src/Domains/WorkCore/System/Modules/Reviews/Http/Requests/RecordReviewRequest.php",
+      "sha256": "de76c3692e098cf6b5702eaedd35909533dae987147e71f50e33cf3ac2dde346"
+    },
+    {
+      "bytes": 406,
+      "path": "src/Domains/WorkCore/System/Modules/Reviews/Http/Requests/ServiceRecoveryRequest.php",
+      "sha256": "150981283a8bfdefde4ba510ab4ce2b722b6d30160fa54518ed805670d1ff3c6"
+    },
+    {
+      "bytes": 614,
+      "path": "src/Domains/WorkCore/System/Modules/Reviews/Http/Requests/StoreReviewRequest.php",
+      "sha256": "d76d062cd9ed70756887d4f613532b09138fd19617c2a78d5307520484490e00"
+    },
+    {
+      "bytes": 2232,
+      "path": "src/Domains/WorkCore/System/Modules/Reviews/Providers/WorkReviewsServiceProvider.php",
+      "sha256": "f11afcc5f9f64e812b2bbbd927ac9869f64bee162efd4f9e5e53f782ada22ece"
+    },
+    {
+      "bytes": 8343,
+      "path": "src/Domains/WorkCore/System/Modules/Reviews/Repositories/EloquentReviewRepository.php",
+      "sha256": "ad33fbfb78f9ae618ee409307651c0350ccf1b7a9b7727420eda1c3d7f925a65"
+    },
+    {
+      "bytes": 883,
+      "path": "src/Domains/WorkCore/System/Modules/Reviews/Services/ReviewPolicy.php",
+      "sha256": "11acb7a63cb4683195e9e055d2036d0db57d9fe5b6c43234941389b614b5f7e4"
+    },
+    {
+      "bytes": 928,
+      "path": "src/Domains/WorkCore/System/Modules/Reviews/routes/api.php",
+      "sha256": "a673459d759a53ebbcbd949efd931d3478b6af54a932ba8bd94442913c887c4b"
+    },
+    {
+      "bytes": 2416,
+      "path": "src/Domains/WorkCore/System/Modules/Support/AI/SupportToolRegistry.php",
+      "sha256": "ce2b438e50fed6aab96a35cdb11f7192166b9ff6a8ffbf18d6cab93b5ad6ab4e"
+    },
+    {
+      "bytes": 1077,
+      "path": "src/Domains/WorkCore/System/Modules/Support/Actions/AddSupportTicketMessage.php",
+      "sha256": "3162e5f124ab13c3ee4c3f11a59ab48a17cc96547361da338134b451b558a2c7"
+    },
+    {
+      "bytes": 1035,
+      "path": "src/Domains/WorkCore/System/Modules/Support/Actions/AssignSupportTicket.php",
+      "sha256": "3e414f7dbbce37d253ef87b7575d06775cec4b9f81baf0be68412a422f2adcd5"
+    },
+    {
+      "bytes": 1053,
+      "path": "src/Domains/WorkCore/System/Modules/Support/Actions/ChangeSupportTicketStatus.php",
+      "sha256": "50ae298b19e64cd73eea2aaee5b818a20519a1e7df127956776c6e4b399a461d"
+    },
+    {
+      "bytes": 2754,
+      "path": "src/Domains/WorkCore/System/Modules/Support/Actions/ConvertSupportTicketToWorkOrder.php",
+      "sha256": "c13a6f790c6fef655ecf0c18489d32d675e56e60c7772cb056d1768277634c2e"
+    },
+    {
+      "bytes": 977,
+      "path": "src/Domains/WorkCore/System/Modules/Support/Actions/CreateSupportQueue.php",
+      "sha256": "edef46d6d543794e02f829cba64afdd55af95e5c4501c1fb6f9c3c57de4de862"
+    },
+    {
+      "bytes": 982,
+      "path": "src/Domains/WorkCore/System/Modules/Support/Actions/CreateSupportTicket.php",
+      "sha256": "52baf56453a642063276fc090635a79bc4a731b16265433ec9e2c1fa60cb067e"
+    },
+    {
+      "bytes": 588,
+      "path": "src/Domains/WorkCore/System/Modules/Support/Actions/SearchSupportTickets.php",
+      "sha256": "9a86bd207ec24b87a7215f9fd6942af313d4c91fd2fb62a7376c2dc69bbc9788"
+    },
+    {
+      "bytes": 994,
+      "path": "src/Domains/WorkCore/System/Modules/Support/Contracts/SupportTicketRepositoryContract.php",
+      "sha256": "a812ea1ba8741324035b2ed46fe760d181ae2df4096044d11e18f380545bf3b9"
+    },
+    {
+      "bytes": 3440,
+      "path": "src/Domains/WorkCore/System/Modules/Support/Http/Controllers/SupportTicketController.php",
+      "sha256": "cc8244d60169b15ccee0d45e9662c746f1ec0f430bb7f55baf56c73bb5f3e79f"
+    },
+    {
+      "bytes": 390,
+      "path": "src/Domains/WorkCore/System/Modules/Support/Http/Requests/AssignSupportTicketRequest.php",
+      "sha256": "ac6cde9dce700abc3c4e199428b3f5cf46c574dce8f9235a52d1bcd9417b31d2"
+    },
+    {
+      "bytes": 467,
+      "path": "src/Domains/WorkCore/System/Modules/Support/Http/Requests/ChangeSupportTicketStatusRequest.php",
+      "sha256": "c675e8f1333c502d0511583fd80309118250f49f44358f5c451ee01eea2a0e7a"
+    },
+    {
+      "bytes": 500,
+      "path": "src/Domains/WorkCore/System/Modules/Support/Http/Requests/ConvertSupportTicketToWorkOrderRequest.php",
+      "sha256": "3e321f6976b866a2a3b5d496b66a2b50a0d48fe44df393d6735bf844a468b82b"
+    },
+    {
+      "bytes": 763,
+      "path": "src/Domains/WorkCore/System/Modules/Support/Http/Requests/StoreSupportQueueRequest.php",
+      "sha256": "a19017f0774d20fc8f9904e94f534e33327ab8c6b470733644e9433e283fda36"
+    },
+    {
+      "bytes": 683,
+      "path": "src/Domains/WorkCore/System/Modules/Support/Http/Requests/StoreSupportTicketMessageRequest.php",
+      "sha256": "a57003df57a30bf1b8821675006b62be857197b27f81830c831dd9653dc7b50f"
+    },
+    {
+      "bytes": 1694,
+      "path": "src/Domains/WorkCore/System/Modules/Support/Http/Requests/StoreSupportTicketRequest.php",
+      "sha256": "8fe48f5c6aead9ebf31f4a5861d16bb1e1e3eeda6907e1ec7940ec6f8562c31d"
+    },
+    {
+      "bytes": 2844,
+      "path": "src/Domains/WorkCore/System/Modules/Support/Providers/WorkSupportServiceProvider.php",
+      "sha256": "6fe050ec200b16801d3f1f10cb0c8501784415910e0d02c561d63d91e2364323"
+    },
+    {
+      "bytes": 25049,
+      "path": "src/Domains/WorkCore/System/Modules/Support/Repositories/EloquentSupportTicketRepository.php",
+      "sha256": "39d7c7acbade0bd08011f39868753f8f4ad2f16e8e1fe64466e0879eef2f0dd8"
+    },
+    {
+      "bytes": 865,
+      "path": "src/Domains/WorkCore/System/Modules/Support/Services/TicketPriorityPolicy.php",
+      "sha256": "358668b5a58290d4c956ff2f8fe4fb2ce6aa664dadf0536802f0d65dc9e5ceea"
+    },
+    {
+      "bytes": 1832,
+      "path": "src/Domains/WorkCore/System/Modules/Support/Services/TicketStatusPolicy.php",
+      "sha256": "597989375347b31464d61299b3390b54d6ad0daee8900974fa34ca88ff29fcbd"
+    },
+    {
+      "bytes": 1189,
+      "path": "src/Domains/WorkCore/System/Modules/Support/routes/api.php",
+      "sha256": "fbdd58d8136b152d71e00b9787563e8cbbef8eb5f2851c4965e7c5e63d025f82"
+    },
+    {
+      "bytes": 379,
+      "path": "src/Domains/WorkCore/System/Modules/Territories/AI/TerritoriesToolRegistry.php",
+      "sha256": "6005af50b5807bd08a4cc99909cb7c2b94d21cd9d9d07501882977d1731cff2a"
+    },
+    {
+      "bytes": 969,
+      "path": "src/Domains/WorkCore/System/Modules/Territories/Actions/AssignTerritory.php",
+      "sha256": "6795f0d10d1f1e026722d5b6256bb2cac603d858ffae624069af4be98fc08e5d"
+    },
+    {
+      "bytes": 954,
+      "path": "src/Domains/WorkCore/System/Modules/Territories/Actions/CreateBranch.php",
+      "sha256": "5a2843a9e9d3718d7f7e85b5fd2fb433e6185e50243703e73aac9dff983bada0"
+    },
+    {
+      "bytes": 962,
+      "path": "src/Domains/WorkCore/System/Modules/Territories/Actions/CreateDistrict.php",
+      "sha256": "2b250532d009f7ea53d4e377c8bc6c84d1e5dbe5a18ea7f8774c12201a0121db"
+    },
+    {
+      "bytes": 954,
+      "path": "src/Domains/WorkCore/System/Modules/Territories/Actions/CreateRegion.php",
+      "sha256": "d428cfedeeddd6780c4b116e5507d8847cba57c2fcb6b4532b3ac3e78610b91d"
+    },
+    {
+      "bytes": 966,
+      "path": "src/Domains/WorkCore/System/Modules/Territories/Actions/CreateTerritory.php",
+      "sha256": "a34acee46146aa0f59ccc0b96a8d4c1ad3a38895bf108c12ea0890fe757a55b2"
+    },
+    {
+      "bytes": 905,
+      "path": "src/Domains/WorkCore/System/Modules/Territories/Actions/MatchTerritories.php",
+      "sha256": "94b873dba620caf94c150614d7f70c4cf55e5b4493cc40c0618c132d976dcb7b"
+    },
+    {
+      "bytes": 1003,
+      "path": "src/Domains/WorkCore/System/Modules/Territories/Actions/SearchTerritories.php",
+      "sha256": "9ba30c369b539b04f3be3ffe32bb16526e843057c9bddcc3de78b58327c624ec"
+    },
+    {
+      "bytes": 302,
+      "path": "src/Domains/WorkCore/System/Modules/Territories/Contracts/TerritoriesRepositoryContract.php",
+      "sha256": "355ba9c3926cdd08e9198fa00418d3cbad011b33e9c4601bd76bf4127adcc3e2"
+    },
+    {
+      "bytes": 1051,
+      "path": "src/Domains/WorkCore/System/Modules/Territories/Contracts/TerritoryRepositoryContract.php",
+      "sha256": "4b53e1e86c6371e71abf01ae8a3ca2f6f0e1058d6fffee8a16721b33c57668f3"
+    },
+    {
+      "bytes": 2140,
+      "path": "src/Domains/WorkCore/System/Modules/Territories/Geometry/GeoJsonCentroid.php",
+      "sha256": "b683c67c5cb2427344eb16dd4e9ebbb2f9ad6a08632b07f3f200838989335bc8"
+    },
+    {
+      "bytes": 2242,
+      "path": "src/Domains/WorkCore/System/Modules/Territories/Geometry/PointInPolygon.php",
+      "sha256": "12744064628b4b8331c4712c784fe2b634e0702dd5f9c6ac0767d7bd06b71127"
+    },
+    {
+      "bytes": 2966,
+      "path": "src/Domains/WorkCore/System/Modules/Territories/Geometry/PolygonGeoJson.php",
+      "sha256": "4a6bd106d95e698ee38ab0c4b488f2ce2f1961af39b38126c9b7033983aa8d93"
+    },
+    {
+      "bytes": 3322,
+      "path": "src/Domains/WorkCore/System/Modules/Territories/Http/Controllers/TerritoryController.php",
+      "sha256": "3a110842b73f8521612977883a635d76373173d52421d40b2ba5f1d8bdd94f0c"
+    },
+    {
+      "bytes": 732,
+      "path": "src/Domains/WorkCore/System/Modules/Territories/Http/Requests/AssignTerritoryRequest.php",
+      "sha256": "82aa5a7ba171325524d52a931e4ac4e9565e07ae258356119dc174a7d3f1825b"
+    },
+    {
+      "bytes": 756,
+      "path": "src/Domains/WorkCore/System/Modules/Territories/Http/Requests/StoreBranchRequest.php",
+      "sha256": "508b6d8bf0bdef165cac4f3a088de2989393dd395475fe72afb4247b460e18ce"
+    },
+    {
+      "bytes": 622,
+      "path": "src/Domains/WorkCore/System/Modules/Territories/Http/Requests/StoreDistrictRequest.php",
+      "sha256": "d9fc80b55ba5d5723f9fc4c232c451b0273030e31b54c4e2ab3deb6ca58c1e8a"
+    },
+    {
+      "bytes": 604,
+      "path": "src/Domains/WorkCore/System/Modules/Territories/Http/Requests/StoreRegionRequest.php",
+      "sha256": "dde87986bc79b91063c17a239c87d069f8fa39f0555cd58423fd6e2362d2fbac"
+    },
+    {
+      "bytes": 3573,
+      "path": "src/Domains/WorkCore/System/Modules/Territories/Http/Requests/StoreTerritoryRequest.php",
+      "sha256": "20d4ad202951831fb058e2ab7a043e402f7c665425bc22fc9bb8a879c81afc8c"
+    },
+    {
+      "bytes": 2802,
+      "path": "src/Domains/WorkCore/System/Modules/Territories/Providers/WorkTerritoriesServiceProvider.php",
+      "sha256": "1d5b39c12ff0d711ea3f666880c0bd75fc7c3673303dde2b9bfd650c50d163e1"
+    },
+    {
+      "bytes": 12931,
+      "path": "src/Domains/WorkCore/System/Modules/Territories/Repositories/EloquentTerritoryRepository.php",
+      "sha256": "17cf8ee322f70f4b356dbeb2713549b8e6d211ae75eb268764510ffc1a745dac"
+    },
+    {
+      "bytes": 1097,
+      "path": "src/Domains/WorkCore/System/Modules/Territories/Services/TerritoryHierarchyPolicy.php",
+      "sha256": "2ed7791ac3ed720377a09ed43b67fee3495546247a0742ee881ad70410d057c5"
+    },
+    {
+      "bytes": 5028,
+      "path": "src/Domains/WorkCore/System/Modules/Territories/Services/TerritoryMatcher.php",
+      "sha256": "b3d26712933b048c721e5d50142f926f6bb3162b8691638086156e6d3b93cb2c"
+    },
+    {
+      "bytes": 1046,
+      "path": "src/Domains/WorkCore/System/Modules/Territories/routes/api.php",
+      "sha256": "1c9edae7890a83afdc9f289f437eae22d5d26f6214b3a1b346a21661428a4bfe"
+    },
+    {
+      "bytes": 1813,
+      "path": "src/Domains/WorkCore/System/Modules/Wizards/AI/WizardsToolRegistry.php",
+      "sha256": "faf87590770caf8d88ad9f5a717f0283570f71266342f0c1c50c40df5b91625c"
+    },
+    {
+      "bytes": 960,
+      "path": "src/Domains/WorkCore/System/Modules/Wizards/Actions/ApproveWizardSection.php",
+      "sha256": "2a6fb0d0c6383829adbda692a43df52d2b387b66225847aee833886128c5a485"
+    },
+    {
+      "bytes": 868,
+      "path": "src/Domains/WorkCore/System/Modules/Wizards/Actions/CompleteWizardRun.php",
+      "sha256": "0c2e103d208cbe03cc2983ae3667437a38a87ea9938e852a1a1a2b119387b3f3"
+    },
+    {
+      "bytes": 912,
+      "path": "src/Domains/WorkCore/System/Modules/Wizards/Actions/CreateWizardDefinition.php",
+      "sha256": "ae895bb6404509f18291b71c6f16bb8ae87aa47131d5d34eb46166720a0d5e5b"
+    },
+    {
+      "bytes": 1008,
+      "path": "src/Domains/WorkCore/System/Modules/Wizards/Actions/PauseWizardRun.php",
+      "sha256": "5425f833f5613fcd80f2d6e2c26dbf96920b4c69af26951ef366fa55805c070a"
+    },
+    {
+      "bytes": 948,
+      "path": "src/Domains/WorkCore/System/Modules/Wizards/Actions/PublishWizardDefinition.php",
+      "sha256": "5a4a3431b4994ff9ab3e153d2e1b61fad183b5ea7f280540696d2205feddc5a5"
+    },
+    {
+      "bytes": 1015,
+      "path": "src/Domains/WorkCore/System/Modules/Wizards/Actions/ResumeWizardRun.php",
+      "sha256": "fbb7187e1e42909417f56ef0c0db9b58e8c76b7fcab94793db34f08bb0688b35"
+    },
+    {
+      "bytes": 1270,
+      "path": "src/Domains/WorkCore/System/Modules/Wizards/Actions/SaveWizardAnswer.php",
+      "sha256": "d7f05c8c37ed37e90bbaffee15529092caf38bb580e489d4e587037992a5b2ae"
+    },
+    {
+      "bytes": 983,
+      "path": "src/Domains/WorkCore/System/Modules/Wizards/Actions/StartWizardRun.php",
+      "sha256": "7a5ca3348963296ac39a0d9017193dfbd5022a6fdc5a567ad8701461197ca53f"
+    },
+    {
+      "bytes": 1027,
+      "path": "src/Domains/WorkCore/System/Modules/Wizards/Contracts/WizardRepositoryContract.php",
+      "sha256": "69b7656d64bff61b860ea8ba796bd8041f559e808eae11723cc87d02a32e3187"
+    },
+    {
+      "bytes": 3768,
+      "path": "src/Domains/WorkCore/System/Modules/Wizards/Http/Controllers/WizardController.php",
+      "sha256": "08af9c1b01014bb329141cee35cb72fe9fdfcfca4ae3160feb6ec47292a57c95"
+    },
+    {
+      "bytes": 712,
+      "path": "src/Domains/WorkCore/System/Modules/Wizards/Http/Controllers/WizardPageController.php",
+      "sha256": "1df68f41ce78bcf9e49eb065271e50e615b59fd44de7e0dbbc9bdc8a2fab095b"
+    },
+    {
+      "bytes": 384,
+      "path": "src/Domains/WorkCore/System/Modules/Wizards/Http/Requests/ApproveWizardSectionRequest.php",
+      "sha256": "ae579e411f14bf2cf757b938df42df6691c27dd68435b94828ddae7675eb537d"
+    },
+    {
+      "bytes": 740,
+      "path": "src/Domains/WorkCore/System/Modules/Wizards/Http/Requests/CreateWizardDefinitionRequest.php",
+      "sha256": "037e02f3116f6551c66e182e5c914e931d77d71bfc313025fa1662cfc9431205"
+    },
+    {
+      "bytes": 624,
+      "path": "src/Domains/WorkCore/System/Modules/Wizards/Http/Requests/SaveWizardAnswerRequest.php",
+      "sha256": "ff5b7596957cb6b8c17313970ef6589fd6e357dc3e1b8e5a688555340210d1fa"
+    },
+    {
+      "bytes": 483,
+      "path": "src/Domains/WorkCore/System/Modules/Wizards/Http/Requests/StartWizardRequest.php",
+      "sha256": "7d16f3f9a59eeed19f50b707f48d242d7788419ec4cd95591e89d4418bceef05"
+    },
+    {
+      "bytes": 3686,
+      "path": "src/Domains/WorkCore/System/Modules/Wizards/Providers/WorkWizardsServiceProvider.php",
+      "sha256": "4c264058c929e331571cac08dff7c88de61368f734ecc963ecb1354e86093cf5"
+    },
+    {
+      "bytes": 395,
+      "path": "src/Domains/WorkCore/System/Modules/Wizards/ReadModels/GetNextWizardQuestion.php",
+      "sha256": "96ff89d7c105f2c333fa80fa0781c9d123eae548e7af885a3b9b8e34e52efa71"
+    },
+    {
+      "bytes": 388,
+      "path": "src/Domains/WorkCore/System/Modules/Wizards/ReadModels/GetWizardRun.php",
+      "sha256": "867d5d92bc9d72df91de0810c066a73752b1b8d096636cc3321fcc64115ad06b"
+    },
+    {
+      "bytes": 535,
+      "path": "src/Domains/WorkCore/System/Modules/Wizards/ReadModels/ListWizardDefinitions.php",
+      "sha256": "ab4df0806a5198a0ff6af4df8f14e6aae58d10949ea2f1d0486c5fbef9160595"
+    },
+    {
+      "bytes": 7656,
+      "path": "src/Domains/WorkCore/System/Modules/Wizards/Repositories/EloquentWizardRepository.php",
+      "sha256": "a8c845a6f5756575c4f2363119868d7ac04a436bd73c12e82dfa9446954ead9d"
+    },
+    {
+      "bytes": 1397,
+      "path": "src/Domains/WorkCore/System/Modules/Wizards/Services/WizardAnswerValidator.php",
+      "sha256": "f94623e04526eaf3d13f511dea71664867c2b2b31218a9c269dd76ab2a8a07e5"
+    },
+    {
+      "bytes": 1480,
+      "path": "src/Domains/WorkCore/System/Modules/Wizards/Services/WizardBranchEvaluator.php",
+      "sha256": "b0914edc2b6434d9c4c0ad326ce88d335de459ab4697fa8f0d161a3350077a97"
+    },
+    {
+      "bytes": 1526,
+      "path": "src/Domains/WorkCore/System/Modules/Wizards/Services/WizardDefinitionRegistry.php",
+      "sha256": "04ffd6a5c0da90686b78c3d267ea3664d982cd985830d1a4e3d494f3f7f39e3a"
+    },
+    {
+      "bytes": 809,
+      "path": "src/Domains/WorkCore/System/Modules/Wizards/Services/WizardRiskPolicy.php",
+      "sha256": "2094976bc9327f900af55777e48155eb29ddcd373f21cb106ae524c24bfe3304"
+    },
+    {
+      "bytes": 6005,
+      "path": "src/Domains/WorkCore/System/Modules/Wizards/Services/WizardRuntime.php",
+      "sha256": "052c38bff5e7155f323bcbcf4e1851edf2fc83f4d8b196418b9f3bc3f9c69c9a"
+    },
+    {
+      "bytes": 87544,
+      "path": "src/Domains/WorkCore/System/Modules/Wizards/config/definitions.json",
+      "sha256": "70e721346b198927f6ccf4f67177755251d2b621d7884e456d95422c78487bdf"
+    },
+    {
+      "bytes": 144,
+      "path": "src/Domains/WorkCore/System/Modules/Wizards/config/definitions.php",
+      "sha256": "f63884b9fb1da9b09af77d03210176a2f5e9746e934c68b5a6fdfcac81053e03"
+    },
+    {
+      "bytes": 2427,
+      "path": "src/Domains/WorkCore/System/Modules/Wizards/config/excluded-settings.json",
+      "sha256": "be522b884f77bd62d5f4c6a903e58a5d2a0814434a375e5a4612b740ac53182d"
+    },
+    {
+      "bytes": 1041,
+      "path": "src/Domains/WorkCore/System/Modules/Wizards/resources/views/index.blade.php",
+      "sha256": "2402cde3886e3bcbfb8532ab4fac9bc2ff55d1b5783155def9c36f241a39730a"
+    },
+    {
+      "bytes": 9440,
+      "path": "src/Domains/WorkCore/System/Modules/Wizards/resources/views/run.blade.php",
+      "sha256": "8eedc567a47b8e165d13f8cc299ced7f27ae6440cbcbca87a2f775d990461a94"
+    },
+    {
+      "bytes": 1168,
+      "path": "src/Domains/WorkCore/System/Modules/Wizards/routes/api.php",
+      "sha256": "36a5f992b8314d0b43fbbe55c8866e7161df78a5c911390f4fde8e499a16703e"
+    },
+    {
+      "bytes": 495,
+      "path": "src/Domains/WorkCore/System/Modules/Wizards/routes/web.php",
+      "sha256": "273e60b3e760a37dc7bd6355e339af73e460b1633f27cde311750808d8d74a9c"
+    }
+  ]
+}

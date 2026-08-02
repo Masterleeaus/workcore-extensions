@@ -1,0 +1,108 @@
+{
+  "key": "plumbing",
+  "label": "Plumbing and Drainage",
+  "version": "1.0.0",
+  "type": "vertical",
+  "extends": [
+    "licensed_trades_core"
+  ],
+  "capabilities": [],
+  "features": {
+    "plumbing.compliance_certificates": true,
+    "plumbing.drainage": true,
+    "plumbing.emergency_callouts": true,
+    "plumbing.asset_history": true
+  },
+  "terminology": {
+    "entity.work_order.singular": "Plumbing job",
+    "entity.work_order.plural": "Plumbing jobs",
+    "entity.worker.singular": "Plumber",
+    "entity.worker.plural": "Plumbers"
+  },
+  "metadata": {
+    "rebased_for_workcore": "0.42.0-unified"
+  },
+  "setup": {
+    "default_business_lines": [
+      {
+        "key": "general_plumbing",
+        "name": "General Plumbing"
+      },
+      {
+        "key": "emergency_plumbing",
+        "name": "Emergency Plumbing"
+      }
+    ],
+    "questions": [
+      {
+        "key": "plumbing.service_types",
+        "section": "vertical_details",
+        "prompt": "Which plumbing and drainage services should be configured?",
+        "type": "multiselect",
+        "required": true,
+        "options": [
+          "general_plumbing",
+          "drainage",
+          "hot_water",
+          "gas",
+          "roof_plumbing",
+          "maintenance",
+          "emergency"
+        ]
+      },
+      {
+        "key": "plumbing.licence_details",
+        "section": "compliance",
+        "prompt": "Which licence classes and responsible licence holders must be tracked?",
+        "type": "list",
+        "required": true
+      },
+      {
+        "key": "plumbing.compliance_certificates",
+        "section": "compliance",
+        "prompt": "Should regulated jobs require compliance certificate workflows?",
+        "type": "boolean",
+        "required": true,
+        "default": true
+      }
+    ],
+    "documents": [
+      "trade_compliance_certificate",
+      "risk_assessment",
+      "maintenance_report",
+      "emergency_procedure"
+    ]
+  },
+  "codebooks": {
+    "roster.type": {
+      "include": [
+        "plumbing"
+      ],
+      "default": "plumbing"
+    },
+    "roster.shift_type": {
+      "include": [
+        "plumbing"
+      ],
+      "default": "plumbing"
+    },
+    "worker.type": {
+      "include": [
+        "plumber"
+      ],
+      "default": "plumber"
+    },
+    "appointment.type": {
+      "include": [
+        "plumbing"
+      ],
+      "default": "plumbing"
+    },
+    "dispatch.assignment_type": {
+      "include": [
+        "plumbing"
+      ],
+      "default": "plumbing"
+    }
+  }
+}

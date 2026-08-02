@@ -1,0 +1,26 @@
+{
+  "canonical_namespace_preserved": true,
+  "destructive_uninstall": false,
+  "modules": [
+    "Finance",
+    "Payroll",
+    "Inventory",
+    "Supply",
+    "TitanVault",
+    "TrustAccounting"
+  ],
+  "name": "WorkCore Commercial",
+  "requires": [
+    "workcore/shared-foundation"
+  ],
+  "runtime_keys": [
+    "finance",
+    "payroll",
+    "inventory",
+    "supply",
+    "vault",
+    "trust_accounting"
+  ],
+  "slug": "commercial",
+  "system_slices": []
+}
