@@ -9,7 +9,9 @@ on:
       - 'tools/build_extensions.py'
       - 'tools/generate_host_profile.py'
       - 'tools/analyze_package_dependencies.py'
+      - 'tools/verify_host_runtime.php'
       - 'tests/test_host_compatibility.py'
+      - 'tests/test_runtime_verifier.py'
       - '.github/workflows/host-compatibility.yml'
   push:
     branches:
@@ -21,7 +23,9 @@ on:
       - 'tools/build_extensions.py'
       - 'tools/generate_host_profile.py'
       - 'tools/analyze_package_dependencies.py'
+      - 'tools/verify_host_runtime.php'
       - 'tests/test_host_compatibility.py'
+      - 'tests/test_runtime_verifier.py'
       - '.github/workflows/host-compatibility.yml'
 
 permissions:
@@ -63,7 +67,7 @@ jobs:
           coverage: none
 
       - name: Run host compatibility regressions
-        run: python -m unittest tests/test_host_compatibility.py -v
+        run: python -m unittest tests/test_host_compatibility.py tests/test_runtime_verifier.py -v
 
       - name: Generate host Composer profile
         run: |
@@ -122,6 +126,21 @@ jobs:
 
       - name: Verify installed WorkCore package set
         run: composer show --working-dir=integration/host-overlay 'workcore/*'
+
+      - name: Verify runtime registrations and disabled state
+        run: |
+          php tools/verify_host_runtime.php \
+            --repo=. \
+            --host=integration/host-overlay \
+            --profiles=compatibility/install-profiles.json \
+            --profile='${{ matrix.profile }}' \
+            --enabled=true
+          php tools/verify_host_runtime.php \
+            --repo=. \
+            --host=integration/host-overlay \
+            --profiles=compatibility/install-profiles.json \
+            --profile='${{ matrix.profile }}' \
+            --enabled=false
 
       - name: Run migration compatibility check
         if: ${{ matrix.migrate }}
@@ -207,3 +226,4 @@ jobs:
           php integration/host-overlay/artisan migrate --force --no-interaction --no-ansi
           php -r '$db = new PDO("sqlite:integration/host-overlay/database/database.sqlite"); $value = $db->query("SELECT value FROM workcore_upgrade_sentinel WHERE id = 1")->fetchColumn(); if ($value !== "preserved") { fwrite(STDERR, "upgrade sentinel was not preserved\n"); exit(1); }'
           composer show --working-dir=integration/host-overlay 'workcore/*'
+          php tools/verify_host_runtime.php --repo=. --host=integration/host-overlay --profiles=compatibility/install-profiles.json --profile=full --enabled=true
