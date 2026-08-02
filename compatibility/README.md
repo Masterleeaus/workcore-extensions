@@ -18,6 +18,7 @@ These profiles define the package combinations that are continuously installed a
 - Domain-level cross-package capabilities are declared as Composer `suggest` entries and `extension.json` `integrates_with` metadata.
 - Historical migrations remain in Shared Foundation, so adding or removing an optional package does not remove its existing tables.
 - Database-specific optional indexes are guarded by driver support. The AI knowledge full-text index is created on MySQL, MariaDB and PostgreSQL, while SQLite retains the table and data without the unsupported index.
+- Host-overlay donor migrations are conditional. Missing optional Meetup tables do not block a WorkCore-only installation, while installed donor tables still receive their tenancy fields.
 - Uninstall hooks and destructive schema automation are prohibited.
 
 The `property-workforce` profile deliberately includes Work Operations because trade compliance, callbacks and worker assignment workflows cross those three domains. Business Network and Work Operations are paired in their supported operational profile because support-ticket conversion targets Work Orders.
