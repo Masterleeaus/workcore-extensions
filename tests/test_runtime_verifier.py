@@ -24,6 +24,13 @@ class RuntimeVerifierContractTests(unittest.TestCase):
         for token in required_tokens:
             self.assertIn(token, verifier)
 
+    def test_runtime_verifier_uses_shared_foundation_contract_namespaces(self) -> None:
+        verifier = (REPOSITORY_ROOT / 'tools/verify_host_runtime.php').read_text(encoding='utf-8')
+        self.assertIn('App\\Domains\\WorkCore\\System\\Contracts\\TenantContextContract', verifier)
+        self.assertIn('App\\Domains\\WorkCore\\System\\Contracts\\OperationContextContract', verifier)
+        self.assertNotIn('App\\Domains\\WorkCore\\Contracts\\TenantContextContract', verifier)
+        self.assertNotIn('App\\Domains\\WorkCore\\Contracts\\OperationContextContract', verifier)
+
     def test_host_matrix_executes_runtime_verifier_enabled_and_disabled(self) -> None:
         workflow = (REPOSITORY_ROOT / '.github/workflows/host-compatibility.yml').read_text(encoding='utf-8')
         self.assertIn('tools/verify_host_runtime.php', workflow)
