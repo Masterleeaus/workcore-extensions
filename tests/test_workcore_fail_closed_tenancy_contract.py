@@ -31,17 +31,18 @@ class WorkCoreFailClosedTenancyContractTests(unittest.TestCase):
         self.assertLess(content.index("if ($context->hasTenant())"), content.index("if ($privileged->isActive())"))
         self.assertLess(content.index("if ($privileged->isActive())"), content.index("throw new MissingTenantContextException"))
 
-    def test_explicit_company_bootstrap_query_is_narrow_and_validated(self) -> None:
+    def test_canonical_trait_exposes_no_generic_scope_bypass(self) -> None:
         content = CANONICAL_TRAIT.read_text(encoding="utf-8")
-        self.assertIn("public static function queryForExplicitCompany(int $companyId): Builder", content)
-        self.assertIn("if ($companyId < 1)", content)
-        self.assertIn("withoutGlobalScope('workcore_company')", content)
-        self.assertIn("qualifyColumn('company_id')", content)
-        self.assertIn("$companyId", content)
+        self.assertNotIn("queryForExplicitCompany", content)
+        self.assertNotIn("withoutGlobalScope('workcore_company')", content)
 
-    def test_membership_bootstrap_uses_explicit_company_query(self) -> None:
+    def test_membership_bootstrap_uses_a_narrow_trusted_scope_bypass(self) -> None:
         adapter = IDENTITY_ADAPTER.read_text(encoding="utf-8")
-        self.assertIn("CompanyMember::queryForExplicitCompany($companyId)", adapter)
+        self.assertIn("CompanyMember::withoutGlobalScope('workcore_company')", adapter)
+        self.assertIn("->where('company_id', $companyId)", adapter)
+        self.assertIn("->where('user_id', $userId)", adapter)
+        self.assertIn("->where('status', 'active')", adapter)
+        self.assertNotIn("queryForExplicitCompany", adapter)
         self.assertNotIn("CompanyMember::query()", adapter)
 
     def test_privileged_access_requires_actor_and_reason_and_is_durably_audited(self) -> None:
