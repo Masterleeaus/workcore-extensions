@@ -1,0 +1,73 @@
+name: Package WorkCore installer bundle
+
+on:
+  push:
+    branches:
+      - release/workcore-installers-0.1.1
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package-installers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out merged WorkCore source
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Build six validated MagicAI extensions
+        run: python tools/build_magicai_extensions.py --repo . --output dist/magicai-extensions
+
+      - name: Assemble installer bundle
+        shell: bash
+        run: |
+          set -euo pipefail
+          bundle="dist/WorkCore-MagicAI-Installers-0.1.1"
+          mkdir -p "$bundle/installers"
+          cp dist/magicai-extensions/zips/*.zip "$bundle/installers/"
+          cp dist/magicai-extensions/release-report.json "$bundle/"
+          cat > "$bundle/INSTALLATION.txt" <<'EOF'
+          WORKCORE MAGICAI INSTALLATION ORDER
+
+          Requirements:
+          - MagicAI 11 or later
+          - Laravel 10
+          - PHP 8.2
+
+          Install in this order:
+          1. WorkCore-0.1.1.zip (mandatory parent)
+          2. WorkCoreBusinessNetwork-0.1.1.zip
+          3. WorkCoreCommercial-0.1.1.zip
+          4. WorkCoreWorkOperations-0.1.1.zip
+          5. WorkCorePropertyOperations-0.1.1.zip
+          6. WorkCoreWorkforceAssurance-0.1.1.zip
+
+          After installation:
+          - Run the parent extension migrations.
+          - Clear Laravel configuration, route and application caches.
+          - Run the WorkCore menu synchronization command.
+          - Refresh company entitlement projections.
+          - Ensure queue workers and the Laravel scheduler are active.
+          EOF
+          (
+            cd "$bundle"
+            sha256sum installers/*.zip > SHA256SUMS.txt
+          )
+          (
+            cd dist
+            zip -r -9 WorkCore-MagicAI-Installers-0.1.1.zip WorkCore-MagicAI-Installers-0.1.1
+          )
+
+      - name: Upload installer bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: WorkCore-MagicAI-Installers-0.1.1
+          path: dist/WorkCore-MagicAI-Installers-0.1.1.zip
+          if-no-files-found: error
+          retention-days: 7
