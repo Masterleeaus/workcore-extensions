@@ -117,7 +117,6 @@ final class WorkCoreServiceProvider extends ServiceProvider implements
 
         $this->publishes([
             __DIR__ . '/../config/workcore-native.php' => config_path('workcore-native.php'),
-            __DIR__ . '/../config/workcore-workspaces.php' => config_path('workcore-workspaces.php'),
         ], 'extension');
     }
 
