@@ -1,5 +1,5 @@
 {
-  "file_count": 423,
+  "file_count": 425,
   "files": [
     {
       "bytes": 227,
@@ -1485,6 +1485,16 @@
       "bytes": 642,
       "path": "src/Domains/WorkCore/System/Donors/FeatureSourceRegistry.php",
       "sha256": "6469bd313e5974cd96115e82b84c9625e8df441ade9711184fe6cfc236e617e5"
+    },
+    {
+      "bytes": 596,
+      "path": "src/Domains/WorkCore/System/Entitlements/CompanyEntitlementRefreshService.php",
+      "sha256": "8c0ea975373b7c1be7cff4487ff97f8764aa7e00036c47d2660dbe7815363a26"
+    },
+    {
+      "bytes": 301,
+      "path": "src/Domains/WorkCore/System/Entitlements/Contracts/EffectiveSubscriptionResolverContract.php",
+      "sha256": "829b5a854e601d7ef67ba61f59d092a9c657a9e99e3f0b91e7babcb0da33103d"
     },
     {
       "bytes": 1593,
