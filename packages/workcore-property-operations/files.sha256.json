@@ -1052,9 +1052,9 @@
       "sha256": "d9a7a206f8ca9a7ff7a30a112e8604c356b072043e54f16ef6ff6c181c2ec829"
     },
     {
-      "bytes": 1446,
+      "bytes": 309,
       "path": "src/Domains/WorkCore/System/Modules/Premises/Entities/Concerns/BelongsToCompany.php",
-      "sha256": "62fcb5bd6a59da6138656d7c880459bad5a1f74a15d16a4c7432f8ab5ef6b33b"
+      "sha256": "39b3ace6b71546411dda55cfdbbab1ff0b7ab65771f9edc9f9f4fcaf716d1dcc"
     },
     {
       "bytes": 1052,
@@ -1342,9 +1342,9 @@
       "sha256": "747921012fea1e47b79a26d9e6130cd75e4142712c857d81ffc5d9dcc4a07331"
     },
     {
-      "bytes": 427,
+      "bytes": 306,
       "path": "src/Domains/WorkCore/System/Modules/Premises/Entities/Traits/BelongsToCompany.php",
-      "sha256": "4e3d1244701074f4652fbdad2a74925bf91910fcc6b02e82cd04b9185411139b"
+      "sha256": "7b2aa57b53e071af07c02f3cf690d6df1d265a2ed8f0d0d6d147e01490b9a0ae"
     },
     {
       "bytes": 434,

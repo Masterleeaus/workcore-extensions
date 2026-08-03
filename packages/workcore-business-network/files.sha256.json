@@ -767,9 +767,9 @@
       "sha256": "98a79440f336264045bab365a39200be70705bb59cc76ab14002e7c84de8578b"
     },
     {
-      "bytes": 1852,
+      "bytes": 2887,
       "path": "src/Domains/WorkCore/System/Intelligence/Approvals/BoundConfirmationVerifier.php",
-      "sha256": "2b87b02e68774d328f325b17be4d90757a069d27faf08f4126272262c1e32919"
+      "sha256": "19bc9a034b1d4dda6f6ffbcb3825f6c3c15e1ea261809c45b94606944231a6d4"
     },
     {
       "bytes": 766,
