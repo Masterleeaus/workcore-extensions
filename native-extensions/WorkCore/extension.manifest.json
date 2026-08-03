@@ -403,6 +403,7 @@
       "tz_premises_service_plans",
       "tz_premises_service_windows",
       "tz_premises_spaces",
+      "tz_privileged_tenant_access_audits",
       "tz_purchase_order_items",
       "tz_purchase_orders",
       "tz_qr_codes",
