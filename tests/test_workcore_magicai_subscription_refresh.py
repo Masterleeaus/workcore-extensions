@@ -7,6 +7,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 BASE = REPO_ROOT / "packages/workcore-shared-foundation/src/Domains/WorkCore/System/Entitlements"
 NATIVE = REPO_ROOT / "native-extensions/WorkCore/System"
 CONFIG = REPO_ROOT / "native-extensions/WorkCore/config/workcore-native.php"
+PLAN_MIGRATION = REPO_ROOT / "native-extensions/WorkCore/database/migrations/2026_08_03_020000_add_workcore_entitlements_to_magicai_plans.php"
 
 
 class WorkCoreMagicAISubscriptionRefreshTests(unittest.TestCase):
@@ -65,10 +66,12 @@ class WorkCoreMagicAISubscriptionRefreshTests(unittest.TestCase):
             "'status_map'",
             "'feature_keys'",
             "'valid_until_column'",
+            "'reconciliation'",
+            "'interval_minutes'",
         ):
             self.assertIn(token, content)
 
-    def test_native_provider_binds_resolver_refresh_service_and_command(self) -> None:
+    def test_native_provider_binds_resolver_refresh_service_command_and_schedule(self) -> None:
         content = (NATIVE / "WorkCoreServiceProvider.php").read_text(encoding="utf-8")
         for token in (
             "EffectiveSubscriptionResolverContract::class",
@@ -77,8 +80,27 @@ class WorkCoreMagicAISubscriptionRefreshTests(unittest.TestCase):
             "RefreshWorkCoreEntitlementsCommand::class",
             "workcore-native.entitlements.subscription_source",
             "$this->commands([",
+            "Schedule::class",
+            "workcore:refresh-entitlements --all",
+            "withoutOverlapping",
         ):
             self.assertIn(token, content)
+
+    def test_magicai_plan_compatibility_migration_adds_workcore_entitlements_safely(self) -> None:
+        content = PLAN_MIGRATION.read_text(encoding="utf-8")
+        self.assertIn("Schema::hasTable($plansTable)", content)
+        self.assertIn("Schema::hasColumn($plansTable", content)
+        for feature in (
+            "ext_workcore_core",
+            "ext_workcore_operations",
+            "ext_workcore_workforce",
+            "ext_workcore_resources",
+            "ext_workcore_commercial",
+            "ext_workcore_offline",
+            "ext_workcore_ai_actions",
+        ):
+            self.assertIn(feature, content)
+        self.assertIn("dropColumn", content)
 
 
 if __name__ == "__main__":
