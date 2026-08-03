@@ -1,15 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Domains\WorkCore\System\Modules\Premises\Entities\Traits;
 
+/**
+ * Backward-compatible namespace wrapper around WorkCore's canonical,
+ * fail-closed tenant boundary.
+ */
 trait BelongsToCompany
 {
-    public static function bootBelongsToCompany(): void
-    {
-        static::creating(function ($model) {
-            if (property_exists($model, 'company_id') && empty($model->company_id) && function_exists('company') && company()) {
-                $model->company_id = company()->id;
-            }
-        });
-    }
+    use \App\Domains\WorkCore\System\Tenancy\BelongsToCompany;
 }
