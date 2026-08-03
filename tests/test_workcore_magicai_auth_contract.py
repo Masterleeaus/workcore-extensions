@@ -7,6 +7,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 BRANCH_TARGETS = {
     "native_config": REPO_ROOT / "native-extensions/WorkCore/config/workcore-native.php",
     "native_provider": REPO_ROOT / "native-extensions/WorkCore/System/WorkCoreServiceProvider.php",
+    "native_commercial_provider": REPO_ROOT / "native-extensions/WorkCoreCommercial/System/WorkCoreCommercialServiceProvider.php",
     "standalone_config": REPO_ROOT / "packages/workcore-shared-foundation/src/Domains/WorkCore/Config/workcore.php",
     "finance_provider": REPO_ROOT / "packages/workcore-commercial/src/Domains/WorkCore/System/Modules/Finance/WorkCoreFinanceServiceProvider.php",
     "host_routes": REPO_ROOT / "integration/host-overlay/routes/api.php",
@@ -33,10 +34,15 @@ class WorkCoreMagicAIAuthenticationContractTests(unittest.TestCase):
         config = BRANCH_TARGETS["standalone_config"].read_text(encoding="utf-8")
         self.assertIn("'auth:sanctum'", config)
 
-    def test_finance_routes_use_shared_workcore_middleware_contract(self) -> None:
-        provider = BRANCH_TARGETS["finance_provider"].read_text(encoding="utf-8")
-        self.assertIn("config('workcore.api.middleware'", provider)
-        self.assertNotIn("Route::middleware(['api', 'auth:sanctum'])", provider)
+    def test_native_commercial_disables_sanctum_only_direct_finance_routes(self) -> None:
+        native_provider = BRANCH_TARGETS["native_commercial_provider"].read_text(encoding="utf-8")
+        finance_provider = BRANCH_TARGETS["finance_provider"].read_text(encoding="utf-8")
+        disable_token = "$this->app['config']->set('workcore.finance.routes_enabled', false);"
+        load_token = "$registry->loadMany(self::MODULES);"
+        self.assertIn("Route::middleware(['api', 'auth:sanctum'])", finance_provider)
+        self.assertIn(disable_token, native_provider)
+        self.assertIn(load_token, native_provider)
+        self.assertLess(native_provider.index(disable_token), native_provider.index(load_token))
 
     def test_magicai_host_overlay_uses_passport(self) -> None:
         routes = BRANCH_TARGETS["host_routes"].read_text(encoding="utf-8")
