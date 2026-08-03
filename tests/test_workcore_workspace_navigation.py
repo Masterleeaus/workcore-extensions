@@ -7,7 +7,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[1]
 NATIVE = REPO_ROOT / "native-extensions/WorkCore"
 CATALOGUE = NATIVE / "System/Navigation/WorkCoreWorkspaceCatalogue.php"
-WORKSPACE_CONFIG = NATIVE / "config/workcore-workspaces.php"
+WORKSPACE_CONFIG = NATIVE / "System/Navigation/workspaces.php"
 MANIFEST = NATIVE / "System/Navigation/WorkCoreWorkspaceManifest.php"
 MENU_SYNC = NATIVE / "System/Navigation/MagicAIMenuSynchronizer.php"
 WORKSPACE_CONTROLLER = NATIVE / "System/Http/Controllers/WorkspaceController.php"
