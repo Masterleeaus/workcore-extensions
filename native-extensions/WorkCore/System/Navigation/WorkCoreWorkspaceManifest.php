@@ -50,13 +50,15 @@ final class WorkCoreWorkspaceManifest
                 continue;
             }
 
+            $visibleCapabilities = [];
+            foreach ($sections as $section) {
+                foreach ($section['capabilities'] as $capability) {
+                    $visibleCapabilities[] = $capability;
+                }
+            }
+
             $presented = $this->present($workspaceKey, $workspace);
-            $presented['capabilities'] = array_values(array_unique(array_merge(
-                ...array_map(
-                    static fn (array $section): array => $section['capabilities'],
-                    $sections,
-                ),
-            )));
+            $presented['capabilities'] = array_values(array_unique($visibleCapabilities));
             $presented['sections'] = $sections;
             $workspaces[] = $presented;
         }
