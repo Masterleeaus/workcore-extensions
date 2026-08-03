@@ -10,8 +10,6 @@ use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
-use RuntimeException;
-use Throwable;
 
 $options = getopt('', ['host:']);
 $host = realpath((string) ($options['host'] ?? ''));
@@ -26,7 +24,7 @@ $app->make(Kernel::class)->bootstrap();
 
 $assert = static function (bool $condition, string $message): void {
     if (! $condition) {
-        throw new RuntimeException($message);
+        throw new \RuntimeException($message);
     }
 };
 
@@ -162,7 +160,7 @@ try {
         'crm_after_expiry' => $entitlements->allows($companyId, 'workcore.crm'),
         'finance_after_expiry' => $entitlements->allows($companyId, 'workcore.finance'),
     ], JSON_PRETTY_PRINT | JSON_THROW_ON_ERROR) . PHP_EOL;
-} catch (Throwable $exception) {
+} catch (\Throwable $exception) {
     fwrite(STDERR, "WorkCore entitlement projection verification FAILED\n");
     fwrite(STDERR, ' - ' . $exception->getMessage() . PHP_EOL);
     exit(1);
