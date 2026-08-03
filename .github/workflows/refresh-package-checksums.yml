@@ -4,27 +4,35 @@ on:
   pull_request:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   generate:
+    if: github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-24.04
     steps:
-      - name: Check out repository
+      - name: Check out pull-request branch
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
-      - name: Generate deterministic package manifests
-        run: python tools/refresh_package_checksums.py --repo . --output-dir generated-checksums
+      - name: Refresh deterministic package manifests
+        run: python tools/refresh_package_checksums.py --repo .
 
-      - name: Upload generated manifests
-        uses: actions/upload-artifact@v4
-        with:
-          name: workcore-package-checksums
-          path: generated-checksums/*.json
-          if-no-files-found: error
-          retention-days: 1
+      - name: Commit refreshed manifests when needed
+        shell: bash
+        run: |
+          if git diff --quiet -- packages/*/files.sha256.json; then
+            echo "Package checksum manifests are already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add packages/*/files.sha256.json
+          git commit -m "Refresh package checksum manifests"
+          git push origin "HEAD:${GITHUB_HEAD_REF}"
