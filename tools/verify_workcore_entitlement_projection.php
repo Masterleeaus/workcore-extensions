@@ -78,7 +78,7 @@ try {
     ]);
 
     $companyId = (int) DB::table('tz_companies')->insertGetId([
-        'public_id' => '01K1W0RKCOREENTITLEMENT01',
+        'public_id' => '01K1W0RKCOREENTITLEMENT01X',
         'name' => 'WorkCore Entitlement Fixture',
         'slug' => 'workcore-entitlement-fixture',
         'status' => 'active',
