@@ -4,6 +4,11 @@ on:
   push:
     branches:
       - release/workcore-installers-0.1.1
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/package-workcore-installers.yml'
   workflow_dispatch:
 
 permissions:
