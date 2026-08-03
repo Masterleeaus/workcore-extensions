@@ -31,6 +31,18 @@ final class WorkCoreServiceProvider extends ServiceProvider implements
         }
 
         $this->app->register(\App\Domains\WorkCore\WorkCoreServiceProvider::class);
+
+        $middleware = config('workcore-native.api_middleware', [
+            'api',
+            'auth:api',
+            'workcore.tenant',
+            'workcore.api',
+        ]);
+        if (! is_array($middleware) || $middleware === []) {
+            throw new RuntimeException('WorkCore native API middleware must be a non-empty array.');
+        }
+
+        $this->app['config']->set('workcore.api.middleware', array_values($middleware));
     }
 
     public function boot(): void
