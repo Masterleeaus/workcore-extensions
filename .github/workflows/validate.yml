@@ -39,9 +39,24 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          php_files="$(find packages -type f -name '*.php' | wc -l)"
-          test "$php_files" -eq 2090
+          expected_php_files="$(python - <<'PY'
+          import json
+          from pathlib import Path
+
+          count = 0
+          for manifest_path in sorted(Path('packages').glob('*/files.sha256.json')):
+              manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
+              count += sum(
+                  1
+                  for entry in manifest.get('files', [])
+                  if isinstance(entry, dict) and entry.get('path', '').endswith('.php')
+              )
+          print(count)
+          PY
+          )"
+          actual_php_files="$(find packages -type f -name '*.php' | wc -l | tr -d ' ')"
+          test "$actual_php_files" -eq "$expected_php_files"
           find packages -type f -name '*.php' -print0 \
             | xargs -0 -n1 -P4 php -l \
             > /tmp/workcore-php-lint.txt
-          echo "Validated $php_files PHP files."
+          echo "Validated $actual_php_files PHP files against package manifests."
