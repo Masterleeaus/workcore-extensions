@@ -211,7 +211,9 @@ class MagicAIMenuSynchronizerTests(unittest.TestCase):
         self.assertIn("$this->synchronizer->sync()", command)
         self.assertIn("MagicAIMenuSynchronizer", migration)
         self.assertIn("Schema::hasTable('menus')", migration)
-        self.assertIn("->update(['is_active' => false", migration)
+        self.assertIn("$payload = ['is_active' => false]", migration)
+        self.assertIn("Schema::hasColumn('menus', 'updated_at')", migration)
+        self.assertIn("$query->update($payload)", migration)
         self.assertNotIn("dropIfExists", migration)
 
 
