@@ -15,6 +15,7 @@ Route::middleware(['auth:api', 'company.active', 'workcore.tenant', 'workcore.ap
         Route::middleware('throttle:workcore-actions')->prefix('workcore')->group(function (): void {
             Route::get('/actions', [ActionController::class, 'index']);
             Route::get('/actions/{action}', [ActionController::class, 'show'])->where('action', '.*');
+            Route::post('/actions/{action}/confirm', [ActionController::class, 'confirm'])->where('action', '.*');
             Route::post('/actions/{action}/execute', [ActionController::class, 'execute'])->where('action', '.*');
             Route::post('/flows/customer-property-work-order', [BusinessFlowController::class, 'customerPropertyWorkOrder']);
         });
