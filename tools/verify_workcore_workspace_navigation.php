@@ -129,7 +129,7 @@ try {
         'updated_at' => $now->copy()->addMinutes(3),
     ]);
     DB::table('plans')->where('id', $subscription->plan_id)->update([
-        'ext_workcore_core' => true,
+        'ext_workcore_core' => false,
         'ext_workcore_commercial' => true,
         'updated_at' => $now->copy()->addMinutes(3),
     ]);
@@ -145,8 +145,16 @@ try {
     $manifest = $app->make(WorkCoreWorkspaceManifest::class);
     $before = $manifest->forActiveCompany();
     $beforeKeys = array_column($before['workspaces'], 'key');
+    $resources_with_commercial_only = in_array('resources', $beforeKeys, true);
     $commercial_before_expiry = in_array('commercial', $beforeKeys, true);
+    $assert($resources_with_commercial_only, 'Resources did not expose commercial-owned Inventory and Supply sections.');
     $assert($commercial_before_expiry, 'Commercial workspace was absent for an active entitled subscription.');
+    $assert(! in_array('crm', $beforeKeys, true), 'CRM remained visible without the core plan feature.');
+
+    $resources = $manifest->findForCompany($companyId, 'resources');
+    $resourceSections = array_column($resources['sections'] ?? [], 'key');
+    $assert(in_array('inventory', $resourceSections, true), 'Inventory was absent from a Commercial-only Resources workspace.');
+    $assert(in_array('supply', $resourceSections, true), 'Supply was absent from a Commercial-only Resources workspace.');
 
     DB::table('subscriptions')->where('id', $subscription->id)->update([
         'ends_at' => $now->copy()->subSecond(),
@@ -157,11 +165,13 @@ try {
     $afterKeys = array_column($after['workspaces'], 'key');
     $commercial_after_expiry = in_array('commercial', $afterKeys, true);
     $assert(! $commercial_after_expiry, 'Commercial workspace remained visible after subscription expiry.');
+    $assert(! in_array('resources', $afterKeys, true), 'Resources remained visible after subscription expiry.');
 
     echo json_encode([
         'first_sync' => $first_sync,
         'second_sync' => $second_sync,
         'menu_count' => DB::table('menus')->where('extension', 'workcore')->count(),
+        'resources_with_commercial_only' => $resources_with_commercial_only,
         'commercial_before_expiry' => $commercial_before_expiry,
         'commercial_after_expiry' => $commercial_after_expiry,
         'entitlement_revision_before' => $before['entitlement_revision'],
