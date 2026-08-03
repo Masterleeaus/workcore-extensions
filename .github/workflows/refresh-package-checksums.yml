@@ -1,0 +1,30 @@
+name: Generate WorkCore package checksums
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  generate:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Generate deterministic package manifests
+        run: python tools/refresh_package_checksums.py --repo . --output-dir generated-checksums
+
+      - name: Upload generated manifests
+        uses: actions/upload-artifact@v4
+        with:
+          name: workcore-package-checksums
+          path: generated-checksums/*.json
+          if-no-files-found: error
+          retention-days: 1
