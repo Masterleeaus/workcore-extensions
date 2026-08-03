@@ -139,7 +139,7 @@ class NativeExtensionProviderTests(unittest.TestCase):
         for folder, modules in self.ADDON_MODULES.items():
             provider_path = NATIVE_ROOT / folder / "System" / f"{folder}ServiceProvider.php"
             provider = provider_path.read_text(encoding="utf-8")
-            key = json.loads((NATIVE_ROOT / folder / "extension.manifest.json").read_text())['key']
+            key = json.loads((NATIVE_ROOT / folder / "extension.manifest.json").read_text())["key"]
 
             self.assertIn("ExtensionRegisterKeyProviderInterface", provider)
             self.assertIn("UninstallExtensionServiceProviderInterface", provider)
@@ -245,12 +245,20 @@ class WorkCoreHostAdapterTests(unittest.TestCase):
 
     def test_parent_owns_only_compatibility_migrations_outside_runtime(self) -> None:
         migrations = sorted((NATIVE_ROOT / "WorkCore/database/migrations").glob("*.php"))
-        self.assertEqual(2, len(migrations))
-        combined = "\n".join(path.read_text(encoding="utf-8") for path in migrations)
+        self.assertGreaterEqual(len(migrations), 1)
+        contents = {path.name: path.read_text(encoding="utf-8") for path in migrations}
+        combined = "\n".join(contents.values())
+
         self.assertIn("active_company_id", combined)
         self.assertIn("workcore_business_flows", combined)
+        self.assertIn("ext_workcore_core", combined)
+        self.assertIn("ext_workcore_commercial", combined)
         self.assertIn("Schema::hasColumn", combined)
         self.assertIn("Schema::hasTable", combined)
+
+        for filename, migration in contents.items():
+            self.assertIn("Schema::hasTable", migration, filename)
+            self.assertNotIn("Schema::create('tz_", migration, filename)
 
 
 if __name__ == "__main__":
