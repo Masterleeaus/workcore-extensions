@@ -1,5 +1,5 @@
 {
-  "file_count": 421,
+  "file_count": 422,
   "files": [
     {
       "bytes": 227,
@@ -1485,6 +1485,11 @@
       "bytes": 1593,
       "path": "src/Domains/WorkCore/System/Entitlements/EffectiveSubscriptionSnapshot.php",
       "sha256": "0d4a997234469dcef1e907d190ea9df30695f73b5d2102a2da6fa4185362002f"
+    },
+    {
+      "bytes": 2103,
+      "path": "src/Domains/WorkCore/System/Entitlements/ProjectedCompanyEntitlementResolver.php",
+      "sha256": "0ef4d0448c865daa2fbc4ce9d54a693bdcf0f57febe37905abe5cc8eb27c89d1"
     },
     {
       "bytes": 5792,
