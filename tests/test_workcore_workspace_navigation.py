@@ -93,13 +93,16 @@ class WorkCoreWorkspaceManifestTests(unittest.TestCase):
             "$this->capabilities->has($capability)",
             "$this->entitlements->allows($companyId, $capability)",
             "if ($sections === [])",
-            "array_merge(",
+            "$visibleCapabilities = []",
+            "foreach ($sections as $section)",
+            "array_unique($visibleCapabilities)",
             "'entitlement_revision'",
             "'company_id'",
             "'workspaces'",
         ):
             self.assertIn(token, content)
         self.assertNotIn("allowsAny($companyId, $workspace['capabilities'])", content)
+        self.assertNotIn("...array_map", content)
 
     def test_native_api_exposes_workspace_manifest(self) -> None:
         routes = API_ROUTES.read_text(encoding="utf-8")
@@ -138,6 +141,9 @@ class WorkCoreWorkspaceWebShellTests(unittest.TestCase):
             "workcore.tenant",
             "workcore.workspace-capability:",
             "foreach ($catalogue->all() as $workspaceKey => $workspace)",
+            "foreach ($workspace['sections'] as $section)",
+            "foreach ($section['capabilities'] as $capability)",
+            "array_unique($rootCapabilities)",
             "foreach ($workspace['sections'] as $sectionKey => $section)",
             "implode('|', $rootCapabilities)",
             "implode('|', $section['capabilities'])",
@@ -145,6 +151,7 @@ class WorkCoreWorkspaceWebShellTests(unittest.TestCase):
             "->name($section['route_name'])",
         ):
             self.assertIn(token, content)
+        self.assertNotIn("...array_map", content)
 
     def test_workspace_capability_middleware_accepts_any_registered_entitlement(self) -> None:
         content = WORKSPACE_MIDDLEWARE.read_text(encoding="utf-8")
