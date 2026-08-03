@@ -35,9 +35,8 @@ final class MagicAIUserCompanyAdapter
             return null;
         }
 
-        return CompanyMember::query()
+        return CompanyMember::queryForExplicitCompany($companyId)
             ->where('user_id', $userId)
-            ->where('company_id', $companyId)
             ->where('status', 'active')
             ->first();
     }
