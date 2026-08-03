@@ -3,8 +3,14 @@
 declare(strict_types=1);
 
 use App\Extensions\WorkCore\System\Http\Controllers\WorkspaceController;
+use App\Extensions\WorkCore\System\Http\Middleware\RequireWorkspaceCapability;
 use App\Extensions\WorkCore\System\Navigation\WorkCoreWorkspaceCatalogue;
+use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Route;
+
+/** @var Router $router */
+$router = app('router');
+$router->aliasMiddleware('workcore.workspace-capability', RequireWorkspaceCapability::class);
 
 /** @var WorkCoreWorkspaceCatalogue $catalogue */
 $catalogue = app(WorkCoreWorkspaceCatalogue::class);
