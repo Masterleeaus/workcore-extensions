@@ -26,6 +26,19 @@ def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def expected_runtime_paths(aggregate_names: set[str]) -> set[str]:
+    paths: set[str] = set()
+    for package_src in sorted((REPO_ROOT / "packages").glob("*/src")):
+        for source in package_src.rglob("*"):
+            if not source.is_file():
+                continue
+            relative = source.relative_to(package_src).as_posix()
+            if Path(relative).parent.as_posix() == "Domains/WorkCore/Providers" and Path(relative).name in aggregate_names:
+                continue
+            paths.add(relative)
+    return paths
+
+
 class MagicAIExtensionBuilderTests(unittest.TestCase):
     def test_builder_cli_runs_directly_from_repository_root(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
@@ -70,15 +83,20 @@ class MagicAIExtensionBuilderTests(unittest.TestCase):
             "PropertyOperationsServiceProvider.php",
             "WorkforceAssuranceServiceProvider.php",
         }
+        expected_paths = expected_runtime_paths(aggregate_names)
         with tempfile.TemporaryDirectory() as temp:
             output = Path(temp) / "release"
             report = build_magicai_extensions(REPO_ROOT, output)
             runtime = output / "WorkCore/Runtime"
             archive = output / "WorkCore/docs/source/aggregate-providers"
-            runtime_files = [path for path in runtime.rglob("*") if path.is_file()]
-            self.assertEqual(2153, len(runtime_files))
+            actual_paths = {
+                path.relative_to(runtime).as_posix()
+                for path in runtime.rglob("*")
+                if path.is_file()
+            }
+            self.assertEqual(expected_paths, actual_paths)
             parent = next(item for item in report.extensions if item.folder == "WorkCore")
-            self.assertEqual(2153, parent.runtime_file_count)
+            self.assertEqual(len(expected_paths), parent.runtime_file_count)
 
             for entry in ownership["files"]:
                 package_path = REPO_ROOT / entry["destination"]
