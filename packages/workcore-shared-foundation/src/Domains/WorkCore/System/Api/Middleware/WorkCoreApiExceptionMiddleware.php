@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Domains\WorkCore\System\Api\Middleware;
 
 use App\Domains\WorkCore\System\Contracts\OperationContextContract;
+use App\Domains\WorkCore\System\Tenancy\MissingTenantContextException;
 use Closure;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Auth\AuthenticationException;
@@ -28,6 +29,8 @@ final class WorkCoreApiExceptionMiddleware
             return $this->error('unauthenticated', 'Authentication is required.', 401);
         } catch (AuthorizationException) {
             return $this->error('forbidden', 'You are not authorised to perform this action.', 403);
+        } catch (MissingTenantContextException $exception) {
+            return $this->error('tenant_required', $exception->getMessage(), 409);
         } catch (HttpExceptionInterface $exception) {
             return $this->error($this->codeFor($exception->getStatusCode()), $exception->getMessage() ?: 'The request could not be completed.', $exception->getStatusCode());
         } catch (Throwable $exception) {
