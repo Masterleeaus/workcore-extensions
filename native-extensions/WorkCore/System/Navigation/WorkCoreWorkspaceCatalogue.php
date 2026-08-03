@@ -14,7 +14,7 @@ final class WorkCoreWorkspaceCatalogue
     /** @param array<string,array<string,mixed>>|null $definitions */
     public function __construct(?array $definitions = null)
     {
-        $definitions ??= require __DIR__ . '/../../config/workcore-workspaces.php';
+        $definitions ??= require __DIR__ . '/workspaces.php';
         $this->workspaces = $this->normalize($definitions);
     }
 
