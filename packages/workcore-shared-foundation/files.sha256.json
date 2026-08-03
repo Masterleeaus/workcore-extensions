@@ -1507,9 +1507,9 @@
       "sha256": "0ef4d0448c865daa2fbc4ce9d54a693bdcf0f57febe37905abe5cc8eb27c89d1"
     },
     {
-      "bytes": 5792,
+      "bytes": 7287,
       "path": "src/Domains/WorkCore/System/Entitlements/WorkCorePlanEntitlementAdapter.php",
-      "sha256": "b645aa9544888645ca23ef741f9bc8e5e911695fb668f41674d5e83f6b1eeae1"
+      "sha256": "5e2a357904cc19a5de92e1f028b5c96ae6643e712199cd13cb7fc5a58768c40b"
     },
     {
       "bytes": 397,
