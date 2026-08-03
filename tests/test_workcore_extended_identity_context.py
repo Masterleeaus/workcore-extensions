@@ -51,10 +51,22 @@ class WorkCoreExtendedIdentityContextTests(unittest.TestCase):
         self.assertIn("actorSubject:", runtime)
         self.assertIn("membershipRevision:", runtime)
 
-    def test_identity_enricher_uses_authoritative_membership_worker_and_territory_data(self) -> None:
-        content = (BASE / "Identity/WorkCoreIdentityContextResolver.php").read_text(encoding="utf-8")
+    def test_identity_enrichment_path_uses_authoritative_membership_worker_and_territory_data(self) -> None:
+        identity = (BASE / "Identity/WorkCoreIdentityContextResolver.php").read_text(encoding="utf-8")
+        resolver_contents = [path.read_text(encoding="utf-8") for path in (NATIVE_RESOLVER, HOST_RESOLVER)]
+
+        for resolver in resolver_contents:
+            for token in (
+                "tz_company_memberships",
+                "where('company_id', $companyId)",
+                "where('user_id', $userId)",
+                "where('status', 'active')",
+                "first(['id', 'role_id', 'role_key', 'is_owner', 'updated_at'])",
+                "$this->identity->resolve($request, $companyId, $userId, $membership)",
+            ):
+                self.assertIn(token, resolver)
+
         for token in (
-            "tz_company_memberships",
             "tz_company_member_permissions",
             "tz_company_role_permissions",
             "tz_workers",
@@ -72,10 +84,10 @@ class WorkCoreExtendedIdentityContextTests(unittest.TestCase):
             "branch_id",
             "territory_id",
         ):
-            self.assertIn(token, content)
-        self.assertIn("abort(409", content)
-        self.assertIn("where('company_id', $companyId)", content)
-        self.assertIn("where('user_id', $userId)", content)
+            self.assertIn(token, identity)
+        self.assertIn("abort(409", identity)
+        self.assertIn("where('company_id', $companyId)", identity)
+        self.assertIn("where('user_id', $userId)", identity)
 
     def test_native_and_host_tenant_resolvers_delegate_identity_enrichment(self) -> None:
         for path in (NATIVE_RESOLVER, HOST_RESOLVER):
