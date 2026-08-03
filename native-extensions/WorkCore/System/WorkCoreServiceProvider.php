@@ -23,6 +23,7 @@ use App\Extensions\WorkCore\System\Console\Commands\RefreshWorkCoreEntitlementsC
 use App\Extensions\WorkCore\System\Entitlements\MagicAIEffectiveSubscriptionResolver;
 use App\Extensions\WorkCore\System\Runtime\WorkCoreHostAliasRegistrar;
 use App\Extensions\WorkCore\System\Runtime\WorkCoreRuntimeAutoloader;
+use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Database\ConnectionInterface;
 use Illuminate\Support\ServiceProvider;
 use RuntimeException;
@@ -90,6 +91,18 @@ final class WorkCoreServiceProvider extends ServiceProvider implements
             $this->commands([
                 RefreshWorkCoreEntitlementsCommand::class,
             ]);
+
+            if ((bool) config('workcore-native.entitlements.reconciliation.enabled', true)) {
+                $interval = max(1, min(59, (int) config(
+                    'workcore-native.entitlements.reconciliation.interval_minutes',
+                    5,
+                )));
+                $this->callAfterResolving(Schedule::class, static function (Schedule $schedule) use ($interval): void {
+                    $schedule->command('workcore:refresh-entitlements --all')
+                        ->cron("*/{$interval} * * * *")
+                        ->withoutOverlapping(max(10, $interval * 2));
+                });
+            }
         }
 
         $this->publishes([
