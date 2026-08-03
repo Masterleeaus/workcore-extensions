@@ -5,11 +5,14 @@ declare(strict_types=1);
 namespace App\Extensions\WorkCore\System\Resolvers;
 
 use App\Domains\WorkCore\System\Contracts\TenantResolverContract;
+use App\Domains\WorkCore\System\Identity\WorkCoreIdentityContextResolver;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 final class WorkCoreTenantResolver implements TenantResolverContract
 {
+    public function __construct(private WorkCoreIdentityContextResolver $identity) {}
+
     public function resolve(Request $request): ?array
     {
         $user = $request->user();
@@ -29,13 +32,14 @@ final class WorkCoreTenantResolver implements TenantResolverContract
         }
 
         $companyId = (int) $candidate;
-        $member = DB::table('tz_company_memberships')
+        $userId = (int) $user->getAuthIdentifier();
+        $membership = DB::table('tz_company_memberships')
             ->where('company_id', $companyId)
-            ->where('user_id', $user->getAuthIdentifier())
+            ->where('user_id', $userId)
             ->where('status', 'active')
-            ->exists();
+            ->first(['id', 'role_id', 'role_key', 'is_owner', 'updated_at']);
 
-        if (! $member) {
+        if ($membership === null) {
             return null;
         }
 
@@ -47,6 +51,6 @@ final class WorkCoreTenantResolver implements TenantResolverContract
             $request->session()->put($sessionKey, $companyId);
         }
 
-        return ['company_id' => $companyId, 'user_id' => (int) $user->getAuthIdentifier()];
+        return $this->identity->resolve($request, $companyId, $userId, $membership);
     }
 }
