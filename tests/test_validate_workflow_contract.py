@@ -12,7 +12,7 @@ class ValidateWorkflowContractTests(unittest.TestCase):
         content = WORKFLOW.read_text(encoding="utf-8")
 
         self.assertNotIn('test "$php_files" -eq 2090', content)
-        self.assertIn("packages/*/files.sha256.json", content)
+        self.assertIn("Path('packages').glob('*/files.sha256.json')", content)
         self.assertIn("expected_php_files", content)
         self.assertIn("actual_php_files", content)
         self.assertIn('test "$actual_php_files" -eq "$expected_php_files"', content)
