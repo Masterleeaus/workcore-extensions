@@ -7,7 +7,7 @@ use App\Http\Controllers\Api\V1\WorkCore\BusinessFlowController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::middleware(['auth:sanctum', 'company.active', 'workcore.tenant', 'workcore.api'])
+Route::middleware(['auth:api', 'company.active', 'workcore.tenant', 'workcore.api'])
     ->prefix('v1')
     ->group(function (): void {
         Route::get('/user', fn (Request $request) => $request->user());
