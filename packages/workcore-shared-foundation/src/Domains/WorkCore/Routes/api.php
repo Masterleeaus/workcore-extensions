@@ -15,6 +15,9 @@ Route::prefix((string) config('workcore.api.route_prefix', 'api/v1/workcore'))
             Route::get('actions/{action}', [ActionController::class, 'show'])
                 ->where('action', '.*')
                 ->name('actions.show');
+            Route::post('actions/{action}/confirm', [ActionController::class, 'confirm'])
+                ->where('action', '.*')
+                ->name('actions.confirm');
             Route::post('actions/{action}/execute', [ActionController::class, 'execute'])
                 ->where('action', '.*')
                 ->name('actions.execute');
