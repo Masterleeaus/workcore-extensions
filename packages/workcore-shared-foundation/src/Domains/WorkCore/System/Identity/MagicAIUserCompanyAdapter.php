@@ -35,7 +35,8 @@ final class MagicAIUserCompanyAdapter
             return null;
         }
 
-        return CompanyMember::queryForExplicitCompany($companyId)
+        return CompanyMember::withoutGlobalScope('workcore_company')
+            ->where('company_id', $companyId)
             ->where('user_id', $userId)
             ->where('status', 'active')
             ->first();
