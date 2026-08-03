@@ -1757,9 +1757,9 @@
       "sha256": "e6da20e53ae24fdb08912953c220d22cd40218cdbcef65d8c9499c0fe5699c4f"
     },
     {
-      "bytes": 1238,
+      "bytes": 1287,
       "path": "src/Domains/WorkCore/System/Identity/MagicAIUserCompanyAdapter.php",
-      "sha256": "f43ef61dd424f968045c427f96342c000f2fb70d00891788aa547ab5b058e11d"
+      "sha256": "3416ebff362902cea4893ca339d22c21232ecbcd88d6e54461dbd1f9bc21ad96"
     },
     {
       "bytes": 1460,
@@ -2047,9 +2047,9 @@
       "sha256": "65076bf7f1c1b5d948af17097573484e2e53f5e30f9ab074745098a7a87b355c"
     },
     {
-      "bytes": 2815,
+      "bytes": 2395,
       "path": "src/Domains/WorkCore/System/Tenancy/BelongsToCompany.php",
-      "sha256": "300351dd50679662f17defedcfee7ca055c5d6d0430b0712d97e6e16023226bf"
+      "sha256": "c64e73013b96bb3efc0cc82d78487c30bbd2554b2be55e5f79c0d782dd99e195"
     },
     {
       "bytes": 1411,
