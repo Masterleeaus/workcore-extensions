@@ -23,7 +23,7 @@ final class WorkCorePermissionResolver implements PermissionResolverContract
         }
 
         if ((bool) $membership->is_owner || in_array((string) $membership->role_key, ['owner', 'admin'], true)) {
-            return WorkCoreAccessLevel::Manage;
+            return WorkCoreAccessLevel::All;
         }
 
         $memberLevel = DB::table('tz_company_member_permissions')
