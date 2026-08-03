@@ -8,7 +8,6 @@ use App\Domains\WorkCore\System\Contracts\PrivilegedTenantAccessContract;
 use App\Domains\WorkCore\System\Contracts\TenantContextContract;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use InvalidArgumentException;
 
 trait BelongsToCompany
 {
@@ -45,18 +44,6 @@ trait BelongsToCompany
                 );
             }
         });
-    }
-
-    public static function queryForExplicitCompany(int $companyId): Builder
-    {
-        if ($companyId < 1) {
-            throw new InvalidArgumentException('An explicit positive company ID is required.');
-        }
-
-        $model = new static();
-
-        return static::withoutGlobalScope('workcore_company')
-            ->where($model->qualifyColumn('company_id'), $companyId);
     }
 
     public function scopeForCompany(Builder $query, ?int $companyId = null): Builder
