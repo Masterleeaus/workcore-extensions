@@ -137,5 +137,9 @@ return [
                 'yokassa_approved' => 'active',
             ],
         ],
+        'reconciliation' => [
+            'enabled' => env('WORKCORE_ENTITLEMENT_RECONCILIATION_ENABLED', true),
+            'interval_minutes' => (int) env('WORKCORE_ENTITLEMENT_RECONCILIATION_MINUTES', 5),
+        ],
     ],
 ];
