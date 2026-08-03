@@ -10,4 +10,6 @@ use App\Domains\WorkCore\System\Actions\ActionRequest;
 interface ConfirmationVerifierContract
 {
     public function verify(ActionDefinition $definition, ActionRequest $request): bool;
+
+    public function consume(ActionDefinition $definition, ActionRequest $request): bool;
 }

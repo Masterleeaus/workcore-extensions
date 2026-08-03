@@ -36,6 +36,11 @@ final class WorkCoreCommercialServiceProvider extends ServiceProvider implements
             return;
         }
 
+        // Direct Titan Money routes currently carry standalone Sanctum middleware.
+        // Keep them disabled inside MagicAI; finance remains available through the
+        // governed WorkCore action/read-model APIs protected by native Passport.
+        $this->app['config']->set('workcore.finance.routes_enabled', false);
+
         /** @var WorkModuleRegistry $registry */
         $registry = $this->app->make(WorkModuleRegistry::class);
         $registry->loadMany(self::MODULES);

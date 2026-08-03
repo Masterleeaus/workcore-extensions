@@ -9,11 +9,15 @@ on:
       - 'tools/build_magicai_extensions.py'
       - 'tools/prepare_magicai_10_fixture.py'
       - 'tools/verify_magicai_native_host.php'
+      - 'tools/verify_workcore_entitlement_projection.php'
+      - 'tools/verify_workcore_workspace_navigation.php'
       - 'tests/test_magicai_native_host_fixture.py'
+      - 'tests/test_workcore_*.py'
       - '.github/workflows/magicai-native-laravel10.yml'
   push:
     branches:
       - feature/magicai-native-workcore-extensions
+      - upgrade/workcore-crm-replacement-foundation
     paths:
       - 'native-extensions/**'
       - 'packages/**'
@@ -21,7 +25,10 @@ on:
       - 'tools/build_magicai_extensions.py'
       - 'tools/prepare_magicai_10_fixture.py'
       - 'tools/verify_magicai_native_host.php'
+      - 'tools/verify_workcore_entitlement_projection.php'
+      - 'tools/verify_workcore_workspace_navigation.php'
       - 'tests/test_magicai_native_host_fixture.py'
+      - 'tests/test_workcore_*.py'
       - '.github/workflows/magicai-native-laravel10.yml'
 
 permissions:
@@ -99,3 +106,11 @@ jobs:
         if: ${{ matrix.migrate }}
         working-directory: /tmp/magicai-host
         run: php artisan migrate:fresh --force --no-interaction --no-ansi
+
+      - name: Run database-backed entitlement projection fixture
+        if: ${{ matrix.profile == 'full' }}
+        run: php tools/verify_workcore_entitlement_projection.php --host=/tmp/magicai-host
+
+      - name: Run database-backed WorkCore workspace navigation fixture
+        if: ${{ matrix.profile == 'full' }}
+        run: php tools/verify_workcore_workspace_navigation.php --host=/tmp/magicai-host

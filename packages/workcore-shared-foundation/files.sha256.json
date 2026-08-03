@@ -1,5 +1,5 @@
 {
-  "file_count": 414,
+  "file_count": 426,
   "files": [
     {
       "bytes": 227,
@@ -607,6 +607,16 @@
       "sha256": "ba9383c506aee1d2343069439fddd38819753165373771a84ac5b095c3dc9e23"
     },
     {
+      "bytes": 1069,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_08_03_000000_create_tz_privileged_tenant_access_audits_table.php",
+      "sha256": "0f020f0bf60b42ef781f6db7e546aa9d89145208a3cb0969692f3d6f74026d9a"
+    },
+    {
+      "bytes": 2560,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_08_03_010000_create_tz_company_entitlement_projection_tables.php",
+      "sha256": "183703ba4d9130c36cc698126991b38066d69e565f15ad49c8791b7a18417354"
+    },
+    {
       "bytes": 450,
       "path": "src/Domains/WorkCore/Database/Seeders/WorkCoreDatabaseSeeder.php",
       "sha256": "2922869f612470ba3062e0e57f6c83e510212fb2060feeb02db43c5490ba8159"
@@ -622,9 +632,9 @@
       "sha256": "c7a2ee2c47a11209a873c0867c3ebf58170b3072567667481f9d1612cbc4d007"
     },
     {
-      "bytes": 1168,
+      "bytes": 1341,
       "path": "src/Domains/WorkCore/Routes/api.php",
-      "sha256": "46543afadb6de042cf6909723e2d2799ad26192c48320a0faf9251e7a42074bf"
+      "sha256": "feb702004c77da7a56f2b8ed37f3a7f2f59e7d0c5840a6d84a7575bccb331591"
     },
     {
       "bytes": 242,
@@ -657,9 +667,9 @@
       "sha256": "888dde7fe4264a33d28480551215e2a2a11f3bcefbf315c812b9c45795f4531b"
     },
     {
-      "bytes": 5518,
+      "bytes": 5952,
       "path": "src/Domains/WorkCore/System/Actions/BusinessActionDispatcher.php",
-      "sha256": "c9d73731b17f044bb74ac501bde82f2154c30c6401f241545dce16dd8e274086"
+      "sha256": "9734e05d9cb5e4973c518565709d58701f0f099a860e38f4cc7672025f27feb1"
     },
     {
       "bytes": 954,
@@ -682,9 +692,9 @@
       "sha256": "3cff950097d2ac1605bce9d294fb5c04d6ed2682cc0eabbc6c33f0bd97b20c78"
     },
     {
-      "bytes": 336,
+      "bytes": 426,
       "path": "src/Domains/WorkCore/System/Actions/Contracts/ConfirmationVerifierContract.php",
-      "sha256": "04bd74f2aed18ea02d1f1af0fd5daa875e038caf5ba169016f3a80d3fe5eb9b2"
+      "sha256": "46be11c8e8a74965c1e61d96152cbcaec66c32152460c889dd07a5e2c33bd065"
     },
     {
       "bytes": 420,
@@ -695,6 +705,11 @@
       "bytes": 204,
       "path": "src/Domains/WorkCore/System/Actions/Contracts/EntitlementResolverContract.php",
       "sha256": "4f85f481d8a786fd40d5d7a248475dead8f2889110f32758e459d2115cad1ba3"
+    },
+    {
+      "bytes": 192,
+      "path": "src/Domains/WorkCore/System/Actions/Contracts/EntitlementRevisionResolverContract.php",
+      "sha256": "159cc7da007d6a0932deaa5b46da3924fe2dbf8a953fb846135a6bc6efa34b16"
     },
     {
       "bytes": 325,
@@ -727,9 +742,9 @@
       "sha256": "6509f0bce2d14b4cfeda3651f692bbf10a61f20ce639a5d0ad59dc605119d463"
     },
     {
-      "bytes": 691,
+      "bytes": 845,
       "path": "src/Domains/WorkCore/System/Actions/Policies/ExplicitConfirmationVerifier.php",
-      "sha256": "a0fe7cb63f65b2ad6e8decc50678fefb220fd814b3c465e80d7e9ab4837c6213"
+      "sha256": "35a1a6f932e4d3cd0065cbe0031cb88298d808664907315cb5c3f114681d3dc9"
     },
     {
       "bytes": 568,
@@ -747,9 +762,9 @@
       "sha256": "e97a633791bddf02b38c9bd36ec7d4703db01595cbbde82bfc146711235e76ec"
     },
     {
-      "bytes": 2464,
+      "bytes": 2679,
       "path": "src/Domains/WorkCore/System/Api/Middleware/WorkCoreApiExceptionMiddleware.php",
-      "sha256": "33d66c2313d361356f494091abb4260155556ebf3be9461bb13e8b72a1e8928e"
+      "sha256": "a0ae3b508cf9b68c26144e7dc3c77528b1db0c358bbd211623497adfb4031f7a"
     },
     {
       "bytes": 2942,
@@ -917,14 +932,14 @@
       "sha256": "4ed5959ca0d524e8e67ab45aff1f7e6e2497d4383edcad82f2f8075e4bbf777e"
     },
     {
-      "bytes": 1575,
+      "bytes": 2451,
       "path": "src/Domains/WorkCore/System/Company/Actions/AcceptCompanyInvitation.php",
-      "sha256": "65ba8e44cfd5ce6bd0d823d23f5bd9c299b6d5fdf8452ca6eb773cd290b07bde"
+      "sha256": "c6a6703e06eafa519df7ed1de7960c214aec9a6b7baa44e197676468cac56c11"
     },
     {
-      "bytes": 3845,
+      "bytes": 4697,
       "path": "src/Domains/WorkCore/System/Company/Actions/CreateCompany.php",
-      "sha256": "2a80a5d0a9b349ac933c61030602b31a0ae2c332f0f63ac384d351e1ddb829ee"
+      "sha256": "b3a585c7e37b6859135d0ad9f8b1cd69bba8c3faf73374ad571260f4f888eeae"
     },
     {
       "bytes": 1326,
@@ -977,14 +992,14 @@
       "sha256": "fc9e9b56c06c4a0de8e769bf838deb57013ffb423373d3182c9af8fd54ddf557"
     },
     {
-      "bytes": 1794,
+      "bytes": 3189,
       "path": "src/Domains/WorkCore/System/Context/OperationContext.php",
-      "sha256": "aa65a82bd4400acad2c6f1d48ab021b5c3bf0a405d0eb7d28350c8742fb861db"
+      "sha256": "2211ea83330be2a7cc5baae07cb80f2e2476e299daf9f60a05f93b4f520b5b08"
     },
     {
-      "bytes": 2101,
+      "bytes": 4915,
       "path": "src/Domains/WorkCore/System/Context/OperationContextSnapshot.php",
-      "sha256": "ccbb5c38df2b505f04073397878d595b1d4cfa5abc4ecb1288d4b28340abe15e"
+      "sha256": "7e29dec4208cc5436709bb01529d9c4f66cf6934bf03af797cdfc14ed69cfbe2"
     },
     {
       "bytes": 958,
@@ -992,14 +1007,19 @@
       "sha256": "09c0477a52c7825e25429ea86438ac04c723c8b1007ae84e0af40bf0d5d0ab46"
     },
     {
-      "bytes": 814,
+      "bytes": 1517,
       "path": "src/Domains/WorkCore/System/Contracts/OperationContextContract.php",
-      "sha256": "007bf510ccd4aab5569f893675b96889efa6756fb483a2b96c9c6bf5188124a5"
+      "sha256": "6d622d8666b1ff1dc5fe83ca47b35c47bd71a04c34b3b13679115fabdeedacfb"
     },
     {
       "bytes": 393,
       "path": "src/Domains/WorkCore/System/Contracts/PermissionResolverContract.php",
       "sha256": "f62c8c49c67411f98511fbec0d2c95e460808feffe872e8f4809d4065a2adbac"
+    },
+    {
+      "bytes": 256,
+      "path": "src/Domains/WorkCore/System/Contracts/PrivilegedTenantAccessContract.php",
+      "sha256": "8c7a44476de1de99e133b457080ad587ad9482adfefd351fa254a0af82d92dfa"
     },
     {
       "bytes": 2122,
@@ -1442,9 +1462,9 @@
       "sha256": "7fc31563c2fc1e247651a474a7fac5d9d4d4633f938ec6d5b8cae35d7efac325"
     },
     {
-      "bytes": 264,
+      "bytes": 557,
       "path": "src/Domains/WorkCore/System/Contracts/TenantResolverContract.php",
-      "sha256": "09a092983bd14abf8140432f9c42d2cc56dcca6db2800eebdf80d00dfe5a6d08"
+      "sha256": "f7d1698fce83c00c155f71d83bb34283c7de6fa88f1dbfc9db8200380ec4a3f7"
     },
     {
       "bytes": 1035,
@@ -1465,6 +1485,31 @@
       "bytes": 642,
       "path": "src/Domains/WorkCore/System/Donors/FeatureSourceRegistry.php",
       "sha256": "6469bd313e5974cd96115e82b84c9625e8df441ade9711184fe6cfc236e617e5"
+    },
+    {
+      "bytes": 596,
+      "path": "src/Domains/WorkCore/System/Entitlements/CompanyEntitlementRefreshService.php",
+      "sha256": "8c0ea975373b7c1be7cff4487ff97f8764aa7e00036c47d2660dbe7815363a26"
+    },
+    {
+      "bytes": 301,
+      "path": "src/Domains/WorkCore/System/Entitlements/Contracts/EffectiveSubscriptionResolverContract.php",
+      "sha256": "829b5a854e601d7ef67ba61f59d092a9c657a9e99e3f0b91e7babcb0da33103d"
+    },
+    {
+      "bytes": 1593,
+      "path": "src/Domains/WorkCore/System/Entitlements/EffectiveSubscriptionSnapshot.php",
+      "sha256": "0d4a997234469dcef1e907d190ea9df30695f73b5d2102a2da6fa4185362002f"
+    },
+    {
+      "bytes": 2103,
+      "path": "src/Domains/WorkCore/System/Entitlements/ProjectedCompanyEntitlementResolver.php",
+      "sha256": "0ef4d0448c865daa2fbc4ce9d54a693bdcf0f57febe37905abe5cc8eb27c89d1"
+    },
+    {
+      "bytes": 7287,
+      "path": "src/Domains/WorkCore/System/Entitlements/WorkCorePlanEntitlementAdapter.php",
+      "sha256": "5e2a357904cc19a5de92e1f028b5c96ae6643e712199cd13cb7fc5a58768c40b"
     },
     {
       "bytes": 397,
@@ -1747,9 +1792,14 @@
       "sha256": "e6da20e53ae24fdb08912953c220d22cd40218cdbcef65d8c9499c0fe5699c4f"
     },
     {
-      "bytes": 1256,
+      "bytes": 1287,
       "path": "src/Domains/WorkCore/System/Identity/MagicAIUserCompanyAdapter.php",
-      "sha256": "bbe3ca97912590641a584ee9de85e9753bd01cc36b51e141ec15cd588b2d41b4"
+      "sha256": "3416ebff362902cea4893ca339d22c21232ecbcd88d6e54461dbd1f9bc21ad96"
+    },
+    {
+      "bytes": 6619,
+      "path": "src/Domains/WorkCore/System/Identity/WorkCoreIdentityContextResolver.php",
+      "sha256": "af7a239bb2399a5046c60a565f5625919c97c14bc819607ed4b16e891a3e22cc"
     },
     {
       "bytes": 1460,
@@ -2037,9 +2087,9 @@
       "sha256": "65076bf7f1c1b5d948af17097573484e2e53f5e30f9ab074745098a7a87b355c"
     },
     {
-      "bytes": 1536,
+      "bytes": 2395,
       "path": "src/Domains/WorkCore/System/Tenancy/BelongsToCompany.php",
-      "sha256": "38c19c291e8c323f7ce5fa6b3c56b6befbea2cc3c5ed7a2147e7c00d1db27dfb"
+      "sha256": "c64e73013b96bb3efc0cc82d78487c30bbd2554b2be55e5f79c0d782dd99e195"
     },
     {
       "bytes": 1411,
@@ -2047,14 +2097,24 @@
       "sha256": "0de1a8491ad2ff0c2759a1ae41f372cc1908b0d74d373ed9aa94352d02bd0c05"
     },
     {
+      "bytes": 175,
+      "path": "src/Domains/WorkCore/System/Tenancy/MissingTenantContextException.php",
+      "sha256": "6b6303104a0872374a43d3d5d8c7a9513c5d0b1f2816dcd5fc443716331f2dc1"
+    },
+    {
       "bytes": 317,
       "path": "src/Domains/WorkCore/System/Tenancy/NullTenantResolver.php",
       "sha256": "aced2618b10470dbccc8ac7be68b80c084b75a9773b42ae83a6bf0e8a9189fdc"
     },
     {
-      "bytes": 2881,
+      "bytes": 3506,
+      "path": "src/Domains/WorkCore/System/Tenancy/PrivilegedTenantAccess.php",
+      "sha256": "9889ba398a06b3f6f0274c73b3f4e7bff34ef546d17c36a70a7079e0a5b666a4"
+    },
+    {
+      "bytes": 3709,
       "path": "src/Domains/WorkCore/System/Tenancy/ResolveWorkCoreTenant.php",
-      "sha256": "ade5afa15e192c3e3526c0af8ce3ee55f7e619907dafe63e85d7772734e91969"
+      "sha256": "1bff9e693eb867f8ddde8ec818d9adba97fc699b35da753728fa7be7a6ad4877"
     },
     {
       "bytes": 1225,
@@ -2067,9 +2127,9 @@
       "sha256": "a49ef9d978f04d6cd08cce2307ddafab97d90431f6321d8620af3ebcfa94a04a"
     },
     {
-      "bytes": 12084,
+      "bytes": 12242,
       "path": "src/Domains/WorkCore/WorkCoreServiceProvider.php",
-      "sha256": "298735ca5a013d27289659726f0cfbfc30dfea851ff683406ca50d3c4f6ebb57"
+      "sha256": "3bd83c5e3b7736432f52cec6e410be806f6a4f2422e11ca10b599f128f5cf3a5"
     }
   ]
 }

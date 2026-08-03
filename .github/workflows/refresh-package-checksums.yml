@@ -1,0 +1,22 @@
+name: Validate WorkCore package checksums
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Verify deterministic package manifests
+        run: python tools/refresh_package_checksums.py --repo . --check

@@ -16,4 +16,9 @@ final class ExplicitConfirmationVerifier implements ConfirmationVerifierContract
 
         return ! $required || ($request->confirmationId !== null && trim($request->confirmationId) !== '');
     }
+
+    public function consume(ActionDefinition $definition, ActionRequest $request): bool
+    {
+        return $this->verify($definition, $request);
+    }
 }

@@ -29,6 +29,7 @@ use App\Domains\WorkCore\System\Context\{CompanyOperatingContextResolver, Contex
 use App\Domains\WorkCore\System\Contracts\{
     OperationContextContract,
     PermissionResolverContract,
+    PrivilegedTenantAccessContract,
     TenantContextContract,
     TenantResolverContract
 };
@@ -42,7 +43,7 @@ use App\Domains\WorkCore\System\Outbox\{DatabaseOutboxPublisher, OutboxPublisher
 use App\Domains\WorkCore\System\ReadModels\{ReadModelExecutor, ReadModelRegistry};
 use App\Domains\WorkCore\System\References\RecordTypeRegistry;
 use App\Domains\WorkCore\System\Registry\WorkModuleRegistry;
-use App\Domains\WorkCore\System\Tenancy\{ResolveWorkCoreTenant, TenantContext};
+use App\Domains\WorkCore\System\Tenancy\{PrivilegedTenantAccess, ResolveWorkCoreTenant, TenantContext};
 use App\Domains\WorkCore\System\Validation\CompanyScopedReferenceValidator;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
@@ -73,6 +74,7 @@ final class WorkCoreServiceProvider extends ServiceProvider
         }
 
         $this->app->scoped(TenantContextContract::class, static fn (): TenantContext => new TenantContext());
+        $this->app->scoped(PrivilegedTenantAccessContract::class, PrivilegedTenantAccess::class);
         $this->app->scoped(OperationContextContract::class, static fn (): OperationContext => new OperationContext());
 
         $this->bindConfigured(TenantResolverContract::class, 'workcore.tenant_resolver');

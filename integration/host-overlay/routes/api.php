@@ -7,7 +7,7 @@ use App\Http\Controllers\Api\V1\WorkCore\BusinessFlowController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::middleware(['auth:sanctum', 'company.active', 'workcore.tenant', 'workcore.api'])
+Route::middleware(['auth:api', 'company.active', 'workcore.tenant', 'workcore.api'])
     ->prefix('v1')
     ->group(function (): void {
         Route::get('/user', fn (Request $request) => $request->user());
@@ -15,6 +15,7 @@ Route::middleware(['auth:sanctum', 'company.active', 'workcore.tenant', 'workcor
         Route::middleware('throttle:workcore-actions')->prefix('workcore')->group(function (): void {
             Route::get('/actions', [ActionController::class, 'index']);
             Route::get('/actions/{action}', [ActionController::class, 'show'])->where('action', '.*');
+            Route::post('/actions/{action}/confirm', [ActionController::class, 'confirm'])->where('action', '.*');
             Route::post('/actions/{action}/execute', [ActionController::class, 'execute'])->where('action', '.*');
             Route::post('/flows/customer-property-work-order', [BusinessFlowController::class, 'customerPropertyWorkOrder']);
         });

@@ -49,12 +49,20 @@ final class ResolveWorkCoreTenant
 
         $this->tenant->set($companyId, $userId);
         $this->operation->set(
-            $companyId,
-            $userId,
-            $correlationId,
-            $causationId,
-            $companyContext->locale,
-            $companyContext->timezone,
+            companyId: $companyId,
+            actorId: $userId,
+            correlationId: $correlationId,
+            causationId: $causationId,
+            locale: $companyContext->locale,
+            timezone: $companyContext->timezone,
+            actorSubject: (string) ($identity['actor_subject'] ?? ($userId === null ? 'system' : 'magicai:user:' . $userId)),
+            workerId: isset($identity['worker_id']) ? (int) $identity['worker_id'] : null,
+            branchId: isset($identity['branch_id']) ? (int) $identity['branch_id'] : null,
+            territoryId: isset($identity['territory_id']) ? (int) $identity['territory_id'] : null,
+            deviceId: isset($identity['device_id']) ? (string) $identity['device_id'] : null,
+            authenticationAssurance: (string) ($identity['authentication_assurance'] ?? 'authenticated'),
+            securityRevision: (int) ($identity['security_revision'] ?? 0),
+            membershipRevision: (int) ($identity['membership_revision'] ?? 0),
         );
         app()->setLocale($companyContext->locale);
         date_default_timezone_set($companyContext->timezone);

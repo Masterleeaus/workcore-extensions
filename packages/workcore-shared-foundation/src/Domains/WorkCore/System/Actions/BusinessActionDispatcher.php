@@ -49,16 +49,24 @@ final class BusinessActionDispatcher
             $this->reject($definition, $request, $correlationId, 'The actor is not permitted to execute this action.', 403);
         }
         if (! $this->confirmations->verify($definition, $request)) {
-            $this->reject($definition, $request, $correlationId, 'Explicit confirmation is required for this action.', 428);
+            $this->reject($definition, $request, $correlationId, 'A valid explicit confirmation grant is required for this action.', 428);
         }
 
         if ($replay = $this->idempotency->replay($request)) {
             return $replay;
         }
 
+        $idempotencyReserved = false;
+
         try {
-            return $this->db->transaction(function () use ($request, $definition, $correlationId): ActionResult {
+            return $this->db->transaction(function () use ($request, $definition, $correlationId, &$idempotencyReserved): ActionResult {
+                if (! $this->confirmations->consume($definition, $request)) {
+                    throw new ActionDispatchException('The confirmation grant expired or was already consumed.', 428);
+                }
+
                 $this->idempotency->reserve($request);
+                $idempotencyReserved = true;
+
                 $handler = $this->container->make($definition->handler);
                 if (! $handler instanceof BusinessActionHandlerContract) {
                     throw new ActionDispatchException("Action handler [{$definition->handler}] must implement BusinessActionHandlerContract.");
@@ -74,8 +82,10 @@ final class BusinessActionDispatcher
             }, 3);
         } catch (Throwable $exception) {
             try {
-                $this->db->transaction(function () use ($request, $definition, $correlationId, $exception): void {
-                    $this->idempotency->fail($request, $exception->getMessage());
+                $this->db->transaction(function () use ($request, $definition, $correlationId, $exception, $idempotencyReserved): void {
+                    if ($idempotencyReserved) {
+                        $this->idempotency->fail($request, $exception->getMessage());
+                    }
                     $this->audit->recordFailed($definition, $request, $correlationId, $exception->getMessage());
                 });
             } catch (Throwable) {

@@ -1,0 +1,62 @@
+name: Refresh WorkCore repository integrity
+
+on:
+  push:
+    branches:
+      - upgrade/workcore-crm-replacement-foundation
+    paths:
+      - 'packages/**'
+      - 'native-extensions/WorkCore/extension.manifest.json'
+      - 'tools/refresh_package_checksums.py'
+      - 'tests/test_refresh_package_checksums.py'
+      - 'tests/test_repository_integrity_updater.py'
+      - '.github/workflows/workcore-repository-integrity.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: workcore-repository-integrity-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Test integrity generator
+        run: |
+          python -m unittest tests/test_refresh_package_checksums.py -v
+          python -m unittest tests/test_repository_integrity_updater.py -v
+
+      - name: Refresh committed integrity metadata
+        run: python tools/refresh_package_checksums.py --repo .
+
+      - name: Validate refreshed repository
+        run: |
+          python tools/refresh_package_checksums.py --repo . --check
+          python tools/validate_repository.py --repo .
+
+      - name: Commit refreshed metadata
+        run: |
+          if git diff --quiet -- packages native-extensions/WorkCore/extension.manifest.json; then
+            echo 'Integrity metadata already current.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add packages/*/files.sha256.json native-extensions/WorkCore/extension.manifest.json
+          git commit -m 'chore: refresh WorkCore integrity metadata'
+          git push origin HEAD:${{ github.ref_name }}
