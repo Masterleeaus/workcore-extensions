@@ -20,7 +20,11 @@ use App\Domains\WorkCore\System\Intelligence\Approvals\ConfirmationGrantSigner;
 use App\Domains\WorkCore\System\Intelligence\Approvals\ConfirmationNonceStoreContract;
 use App\Domains\WorkCore\System\Intelligence\Approvals\DatabaseConfirmationNonceStore;
 use App\Extensions\WorkCore\System\Console\Commands\RefreshWorkCoreEntitlementsCommand;
+use App\Extensions\WorkCore\System\Console\Commands\SyncWorkCoreMenusCommand;
 use App\Extensions\WorkCore\System\Entitlements\MagicAIEffectiveSubscriptionResolver;
+use App\Extensions\WorkCore\System\Navigation\MagicAIMenuSynchronizer;
+use App\Extensions\WorkCore\System\Navigation\WorkCoreWorkspaceCatalogue;
+use App\Extensions\WorkCore\System\Navigation\WorkCoreWorkspaceManifest;
 use App\Extensions\WorkCore\System\Runtime\WorkCoreHostAliasRegistrar;
 use App\Extensions\WorkCore\System\Runtime\WorkCoreRuntimeAutoloader;
 use Illuminate\Console\Scheduling\Schedule;
@@ -77,6 +81,7 @@ final class WorkCoreServiceProvider extends ServiceProvider implements
 
         $this->registerNativeConfirmationSecurity();
         $this->registerNativeEntitlements();
+        $this->registerNativeNavigation();
     }
 
     public function boot(): void
@@ -86,10 +91,14 @@ final class WorkCoreServiceProvider extends ServiceProvider implements
         }
 
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'workcore');
+        $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'workcore');
+        $this->registerWorkspaceRoutes();
 
         if ($this->app->runningInConsole()) {
             $this->commands([
                 RefreshWorkCoreEntitlementsCommand::class,
+                SyncWorkCoreMenusCommand::class,
             ]);
 
             if ((bool) config('workcore-native.entitlements.reconciliation.enabled', true)) {
@@ -108,6 +117,7 @@ final class WorkCoreServiceProvider extends ServiceProvider implements
 
         $this->publishes([
             __DIR__ . '/../config/workcore-native.php' => config_path('workcore-native.php'),
+            __DIR__ . '/../config/workcore-workspaces.php' => config_path('workcore-workspaces.php'),
         ], 'extension');
     }
 
@@ -120,6 +130,23 @@ final class WorkCoreServiceProvider extends ServiceProvider implements
     {
         // Intentionally retain WorkCore tenant data, evidence and audit history.
         // Repeated execution is a safe no-op; destructive purge is a separate operation.
+    }
+
+    private function registerWorkspaceRoutes(): void
+    {
+        if (! (bool) config('workcore-native.workspace_routes_enabled', true)) {
+            return;
+        }
+
+        $this->loadRoutesFrom(__DIR__ . '/../routes/user.php');
+        $this->loadRoutesFrom(__DIR__ . '/../routes/api.php');
+    }
+
+    private function registerNativeNavigation(): void
+    {
+        $this->app->singleton(WorkCoreWorkspaceCatalogue::class);
+        $this->app->singleton(WorkCoreWorkspaceManifest::class);
+        $this->app->singleton(MagicAIMenuSynchronizer::class);
     }
 
     private function registerNativeConfirmationSecurity(): void
