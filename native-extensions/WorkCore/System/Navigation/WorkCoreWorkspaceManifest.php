@@ -39,10 +39,6 @@ final class WorkCoreWorkspaceManifest
 
         $workspaces = [];
         foreach ($this->catalogue->all() as $workspaceKey => $workspace) {
-            if (! $this->allowsAny($companyId, $workspace['capabilities'])) {
-                continue;
-            }
-
             $sections = [];
             foreach ($workspace['sections'] as $sectionKey => $section) {
                 if (! $this->allowsAny($companyId, $section['capabilities'])) {
@@ -55,6 +51,12 @@ final class WorkCoreWorkspaceManifest
             }
 
             $presented = $this->present($workspaceKey, $workspace);
+            $presented['capabilities'] = array_values(array_unique(array_merge(
+                ...array_map(
+                    static fn (array $section): array => $section['capabilities'],
+                    $sections,
+                ),
+            )));
             $presented['sections'] = $sections;
             $workspaces[] = $presented;
         }
