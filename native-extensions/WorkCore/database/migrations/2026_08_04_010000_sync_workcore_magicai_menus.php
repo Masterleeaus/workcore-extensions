@@ -29,6 +29,10 @@ return new class extends Migration
             $query->where('extension', 'workcore');
         }
 
-        $query->update(['is_active' => false, 'updated_at' => now()]);
+        $payload = ['is_active' => false];
+        if (Schema::hasColumn('menus', 'updated_at')) {
+            $payload['updated_at'] = now();
+        }
+        $query->update($payload);
     }
 };
