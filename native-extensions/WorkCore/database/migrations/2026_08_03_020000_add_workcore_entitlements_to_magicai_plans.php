@@ -5,7 +5,6 @@ declare(strict_types=1);
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use RuntimeException;
 
 return new class extends Migration
 {
@@ -69,7 +68,7 @@ return new class extends Migration
             'plans',
         ));
         if (! preg_match('/^[A-Za-z_][A-Za-z0-9_]*$/', $plansTable)) {
-            throw new RuntimeException("Unsafe MagicAI plans table identifier [{$plansTable}].");
+            throw new \RuntimeException("Unsafe MagicAI plans table identifier [{$plansTable}].");
         }
 
         return $plansTable;
