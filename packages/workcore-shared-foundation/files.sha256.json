@@ -1,5 +1,5 @@
 {
-  "file_count": 422,
+  "file_count": 423,
   "files": [
     {
       "bytes": 227,
@@ -610,6 +610,11 @@
       "bytes": 1069,
       "path": "src/Domains/WorkCore/Database/Migrations/2026_08_03_000000_create_tz_privileged_tenant_access_audits_table.php",
       "sha256": "0f020f0bf60b42ef781f6db7e546aa9d89145208a3cb0969692f3d6f74026d9a"
+    },
+    {
+      "bytes": 2560,
+      "path": "src/Domains/WorkCore/Database/Migrations/2026_08_03_010000_create_tz_company_entitlement_projection_tables.php",
+      "sha256": "183703ba4d9130c36cc698126991b38066d69e565f15ad49c8791b7a18417354"
     },
     {
       "bytes": 450,

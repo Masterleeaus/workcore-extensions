@@ -265,6 +265,8 @@
       "tz_capability_expansion_requests",
       "tz_companies",
       "tz_company_document_templates",
+      "tz_company_entitlement_projections",
+      "tz_company_entitlement_states",
       "tz_company_features",
       "tz_company_invitations",
       "tz_company_locales",
