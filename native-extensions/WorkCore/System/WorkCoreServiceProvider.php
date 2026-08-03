@@ -10,6 +10,8 @@ use App\Domains\WorkCore\System\Actions\Contracts\ConfirmationVerifierContract;
 use App\Domains\WorkCore\System\Actions\Contracts\EntitlementResolverContract;
 use App\Domains\WorkCore\System\Actions\Contracts\EntitlementRevisionResolverContract;
 use App\Domains\WorkCore\System\Capabilities\CapabilityRegistry;
+use App\Domains\WorkCore\System\Entitlements\CompanyEntitlementRefreshService;
+use App\Domains\WorkCore\System\Entitlements\Contracts\EffectiveSubscriptionResolverContract;
 use App\Domains\WorkCore\System\Entitlements\ProjectedCompanyEntitlementResolver;
 use App\Domains\WorkCore\System\Entitlements\WorkCorePlanEntitlementAdapter;
 use App\Domains\WorkCore\System\Intelligence\Approvals\BoundConfirmationVerifier;
@@ -17,6 +19,8 @@ use App\Domains\WorkCore\System\Intelligence\Approvals\ConfirmationGrantService;
 use App\Domains\WorkCore\System\Intelligence\Approvals\ConfirmationGrantSigner;
 use App\Domains\WorkCore\System\Intelligence\Approvals\ConfirmationNonceStoreContract;
 use App\Domains\WorkCore\System\Intelligence\Approvals\DatabaseConfirmationNonceStore;
+use App\Extensions\WorkCore\System\Console\Commands\RefreshWorkCoreEntitlementsCommand;
+use App\Extensions\WorkCore\System\Entitlements\MagicAIEffectiveSubscriptionResolver;
 use App\Extensions\WorkCore\System\Runtime\WorkCoreHostAliasRegistrar;
 use App\Extensions\WorkCore\System\Runtime\WorkCoreRuntimeAutoloader;
 use Illuminate\Database\ConnectionInterface;
@@ -47,6 +51,8 @@ final class WorkCoreServiceProvider extends ServiceProvider implements
             DatabaseConfirmationNonceStore::class,
             ProjectedCompanyEntitlementResolver::class,
             WorkCorePlanEntitlementAdapter::class,
+            CompanyEntitlementRefreshService::class,
+            EffectiveSubscriptionResolverContract::class,
             EntitlementRevisionResolverContract::class,
         ];
         foreach ($requiredRuntimeClasses as $requiredRuntimeClass) {
@@ -79,6 +85,12 @@ final class WorkCoreServiceProvider extends ServiceProvider implements
         }
 
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                RefreshWorkCoreEntitlementsCommand::class,
+            ]);
+        }
 
         $this->publishes([
             __DIR__ . '/../config/workcore-native.php' => config_path('workcore-native.php'),
@@ -139,7 +151,8 @@ final class WorkCoreServiceProvider extends ServiceProvider implements
     {
         $featureMap = config('workcore-native.entitlements.feature_map', []);
         $bootstrapCapabilities = config('workcore-native.entitlements.bootstrap_capabilities', []);
-        if (! is_array($featureMap) || ! is_array($bootstrapCapabilities)) {
+        $subscriptionSource = config('workcore-native.entitlements.subscription_source', []);
+        if (! is_array($featureMap) || ! is_array($bootstrapCapabilities) || ! is_array($subscriptionSource)) {
             throw new RuntimeException('WorkCore native entitlement configuration is invalid.');
         }
 
@@ -155,5 +168,11 @@ final class WorkCoreServiceProvider extends ServiceProvider implements
             $app->make(CapabilityRegistry::class),
             $featureMap,
         ));
+        $this->app->singleton(MagicAIEffectiveSubscriptionResolver::class, static fn ($app): MagicAIEffectiveSubscriptionResolver => new MagicAIEffectiveSubscriptionResolver(
+            $app->make(ConnectionInterface::class),
+            $subscriptionSource,
+        ));
+        $this->app->bind(EffectiveSubscriptionResolverContract::class, static fn ($app): MagicAIEffectiveSubscriptionResolver => $app->make(MagicAIEffectiveSubscriptionResolver::class));
+        $this->app->singleton(CompanyEntitlementRefreshService::class);
     }
 }
