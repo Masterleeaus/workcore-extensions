@@ -7,6 +7,11 @@ namespace App\Extensions\WorkCore\System;
 use App\Domains\Marketplace\Contracts\ExtensionRegisterKeyProviderInterface;
 use App\Domains\Marketplace\Contracts\UninstallExtensionServiceProviderInterface;
 use App\Domains\WorkCore\System\Actions\Contracts\ConfirmationVerifierContract;
+use App\Domains\WorkCore\System\Actions\Contracts\EntitlementResolverContract;
+use App\Domains\WorkCore\System\Actions\Contracts\EntitlementRevisionResolverContract;
+use App\Domains\WorkCore\System\Capabilities\CapabilityRegistry;
+use App\Domains\WorkCore\System\Entitlements\ProjectedCompanyEntitlementResolver;
+use App\Domains\WorkCore\System\Entitlements\WorkCorePlanEntitlementAdapter;
 use App\Domains\WorkCore\System\Intelligence\Approvals\BoundConfirmationVerifier;
 use App\Domains\WorkCore\System\Intelligence\Approvals\ConfirmationGrantService;
 use App\Domains\WorkCore\System\Intelligence\Approvals\ConfirmationGrantSigner;
@@ -14,6 +19,7 @@ use App\Domains\WorkCore\System\Intelligence\Approvals\ConfirmationNonceStoreCon
 use App\Domains\WorkCore\System\Intelligence\Approvals\DatabaseConfirmationNonceStore;
 use App\Extensions\WorkCore\System\Runtime\WorkCoreHostAliasRegistrar;
 use App\Extensions\WorkCore\System\Runtime\WorkCoreRuntimeAutoloader;
+use Illuminate\Database\ConnectionInterface;
 use Illuminate\Support\ServiceProvider;
 use RuntimeException;
 
@@ -39,6 +45,9 @@ final class WorkCoreServiceProvider extends ServiceProvider implements
             ConfirmationGrantSigner::class,
             ConfirmationNonceStoreContract::class,
             DatabaseConfirmationNonceStore::class,
+            ProjectedCompanyEntitlementResolver::class,
+            WorkCorePlanEntitlementAdapter::class,
+            EntitlementRevisionResolverContract::class,
         ];
         foreach ($requiredRuntimeClasses as $requiredRuntimeClass) {
             if (! class_exists($requiredRuntimeClass) && ! interface_exists($requiredRuntimeClass)) {
@@ -60,6 +69,7 @@ final class WorkCoreServiceProvider extends ServiceProvider implements
         $this->app['config']->set('workcore.api.middleware', array_values($middleware));
 
         $this->registerNativeConfirmationSecurity();
+        $this->registerNativeEntitlements();
     }
 
     public function boot(): void
@@ -122,6 +132,28 @@ final class WorkCoreServiceProvider extends ServiceProvider implements
             [],
             true,
             false,
+        ));
+    }
+
+    private function registerNativeEntitlements(): void
+    {
+        $featureMap = config('workcore-native.entitlements.feature_map', []);
+        $bootstrapCapabilities = config('workcore-native.entitlements.bootstrap_capabilities', []);
+        if (! is_array($featureMap) || ! is_array($bootstrapCapabilities)) {
+            throw new RuntimeException('WorkCore native entitlement configuration is invalid.');
+        }
+
+        $this->app->singleton(ProjectedCompanyEntitlementResolver::class, static fn ($app): ProjectedCompanyEntitlementResolver => new ProjectedCompanyEntitlementResolver(
+            $app->make(ConnectionInterface::class),
+            $app->make(CapabilityRegistry::class),
+            array_values(array_filter($bootstrapCapabilities, 'is_string')),
+        ));
+        $this->app->bind(EntitlementResolverContract::class, static fn ($app): ProjectedCompanyEntitlementResolver => $app->make(ProjectedCompanyEntitlementResolver::class));
+        $this->app->bind(EntitlementRevisionResolverContract::class, static fn ($app): ProjectedCompanyEntitlementResolver => $app->make(ProjectedCompanyEntitlementResolver::class));
+        $this->app->singleton(WorkCorePlanEntitlementAdapter::class, static fn ($app): WorkCorePlanEntitlementAdapter => new WorkCorePlanEntitlementAdapter(
+            $app->make(ConnectionInterface::class),
+            $app->make(CapabilityRegistry::class),
+            $featureMap,
         ));
     }
 }
