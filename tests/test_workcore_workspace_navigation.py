@@ -12,6 +12,7 @@ MANIFEST = NATIVE / "System/Navigation/WorkCoreWorkspaceManifest.php"
 MENU_SYNC = NATIVE / "System/Navigation/MagicAIMenuSynchronizer.php"
 WORKSPACE_CONTROLLER = NATIVE / "System/Http/Controllers/WorkspaceController.php"
 MANIFEST_CONTROLLER = NATIVE / "System/Http/Controllers/WorkspaceManifestController.php"
+WORKSPACE_MIDDLEWARE = NATIVE / "System/Http/Middleware/RequireWorkspaceCapability.php"
 MENU_COMMAND = NATIVE / "System/Console/Commands/SyncWorkCoreMenusCommand.php"
 USER_ROUTES = NATIVE / "routes/user.php"
 API_ROUTES = NATIVE / "routes/api.php"
@@ -79,7 +80,7 @@ class WorkCoreWorkspaceCatalogueTests(unittest.TestCase):
 
 
 class WorkCoreWorkspaceManifestTests(unittest.TestCase):
-    def test_manifest_filters_by_registered_and_entitled_capabilities(self) -> None:
+    def test_manifest_filters_sections_and_exposes_roots_with_any_visible_child(self) -> None:
         content = MANIFEST.read_text(encoding="utf-8")
         for token in (
             "CapabilityRegistry",
@@ -91,11 +92,14 @@ class WorkCoreWorkspaceManifestTests(unittest.TestCase):
             "public function findForCompany(int $companyId, string $workspace): ?array",
             "$this->capabilities->has($capability)",
             "$this->entitlements->allows($companyId, $capability)",
+            "if ($sections === [])",
+            "array_merge(",
             "'entitlement_revision'",
             "'company_id'",
             "'workspaces'",
         ):
             self.assertIn(token, content)
+        self.assertNotIn("allowsAny($companyId, $workspace['capabilities'])", content)
 
     def test_native_api_exposes_workspace_manifest(self) -> None:
         routes = API_ROUTES.read_text(encoding="utf-8")
@@ -125,17 +129,34 @@ class WorkCoreWorkspaceWebShellTests(unittest.TestCase):
         ):
             self.assertIn(token, content)
 
-    def test_user_routes_are_catalogue_driven_and_capability_gated(self) -> None:
+    def test_user_routes_are_catalogue_driven_and_any_capability_gated(self) -> None:
         content = USER_ROUTES.read_text(encoding="utf-8")
         for token in (
             "WorkCoreWorkspaceCatalogue",
             "WorkspaceController",
+            "RequireWorkspaceCapability",
             "workcore.tenant",
-            "workcore.capability:",
+            "workcore.workspace-capability:",
             "foreach ($catalogue->all() as $workspaceKey => $workspace)",
             "foreach ($workspace['sections'] as $sectionKey => $section)",
+            "implode('|', $rootCapabilities)",
+            "implode('|', $section['capabilities'])",
             "->name($workspace['route_name'])",
             "->name($section['route_name'])",
+        ):
+            self.assertIn(token, content)
+
+    def test_workspace_capability_middleware_accepts_any_registered_entitlement(self) -> None:
+        content = WORKSPACE_MIDDLEWARE.read_text(encoding="utf-8")
+        for token in (
+            "TenantContextContract",
+            "CapabilityRegistry",
+            "EntitlementResolverContract",
+            "explode('|', $capabilities)",
+            "$this->registry->has($capability)",
+            "$this->entitlements->allows($companyId, $capability)",
+            "return $next($request)",
+            "AuthorizationException",
         ):
             self.assertIn(token, content)
 
@@ -201,7 +222,7 @@ class WorkCoreWorkspaceLaravelFixtureTests(unittest.TestCase):
         self.assertIn("Run database-backed WorkCore workspace navigation fixture", workflow)
         self.assertIn("matrix.profile == 'full'", workflow)
 
-    def test_verifier_proves_menu_sync_routes_manifest_and_expiry(self) -> None:
+    def test_verifier_proves_menu_sync_routes_cross_product_manifest_and_expiry(self) -> None:
         content = FIXTURE_VERIFIER.read_text(encoding="utf-8")
         for token in (
             "Schema::create('menus'",
@@ -217,6 +238,7 @@ class WorkCoreWorkspaceLaravelFixtureTests(unittest.TestCase):
             "dashboard.user.workcore.commercial.index",
             "first_sync",
             "second_sync",
+            "resources_with_commercial_only",
             "commercial_before_expiry",
             "commercial_after_expiry",
         ):
