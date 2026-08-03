@@ -10,4 +10,11 @@ return [
         'workcore.tenant',
         'workcore.api',
     ],
+    'approvals' => [
+        'signing_key' => env('WORKCORE_CONFIRMATION_SIGNING_KEY'),
+        'key_id' => env('WORKCORE_CONFIRMATION_KEY_ID', 'primary'),
+        'ttl_seconds' => (int) env('WORKCORE_CONFIRMATION_TTL_SECONDS', 300),
+        'enforce_all' => true,
+        'allow_legacy_human_confirmation' => false,
+    ],
 ];
