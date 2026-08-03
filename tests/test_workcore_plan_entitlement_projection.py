@@ -1,10 +1,12 @@
 from __future__ import annotations
 
+import re
 import unittest
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 BASE = REPO_ROOT / "packages/workcore-shared-foundation/src/Domains/WorkCore/System"
+WORKCORE_CONFIG = REPO_ROOT / "packages/workcore-shared-foundation/src/Domains/WorkCore/Config/workcore.php"
 MIGRATION = REPO_ROOT / "packages/workcore-shared-foundation/src/Domains/WorkCore/Database/Migrations/2026_08_03_010000_create_tz_company_entitlement_projection_tables.php"
 NATIVE_CONFIG = REPO_ROOT / "native-extensions/WorkCore/config/workcore-native.php"
 NATIVE_PROVIDER = REPO_ROOT / "native-extensions/WorkCore/System/WorkCoreServiceProvider.php"
@@ -35,7 +37,9 @@ class WorkCorePlanEntitlementProjectionTests(unittest.TestCase):
             "CapabilityRegistry",
             "public function project(int $companyId, EffectiveSubscriptionSnapshot $subscription): int",
             "$this->db->transaction",
+            "insertOrIgnore",
             "lockForUpdate()",
+            "array_fill_keys(array_keys($this->capabilities->all()), false)",
             "tz_company_entitlement_states",
             "tz_company_entitlement_projections",
             "source_checksum",
@@ -45,6 +49,7 @@ class WorkCorePlanEntitlementProjectionTests(unittest.TestCase):
             "->delete()",
         ):
             self.assertIn(token, content)
+        self.assertLess(content.index("insertOrIgnore"), content.index("lockForUpdate()"))
         self.assertIn("$subscription->grantsAccessAt", content)
         self.assertIn("$this->capabilities->has", content)
 
@@ -115,6 +120,17 @@ class WorkCorePlanEntitlementProjectionTests(unittest.TestCase):
             "workcore-native.entitlements.bootstrap_capabilities",
         ):
             self.assertIn(token, provider)
+
+    def test_native_feature_map_covers_every_registered_capability(self) -> None:
+        workcore = WORKCORE_CONFIG.read_text(encoding="utf-8")
+        capability_section = workcore.split("'capabilities' => [", 1)[1].split("    'storage' => [", 1)[0]
+        registered = set(re.findall(r"^\s{8}'(workcore\.[^']+)'\s*=>\s*\[", capability_section, re.MULTILINE))
+
+        native = NATIVE_CONFIG.read_text(encoding="utf-8")
+        configured = set(re.findall(r"'(workcore\.[^']+)'", native))
+
+        self.assertTrue(registered)
+        self.assertEqual(registered, configured, f"Missing or unknown entitlement capabilities: {sorted(registered ^ configured)}")
 
 
 if __name__ == "__main__":
