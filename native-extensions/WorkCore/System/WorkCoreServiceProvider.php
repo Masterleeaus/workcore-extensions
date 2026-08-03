@@ -100,7 +100,8 @@ final class WorkCoreServiceProvider extends ServiceProvider implements
                 $this->callAfterResolving(Schedule::class, static function (Schedule $schedule) use ($interval): void {
                     $schedule->command('workcore:refresh-entitlements --all')
                         ->cron("*/{$interval} * * * *")
-                        ->withoutOverlapping(max(10, $interval * 2));
+                        ->withoutOverlapping(max(10, $interval * 2))
+                        ->onOneServer();
                 });
             }
         }
