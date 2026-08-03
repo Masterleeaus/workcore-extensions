@@ -7,6 +7,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[1]
 NATIVE = REPO_ROOT / "native-extensions/WorkCore"
 CATALOGUE = NATIVE / "System/Navigation/WorkCoreWorkspaceCatalogue.php"
+WORKSPACE_CONFIG = NATIVE / "config/workcore-workspaces.php"
 MANIFEST = NATIVE / "System/Navigation/WorkCoreWorkspaceManifest.php"
 MENU_SYNC = NATIVE / "System/Navigation/MagicAIMenuSynchronizer.php"
 WORKSPACE_CONTROLLER = NATIVE / "System/Http/Controllers/WorkspaceController.php"
@@ -16,7 +17,6 @@ USER_ROUTES = NATIVE / "routes/user.php"
 API_ROUTES = NATIVE / "routes/api.php"
 WORKSPACE_VIEW = NATIVE / "resources/views/workspace.blade.php"
 PROVIDER = NATIVE / "System/WorkCoreServiceProvider.php"
-CONFIG = NATIVE / "config/workcore-native.php"
 MENU_MIGRATION = NATIVE / "database/migrations/2026_08_04_010000_sync_workcore_magicai_menus.php"
 FIXTURE_VERIFIER = REPO_ROOT / "tools/verify_workcore_workspace_navigation.php"
 FIXTURE_WORKFLOW = REPO_ROOT / ".github/workflows/magicai-native-laravel10.yml"
@@ -24,8 +24,8 @@ FIXTURE_WORKFLOW = REPO_ROOT / ".github/workflows/magicai-native-laravel10.yml"
 
 class WorkCoreWorkspaceCatalogueTests(unittest.TestCase):
     def test_catalogue_defines_five_ordered_workspace_roots(self) -> None:
-        config = CONFIG.read_text(encoding="utf-8")
-        positions = [config.index(f"'{key}' => [") for key in (
+        config = WORKSPACE_CONFIG.read_text(encoding="utf-8")
+        positions = [config.index(f"'{key}' => $workspace(") for key in (
             "crm",
             "operations",
             "workforce",
@@ -34,14 +34,14 @@ class WorkCoreWorkspaceCatalogueTests(unittest.TestCase):
         )]
         self.assertEqual(sorted(positions), positions)
         for token in (
-            "'workspaces' => [",
-            "'menu_key'",
-            "'route_name'",
-            "'path'",
-            "'icon'",
-            "'order'",
-            "'capabilities'",
-            "'sections'",
+            "$workspace = static fn",
+            "$section = static fn",
+            "string $menuKey",
+            "string $routeName",
+            "string $path",
+            "int $order",
+            "array $capabilities",
+            "array $sections",
         ):
             self.assertIn(token, config)
 
@@ -56,16 +56,21 @@ class WorkCoreWorkspaceCatalogueTests(unittest.TestCase):
             "Duplicate WorkCore workspace menu key",
             "Duplicate WorkCore workspace route name",
             "InvalidArgumentException",
-            "ksort",
+            "uasort",
         ):
             self.assertIn(token, content)
 
     def test_workspace_keys_routes_and_paths_are_unique(self) -> None:
-        config = CONFIG.read_text(encoding="utf-8")
-        menu_keys = re.findall(r"'menu_key'\s*=>\s*'([^']+)'", config)
-        route_names = re.findall(r"'route_name'\s*=>\s*'([^']+)'", config)
-        paths = re.findall(r"'path'\s*=>\s*'([^']+)'", config)
-        self.assertGreaterEqual(len(menu_keys), 35)
+        config = WORKSPACE_CONFIG.read_text(encoding="utf-8")
+        definitions = re.findall(
+            r"\$(?:workspace|section)\(\s*'([^']+)'\s*,\s*'[^']+'\s*,\s*'[^']+'\s*,\s*'([^']+)'\s*,\s*'([^']+)'",
+            config,
+            re.S,
+        )
+        self.assertEqual(42, len(definitions))
+        menu_keys = [definition[0] for definition in definitions]
+        route_names = [definition[1] for definition in definitions]
+        paths = [definition[2] for definition in definitions]
         self.assertEqual(len(menu_keys), len(set(menu_keys)))
         self.assertEqual(len(route_names), len(set(route_names)))
         self.assertEqual(len(paths), len(set(paths)))
@@ -127,16 +132,18 @@ class WorkCoreWorkspaceWebShellTests(unittest.TestCase):
             "WorkspaceController",
             "workcore.tenant",
             "workcore.capability:",
-            "dashboard.user.workcore.",
             "foreach ($catalogue->all() as $workspaceKey => $workspace)",
             "foreach ($workspace['sections'] as $sectionKey => $section)",
+            "->name($workspace['route_name'])",
+            "->name($section['route_name'])",
         ):
             self.assertIn(token, content)
 
     def test_controller_resolves_only_catalogue_definitions(self) -> None:
         content = WORKSPACE_CONTROLLER.read_text(encoding="utf-8")
-        self.assertIn("$this->catalogue->workspace($workspace)", content)
-        self.assertIn("$this->catalogue->section($workspace, $section)", content)
+        self.assertIn("$this->catalogue->workspace($workspaceKey)", content)
+        self.assertIn("$this->catalogue->section($workspaceKey, (string) $sectionKey)", content)
+        self.assertIn("$this->manifest->forActiveCompany()", content)
         self.assertIn("abort(404", content)
         self.assertIn("return view('workcore::workspace'", content)
         self.assertNotIn("view($workspace", content)
@@ -162,7 +169,7 @@ class MagicAIMenuSynchronizerTests(unittest.TestCase):
             "Schema::hasColumn('menus'",
             "ConnectionInterface",
             "WorkCoreWorkspaceCatalogue",
-            "preserve",
+            "preserved",
             "where('key', 'like', 'workcore_%')",
             "whereNotIn('key', $ownedKeys)",
             "'created'",
