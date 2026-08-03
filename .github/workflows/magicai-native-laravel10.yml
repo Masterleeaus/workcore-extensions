@@ -10,6 +10,7 @@ on:
       - 'tools/prepare_magicai_10_fixture.py'
       - 'tools/verify_magicai_native_host.php'
       - 'tools/verify_workcore_entitlement_projection.php'
+      - 'tools/verify_workcore_workspace_navigation.php'
       - 'tests/test_magicai_native_host_fixture.py'
       - 'tests/test_workcore_*.py'
       - '.github/workflows/magicai-native-laravel10.yml'
@@ -25,6 +26,7 @@ on:
       - 'tools/prepare_magicai_10_fixture.py'
       - 'tools/verify_magicai_native_host.php'
       - 'tools/verify_workcore_entitlement_projection.php'
+      - 'tools/verify_workcore_workspace_navigation.php'
       - 'tests/test_magicai_native_host_fixture.py'
       - 'tests/test_workcore_*.py'
       - '.github/workflows/magicai-native-laravel10.yml'
@@ -108,3 +110,7 @@ jobs:
       - name: Run database-backed entitlement projection fixture
         if: ${{ matrix.profile == 'full' }}
         run: php tools/verify_workcore_entitlement_projection.php --host=/tmp/magicai-host
+
+      - name: Run database-backed WorkCore workspace navigation fixture
+        if: ${{ matrix.profile == 'full' }}
+        run: php tools/verify_workcore_workspace_navigation.php --host=/tmp/magicai-host
