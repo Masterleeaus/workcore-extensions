@@ -19,13 +19,14 @@ Route::prefix('dashboard/user/workcore')
     ->middleware(['web', 'auth', 'workcore.tenant'])
     ->group(function () use ($catalogue): void {
         foreach ($catalogue->all() as $workspaceKey => $workspace) {
-            $rootCapabilities = array_values(array_unique(array_merge(
-                $workspace['capabilities'],
-                ...array_map(
-                    static fn (array $section): array => $section['capabilities'],
-                    $workspace['sections'],
-                ),
-            )));
+            $rootCapabilities = $workspace['capabilities'];
+            foreach ($workspace['sections'] as $section) {
+                foreach ($section['capabilities'] as $capability) {
+                    $rootCapabilities[] = $capability;
+                }
+            }
+            $rootCapabilities = array_values(array_unique($rootCapabilities));
+
             Route::get($workspace['path'], [WorkspaceController::class, 'show'])
                 ->defaults('workspace', $workspaceKey)
                 ->defaults('section', null)
