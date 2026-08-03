@@ -5,7 +5,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from tools.update_repository_integrity import checksum_payload, discover_owned_tables
+from tools.refresh_package_checksums import build_manifest, discover_owned_tables
 
 
 class RepositoryIntegrityUpdaterTests(unittest.TestCase):
@@ -16,8 +16,8 @@ class RepositoryIntegrityUpdaterTests(unittest.TestCase):
             (root / "a.txt").write_text("alpha", encoding="utf-8")
             (root / "files.sha256.json").write_text("stale", encoding="utf-8")
 
-            first = checksum_payload(root)
-            second = checksum_payload(root)
+            first = build_manifest(root)
+            second = build_manifest(root)
 
             self.assertEqual(first, second)
             self.assertEqual(2, first["file_count"])
