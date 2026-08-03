@@ -127,7 +127,9 @@ class WorkCorePlanEntitlementProjectionTests(unittest.TestCase):
         registered = set(re.findall(r"^\s{8}'(workcore\.[^']+)'\s*=>\s*\[", capability_section, re.MULTILINE))
 
         native = NATIVE_CONFIG.read_text(encoding="utf-8")
-        configured = set(re.findall(r"'(workcore\.[^']+)'", native))
+        entitlement_section = native.split("'entitlements' => [", 1)[1]
+        projection_section = entitlement_section.split("'subscription_source' => [", 1)[0]
+        configured = set(re.findall(r"'(workcore\.[^']+)'", projection_section))
 
         self.assertTrue(registered)
         self.assertEqual(registered, configured, f"Missing or unknown entitlement capabilities: {sorted(registered ^ configured)}")
